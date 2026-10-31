@@ -1,9 +1,0 @@
-'config':
-  jcr:primaryType: 'mgnl:content'
-  'apiEndpoint': 'https://products.api.dibhids.net/v2/pmd'
-  'tokenEndpoint': 'https://doosan.okta.com/oauth2/aus8kshd9vR44ZJLg1t7/v1/token'
-  'tokenUser': '0oal12hzzg8zYQvGB1t7'
-  'tokenPassword': '${jcr.auth.magnolia.pmd.okta.secret}'
-  'apiCacheEnabled': true
-  'apiCacheTTLSeconds': 300
-  'apiCacheMaxSize': 1000

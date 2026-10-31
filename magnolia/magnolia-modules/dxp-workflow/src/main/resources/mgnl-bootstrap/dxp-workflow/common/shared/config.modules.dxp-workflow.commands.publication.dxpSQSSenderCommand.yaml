@@ -1,3 +1,0 @@
-dxpSQSSenderCommand:
-  class: com.tbscg.doosan.magnolia.dxp.workflow.command.DxpSQSSenderCommand
-  commandName: dxpSQSSenderCommand

@@ -1,9 +1,0 @@
-roles:
-  superuser: superuser
-  dxp-bobcat-admins: dxp-bobcat-admins
-  dxp-bobcat-admin-na: dxp-bobcat-admin-na
-  dxp-bobcat-admin-emea: dxp-bobcat-admin-emea
-  dxp-bobcat-admin-alao: dxp-bobcat-admin-alao
-  dxp-bobcat-campaign-app-na: dxp-bobcat-campaign-app-na
-  dxp-bobcat-campaign-app-emea: dxp-bobcat-campaign-app-emea
-  dxp-bobcat-campaign-app-alao: dxp-bobcat-campaign-app-alao

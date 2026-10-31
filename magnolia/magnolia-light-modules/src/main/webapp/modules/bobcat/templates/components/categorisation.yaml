@@ -1,4 +1,0 @@
-renderType: freemarker
-title: Categorisation Demo
-templateScript: /bobcat/templates/components/categorisation.ftl
-moveable: true

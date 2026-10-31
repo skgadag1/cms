@@ -1,5 +1,0 @@
-'activate': 
-  'class': 'info.magnolia.module.workflow.commands.PublicationWorkflowCommand'
-  'commandName': 'activate'
-  'parameterMapName': 'mgnlData'
-  'workflow': 'reviewForPublication'

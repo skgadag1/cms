@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Footer Component
-templateScript: /kags/templates/components/footer.ftl
-dialog: kags:components/footer
-moveable: false

@@ -1,3 +1,0 @@
-'backupRegionsApiCommandConfig':
-  's3Bucket': 'db-dxp-magnolia-backup-product-prod'
-  'apiUrl': 'https://bobcat.api.bobcat.com/content/author/api/content/regions/bobcat/@nodes'

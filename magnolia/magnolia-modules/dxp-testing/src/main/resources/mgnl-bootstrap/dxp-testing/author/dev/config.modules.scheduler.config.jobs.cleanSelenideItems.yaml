@@ -1,6 +1,0 @@
-'cleanSelenideItems':
-  'catalog': 'maintenance'
-  'command': 'cleanSelenideItems'
-  'cron': '0 9 * * * *'
-  'description': 'Clean all the JCR files created after running Selenide tests. It runs everyday at 09:00 a.m. server time (UTC)'
-  'enabled': 'true'

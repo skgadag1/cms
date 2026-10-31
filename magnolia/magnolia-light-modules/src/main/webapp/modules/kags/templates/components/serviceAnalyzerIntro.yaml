@@ -1,6 +1,0 @@
-# DEPRECATED! - renamed to intro
-renderType: freemarker
-title: Service Analyzer Intro Component
-templateScript: /kags/templates/components/serviceAnalyzerIntro.ftl
-dialog: kags:components/serviceAnalyzerIntro
-moveable: false

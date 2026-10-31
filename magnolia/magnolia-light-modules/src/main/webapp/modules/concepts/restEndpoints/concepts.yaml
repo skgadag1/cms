@@ -1,7 +1,0 @@
-class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: concepts
-rootPath: /
-depth: 2
-includeSystemProperties: false
-nodeTypes:
-- mgnl:content

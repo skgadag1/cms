@@ -1,8 +1,0 @@
-'kags-smartIdp':
-  'authenticationServiceName': 'kags-smartIdp'
-  'class': 'info.magnolia.cms.security.auth.callback.SSOAuthenticationRedirectCallback'
-  'hostPattern': 
-    'class': 'info.magnolia.cms.util.SimpleUrlPattern'
-    'patternString': 'direct.bobcat.com'
-
-

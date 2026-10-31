@@ -1,2 +1,0 @@
-definitionClass: com.tbscg.doosan.magnolia.cloudinary.field.definition.CloudinaryBentoLayoutFieldDefinition
-factoryClass: info.magnolia.ui.javascript.field.JavascriptFieldFactory

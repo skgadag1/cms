@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: RichText Component
-templateScript: /kags/templates/components/richtext.ftl
-dialog: kags:components/richtext
-moveable: true

@@ -1,3 +1,0 @@
-spa-page-prototype:
-  baseUrl: 'https://dealer.dev.bobcat.com'
-  routeTemplate: '/{{@path}}?lang={language}'

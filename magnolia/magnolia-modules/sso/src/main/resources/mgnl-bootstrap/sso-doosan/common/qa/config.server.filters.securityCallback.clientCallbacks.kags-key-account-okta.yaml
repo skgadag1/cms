@@ -1,8 +1,0 @@
-'kags-key-account-okta': 
-  'authenticationServiceName': 'kags-key-account-okta'
-  'class': 'info.magnolia.cms.security.auth.callback.SSOAuthenticationRedirectCallback'
-  'hostPattern': 
-    'class': 'info.magnolia.cms.util.SimpleUrlPattern'
-    'patternString': 'keyaccount.dxp-kags.qa.dice-tools.com'
-
-

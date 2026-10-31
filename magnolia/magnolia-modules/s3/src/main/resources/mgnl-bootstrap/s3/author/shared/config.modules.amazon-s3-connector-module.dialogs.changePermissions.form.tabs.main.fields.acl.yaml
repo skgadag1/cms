@@ -1,4 +1,0 @@
-'acl':
-  'class': 'info.magnolia.ui.form.field.definition.HiddenFieldDefinition'
-  'defaultValue': 'private'
-  'type': 'String'

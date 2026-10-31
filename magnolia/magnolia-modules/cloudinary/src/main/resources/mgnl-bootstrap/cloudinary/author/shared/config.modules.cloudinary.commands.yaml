@@ -1,9 +1,0 @@
-'commands': 
-  jcr:primaryType: 'mgnl:content'
-  'cloudinary': 
-    jcr:primaryType: 'mgnl:content'
-    'updateFolders': 
-      'class': 'com.tbscg.doosan.magnolia.cloudinary.command.UpdateFoldersCommand'
-      'enabled': true
-
-

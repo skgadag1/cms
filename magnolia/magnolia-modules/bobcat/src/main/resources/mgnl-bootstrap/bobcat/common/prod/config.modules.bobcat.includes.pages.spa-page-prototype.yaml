@@ -1,3 +1,0 @@
-spa-page-prototype:
-  baseUrl: 'https://magnolia-cms.dibhids.net/bobcat_editor' # proxy to: 'https://ssr-author.bobcat.com'
-  routeTemplate: '/{{@path}}?lang={language}&editmode=on'

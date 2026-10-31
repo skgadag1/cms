@@ -1,4 +1,0 @@
-title: Kags prototype page
-renderType: freemarker
-dialog: kags:pages/prototype
-visible: false

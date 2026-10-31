@@ -1,5 +1,0 @@
-!include:/kags/includes/dam-asset.yaml
-filters:
-  - class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
-    name: resource_type
-    value: video

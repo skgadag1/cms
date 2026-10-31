@@ -1,4 +1,0 @@
-'config':
-  'jcr:primaryType': mgnl:content
-  'sqsQueueParamName': /cf/api/content/toc/package/sqsUrl
-  'sqsS3BucketParamName': /cf/api/content/toc/package/sqsS3BucketName

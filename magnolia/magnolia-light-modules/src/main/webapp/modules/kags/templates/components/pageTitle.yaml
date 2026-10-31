@@ -1,5 +1,0 @@
-renderType: freemarker
-title: Page Title Component
-templateScript: /kags/templates/components/pageTitle.ftl
-dialog: kags:components/pageTitle
-moveable: false

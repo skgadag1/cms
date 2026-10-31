@@ -1,3 +1,0 @@
-'backupRegionsApiCommandConfig':
-  's3Bucket': 'db-dxp-magnolia-backup-product-{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-dev'
-  'apiUrl': 'https://{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-bobcat.api.dev.dice-tools.com/content/author/api/content/regions/bobcat/@nodes'

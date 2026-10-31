@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Troubleshooting Component
-templateScript: /kags/templates/components/troubleshooting.ftl
-dialog: kags:components/troubleshooting
-moveable: false

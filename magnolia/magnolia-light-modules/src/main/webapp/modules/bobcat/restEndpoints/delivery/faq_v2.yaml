@@ -1,9 +1,0 @@
-class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
-workspace: faq
-endpointPath: /api/content/faq
-rootPath: /
-depth: 0
-includeSystemProperties: false
-bypassWorkspaceAcls: true
-nodeTypes:
-  - dxp:faq

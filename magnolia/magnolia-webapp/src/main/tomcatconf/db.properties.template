@@ -1,4 +1,0 @@
-dbType=postgres
-dbUrl=jdbc:postgresql://localhost:5432/magnolia
-dbUser=
-dbPassword=

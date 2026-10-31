@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Machine Library
-templateScript: /kags/templates/components/machinelibrary.ftl
-dialog: kags:components/machinelibrary
-moveable: false

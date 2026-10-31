@@ -1,6 +1,0 @@
-actions:
-  commit:
-    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpJcrImportActionDefinition
-    command: import
-  cancel:
-    class: info.magnolia.ui.dialog.action.CancelDialogActionDefinition

@@ -1,5 +1,0 @@
-$type: checkBoxField
-label: Hide for regular user
-buttonLabel: Show this component only to supertechs
-defaultValue: false
-type: java.lang.Boolean

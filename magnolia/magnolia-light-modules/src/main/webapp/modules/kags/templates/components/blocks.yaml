@@ -1,4 +1,0 @@
-renderType: freemarker
-title: Blocks Component
-templateScript: /kags/templates/components/blocks.ftl
-dialog: kags:components/blocks

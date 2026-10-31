@@ -1,9 +1,0 @@
-attachment-details:
-  extends: '/modules/bobcat/templates/pages/index'
-  title: 'Bobcat.com Attachment Details Page'
-  dialog: bobcat:pages/attachment-details
-
-  areas:
-    main:
-      availableComponents:
-        extends: '/modules/bobcat/includes/main-area-components-attachment-required'

@@ -1,2 +1,0 @@
-'kags-key-account-okta':
-  'keyAccountDataEndpoint': 'https://inner-iam.api-internal.qa.dice-tools.com/v2/keyaccount/{email}'

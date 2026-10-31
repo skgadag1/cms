@@ -1,8 +1,0 @@
-'dxp-pmd-admins':
-  'jcr:primaryType': 'mgnl:group'
-  'jcr:uuid': 'b685fac1-2e76-4294-bdbb-e7dbe5058a96'
-  'groups':
-    'jcr:uuid': '42c7b699-16c1-45a4-aa24-e94a89da2a9d'
-  'roles':
-    '0': '0a57cbc7-9ce6-45bc-be96-2740ccd75c7b'
-    'jcr:uuid': '077bed93-dc35-4bf3-a95b-dcff20d25ed3'

@@ -1,6 +1,0 @@
-# DEPRECATED! - renamed to download
-renderType: freemarker
-title: Service Analyzer Downloads Component
-templateScript: /kags/templates/components/serviceAnalyzerDownload.ftl
-dialog: kags:components/serviceAnalyzerDownload
-moveable: false

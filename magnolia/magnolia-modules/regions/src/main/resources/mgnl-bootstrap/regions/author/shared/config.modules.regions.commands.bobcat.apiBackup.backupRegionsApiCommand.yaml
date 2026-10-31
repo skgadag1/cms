@@ -1,3 +1,0 @@
-backupRegionsApiCommand:
-  class: com.tbscg.doosan.magnolia.regions.commands.BackupRegionsApiCommand
-  commandName: backupRegionsApiCommand

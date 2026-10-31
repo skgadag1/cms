@@ -1,6 +1,0 @@
-bucketConfigurations:
-  jcr:primaryType: 'mgnl:content'
-  downloads:
-    bucketName: 'dibh-dev-dxp-downloads'
-  sitemaps:
-    bucketName: 'dibh-dev-dxp-bobcat-com-sitemaps'

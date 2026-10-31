@@ -1,5 +1,0 @@
-renderType: freemarker
-title: Header Component
-templateScript: /kags/templates/components/header.ftl
-dialog: kags:components/header
-moveable: false

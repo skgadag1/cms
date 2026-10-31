@@ -1,6 +1,0 @@
-commit:
-  class: info.magnolia.ui.dialog.action.SaveDialogActionDefinition
-  label: Save
-cancel:
-  class: info.magnolia.ui.dialog.action.CancelDialogActionDefinition
-  label: Cancel

@@ -1,9 +1,0 @@
-form:
-  properties:
-    jcrName:
-      $type: textField
-      required: true
-      rows: 2
-      validators:
-        - $type: lowerCaseNodeNameValidator
-          mode: ADD

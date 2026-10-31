@@ -1,7 +1,0 @@
-'acl_uri':
-  '0':
-    'path': '*'
-    'permissions': 63
-  '00':
-    'path': '/.magnolia*'
-    'permissions': 0

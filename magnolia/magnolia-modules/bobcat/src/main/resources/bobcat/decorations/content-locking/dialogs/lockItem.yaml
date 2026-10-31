@@ -1,6 +1,0 @@
-form:
-  tabs:
-    - name: locking
-      fields:
-        - name: lockDescription
-          required: false

@@ -1,5 +1,0 @@
-renderType: freemarker
-title: Machine Component
-templateScript: /kags/templates/components/machine.ftl
-dialog: kags:components/machine
-moveable: false

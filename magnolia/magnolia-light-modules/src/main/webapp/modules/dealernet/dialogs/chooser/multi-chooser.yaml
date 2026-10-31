@@ -1,5 +1,0 @@
-!include:/ui-framework-jcr/dialogs/multiChooser.yaml
-label: Visibility tags
-actions:
-  clear:
-    label: Unselect all

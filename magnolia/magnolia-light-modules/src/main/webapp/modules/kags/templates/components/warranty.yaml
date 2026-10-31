@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Warranty Component
-templateScript: /kags/templates/components/warranty.ftl
-dialog: kags:components/warranty
-moveable: false

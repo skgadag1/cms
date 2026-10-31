@@ -1,5 +1,0 @@
-label: Visibility
-$type: jcrMultiLinkField
-field:
-  !include:/dealernet/dialogs/chooser/visibility-chooser.yaml
-chooserId: dealernet:chooser/multi-chooser

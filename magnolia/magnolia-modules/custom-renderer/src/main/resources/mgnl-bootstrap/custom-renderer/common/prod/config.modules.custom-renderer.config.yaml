@@ -1,6 +1,0 @@
-'config':
-  'templateScript':
-    'dp-software': 'https://dealer.bobcat.com/service/software/'
-    'owner-portal': 'https://my.bobcat.com/software-center/'
-    'irp': 'https://independentrepairprovider.bobcat.com/software-center/'
-    'service-videos': 'https://dealer.bobcat.com/service/videos/'

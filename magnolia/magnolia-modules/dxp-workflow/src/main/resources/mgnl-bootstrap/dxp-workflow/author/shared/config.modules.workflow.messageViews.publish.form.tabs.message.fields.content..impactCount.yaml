@@ -1,4 +1,0 @@
-'content.impactCount':
-  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-  label: Publication impact
-  description: Number of nodes affected by a recursive publication

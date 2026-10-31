@@ -1,4 +1,0 @@
-renderType: ftlExtended
-title: BATS Component
-templateScript: /kags/templates/components/bats.ftl
-moveable: false

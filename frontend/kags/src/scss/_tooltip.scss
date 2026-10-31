@@ -1,9 +1,0 @@
-// Tooltip color variants. Use as <b-tooltip class="tooltip-light"> or
-// v-b-tooltip="{titleClass: 'tooltip-light'}".
-@each $variant, $bg, $color in (light, $light, $gray-900), (danger, $danger, $white) {
-  .tooltip.tooltip-#{$variant},
-  .tooltip:has(.tooltip-#{$variant}) {
-    --bs-tooltip-bg: #{$bg};
-    --bs-tooltip-color: #{$color};
-  }
-}

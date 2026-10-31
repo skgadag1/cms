@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Maintenance Schedule
-templateScript: /kags/templates/components/maintenance.ftl
-dialog: kags:components/maintenance
-moveable: false

@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: Location History Component
-templateScript: /kags/templates/components/locationhistory.ftl
-dialog: kags:components/locationhistory
-moveable: false

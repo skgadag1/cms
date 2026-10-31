@@ -1,6 +1,0 @@
-'config':
-  jcr:primaryType: 'mgnl:content'
-  'contractCodesApiBaseUrl': 'https://bobcat.api.dev.dice-tools.com'
-  'downloadFormSummaryConfig':
-    'bucketName': 'dibh-dev-dxp-bobcat-forms'
-    'pathToDynamoDBTableName': '/cf/ngb/storage/dynamodb/BobcatFormsDynamoDBTableName'

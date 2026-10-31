@@ -1,7 +1,0 @@
-$type: jcrMultiField
-field:
-  !include:/bobcat/includes/page-link-or-url-field.yaml
-  i18n: true
-label: Links
-required: true
-buttonSelectAddLabel: Add link

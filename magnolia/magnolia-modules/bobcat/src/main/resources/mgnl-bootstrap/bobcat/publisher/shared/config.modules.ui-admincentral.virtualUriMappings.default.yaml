@@ -1,4 +1,0 @@
-'default':
-  class: info.magnolia.multisite.mapping.MultiSiteRootVirtualUriMapping
-  fromUri: ''
-  toUri: ''

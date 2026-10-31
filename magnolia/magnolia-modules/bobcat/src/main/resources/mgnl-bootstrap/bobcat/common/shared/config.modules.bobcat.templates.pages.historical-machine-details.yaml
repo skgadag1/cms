@@ -1,4 +1,0 @@
-historical-machine-details:
-  extends: '/modules/bobcat/templates/pages/machine-details'
-  title: 'Bobcat.com Historical Machine Details Page'
-  dialog: bobcat:pages/historical-machine-details

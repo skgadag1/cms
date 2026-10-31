@@ -1,7 +1,0 @@
-!include:/bobcat/includes/inheritable-config.yaml
-label: Breadcrumb Configuration
-form:
-  properties:
-    inheritable:
-      defaultValue: true
-light: false

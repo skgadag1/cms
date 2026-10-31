@@ -1,4 +1,0 @@
-renderType: freemarker
-title: Downloads Component
-templateScript: /kags/templates/components/download.ftl
-dialog: kags:components/download

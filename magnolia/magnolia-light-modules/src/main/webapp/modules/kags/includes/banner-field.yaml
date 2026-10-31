@@ -1,4 +1,0 @@
-!include:/kags/includes/dam-image.yaml
-name: banner
-label: Background banner image
-required: false

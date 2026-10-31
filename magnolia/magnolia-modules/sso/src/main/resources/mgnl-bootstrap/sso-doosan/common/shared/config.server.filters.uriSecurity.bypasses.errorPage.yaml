@@ -1,5 +1,0 @@
-'errorPage': 
-  'class': 'info.magnolia.voting.voters.URIStartsWithVoter'
-  'pattern': '/error'
-
-

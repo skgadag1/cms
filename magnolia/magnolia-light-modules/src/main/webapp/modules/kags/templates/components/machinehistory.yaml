@@ -1,5 +1,0 @@
-renderType: freemarker
-title: Machine history component
-templateScript: /kags/templates/components/machinehistory.ftl
-dialog: kags:components/machinehistory
-moveable: false

@@ -1,8 +1,0 @@
-'kags-okta': 
-  'authenticationServiceName': 'kags-okta'
-  'class': 'info.magnolia.cms.security.auth.callback.SSOAuthenticationRedirectCallback'
-  'hostPattern': 
-    'class': 'info.magnolia.cms.util.SimpleUrlPattern'
-    'patternString': 'internal.direct.bobcat.com'
-
-

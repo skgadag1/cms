@@ -1,8 +1,0 @@
-label: Order
-$type: textField
-required: true
-validators:
-  numberValidator:
-    $type: regexpValidator
-    pattern: ^[0-9]{1}$
-    errorMessage: 'Enter valid number within range: 0-9'

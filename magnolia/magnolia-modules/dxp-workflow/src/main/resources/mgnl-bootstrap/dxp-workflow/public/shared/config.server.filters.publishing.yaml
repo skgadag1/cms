@@ -1,8 +1,0 @@
-'publishing':
-  'class': 'com.tbscg.doosan.magnolia.dxp.workflow.filters.DxpPublicationFilter'
-  'jcr:primaryType': 'mgnl:content'
-  'bypasses':
-    'allButActivationHandler':
-      'class': 'info.magnolia.voting.voters.URIStartsWithVoter'
-      'not': true
-      'pattern': '/.magnolia/activation'

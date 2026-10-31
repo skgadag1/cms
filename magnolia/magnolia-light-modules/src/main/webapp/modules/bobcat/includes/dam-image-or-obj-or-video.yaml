@@ -1,5 +1,0 @@
-!include:/bobcat/includes/dam-asset.yaml
-filters:
-  gallery_filter:
-    class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.ResourceTypeOrFormatAssetFilter
-    resource_types_and_formats: obj,image,video

@@ -1,4 +1,0 @@
-'xlfImporter':
-  'extension': 'xlf'
-  'label': 'contenttranslation.fileformat.xliff'
-  'readerImplementationClass': 'com.tbscg.doosan.magnolia.dxp.core.translation.io.CustomXliffTranslationItemReader'

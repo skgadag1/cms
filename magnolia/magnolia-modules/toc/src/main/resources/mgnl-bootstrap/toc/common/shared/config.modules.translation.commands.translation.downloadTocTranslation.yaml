@@ -1,4 +1,0 @@
-'downloadTocTranslation':
-  'class': 'com.tbscg.doosan.magnolia.toc.commands.TocTranslationFileDownloadCommand'
-  'formPath': '/modules/toc/apps/toc-app/subApps/detailToc/editor/form'
-  'workspace': 'toc'

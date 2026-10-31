@@ -1,7 +1,0 @@
-'acl_website':
-  '0':
-    'path': '/bobcat'
-    'permissions': 8
-  '00':
-    'path': '/bobcat/*'
-    'permissions': 8

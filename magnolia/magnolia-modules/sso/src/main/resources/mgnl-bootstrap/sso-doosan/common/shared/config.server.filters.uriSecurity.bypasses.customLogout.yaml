@@ -1,5 +1,0 @@
-'customLogout': 
-  'class': 'info.magnolia.voting.voters.URIStartsWithVoter'
-  'pattern': '/logout'
-
-

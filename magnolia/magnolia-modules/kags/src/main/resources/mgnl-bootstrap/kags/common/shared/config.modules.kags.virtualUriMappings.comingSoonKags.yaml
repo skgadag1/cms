@@ -1,5 +1,0 @@
-'comingSoonKags': 
-  'class': 'info.magnolia.multisite.mapping.MultiSiteRegexpVirtualUriMapping'
-  'fromUri': '^(?!/coming-soon$)\S*'
-  'site': 'disabledkags'
-  'toUri': 'redirect:/coming-soon'

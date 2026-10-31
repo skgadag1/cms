@@ -1,5 +1,0 @@
-renderType: ftlExtended
-title: My Machine Search Component
-templateScript: /kags/templates/components/machinesearch.ftl
-dialog: kags:components/machinesearch
-moveable: true

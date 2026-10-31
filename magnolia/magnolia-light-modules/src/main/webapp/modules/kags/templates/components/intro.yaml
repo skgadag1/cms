@@ -1,4 +1,0 @@
-renderType: freemarker
-title: Intro Component
-templateScript: /kags/templates/components/intro.ftl
-dialog: kags:components/intro

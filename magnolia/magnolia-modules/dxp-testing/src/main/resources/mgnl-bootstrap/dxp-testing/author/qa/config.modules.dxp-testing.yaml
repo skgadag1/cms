@@ -1,8 +1,0 @@
-'dxp-testing':
-  'jcr:primaryType': 'mgnl:content'
-  'commands':
-    'jcr:primaryType': 'mgnl:content'
-    'maintenance':
-      'jcr:primaryType': 'mgnl:content'
-      'cleanSelenideItems':
-        'class': 'com.tbscg.doosan.magnolia.dxp.testing.commands.CleanTestItemsCommand'

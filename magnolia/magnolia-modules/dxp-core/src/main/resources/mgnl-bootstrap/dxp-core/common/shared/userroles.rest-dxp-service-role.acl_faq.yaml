@@ -1,7 +1,0 @@
-'acl_faq':
-  '0':
-    'path': '/'
-    'permissions': 8
-  '00':
-    'path': '/*'
-    'permissions': 8

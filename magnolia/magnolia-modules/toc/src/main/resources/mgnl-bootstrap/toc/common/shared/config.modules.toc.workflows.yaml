@@ -1,6 +1,0 @@
-'workflows':
-  'jcr:primaryType': mgnl:content
-  'tocPackagePublication':
-    'id': com.tbscg.doosan.magnolia.dxp.workflow.TocPackagePublication
-    'resourcePath': toc/workflows/TocPackagePublication.bpmn2
-    'type': bpmn

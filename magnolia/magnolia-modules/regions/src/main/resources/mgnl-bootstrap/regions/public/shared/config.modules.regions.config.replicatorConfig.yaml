@@ -1,5 +1,0 @@
-'replicatorConfig':
-  'jcr:primaryType': mgnl:content
-  'registry':
-    'class': com.tbscg.doosan.magnolia.regions.replication.ReplicatorConfiguration
-    'replicatorClass': com.tbscg.doosan.magnolia.regions.replication.RegistryRegionReplicator

@@ -1,4 +1,0 @@
-'downloadFaqTranslation':
-  'class': 'info.magnolia.translation.commands.TranslationFileDownloadCommand'
-  'formPath': '/modules/faq/apps/faq-app/subApps/detailFaq/form|/modules/faq/apps/faq-app/subApps/detailSection/form'
-  'workspace': 'faq'

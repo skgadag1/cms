@@ -1,4 +1,0 @@
-'xliffExporter':
-  'extension': 'zip'
-  'label': 'contenttranslation.fileformat.xliff'
-  'writerImplementationClass': 'com.tbscg.doosan.magnolia.dxp.core.translation.io.CustomXliffTranslationItemWriter'

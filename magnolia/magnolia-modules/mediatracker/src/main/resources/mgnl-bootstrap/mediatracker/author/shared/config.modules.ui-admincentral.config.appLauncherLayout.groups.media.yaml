@@ -1,8 +1,0 @@
-'media':
-  'jcr:primaryType': mgnl:content
-  'label': 'Media'
-  'apps':
-    'mediatracker': {}
-  'permissions':
-    'roles':
-      'dxp-bobcat-mediatracker-users': 'dxp-bobcat-mediatracker-users'

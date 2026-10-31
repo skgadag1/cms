@@ -1,5 +1,0 @@
-# DEPRECATED! - renamed to blocks
-renderType: freemarker
-title: Contact Us
-templateScript: /kags/templates/components/contactus2.ftl
-dialog: kags:components/contactus2

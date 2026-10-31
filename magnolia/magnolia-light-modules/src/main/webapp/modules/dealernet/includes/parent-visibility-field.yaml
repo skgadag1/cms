@@ -1,7 +1,0 @@
-label: Inherited Visibility
-$type: parentVisibilityField
-root: dealernet
-layout:
-  $type: form
-itemProvider:
-  $type: currentItemProvider

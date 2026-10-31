@@ -1,6 +1,0 @@
-!inherit:ui-framework-jcr:versions
-label: Show FAQ section versions
-actions:
-  commit:
-    appName: faq-app
-    subAppName: detailSection

@@ -1,5 +1,0 @@
-'workItemHandlers':
-  'jcr:primaryType': mgnl:content
-  'tocPackagePublication':
-    'class': info.magnolia.module.workflow.jbpm.workitem.handler.definition.ConfiguredWorkItemHandlerDefinition
-    'implementationClass': com.tbscg.doosan.magnolia.toc.workflow.TocSqsWorkItemHandler
