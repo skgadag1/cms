@@ -1,0 +1,12 @@
+'media-tracker-user':
+  'jcr:primaryType': mgnl:role
+  'jcr:uuid': '50387cfc-9f9e-43f3-8c52-22711b9c2abb'
+  'title': 'Media Tracker User'
+  'acl_userroles':
+    '0':
+      'path': '/media-tracker-user'
+      'permissions': 8
+  'acl_uri':
+    '0':
+      'path': '/*'
+      'permissions': 63

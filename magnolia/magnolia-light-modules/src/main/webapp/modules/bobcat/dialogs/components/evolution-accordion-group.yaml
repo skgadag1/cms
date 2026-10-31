@@ -1,0 +1,102 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Accordion Group Configuration
+form:
+  properties:
+    evolutionTitle:
+      label: Rich Text Title
+      $type: cloudinaryRichText
+      alignment: true
+      i18n: true
+    primaryAccordionHtag:
+      !include:/bobcat/includes/htag-field.yaml
+      label: Primary Accordion Tag
+      defaultValue: 'h3'
+    secondaryAccordionHtag:
+      !include:/bobcat/includes/htag-field.yaml
+      label: Secondary Accordion Tag
+      defaultValue: 'h4'
+    expandLabel:
+      label: Expand button label
+      $type: textField
+      i18n: true
+    collapseLabel:
+      label: Collapse button label
+      $type: textField
+      i18n: true
+    isExpanded:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Accordions expanded on init
+      type: java.lang.Boolean
+    variant:
+      !include:/bobcat/includes/variants/evolution-accordion-color-variants.yaml
+    animationEnabled:
+      $type: checkBoxField
+      label: Animate cards
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+    sectionAlignment:
+      $type: comboBoxField
+      label: Component alignment
+      defaultValue: fullWidth
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left Constrained
+            value: left
+          - name: center
+            label: Center Constrained
+            value: center
+          - name: fullWidth
+            label: Left Full Width
+            value: fullWidth
+    generateSeoSchema:
+      $type: checkBoxField
+      label: Generate FAQ schema
+      defaultValue: false
+    cta:
+      !include:/bobcat/includes/button-style-chooser.yaml
+      label: CTA Button
+    accordions:
+      !include:/bobcat/includes/evolution-single-or-nested-accordion.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      general:
+        label: General
+        fields:
+          - name: evolutionTitle
+      accordionConfiguration:
+        label: Accordions
+        fields:
+          - name: accordions
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: sectionAlignment
+          - name: animationEnabled
+      expandAndCollapse:
+        label: Expand/Collapse
+        fields:
+          - name: collapseLabel
+          - name: expandLabel
+          - name: isExpanded
+      tagStructure:
+        label: Tag structure
+        fields:
+          - name: primaryAccordionHtag
+          - name: secondaryAccordionHtag
+      inheritableSection:
+      anchor:
+      meta:
+        label: SEO
+        fields:
+          - name: generateSeoSchema
+light: false

@@ -1,0 +1,6 @@
+form:
+  tabs:
+    - name: config
+      label: Main configuration
+
+actions: !include:/kags/includes/common-actions.yaml

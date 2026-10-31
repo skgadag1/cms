@@ -1,0 +1,18 @@
+$type: linkField
+buttonSelectNewLabel: Select default model
+chooserId: bobcat:chooser/product-chooser
+datasource:
+  $type: filterableJcrDatasource
+  workspace: products
+  rootPath: /
+  allowedNodeTypes:
+    - mgnl:folder
+    - dxp:category
+    - dxp:subcategory
+    - dxp:productGroup
+    - dxp:product
+  nodeFilter:
+    propertyName: lifecycle
+    propertyValue: Current
+    propertyDefaultValue: Current
+    nodeType: dxp:product

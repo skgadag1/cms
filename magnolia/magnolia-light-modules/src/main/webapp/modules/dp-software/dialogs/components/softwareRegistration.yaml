@@ -1,0 +1,35 @@
+label: Software Registration Component
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      i18n: true
+      required: true
+    contentField:
+      $type: cloudinaryRichText
+      images: true
+      label: Content
+      i18n: true
+    noticeField:
+      $type: textField
+      label: Notification
+    footerField:
+      $type: cloudinaryRichText
+      images: true
+      label: Content
+      i18n: true
+    choosenSoftware:
+      !include:/dp-software/includes/software-registration-field.yaml
+  layout:
+    $type: tabbedLayout
+    tabs:
+      config:
+        label: Software Registration component configuration
+        fields:
+          - name: titleField
+          - name: contentField
+          - name: noticeField
+          - name: footerField
+          - name: choosenSoftware
+  light: false

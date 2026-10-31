@@ -1,0 +1,5 @@
+actions:
+  cancel:
+    $type: closeAction
+  commit:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpCommitActionDefinition

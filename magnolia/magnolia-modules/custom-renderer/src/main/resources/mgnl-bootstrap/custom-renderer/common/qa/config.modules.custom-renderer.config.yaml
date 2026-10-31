@@ -1,0 +1,6 @@
+'config':
+  'templateScript':
+    'dp-software': 'https://bobcatdealernet.qa.dice-tools.com/service/software/'
+    'owner-portal': 'https://my-bobcat.qa.dice-tools.com/software-center/'
+    'irp': 'https://independentrepairprovider.qa.dice-tools.com/software-center/'
+    'service-videos': 'https://bobcatdealernet.qa.dice-tools.com/service/videos/'

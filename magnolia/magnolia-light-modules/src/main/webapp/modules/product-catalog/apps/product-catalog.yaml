@@ -1,0 +1,42 @@
+label: Product Catalog
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+name: product-catalog
+icon: icon-categories
+datasource:
+  $type: jcrDatasource
+  workspace: products
+  includeProperties: false
+  allowedNodeTypes: &allowedNodeTypes
+    - mgnl:folder
+    - dxp:product
+    - dxp:category
+    - dxp:subcategory
+    - dxp:productGroup
+subApps:
+  products:
+    !include:/product-catalog/includes/product-hierarchy-sub-app.yaml
+  features:
+    !include:/product-catalog/includes/feature-hierarchy-sub-app.yaml
+  attachments:
+    !include:/product-catalog/includes/attachment-hierarchy-sub-app.yaml
+  detailCategory:
+    !include:/product-catalog/includes/models/detailCategory.yaml
+  subcategoryDetails:
+    !include:/product-catalog/includes/models/subcategoryDetails.yaml
+  productDetails:
+    !include:/product-catalog/includes/models/productDetails.yaml
+  productGroupDetails:
+    !include:/product-catalog/includes/models/productGroupDetails.yaml
+  featureGroupDetails:
+    !include:/product-catalog/includes/models/featureGroupDetails.yaml
+  featureCategoryDetails:
+    !include:/product-catalog/includes/models/featureCategoryDetails.yaml
+  featureDetails:
+    !include:/product-catalog/includes/models/featureDetails.yaml
+  attachmentCategoryDetails:
+    !include:/product-catalog/includes/models/attachmentCategoryDetails.yaml
+  attachmentGroupDetails:
+    !include:/product-catalog/includes/models/attachmentGroupDetails.yaml
+  attachmentDetails:
+    !include:/product-catalog/includes/models/attachmentDetails.yaml

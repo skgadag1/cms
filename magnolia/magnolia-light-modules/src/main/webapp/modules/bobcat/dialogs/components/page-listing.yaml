@@ -1,0 +1,118 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Page Listing Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    pageType:
+      $type: switchableField
+      label: Page type
+      field:
+        $type: comboBoxField
+        layout: horizontal
+        defaultValue: article
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: Article
+              label: Article
+              value: article
+            - name: Video
+              label: Video
+              value: video
+            - name: General
+              label: General
+              value: general
+      itemProvider:
+        $type: jcrChildNodeProvider
+    facet:
+      !include:/bobcat/dialogs/chooser/facet-chooser.yaml
+    resultsPerPage:
+      !include:/bobcat/includes/per-page-results.yaml
+    useShowMore:
+      $type: checkBoxField
+      label: Use Show More button instead of pagination
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showPublishDate:
+      $type: checkBoxField
+      label: Display item publish date
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+    hideFilters:
+      $type: checkBoxField
+      label: Hide Facet Filters
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    hideImages:
+      $type: checkBoxField
+      label: Hide Images
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    useCollapse:
+      $type: checkBoxField
+      label: Collapse facets
+      description: 'If more than 5 facets it will use collapse with "Show more/less" option'
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    hideDescription:
+      $type: checkBoxField
+      label: Hide short description
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showCTA:
+      $type: checkBoxField
+      label: Show CTA
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    ctaLabel:
+      label: CTA Label
+      $type: textField
+      i18n: true
+    ctaLabelUrlTarget:
+      !include:/bobcat/includes/anchor-target.yaml
+      label: CTA Label Link target
+      defaultValue: _parent
+      required: false
+  layout:
+    $type: tabbedLayout
+    tabs:
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: pageType
+          - name: facet
+      buttons:
+        label: Buttons
+        fields:
+          - name: ctaLabel
+          - name: ctaLabelUrlTarget
+          - name: showCTA
+      settings:
+        label: Look & Feel
+        fields:
+          - name: hideFilters
+          - name: hideImages
+          - name: hideDescription
+          - name: showPublishDate
+          - name: useShowMore
+          - name: useCollapse
+          - name: resultsPerPage
+      inheritableSection:
+      meta:
+light: false
+actions: !include:/bobcat/includes/use-dxp-actions.yaml
+

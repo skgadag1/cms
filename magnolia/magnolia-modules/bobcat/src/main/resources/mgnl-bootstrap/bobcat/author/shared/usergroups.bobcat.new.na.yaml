@@ -1,0 +1,67 @@
+'na':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-bobcat-content-uploader-na':
+    'jcr:uuid': 8ea51627-05ba-4fd3-878b-274acc174d9c
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 2f728bae-ed02-4070-96b9-44efe3ab716f
+
+  'dxp-bobcat-publisher-na':
+    'jcr:uuid': 9070e47e-1dbc-43a8-a8cb-a7e636551c6d
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 5b5a170f-e77e-4ccb-b089-c7b308e80906
+
+  'dxp-bobcat-forms-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': 'e0c33fb7-f704-4dba-9fe6-732fa47223f8'
+    'roles':
+      '0': '663735d0-13c7-4147-8733-538f1b8821d8'
+
+  'dxp-bobcat-campaign-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '7d98bcb4-ab14-42c1-9fe5-cbaf4be96142'
+    'roles':
+      '0': '7e510fcb-04d2-4792-8a06-1294eefe8aba'
+
+  'dxp-bobcat-read-only-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '86d1bd58-059a-496d-9d15-0b81b55dd603'
+    'roles':
+      '0': '6911d7c3-5c90-4a2b-908a-17231a4c967a'
+
+  'dxp-bobcat-admin-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '1da921d7-02b1-4c21-a8b1-b0d521d81aff'
+    'roles':
+      '0': 'e59f3aa0-7bff-42b0-b370-4d19825d77a8'
+
+  'dxp-bobcat-concepts-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '7b52a8b3-8798-4b57-b234-7604ce2157d8'
+    'roles':
+      '0': '9e1bbb74-0052-4104-863b-b4a845c4642e'
+
+  'dxp-bobcat-filters-facets-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': 'b3693954-5972-4684-a486-126d9f1c01f7'
+    'roles':
+      '0': '81e277ad-ef3a-4321-a866-997e6975fc9d'
+
+  'dxp-bobcat-tags-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '0660a9f5-d6ea-437c-bbbc-f7640c72c2ce'
+    'roles':
+      '0': '0ff2bcc0-acef-4b69-8432-ad1b3823bfca'
+
+  'dxp-bobcat-faq-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '793dc306-57e3-44b4-9ce0-70066326453b'
+    'roles':
+      '0': 'dda5dd15-9b4b-4afb-974d-c885ae15e565'
+
+  'dxp-bobcat-navigation-app-na':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '0f7cc372-0d0c-470f-9f62-f9c1402f94f1'
+    'roles':
+      '0': '4c61a136-1ba2-40a0-97fa-07cd04948060'

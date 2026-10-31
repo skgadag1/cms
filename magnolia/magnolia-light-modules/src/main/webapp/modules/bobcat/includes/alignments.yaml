@@ -1,0 +1,19 @@
+label: Alignments
+$type: switchableField
+i18n: true
+field:
+  $type: radioButtonGroupField
+  layout: horizontal
+  i18n: true
+  defaultValue: left
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: left
+        label: Left
+        value: left
+      - name: between
+        label: Between
+        value: between
+itemProvider:
+  $type: jcrChildNodeProvider

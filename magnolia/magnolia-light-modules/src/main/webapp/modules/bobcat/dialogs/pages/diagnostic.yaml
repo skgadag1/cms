@@ -1,0 +1,18 @@
+!include:/bobcat/dialogs/pages/index.yaml
+label: Page properties (diagnostic landing)
+form:
+  properties:
+    excludeBreadcrumb:
+      label: ''
+      $type: checkBoxField
+      buttonLabel: Do not show breadcrumb on this site
+      description: 'USE WITH CAUTION! If selected, breadcrumb will be excluded from the page.'
+      defaultValue: false
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs:
+      visibility:
+        fields:
+          - name: excludeBreadcrumb
+light: false

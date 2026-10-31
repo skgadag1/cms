@@ -1,0 +1,725 @@
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+icon: icon-language-app
+label: Region sites
+datasource:
+  $type: jcrDatasource
+  workspace: regions
+  allowedNodeTypes:
+    - dxp:website
+    - dxp:region
+    - dxp:language
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+    label: Region sites
+    workbench:
+      contentViews:
+        tree:
+          $type: treeView
+          multiSelect: true
+          columns: &appColumns
+            jcrName:
+              $type: jcrTitleColumn
+              editable: true
+              sortable: true
+              expandRatio: 2
+              nodeTypeToIcon:
+                dxp:website: icon-node-content
+                dxp:region: icon-node-content
+                dxp:language: icon-node-content
+            path:
+              $type: jcrPathColumn
+              label: Path
+              sortable: false
+              expandRatio: 2
+            mgnl:lastModified:
+              $type: dateColumn
+              sortable: true
+              width: 160
+            jcrPublishingStatus:
+              $type: jcrStatusColumn
+              label: Status
+        list:
+          $type: listView
+          multiSelect: true
+          columns: *appColumns
+    actionbar:
+      defaultAction: editSite
+      sections:
+        deletedSite:
+          availability:
+            nodeTypes:
+              website: dxp:website
+            rules:
+              isDeleted:
+                $type: jcrIsDeletedRule
+          groups:
+            activationActions:
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            deletedActions:
+              items:
+                - name: restorePreviousVersion
+          label: Deleted site
+        deletedRegion:
+          availability:
+            nodeTypes:
+              region: dxp:region
+            rules:
+              isDeleted:
+                $type: jcrIsDeletedRule
+          groups:
+            activationActions:
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            deletedActions:
+              items:
+                - name: restorePreviousVersion
+          label: Deleted region
+        site:
+          availability:
+            nodeTypes:
+              website: dxp:website
+          groups:
+            addActions:
+              items:
+                - name: addRegion
+            mainSiteActions:
+              items:
+                - name: editSite
+                - name: renameSite
+                - name: confirmSiteDeletion
+            editActions:
+              items:
+                - name: copySite
+                - name: duplicateSite
+                - name: moveSite
+                - name: pasteRegion
+            activationActions:
+              items:
+                - name: activate
+                - name: deactivate
+            importExportActions:
+              items:
+                - name: export
+            versionsActions:
+              items:
+                - name: restoreVersion
+                - name: showVersions
+          label: Site
+        region:
+          availability:
+            nodeTypes:
+              region: dxp:region
+          groups:
+            addActions:
+              items:
+                - name: addLanguage
+            mainSiteActions:
+              items:
+                - name: editRegion
+                - name: renameRegion
+                - name: confirmRegionDeletion
+            editActions:
+              items:
+                - name: copyRegion
+                - name: duplicateRegion
+                - name: moveRegion
+                - name: pasteLanguage
+            activationActions:
+              items:
+                - name: activate
+                - name: deactivate
+            importExportActions:
+              items:
+                - name: export
+            versionsActions:
+              items:
+                - name: restoreVersion
+                - name: showVersions
+          label: Region
+        deletedLanguage:
+          availability:
+            nodeTypes:
+              language: dxp:language
+            rules:
+              isDeleted:
+                $type: jcrIsDeletedRule
+          groups:
+            activationActions:
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            deletedActions:
+              items:
+                - name: restorePreviousVersion
+          label: Deleted language
+        language:
+          availability:
+            nodeTypes:
+              language: dxp:language
+          groups:
+            mainSiteActions:
+              items:
+                - name: editLanguage
+                - name: confirmLanguageDeletion
+            editActions:
+              items:
+                - name: copyLanguage
+                - name: duplicateLanguage
+                - name: moveLanguage
+                - name: pasteLanguage
+            activationActions:
+              items:
+                - name: activate
+                - name: deactivate
+            importExportActions:
+              items:
+                - name: export
+            versionsActions:
+              items:
+                - name: restoreVersion
+                - name: showVersions
+          label: Language
+        root:
+          availability:
+            nodes: false
+            root: true
+          groups:
+            addActions:
+              items:
+                - name: addSite
+            editActions:
+              items:
+                - name: pasteSite
+            importExportActions:
+              items:
+                - name: import
+    actions:
+      activate:
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability:
+          rules:
+            isNotDeleted: &isNotDeleted
+              $type: jcrIsDeletedRule
+              negate: true
+            isPublishable: &isPublishable
+              $type: jcrPublishableRule
+          writePermissionRequired: true
+      activateDeleted:
+        command: activate
+        icon: icon-publish
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        availability:
+          writePermissionRequired: true
+          rules:
+            isDeleted: &isDeleted
+              $type: jcrIsDeletedRule
+      addSite:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: siteDetail
+        viewType: add
+        icon: icon-add-item
+        label: Add site
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            folder: mgnl:folder
+          rules:
+            isNotDeleted: *isNotDeleted
+      addRegion:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: regionDetail
+        viewType: add
+        icon: icon-add-item
+        label: Add region
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            website: dxp:website
+          rules:
+            isNotDeleted: *isNotDeleted
+      addLanguage:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: languageDetail
+        viewType: add
+        icon: icon-add-item
+        label: Add language
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            region: dxp:region
+          rules:
+            isNotDeleted: *isNotDeleted
+      confirmDeletion: &confirmDeletion
+        $type: markAsDeletedAction
+        icon: icon-delete
+        label: Delete
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      confirmSiteDeletion:
+        <<: *confirmDeletion
+        label: Delete site
+      confirmRegionDeletion:
+        <<: *confirmDeletion
+        label: Delete region
+      confirmLanguageDeletion:
+        <<: *confirmDeletion
+        label: Delete language
+      copySite:
+        $type: copyContentAction
+        icon: icon-copy
+        label: Copy site
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      copyRegion:
+        $type: copyContentAction
+        icon: icon-copy
+        label: Copy region
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      copyLanguage:
+        $type: copyContentAction
+        icon: icon-copy
+        label: Copy language
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      deactivate:
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.DeactivationActionDefinition
+        command: deactivate
+        icon: icon-unpublish
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+            isPublished:
+              $type: jcrPublishedRule
+      deleteSite:
+        $type: markAsDeletedAction
+        icon: icon-delete
+        label: Delete site
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      deleteRegion:
+        $type: markAsDeletedAction
+        icon: icon-delete
+        label: Delete region
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      deleteLanguage:
+        $type: markAsDeletedAction
+        icon: icon-delete
+        label: Delete language
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      duplicateSite:
+        $type: duplicateNodeAction
+        icon: icon-duplicate
+        label: Duplicate site
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      duplicateRegion:
+        $type: duplicateNodeAction
+        icon: icon-duplicate
+        label: Duplicate region
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      duplicateLanguage:
+        $type: duplicateNodeAction
+        icon: icon-duplicate
+        label: Duplicate language
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      editSite:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: siteDetail
+        viewType: edit
+        icon: icon-edit
+        label: Edit site
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            website: dxp:website
+          rules:
+            isNotDeleted: *isNotDeleted
+      editRegion:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: regionDetail
+        viewType: edit
+        icon: icon-edit
+        label: Edit region
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            region: dxp:region
+          rules:
+            isNotDeleted: *isNotDeleted
+      editLanguage:
+        $type: openDetailSubappAction
+        appName: regions-app
+        subAppName: languageDetail
+        viewType: edit
+        icon: icon-edit
+        label: Edit language
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            language: dxp:language
+          rules:
+            isNotDeleted: *isNotDeleted
+      export:
+        $type: exportAction
+        icon: icon-export
+        availability:
+          nodeTypes:
+            website: dxp:website
+          rules:
+            isNotDeleted: *isNotDeleted
+      import:
+        label: Import
+        icon: icon-import
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:import
+        availability:
+          root: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      moveSite:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:move
+        icon: icon-move
+        label: Move site
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      moveRegion:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:move
+        icon: icon-move
+        label: Move region
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      moveLanguage:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:move
+        icon: icon-move
+        label: Move language
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      pasteSite:
+        $type: pasteContentAction
+        icon: icon-paste
+        label: Paste site
+        availability:
+          root: true
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+            acceptsClipboardContent:
+              $type: canPasteContentRule
+            clipboardContentIsSite:
+              $type: clipboardContentRule
+              nodeTypes:
+                website: dxp:website
+      pasteRegion:
+        $type: pasteContentAction
+        icon: icon-paste
+        label: Paste region
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            website: dxp:website
+          rules:
+            isNotDeleted: *isNotDeleted
+            clipboardContentIsRegion:
+              implementationClass: com.tbscg.doosan.magnolia.regions.compatibility.app.availability.ClipboardContentIsRegion
+            acceptsClipboardContent:
+              $type: canPasteContentRule
+      pasteLanguage:
+        $type: pasteContentAction
+        icon: icon-paste
+        label: Paste language
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            region: dxp:region
+          rules:
+            isNotDeleted: *isNotDeleted
+            clipboardContentIsLanguage:
+              implementationClass: com.tbscg.doosan.magnolia.regions.compatibility.app.availability.ClipboardContentIsLanguage
+            acceptsClipboardContent:
+              $type: canPasteContentRule
+      renameSite:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:rename
+        icon: icon-edit
+        label: Rename site
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      renameRegion:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:rename
+        icon: icon-edit
+        label: Rename region
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      restorePreviousVersion:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:restoreVersion
+        icon: icon-undo
+        label: Restore previous version
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeleted: *isNotDeleted
+      restoreVersion:
+        icon: icon-retrieve-versions
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:restoreVersion
+        availability:
+          writePermissionRequired: true
+          rules:
+            hasVersionsRule: &hasVersionsRule
+              $type: jcrHasVersionsRule
+      showVersions:
+        $type: openDialogAction
+        dialogId: ui-framework-jcr:versions
+        icon: icon-show-versions
+        label: Show versions
+        availability:
+          rules:
+            hasVersionsRule: *hasVersionsRule
+  siteDetail:
+    class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+    label: Edit Site
+    itemProvider:
+      $type: jcrNodeFromLocationProvider
+      workspace: regions
+      nodeType: dxp:website
+    form:
+      properties:
+        jcrName:
+          $type: textField
+          label: Site Name
+          required: true
+        title:
+          $type: textField
+          label: Site Title
+        templates:
+          $type: jcrMultiField
+          label: Site Templates
+          itemProvider:
+            $type: jcrChildNodeProvider
+            supportI18N: false
+          entryResolution:
+            class: info.magnolia.ui.editor.ByLexicographicallyIndexedChildNodes$Definition
+            strict: true
+          orderHandler:
+            class: info.magnolia.ui.editor.LexicographicallyIndexedJcrNodeOrderHandler$Definition
+          field:
+            name: templateId
+            $type: comboBoxField
+            label: ""
+            datasource:
+              class: com.tbscg.doosan.magnolia.regions.field.datasource.TemplateOptionListDefinition
+        domains:
+          $type: jcrMultiField
+          label: Site Domains
+          field:
+            $type: compositeField
+            label: Domain
+            properties:
+              name:
+                $type: textField
+                label: Domain Name
+                required: true
+              protocol:
+                $type: comboBoxField
+                label: Protocol
+                datasource:
+                  $type: optionListDatasource
+                  options:
+                    - name: http
+                      label: HTTP
+                      value: http
+                    - name: https
+                      label: HTTPS
+                      value: https
+                defaultValue: https
+                required: true
+    actions:
+      commit:
+        $type: commitAction
+        label: Save changes
+      cancel:
+        $type: closeAction
+        label: Cancel
+  regionDetail:
+    class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+    label: Edit Region
+    itemProvider:
+      $type: jcrNodeFromLocationProvider
+      workspace: regions
+      nodeType: dxp:region
+    form:
+      properties:
+        jcrName:
+          $type: textField
+          label: Region Code
+          required: true
+        title:
+          $type: textField
+          label: Region Title
+        countryCode:
+          $type: textField
+          label: Country Code
+          description: Country code ex. IN for India. Required when Region code is not a Country code. Used for ALAO
+        businessUnit:
+          $type: textField
+          label: Business Unit
+        publishers:
+          $type: jcrMultiField
+          label: Publishers
+          itemProvider:
+            $type: jcrChildNodeProvider
+            supportI18N: false
+          entryResolution:
+            class: info.magnolia.ui.editor.ByLexicographicallyIndexedChildNodes$Definition
+            strict: true
+          orderHandler:
+            class: info.magnolia.ui.editor.LexicographicallyIndexedJcrNodeOrderHandler$Definition
+          field:
+            name: publisherId
+            $type: comboBoxField
+            label: ""
+            datasource:
+              class: com.tbscg.doosan.magnolia.regions.field.datasource.PublisherOptionListDefinition
+        xDefault:
+          $type: textField
+          label: x-default
+          defaultValue: https://www.bobcat.com/regions
+          validators:
+            urlPattern:
+              class: info.magnolia.ui.field.RegexpValidatorDefinition
+              pattern: ^https://[^/]+/.+$
+              errorMessage: "URL must follow the pattern https://hostname/path"
+    actions:
+      commit:
+        $type: commitAction
+        label: Save changes
+      cancel:
+        $type: closeAction
+        label: Cancel
+  languageDetail:
+    class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+    label: Edit Language
+    itemProvider:
+      $type: jcrNodeFromLocationProvider
+      workspace: regions
+      nodeType: dxp:language
+    form:
+      properties:
+        enabled:
+          $type: hiddenField
+          type: java.lang.Boolean
+          defaultValue: true
+        language:
+          $type: textField
+          label: Language Code
+          name: jcrName
+          required: true
+        isoCode:
+          $type: textField
+          label: Language ISO Code
+        locale:
+          $type: textField
+          label: Locale code
+          defaultValue: en-EN
+          required: true
+          description: "Locale code {lang}-{Country code} ex. en-KR for South Korea in English. It's used to call i.e. product api."
+        label:
+          $type: textField
+          label: Language label
+          description: 'Language label should be reflected in origin language (i.e. Español, Français, etc)'
+        isDefault:
+          $type: checkBoxField
+          label: Is Default
+          buttonLabel: Select if language should be default
+          defaultValue: false
+        hreflangLocale:
+          $type: jcrMultiField
+          label: Hreflang Locales
+          required: false
+          description: "Hreflang locale codes in format {lang}-{Country code} ex. en-KR for South Korea in English."
+          field:
+            $type: dxp:hreflangLocale
+            required: true
+            label: Hreflang Locale code
+            validators:
+              hreflangLocaleRegex:
+                class: info.magnolia.ui.field.RegexpValidatorDefinition
+                pattern: ^[a-z]{2}-[a-z]{2}$
+                errorMessage: "Hreflang locale code must be in the format xx-xx (e.g., en-us or en-ca)."
+              uniqueWithinList:
+                class: com.tbscg.doosan.magnolia.regions.validator.UniqueWithinListDefinition
+                errorMessage: "This hreflang locale is already used in this language"
+              uniqueAcrossLanguages:
+                class: com.tbscg.doosan.magnolia.regions.validator.UniqueAcrossLanguagesDefinition
+                errorMessage: "This hreflang locale is already used in another language within this website"
+    actions:
+      commit:
+        $type: commitAction
+        label: Save
+      cancel:
+        $type: closeAction
+        label: Cancel

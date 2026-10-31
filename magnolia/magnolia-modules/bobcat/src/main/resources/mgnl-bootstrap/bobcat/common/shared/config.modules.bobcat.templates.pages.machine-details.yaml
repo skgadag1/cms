@@ -1,0 +1,9 @@
+machine-details:
+  extends: '/modules/bobcat/templates/pages/index'
+  title: 'Bobcat.com Machine Details Page'
+  dialog: bobcat:pages/machine-details
+
+  areas:
+    main:
+      availableComponents:
+        extends: '/modules/bobcat/includes/main-area-components-model-required'

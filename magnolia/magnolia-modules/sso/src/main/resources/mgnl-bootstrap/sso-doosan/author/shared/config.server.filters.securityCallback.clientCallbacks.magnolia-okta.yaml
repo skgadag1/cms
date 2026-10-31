@@ -1,0 +1,7 @@
+'magnolia-okta':
+  'authenticationServiceName': 'OktaAuthorOpenIdConnectService'
+  'class': 'info.magnolia.cms.security.auth.callback.SSOAuthenticationRedirectCallback'
+  'hostPattern':
+    'class': 'info.magnolia.cms.util.SimpleUrlPattern'
+    'patternString': 'magnolia-author'
+

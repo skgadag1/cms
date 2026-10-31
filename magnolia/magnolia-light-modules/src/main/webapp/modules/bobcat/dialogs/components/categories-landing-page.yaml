@@ -1,0 +1,31 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Dealer Inventory Categories Landing Page
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    viewAllLabel:
+      $type: textField
+      label: View All Inventory button
+      i18n: true
+    categoriesLabel:
+      $type: textField
+      label: Categories button
+      i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: viewAllLabel
+          - name: categoriesLabel
+      inheritableSection:
+      meta:
+light: false

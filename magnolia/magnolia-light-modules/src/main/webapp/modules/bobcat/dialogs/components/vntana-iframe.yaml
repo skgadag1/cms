@@ -1,0 +1,34 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Vntana Iframe Configuration
+form:
+  properties:
+    title:
+      label: Section title
+      $type: textField
+      i18n: true
+    paragraph:
+      $type: cloudinaryRichText
+      alignment: true
+      label: Content
+      i18n: true
+    src:
+      label: Vntana asset public Link
+      description: 'Link copied from Vntana share asset popup.'
+      $type: textField
+      i18n: true
+      required: true
+    preloaded:
+      defaultValue: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: paragraph
+          - name: src
+      inheritableSection:
+      anchor:
+      meta:
+light: false

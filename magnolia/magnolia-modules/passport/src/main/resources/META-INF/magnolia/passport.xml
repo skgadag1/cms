@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+    <name>passport</name>
+    <displayName>Passport Magnolia Module</displayName>
+    <class>com.tbscg.doosan.magnolia.passport.PassportModule</class>
+    <versionHandler>com.tbscg.doosan.magnolia.passport.setup.PassportVersionHandler</versionHandler>
+    <version>1</version>
+
+    <components>
+        <id>app-passport</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.passport.app.PassportNavigator</type>
+            <implementation>com.tbscg.doosan.magnolia.passport.app.PassportNavigator</implementation>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.passport.data.provider.api.ApiService</type>
+            <implementation>com.tbscg.doosan.magnolia.passport.data.provider.api.ApiService</implementation>
+            <scope>singleton</scope>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.passport.data.provider.api.TokenService</type>
+            <implementation>com.tbscg.doosan.magnolia.passport.data.provider.api.TokenService</implementation>
+            <scope>singleton</scope>
+        </component>
+    </components>
+    <components>
+        <id>app-passport-documentBrowser</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.passport.app.documentBrowser.DocumentBrowserSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.passport.app.documentBrowser.DocumentBrowserSubAppViewImpl</implementation>
+        </component>
+    </components>
+    <components>
+        <id>app-passport-documentView</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.passport.app.documentView.DocumentViewSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.passport.app.documentView.DocumentViewSubAppViewImpl</implementation>
+        </component>
+    </components>
+    <dependencies>
+        <dependency>
+            <name>core</name>
+            <version>*</version>
+        </dependency>
+        <dependency>
+            <name>ui-admincentral</name>
+            <version>*</version>
+        </dependency>
+        <dependency>
+            <name>dxp-core</name>
+            <version>*</version>
+        </dependency>
+    </dependencies>
+
+</module>

@@ -1,0 +1,8 @@
+backupApiRegions:
+  catalog: apiBackup
+  command: backupRegionsApiCommand
+  'cron': '0 0 3 * * *'
+  description: 'Backup regions api response in s3Bucket, It runs everyday at 03:00 a.m. server time (UTC)'
+  enabled: true
+  params:
+    regionsApiBackupPath: "regionsApiBackup/regions"

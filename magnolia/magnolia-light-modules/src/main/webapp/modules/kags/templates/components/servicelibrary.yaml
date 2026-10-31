@@ -1,0 +1,5 @@
+renderType: ftlExtended
+title: Service Library Component
+templateScript: /kags/templates/components/servicelibrary.ftl
+dialog: kags:components/servicelibrary
+moveable: false

@@ -1,0 +1,6 @@
+# DEPRECATED! - renamed to text
+renderType: freemarker
+title: Service Analyzer Information Component
+templateScript: /kags/templates/components/serviceAnalyzerRichTextInfo.ftl
+dialog: kags:components/serviceAnalyzerRichTextInfo
+moveable: false

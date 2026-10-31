@@ -1,0 +1,4 @@
+'downloadTocPackageTranslation':
+  'class': 'info.magnolia.translation.commands.TranslationFileDownloadCommand'
+  'formPath': '/modules/toc/apps/toc-package-app/subApps/detailPackage/editor/form'
+  'workspace': 'toc-packages'

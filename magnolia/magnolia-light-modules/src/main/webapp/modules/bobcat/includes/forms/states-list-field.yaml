@@ -1,0 +1,80 @@
+$type: compositeField
+layout:
+  $type: form
+itemProvider:
+  $type: jcrChildNodeProvider
+label: States List
+properties:
+  type:
+    $type: comboBoxField
+    datasource:
+      $type: optionListDatasource
+      options:
+        - name: nao
+          label: NAO
+          value: nao
+        - name: alao  
+          label: ALAO
+          value: alao
+    label: Content type for regions
+    defaultValue: nao
+  countriesLabel:
+    label: Countries label
+    $type: textField
+    i18n: true  
+  statesLabel:
+    label: States label
+    $type: textField
+    i18n: true  
+  countriesPlaceholder:
+    label: Countries placeholder
+    $type: textField
+    i18n: true
+  statesPlaceholder:
+    label: States placeholder
+    $type: textField
+    i18n: true
+  name:
+    $type: textField
+    label: Field name (country)
+    description: Name needs to be unique
+    i18n: true
+    required: true  
+  stateName:
+    $type: textField
+    label: Field name (state)
+    description: Name needs to be unique
+    i18n: true
+    required: true
+  id:
+    $type: textField
+    label: Mapping field ID (country)
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.
+  stateId:
+    $type: textField
+    label: Mapping field ID (state)
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.
+  required:
+    $type: checkBoxField
+    label: Is required
+    buttonLabel: Required
+    defaultValue: false
+    type: java.lang.Boolean  
+  countryBold:
+    $type: checkBoxField
+    label: Country label bolded
+    buttonLabel: active
+    defaultValue: false
+    type: java.lang.Boolean
+  stateBold:
+    $type: checkBoxField
+    label: State label bolded
+    buttonLabel: active
+    defaultValue: on
+    type: java.lang.Boolean
+  noResultsMsg:
+    label: No results message (filtering)
+    $type: textField
+    i18n: true  
+  width:
+    !include:/bobcat/includes/forms/shared/width-option.yaml

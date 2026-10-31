@@ -1,0 +1,4 @@
+title: HTML
+templateScript: /kags/templates/components/customhtml.ftl
+dialog: kags:components/customhtml
+renderType: freemarker

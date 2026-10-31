@@ -1,0 +1,9 @@
+'config':
+  jcr:primaryType: 'mgnl:content'
+  'apiEndpoint': 'https://products.api-internal.dev.dice-tools.com/v2/pmd'
+  'tokenEndpoint': 'https://doosan.oktapreview.com/oauth2/ausbgd9lwgmsRIdGY0h7/v1/token'
+  'tokenUser': '0oa12sgq479q31Feg0h8'
+  'tokenPassword': '${jcr.auth.magnolia.pmd.okta.secret}'
+  'apiCacheEnabled': true
+  'apiCacheTTLSeconds': 300
+  'apiCacheMaxSize': 1000

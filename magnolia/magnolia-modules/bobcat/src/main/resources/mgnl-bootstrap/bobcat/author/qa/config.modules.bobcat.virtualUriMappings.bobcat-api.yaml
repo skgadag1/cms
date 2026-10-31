@@ -1,0 +1,6 @@
+'bobcat-api':
+  'class': 'com.tbscg.doosan.magnolia.bobcat.mapping.RegexpVirtualUriMappingWithKey'
+  'fromUri': '^/bobcat_api/(.*)'
+  'site': 'bobcat'
+  'toUri': 'key-proxy:https://bobcat.api.qa.dice-tools.com/$1'
+  'apiKeyType': 'bobcat'

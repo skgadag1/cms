@@ -1,0 +1,78 @@
+!include:/dealernet/includes/visibility-config.yaml
+label: Documents list Configuration
+form:
+  properties:
+    assets:
+      !include:/dealernet/includes/visibility-tag-switchable-field.yaml
+      label: ''
+      forms:
+        default:
+          properties:
+            default:
+              $type: compositeField
+              label: ''
+              layout:
+                $type: form
+              label: ''
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                title:
+                  $type: textField
+                  label: Component title
+                  required: true
+                asset:
+                  label: Documents
+                  $type: jcrMultiField
+                  buttonSelectAddLabel: Add new document
+                  field:
+                    $type: compositeField
+                    label: ''
+                    properties:
+                      fileName:
+                        $type: textField
+                        label: File name
+                        required: true
+                      description:
+                        $type: textField
+                        label: Description
+                        required: false
+                      asset:
+                        label: Asset source
+                        $type: switchableField
+                        field:
+                          $type: radioButtonGroupField
+                          layout: horizontal
+                          required: true
+                          datasource:
+                            $type: optionListDatasource
+                            options:
+                              - name: doc
+                                label: Document
+                                value: doc
+                              - name: pdf
+                                label: Pdf
+                                value: pdf
+                        itemProvider:
+                          $type: jcrChildNodeProvider
+                        forms:
+                          doc:
+                            properties:
+                              filePath:
+                                !include:/bobcat/includes/dam-doc.yaml
+                          pdf:
+                            properties:
+                              filePath:
+                                !include:/bobcat/includes/dam-pdf.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      general:
+        label: General
+        fields:
+          - name: title
+          - name: assets
+      componentVisibility:
+      contentVisibility:
+wide: true
+light: false

@@ -1,0 +1,57 @@
+index:
+  label: Page properties
+  form:
+    $type: tabbedForm
+    tabs:
+      meta:
+        label: Meta tags/SEO
+        fields:
+          title:
+            label: Title
+            description: 'Title will be injected in page <head> section'
+            $type: textField
+            i18n: true
+          description:
+            $type: textField
+            label: Description
+            rows: 3
+            i18n: true
+          keywords:
+            $type: textField
+            label: Keywords
+            i18n: true
+      visibility:
+        label: Visibility
+        fields:
+          pageVisibility:
+            label: Visibility
+            $type: jcrMultiLinkField
+            field:
+              label: Select visibility tag
+              $type: linkField
+              required: true
+              chooserId: dealernet:chooser/chooser
+              buttonSelectNewLabel: Select...
+              datasource:
+                $type: jcrDatasource
+                describeByProperty: label
+                workspace: visibility
+                rootPath: /
+                allowedNodeTypes:
+                  - mgnl:folder
+                  - dxp:visibility
+            chooserId: dealernet:chooser/multi-chooser
+          parentVisibility:
+            label: Inherited Visibility
+            $type: parentVisibilityField
+            root: dealernet
+            layout:
+              $type: form
+            itemProvider:
+              $type: currentItemProvider
+  light: false
+  actions:
+    cancel:
+      $type: closeAction
+    commit:
+      class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DealernetCommitActionDefinition

@@ -1,0 +1,41 @@
+!include:/dealernet/includes/visibility-config.yaml
+label: Announcements Configuration
+form:
+  properties:
+    title:
+      !include:/dealernet/includes/visibility-tag-switchable-field.yaml
+      label: Component title
+      forms:
+        default:
+          properties:
+            default:
+              $type: textField
+              description: '%USER% will be replaced with current username, %%USER_ROLE% will be replaced by his role'
+              required: true
+              i18n: true
+    announcementsTitle:
+      label: Announcements heading label
+      $type: textField
+      required: true
+      i18n: true
+    contentVisibility:
+      field:
+        properties:
+          nodes:
+            datasource:
+              options: !override
+                - name: title
+                  label: title
+                  value: title
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      socialSection:
+        label: General
+        fields:
+          - name: title
+          - name: announcementsTitle
+      componentVisibility:
+      contentVisibility:
+wide: true
+light: false

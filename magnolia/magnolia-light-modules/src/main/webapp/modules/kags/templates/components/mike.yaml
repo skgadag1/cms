@@ -1,0 +1,5 @@
+renderType: freemarker
+title: Old Mike Component
+templateScript: /kags/templates/components/machine.ftl
+dialog: kags:components/machine
+moveable: false

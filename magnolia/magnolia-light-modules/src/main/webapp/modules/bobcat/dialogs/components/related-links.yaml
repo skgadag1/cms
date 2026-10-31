@@ -1,0 +1,130 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Related Links Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h4'
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Light
+            value: light
+          - name: dark
+            label: Dark
+            value: dark
+      defaultValue: white
+    firstTitle:
+      label: Title
+      $type: textField
+      i18n: true
+    firstHtag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h4'
+    firstOrder:
+      !include:/bobcat/includes/order-field.yaml
+      defaultValue: '1'
+    secondTitle:
+      label: Title
+      $type: textField
+      i18n: true
+    secondHtag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h4'
+    secondOrder:
+      !include:/bobcat/includes/order-field.yaml
+      defaultValue: '2'
+    thirdTitle:
+      label: Title
+      $type: textField
+      i18n: true
+    thirdHtag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h4'
+    thirdOrder:
+      !include:/bobcat/includes/order-field.yaml
+      defaultValue: '3'
+    first:
+      label: Column links
+      $type: jcrMultiField
+      i18n: false
+      field:
+        $type: compositeField
+        label: link
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            i18n: true
+    second:
+      label: Column links
+      $type: jcrMultiField
+      i18n: false
+      field:
+        $type: compositeField
+        label: link
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            i18n: true
+    third:
+      label: Column links
+      $type: jcrMultiField
+      i18n: false
+      field:
+        $type: compositeField
+        label: link
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            i18n: true
+    grayBackground:
+      $type: checkBoxField
+      label: Background color
+      buttonLabel: Makes component's background gray (deprecated)
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: grayBackground
+          - name: variant
+      firstCol:
+        label: Column
+        fields:
+          - name: firstTitle
+          - name: firstHtag
+          - name: firstOrder
+          - name: first
+      secondCol:
+        label: Column
+        fields:
+          - name: secondTitle
+          - name: secondHtag
+          - name: secondOrder
+          - name: second
+      third:
+        label: Column
+        fields:
+          - name: thirdTitle
+          - name: thirdHtag
+          - name: thirdOrder
+          - name: third
+      inheritableSection:
+      anchor:
+      meta:
+light: false

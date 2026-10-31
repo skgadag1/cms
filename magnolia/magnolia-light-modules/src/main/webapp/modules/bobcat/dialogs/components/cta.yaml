@@ -1,0 +1,67 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: CTA Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: cloudinaryRichText
+      i18n: true
+    color:
+      !include:/bobcat/includes/variants/cta-color-variants.yaml
+    paragraph:
+      $type: cloudinaryRichText
+      label: Paragraph
+      rows: 5
+      i18n: true
+    link:
+      !include:/bobcat/includes/button-style-chooser.yaml
+      label: Optional CTA button
+      i18n: true
+    textAlignment:
+      $type: comboBoxField
+      label: Text alignment
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left aligned
+            value: left
+          - name: center
+            label: Center aligned
+            value: center
+      defaultValue: center
+    width:
+      $type: comboBoxField
+      label: Component width
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: full
+            label: Full width
+            value: full
+          - name: container
+            label: Container width
+            value: container
+          - name: article
+            label: Article width
+            value: article
+      defaultValue: full
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: paragraph
+          - name: link
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: textAlignment
+          - name: width
+          - name: color
+      inheritableSection:
+      anchor:
+      meta:
+light: false

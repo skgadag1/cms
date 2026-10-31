@@ -1,0 +1,5 @@
+renderType: freemarker
+title: Notification Bar Component
+templateScript: /kags/templates/components/notificationbar.ftl
+dialog: kags:components/notificationbar
+moveable: false

@@ -1,0 +1,94 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - !include:/kags/includes/banner-field.yaml
+        - name: componentTitle
+          fieldType: text
+          label: Title
+          required: true
+        - name: welcome
+          fieldType: text
+          label: Welcome text
+          required: true
+        - name: searchLabel
+          fieldType: text
+          label: Search label
+          required: true
+        - name: resultsLabel
+          fieldType: text
+          label: Results label
+          required: true
+        - name: moreThanResultsLabel
+          fieldType: text
+          label: More than [total] results
+          required: true
+        - name: searchInputPlaceholder
+          fieldType: text
+          label: Search input placeholder
+          required: true
+        - name: refineSearch
+          fieldType: text
+          label: Refine search label
+          required: true
+        - name: selectFiltersLabel
+          fieldType: text
+          label: Select filters label
+          required: true
+        - name: clearAllLabel
+          fieldType: text
+          label: Clear all label
+          required: true
+        - name: clearLabel
+          fieldType: text
+          label: Clear label
+          required: true
+        - name: titleHeader
+          fieldType: text
+          label: Title header
+          required: true
+        - name: descriptionHeader
+          fieldType: text
+          label: Description header
+          required: true
+        - name: categoryHeader
+          fieldType: text
+          label: Category header
+          required: true
+        - name: languageHeader
+          fieldType: text
+          label: Language header
+          required: true
+        - name: bulletin_filter
+          fieldType: text
+          label: Bulletin filter label
+          required: true
+        - name: language_filter
+          fieldType: text
+          label: Language filter label
+          required: true
+        - name: defaultEnglishSelected
+          fieldType: checkbox
+          label: English language selected by default
+          buttonLabel: Select english language on search init
+          defaultValue: false
+          type: Boolean
+        - name: product_filter
+          fieldType: text
+          label: Product filter label
+          required: true
+        - name: manual_filter
+          fieldType: text
+          label: Manual filter label
+          required: true
+        - name: instruction_filter
+          fieldType: text
+          label: Instruction filter label
+          required: true
+        - name: downloadDetails
+          fieldType: text
+          label: Download details label
+          required: true
+
+actions: !include:/kags/includes/common-actions.yaml

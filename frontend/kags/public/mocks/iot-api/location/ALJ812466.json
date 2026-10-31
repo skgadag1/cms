@@ -1,0 +1,154 @@
+[
+  {
+    "duration": 1261,
+    "corrId": "1",
+    "lat": 46.230245,
+    "lng": -97.661012,
+    "altitude": 378.33,
+    "heading": 0,
+    "speed": 0,
+    "delta": 0
+  },
+  {
+    "ts": "2020-01-09T05:51:05Z",
+    "duration": 0,
+    "corrId": "9",
+    "lat": 46.230222,
+    "lng": -97.661009,
+    "altitude": 378.79,
+    "heading": 0,
+    "speed": 0,
+    "delta": 2.5712691030083255,
+    "address": {
+    }
+  },
+  {
+    "ts": "2020-01-09T07:55:35Z",
+    "corrId": "163",
+    "lat": 46.230222,
+    "lng": -97.661009,
+    "altitude": 378.79,
+    "heading": 0,
+    "speed": 0,
+    "delta": 0,
+    "address": {
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T09:16:27Z",
+    "duration": 73,
+    "corrId": "171",
+    "lat": 46.230892,
+    "lng": -97.659379,
+    "altitude": 367.67,
+    "heading": 105,
+    "speed": 0,
+    "delta": 145.99966416883964,
+    "address": {
+      "streetNumber": "1",
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T09:17:40Z",
+    "corrId": "172",
+    "lat": 46.230077,
+    "lng": -97.660249,
+    "altitude": 361.45,
+    "heading": 260,
+    "speed": 0,
+    "delta": 112.77489753693501,
+    "address": {
+      "streetNumber": "1",
+      "street": "Street",
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T09:28:56Z",
+    "duration": 459,
+    "corrId": "182",
+    "lat": 46.230872,
+    "lng": -97.660871,
+    "altitude": 360.81,
+    "heading": 255,
+    "speed": 0,
+    "delta": 96.6985727331612,
+    "address": {
+      "street": "Street",
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T09:36:35Z",
+    "duration": 0,
+    "corrId": "186",
+    "lat": 46.230655,
+    "lng": -97.66088,
+    "altitude": 366.16,
+    "heading": 180,
+    "speed": 0,
+    "delta": 24.16478708606718,
+    "address": {
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T11:44:06Z",
+    "duration": 125,
+    "corrId": "209",
+    "lat": 46.229999,
+    "lng": -97.65794,
+    "altitude": 355.91,
+    "heading": 352,
+    "speed": 4.47,
+    "delta": 237.87297881850955,
+    "address": {
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-09T11:46:11Z",
+    "corrId": "210",
+    "lat": 46.230904,
+    "lng": -97.659855,
+    "altitude": 356.76,
+    "heading": 144,
+    "speed": 0,
+    "delta": 178.58522423480045,
+    "address": {
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  },
+  {
+    "ts": "2020-01-10T05:25:55Z",
+    "duration": 345668,
+    "corrId": "218",
+    "lat": 46.23096,
+    "lng": -97.659862,
+    "altitude": 358.02,
+    "heading": 0,
+    "speed": 0,
+    "delta": 6.256571964721827,
+    "address": {
+      "city": "Gwinner",
+      "state": "North Dakota",
+      "country": "US"
+    }
+  }
+]

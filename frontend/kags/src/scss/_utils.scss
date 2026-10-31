@@ -1,0 +1,47 @@
+@import 'colors';
+
+$box-shadow: 0 .5rem 1rem rgba($black, .15);
+
+@each $c, $v in $grays {
+  .bg-gray-#{$c} {
+    background-color: $v !important;
+  }
+
+  .text-gray-#{$c} {
+    color: $v !important;
+  }
+
+  .border-gray-#{$c} {
+    border-color: $v !important;
+  }
+}
+
+@each $c, $v in $colors {
+  .text-#{$c} {
+    color: $v;
+  }
+
+  .bg-#{$c} {
+    background-color: $v;
+  }
+}
+
+.box-shadow {
+  box-shadow: $box-shadow;
+}
+
+@for $v from 2 to 5 {
+  .border-#{$v} {
+    border-width: $v + px !important;
+  }
+}
+
+@for $v from 0 to 4 {
+  .zindex-#{$v} {
+    z-index: $v;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

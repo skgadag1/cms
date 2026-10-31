@@ -1,0 +1,6 @@
+SectionDownload:
+  id: irp:components/sectionDownload
+SectionRTE:
+  id: irp:components/sectionRTE
+SectionSoftwaresAutomated:
+  id: irp:components/sectionSoftwaresAutomated

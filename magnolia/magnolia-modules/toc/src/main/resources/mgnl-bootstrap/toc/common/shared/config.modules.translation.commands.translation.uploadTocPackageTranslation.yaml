@@ -1,0 +1,3 @@
+'uploadTocPackageTranslation':
+  'class': 'com.tbscg.doosan.magnolia.dxp.core.translation.commands.CustomTranslationFileUploadCommand'
+  'workspace': 'toc-packages'

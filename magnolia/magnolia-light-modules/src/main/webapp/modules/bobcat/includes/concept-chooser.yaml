@@ -1,0 +1,12 @@
+label: Disclaimer concept
+$type: linkField
+required: false
+buttonSelectNewLabel: Select...
+datasource:
+  $type: jcrDatasource
+  describeByProperty: valuePlainText
+  workspace: concepts
+  rootPath: /bobcat
+  allowedNodeTypes:
+    - mgnl:folder
+    - mgnl:content

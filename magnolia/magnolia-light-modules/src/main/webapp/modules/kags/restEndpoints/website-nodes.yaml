@@ -1,0 +1,9 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: website-nodes
+workspace: website
+limit: 1
+depth: 0
+includeSystemProperties: false
+nodeTypes:
+- mgnl:component
+- mgnl:contentNode

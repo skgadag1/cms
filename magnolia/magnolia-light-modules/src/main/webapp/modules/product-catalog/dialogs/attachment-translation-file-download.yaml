@@ -1,0 +1,9 @@
+!include:/dxp-core/dialogs/downloadTranslationFile.yaml
+actions:
+  commit:
+    label: 'Export translation file'
+    catalog: translation
+    command: downloadAttachmentTranslation
+    class: info.magnolia.translation.ui.action.TranslationFileDownloadDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.dialog.action.CancelDialogActionDefinition

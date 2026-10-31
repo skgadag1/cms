@@ -1,0 +1,8 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - !include:/kags/includes/banner-field.yaml
+
+actions: !include:/kags/includes/common-actions.yaml

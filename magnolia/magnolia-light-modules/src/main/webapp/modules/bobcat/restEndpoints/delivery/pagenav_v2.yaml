@@ -1,0 +1,30 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/pagenav
+workspace: website
+depth: 5
+bypassWorkspaceAcls: true
+rootPath: /bobcat
+limit: 50
+strict: true
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:page
+  - mgnl:contentNode
+references:
+  - name: pageReference
+    propertyName: pageUrl
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.CustomUrlReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+  - name: pageNodeReference
+    propertyName: jcr:uuid
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+referenceRepeat: true
+referenceDepth: 10

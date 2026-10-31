@@ -1,0 +1,23 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: website
+rootPath: /
+depth: 3
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:page
+includeSystemProperties: false
+references:
+  cloudinaryAssetReference:
+    propertyName: image
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.cloudinary.dam.reference.CloudinaryAssetReferenceResolverDefinition
+  forKeyAccounts:
+    propertyName: forKeyAccounts
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+referenceRepeat: true
+referenceDepth: 3

@@ -1,0 +1,5 @@
+renderType: ftlExtended
+title: Feedback Component
+templateScript: /kags/templates/components/feedback.ftl
+dialog: kags:components/feedback
+moveable: false

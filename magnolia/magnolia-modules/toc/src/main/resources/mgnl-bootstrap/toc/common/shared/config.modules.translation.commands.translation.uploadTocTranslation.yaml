@@ -1,0 +1,3 @@
+'uploadTocTranslation':
+  'class': 'com.tbscg.doosan.magnolia.toc.commands.TocTranslationFileUploadCommand'
+  'workspace': 'toc'

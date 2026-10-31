@@ -1,0 +1,117 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Anchor Links/Alternative nav
+form:
+  properties:
+    navigation:
+      label: Navigation list
+      $type: jcrMultiField
+      i18n: true
+      field:
+        label: Navigation item
+        name: compositeField
+        $type: compositeField
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            label: Link
+            required: true
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h4'
+    ctaLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      label: CTA settings
+    ctaLabel:
+      label: CTA label
+      $type: textField
+      i18n: true
+    showCTA:
+      $type: checkBoxField
+      label: Show CTA
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    ctaVariant:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: primary
+            label: Primary Red
+            value: primary
+          - name: tertiary
+            label: Tertiary Gray
+            value: tertiary
+          - name: orange
+            label: Warning Yellow
+            value: orange
+      defaultValue: primary
+      label: CTA Button color
+    buttonStyle:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: edge
+            label: Hex Button Style
+            value: edge
+          - name: classic
+            label: Classic Button Style
+            value: classic
+      defaultValue: edge
+      label: Button style variant
+    variant:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: light
+            label: Gray Lighter
+            value: light
+          - name: dark
+            label: Gray Darker
+            value: dark
+          - name: white
+            label: White
+            value: white
+      defaultValue: light
+      label: Color schema
+    notSticky:
+      $type: checkBoxField
+      label: Keep the primary navigation
+      description: 'The component will not be sticky and will not replace the original navigation'
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: navigation
+      cta:
+        label: CTA
+        fields:
+          - name: ctaLink
+          - name: showCTA
+      buttons:
+        label: Buttons
+        fields:
+          - name: buttonStyle
+          - name: ctaVariant
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: notSticky
+      inheritableSection:
+      anchor:
+      meta:
+light: false

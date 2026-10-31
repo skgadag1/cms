@@ -1,0 +1,157 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  sort: true
+  options:
+    - name: fieldmods
+      label: Fieldmods warn
+      value: fieldmods
+    - name: globe
+      label: Globe
+      value: globe
+    - name: facebook
+      label: Facebook
+      value: social-facebook
+    - name: linkedin
+      label: Linkedin
+      value: social-linkedin
+    - name: info
+      label: Info
+      value: info
+    - name: loader
+      label: Loader
+      value: loader
+    - name: twitter
+      label: Twitter
+      value: social-twitter
+    - name: youtube
+      label: Youtube
+      value: social-youtube
+    - name: tiktok
+      label: TikTok
+      value: social-tiktok
+    - name: instagram
+      label: Instagram
+      value: social-instagram
+    - name: map
+      label: Map with pin
+      value: map-pin
+    - name: pin
+      label: Pin (map)
+      value: pin
+    - name: save
+      label: Save
+      value: save
+    - name: times
+      label: Times (cancel X)
+      value: times
+    - name: warn
+      label: Warn
+      value: warn
+    - name: megaphone
+      label: Megaphone
+      value: megaphone
+    - name: inventory
+      label: Inventory
+      value: inventory
+    - name: programTabLabel
+      label: Program Tabs Label
+      value: program-tabs-labels
+    - name: linkUrlLeft
+      label: Link URl (left)
+      value: link-left
+    - name: linkUrlRight
+      label: Link URl (right)
+      value: link-right
+    - name: send
+      label: Send
+      value: send
+    - name: search
+      label: Search
+      value: search
+    - name: download
+      label: Download
+      value: download
+    - name: settings
+      label: Settings
+      value: settings
+    - name: show
+      label: Show
+      value: show
+    - name: notifications
+      label: Notifications
+      value: notifications
+    - name: maintenance
+      label: Maintenance
+      value: maintenance
+    - name: comment
+      label: Comment
+      value: comment
+    - name: home
+      label: Home
+      value: home
+    - name: cartBuyShop
+      label: Cart Buy Shop
+      value: cart-buy-shop
+    - name: usDollars
+      label: US Dollars
+      value: us-dollars
+    - name: error
+      label: Error
+      value: error
+    - name: success
+      label: Success
+      value: success
+    - name: location
+      label: Location
+      value: location
+    - name: machineIQ
+      label: Machine IQ
+      value: machine-iq
+    - name: bobcat
+      label: Bobcat
+      value: bobcat
+    - name: email
+      label: Email
+      value: email
+    - name: print
+      label: Print
+      value: print
+    - name: video
+      label: Video
+      value: video
+    - name: phone
+      label: Phone
+      value: phone
+    - name: manual
+      label: Manual
+      value: manual
+    - name: parts
+      label: Parts
+      value: parts
+    - name: faultCode
+      label: Fault Code
+      value: fault-code
+    - name: user
+      label: User
+      value: user
+    - name: 3users
+      label: 3 users
+      value: 3users
+    - name: list
+      label: List
+      value: list
+    - name: launch
+      label: Launch
+      value: launch
+    - name: attachments
+      label: Attachments
+      value: attachments
+    - name: inventory-search
+      label: Inventory Search
+      value: inventory-search
+    - name: none
+      label: ' None'
+      value: none
+label: Icon
+required: true

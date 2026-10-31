@@ -1,0 +1,25 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: 0
+      label: Style 0 (0%)
+      value: 0
+    - name: 1
+      label: Style 1 (20%)
+      value: 1
+    - name: 2
+      label: Style 2 (40%)
+      value: 2
+    - name: 3
+      label: Style 3 (60%)
+      value: 3
+    - name: 4
+      label: Style 4 (80%)
+      value: 4
+    - name: 5
+      label: Style 5 (100%)
+      value: 5
+defaultValue: 5
+label: Opacity
+required: true

@@ -1,0 +1,15 @@
+regionUriMapping:
+  'jcr:primaryType': mgnl:content
+  enabled: true
+  class: com.tbscg.doosan.magnolia.bobcat.filters.RegionUriMappingFilter
+  siteName: ''
+  fromUri: '/'
+  toUri: 'redirect:/${region}/en/index'
+  defaultRegion: 'na'
+  bypasses:
+    'jcr:primaryType': mgnl:content
+    nonPublicInstance:
+      class: info.magnolia.voting.voters.PropertyVoter
+      property: instanceType
+      value: public
+      not: true

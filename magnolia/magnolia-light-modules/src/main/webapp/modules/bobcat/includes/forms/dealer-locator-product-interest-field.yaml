@@ -1,0 +1,34 @@
+!include:/bobcat/includes/forms/shared/form-field.yaml
+label: Dealer Locator Product Interest
+properties:
+  label:
+    label: Label for field
+  noResultsMessage:
+    label: No results message
+    $type: textField
+    required: true
+    i18n: true
+  limit:
+    $type: textField
+    type: java.lang.Integer
+    label: Limit
+    description: Maximum number of products the user can select
+    defaultValue: 10
+    required: true
+    converterClass: com.vaadin.data.converter.StringToIntegerConverter
+    validators:
+      number:
+        $type: regexpValidator
+        pattern: ^(?:[2-9]|\d\d\d*)$
+        errorMessage: Enter a valid number - the value must be greater than 1
+  limitMessage:
+    label: Limit message
+    description: 'Put %LIMIT% to replace variable with a limit value'
+    $type: textField
+    i18n: true
+  placeholder:
+    label: Placeholder
+    $type: textField
+    i18n: true
+  name:
+    label: Select name

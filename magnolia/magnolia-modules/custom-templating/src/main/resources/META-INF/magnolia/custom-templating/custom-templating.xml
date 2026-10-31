@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+	<name>custom-templating</name>
+	<displayName>${project.name}</displayName>
+	<description>${project.description}</description>
+	<versionHandler>com.tbscg.doosan.magnolia.templating.setup.ModuleVersionHandler</versionHandler>
+	<version>1.0</version>
+
+	<components>
+		<id>main</id>
+		<component>
+			<type>com.tbscg.doosan.magnolia.templating.ResourcesTemplatingFunctions</type>
+			<implementation>com.tbscg.doosan.magnolia.templating.ResourcesTemplatingFunctions</implementation>
+			<scope>singleton</scope>
+		</component>
+		<component>
+			<type>com.tbscg.doosan.magnolia.templating.ConfigTemplatingFunctions</type>
+			<implementation>com.tbscg.doosan.magnolia.templating.ConfigTemplatingFunctions</implementation>
+			<scope>singleton</scope>
+		</component>
+	</components>
+
+	<dependencies>
+		<dependency>
+			<name>magnolia-resources-templating</name>
+			<version>*</version>
+		</dependency>
+		<dependency>
+			<name>dxp-core</name>
+			<version>*</version>
+		</dependency>
+	</dependencies>
+</module>

@@ -1,0 +1,26 @@
+!include:/bobcat/dialogs/pages/index.yaml
+label: Page properties (attachment)
+form:
+  properties:
+    attachmentModel:
+      label: Attachment model
+      $type: linkField
+      buttonSelectNewLabel: Select new ...
+      chooserId: bobcat:chooser/attachment-chooser
+      required: true
+      datasource:
+        $type: jcrDatasource
+        workspace: attachments
+        allowedNodeTypes:
+          - mgnl:folder
+          - dxp:attachmentCategory
+          - dxp:attachment
+          - dxp:attachmentGroup
+  layout:
+    $type: tabbedLayout
+    tabs:
+      general:
+        label: General
+        fields:
+          - name: attachmentModel
+light: false

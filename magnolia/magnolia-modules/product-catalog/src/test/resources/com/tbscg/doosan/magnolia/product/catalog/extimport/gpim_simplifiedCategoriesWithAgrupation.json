@@ -1,0 +1,56 @@
+{
+  "$": "Simplified category",
+  "name": "Simplified category",
+  "description": null,
+  "@code": "simplifiedCategoryWithAgrupation",
+  "@catalog": "Products",
+  "@catalogVersion": "Online",
+  "visibility": "PUBLIC",
+  "subCategories": [],
+  "relatedCategories": [],
+  "products": [
+    {
+      "@code": "M0249",
+      "@catalog": "CompactNA",
+      "@catalogVersion": "Online",
+      "$": "Bobcat T595",
+      "name": "T595 T4",
+      "shortName": "Bobcat T595",
+      "lifecycleStatus": "ACTIVE",
+      "visibility": "PUBLIC",
+      "variationsLinks": [
+        {
+          "@code": "M0249_53179",
+          "@catalog": "CompactNA",
+          "@catalogVersion": "Online",
+          "$": "Standard",
+          "name": "T595 T4",
+          "shortName": "Standard",
+          "lifecycleStatus": "ACTIVE",
+          "visibility": "PUBLIC",
+          "attributePriority": "P1"
+        },
+        {
+          "@code": "M0249_53962",
+          "@catalog": "CompactNA",
+          "@catalogVersion": "Online",
+          "$": "Roller Suspension Option",
+          "name": "T595 T4 RS",
+          "shortName": "Roller Suspension Option",
+          "lifecycleStatus": "ACTIVE",
+          "visibility": "PUBLIC"
+        }
+      ]
+    },
+    {
+      "@code": "D-53962",
+      "@catalog": "CompactNA",
+      "@catalogVersion": "Online",
+      "$": "Bobcat T595 - RS Option",
+      "name": "T595 T4 RS",
+      "shortName": "Bobcat T595 - RS Option",
+      "lifecycleStatus": "ACTIVE",
+      "visibility": "PUBLIC"
+    }
+  ]
+}

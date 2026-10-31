@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>faq</name>
+  <displayName>${project.name}</displayName>
+  <description>${project.description}</description>
+  <class>com.tbscg.doosan.magnolia.faq.FaqModule</class>
+  <versionHandler>com.tbscg.doosan.magnolia.faq.setup.FaqModuleVersionHandler</versionHandler>
+  <version>1.0.0</version>
+
+  <components>
+    <id>app-faq-app</id>
+    <component>
+      <type>info.magnolia.ui.datasource.ItemResolver</type>
+      <implementation>info.magnolia.ui.contentapp.JcrNodeResolver</implementation>
+    </component>
+
+    <component>
+      <type>info.magnolia.ui.framework.ContentClipboard</type>
+      <implementation>info.magnolia.ui.contentapp.action.clipboard.JcrClipboard</implementation>
+    </component>
+
+    <component>
+      <type>info.magnolia.ui.contentapp.Datasource</type>
+      <implementation>info.magnolia.ui.datasource.jcr.JcrDatasource</implementation>
+    </component>
+
+    <component>
+      <type>info.magnolia.ui.observation.DatasourceObservation</type>
+      <implementation>info.magnolia.jcrbrowser.app.observation.JcrManualDataSourceObservation</implementation>
+    </component>
+
+    <component>
+      <type>info.magnolia.ui.availability.AvailabilityChecker</type>
+      <implementation>info.magnolia.ui.availability.JcrAvailabilityChecker</implementation>
+    </component>
+
+    <component>
+      <type>info.magnolia.ui.datasource.PropertySetFactory</type>
+      <implementation>info.magnolia.ui.contentapp.JcrPropertySetFactory</implementation>
+    </component>
+
+    <type-mapping>
+      <type>info.magnolia.ui.contentapp.browser.TreePresenter</type>
+      <implementation>info.magnolia.ui.contentapp.JcrTreePresenter</implementation>
+    </type-mapping>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>core</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>dxp-core</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>translation</name>
+      <version>*</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <name>magnolia</name>
+      <workspaces>
+        <workspace>faq</workspace>
+      </workspaces>
+    </repository>
+  </repositories>
+</module>

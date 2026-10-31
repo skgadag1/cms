@@ -1,0 +1,37 @@
+logConfigurations:
+  deactivate:
+    active: false
+    logName: log-audit
+  activate:
+    active: true
+    logName: log-audit
+  unpublish:
+    active: false
+    logName: log-audit
+  publish:
+    active: false
+    logName: log-audit
+  copy:
+    active: true
+    logName: log-audit
+  login:
+    active: false
+    logName: log-access
+  logout:
+    active: false
+    logName: log-access
+  move:
+    active: true
+    logName: log-audit
+  modify:
+    active: true
+    logName: log-audit
+  create:
+    active: true
+    logName: log-audit
+  delete:
+    active: true
+    logName: log-audit
+  security:
+    active: true
+    logName: log-audit

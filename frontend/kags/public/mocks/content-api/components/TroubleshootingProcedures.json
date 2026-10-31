@@ -1,0 +1,142 @@
+[
+  {
+    "key": "procedureName",
+    "value": "Error Code"
+  },
+  {
+    "key": "rank",
+    "value": "Ranking"
+  },
+  {
+    "key": "action",
+    "value": "Actions"
+  },
+  {
+    "key": "description",
+    "value": "Description"
+  },
+  {
+    "key": "faultDetails",
+    "value": "Fault Details"
+  },
+  {
+    "key": "startSession",
+    "value": "Start session"
+  },
+  {
+    "key": "sessionStartError",
+    "value": "Session start failed"
+  },
+  {
+    "key": "exactMatches",
+    "value": "Exact Matches"
+  },
+  {
+    "key": "partialMatches",
+    "value": "Partial Matches"
+  },
+   {
+    "key": "TraditionalTab",
+    "value": "Traditional"
+  },
+  {
+    "key": "AiAssistantTab",
+    "value": "AI Assistant"
+  },
+  {
+    "key": "DescriptionTitle",
+    "value": "Ask a service question, add a machine photo, or upload repair documentation to surface relevant Bobcat service information faster. Prefer the familiar workflow? You can switch to Manual Lookup at any time."
+  },
+  {
+    "key": "InputPlaceholder",
+    "value": "Send a message"
+  },
+  {
+    "key": "Disclaimer",
+    "value": "DISCLAIMER: This tool uses Al, mistakes may occur. T&C's Apply."
+  },
+  {
+    "key": "addContent",
+    "value": "Add Content"
+  },
+  {
+    "key": "uploadFile",
+    "value": "Upload File"
+  },
+  {
+    "key": "dragDropText",
+    "value": "Drag & Drop file here or use button to Select Files:"
+  },
+  {
+    "key": "selectFiles",
+    "value": "Select File(s)..."
+  },
+  {
+    "key": "fileTypeRestrictions",
+    "value": "Accepted file extensions: .xls"
+  },
+  {
+    "key": "uploading",
+    "value": "Uploading:"
+  },
+  {
+    "key": "uploadedFiles",
+    "value": "Uploaded File(s):"
+  },
+  {
+    "key": "fileTypeError",
+    "value": "Error: File type for {filename} not supported"
+  },
+  {
+    "key": "addToChat",
+    "value": "Add to Chat"
+  },
+  {
+    "key": "ServiceAiTitle",
+    "value": "Search AI Guided Troubleshooting"
+  },
+  {
+    "key": "fileSizeError",
+    "value": "Error: {filename} exceeds max file limit (50mb)"
+  },
+  {
+    "key": "openSession",
+    "value": "Open Sessions"
+  },
+  {
+    "key": "dateOpened",
+    "value": "Date Opened"
+  },
+  {
+    "key": "review",
+    "value": "Review"
+  },
+  {
+    "key": "daysAgo",
+    "value": "days ago"
+  },
+  {
+    "key": "noSessionResult",
+    "value": "No open sessions found"
+  },
+  {
+    "key": "resumeExistingSessionTitle",
+    "value": "Resume existing session?"
+  },
+  {
+    "key": "resumeExistingSessionDescription",
+    "value": "One or more open sessions for this procedure already exist for this serial. You can resume an existing session from the list below, or proceed with a new session."
+  },
+  {
+    "key": "startNewSession",
+    "value": "Start New Session"
+  },
+  {
+    "key": "cancelButton",
+    "value": "Cancel"
+  },
+  {
+    "key": "topGuidesForModel",
+    "value": "Top Guides For This Model"
+  }
+]

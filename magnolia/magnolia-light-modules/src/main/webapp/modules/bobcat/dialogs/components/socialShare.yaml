@@ -1,0 +1,28 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: SocialShare Configuration
+form:
+  properties:
+    centeredColumn:
+      $type: checkBoxField
+      label: Centered column
+      buttonLabel: Use centered column layout
+      description: For tablet/desktop will be used centered half-width column
+      defaultValue: false
+      type: java.lang.Boolean
+    showSpacer:
+      $type: checkBoxField
+      label: Spacer
+      buttonLabel: Show gray spacer at bottom
+      defaultValue: false
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: centeredColumn
+          - name: showSpacer
+      inheritableSection:
+      meta:
+light: false

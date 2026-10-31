@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>localizations</name>
+  <displayName>Localizations Magnolia Module</displayName>
+  <class>com.tbscg.doosan.magnolia.localizations.LocalizationsModule</class>
+  <versionHandler>com.tbscg.doosan.magnolia.localizations.setup.LocalizationsVersionHandler</versionHandler>
+  <version>1.1.0</version>
+
+  <components>
+    <id>main</id>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.service.LocalizationsSqsService</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.service.LocalizationsSqsService</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.converter.NodeToLocalizationsPackageConverter</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.converter.NodeToLocalizationsPackageConverter</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.converter.NodeToNonRegionalizedLocalizationsPackageConverterStrategy</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.converter.NodeToNonRegionalizedLocalizationsPackageConverterStrategy</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.converter.NodeToRegionalizedLocalizationsPackageConverterStrategy</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.converter.NodeToRegionalizedLocalizationsPackageConverterStrategy</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.converter.NodeToRegionalizedLocalizationsPackageConverterStrategy</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.converter.NodeToRegionalizedLocalizationsPackageConverterStrategy</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.converter.LocalizationsPackageJsonSerializer</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.converter.LocalizationsPackageJsonSerializer</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.service.LocalizationPackageService</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.service.LocalizationPackageService</implementation>
+    </component>
+    <component>
+      <type>com.tbscg.doosan.magnolia.localizations.service.LocalizationPackageStatusService</type>
+      <implementation>com.tbscg.doosan.magnolia.localizations.service.LocalizationPackageStatusService</implementation>
+    </component>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>dxp-core</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>dxp-workflow</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>regions</name>
+      <version>*</version>
+    </dependency>
+  </dependencies>
+</module>

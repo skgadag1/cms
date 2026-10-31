@@ -1,0 +1,22 @@
+'kags': 
+  jcr:primaryType: 'mgnl:folder'
+  'KeyAccount': 
+    'description': 'Specific Role for Kags users'
+    'title': 'KeyAccount'
+    jcr:primaryType: 'mgnl:role'
+    jcr:uuid: '8e653df6-1cad-4cde-8200-86704f0dca32'
+    'acl_userroles': 
+      '0': 
+        'path': '/KeyAccount'
+        'permissions': 8
+    'acl_website': 
+      '0': 
+        'path': '/'
+        'permissions': 8
+      '00': 
+        'path': '/*'
+        'permissions': 8
+    'acl_uri': 
+      '0': 
+        'path': '*'
+        'permissions': 63

@@ -1,0 +1,111 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/pages
+workspace: website
+depth: 30
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:template
+  - mgnl:lastModified
+
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:area
+  - mgnl:component
+  - mgnl:contentNode
+
+references:
+  - name: assetReference
+    propertyName: image
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+  - name: assetFieldReference
+    propertyName: field
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+  - name: pageReference
+    propertyName: pageUrl
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.CustomUrlReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+  - name: facetReference
+    propertyName: facet
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: facets
+      expand: true
+      generateLink: false
+  - name: iconTagReference
+    propertyName: iconTag
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: dxpTags
+      expand: true
+      generateLink: false
+  - name: linkReferenceWithRichTextBQ
+    propertyName: manualInfo
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextContent
+    propertyName: content
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextContentProductOverview
+    propertyName: overview
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextFaqAnswer
+    propertyName: answer
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextArticle
+    propertyName: text
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextFormDescription
+    propertyName: description
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: linkReferenceWithRichTextDealerPartnerNote
+    propertyName: partnerNote
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.richtext.DxpRichTextLinkResolverDefinition
+  - name: featureReference
+    propertyName: features
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: features
+      expand: true
+      generateLink: false
+  - name: chipReference
+    propertyName: chips
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: concepts
+      expand: true
+      generateLink: false
+  - name: dxpFaqReference
+    propertyName: faqSection
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: faq
+      expand: true
+      generateLink: false
+  - name: marketingCampaignsConfigurationRefence
+    propertyName: marketingCampaigns
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: marketingCampaigns
+      expand: true
+      generateLink: false
+  - name: regionReference
+    propertyName: region
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: regions
+      expand: true
+      generateLink: false
+referenceRepeat: true
+referenceDepth: 10

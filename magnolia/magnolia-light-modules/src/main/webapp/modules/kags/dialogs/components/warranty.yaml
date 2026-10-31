@@ -1,0 +1,53 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: title
+          fieldType: text
+          label: Title
+          required: true
+        - name: showBreadcrumb
+          fieldType: checkbox
+          label: Enable breadcrumb
+          buttonLabel: Select to display breadcrumbs based on sitemap
+          defaultValue: false
+          type: Boolean
+        - !include:/kags/includes/banner-field.yaml
+        - name: noResults
+          fieldType: text
+          label: No results label
+          required: true
+        - name: statusHeader
+          fieldType: text
+          label: Status label for table header
+          required: true
+        - name: descriptionHeader
+          fieldType: text
+          label: Description label for table header
+          required: true
+        - name: typeHeader
+          fieldType: text
+          label: Type label for table header
+          required: true
+        - name: startDateHeader
+          fieldType: text
+          label: Start date label for table header
+          required: true
+        - name: endDateHeader
+          fieldType: text
+          label: End date label for table header
+          required: true
+        - name: hoursHeader
+          fieldType: text
+          label: Engine hours label for table header
+          required: true
+        - name: unauthorizedError
+          fieldType: text
+          label: Not authorized error label
+          required: true
+        - name: noWarrantyInclusions
+          fieldType: text
+          label: No warranty inclusions notification
+          required: true
+actions: !include:/kags/includes/common-actions.yaml

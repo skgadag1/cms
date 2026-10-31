@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  Environment:
+    Description: Deployment environment
+    Type: String
+    AllowedValues: [ dev, qa, prod ]
+  DXPBobcatNotificationsTopic:
+    Description: ARN of SNS topic
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: '/cf/ngb/messaging/sns/topic/DXPBobcatNotificationsTopic'
+
+
+Resources:
+  CloudinaryResponseAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: 'Cloudinary API response time'
+      AlarmName: 'Cloudinary-Response-Alarm'
+
+      AlarmActions:
+        - !Ref DXPBobcatNotificationsTopic
+      EvaluationPeriods: 1
+      DatapointsToAlarm: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 5000
+      Namespace: BOBCAT/CLOUDINARY_API
+      Statistic: Average
+      MetricName: ApiResponse
+      Dimensions:
+        - Name: API
+          Value: ResponseTime
+      Period: 60
+      Unit: Milliseconds

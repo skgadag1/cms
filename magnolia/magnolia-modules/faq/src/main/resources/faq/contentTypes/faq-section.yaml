@@ -1,0 +1,26 @@
+name: dxp:faqSection
+
+datasource:
+  workspace: faq
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+
+model:
+  nodeType: dxp:faqSection
+  properties:
+    - name: name
+      label: Section Name
+      required: true
+    - name: title
+      label: Section Title
+    - name: icon
+      label: Section Icon
+    - name: faqs
+      label: Section FAQ
+      type: reference:dxp:faq
+      multiple: true
+    - name: tags
+      label: Tags
+      multiple: true

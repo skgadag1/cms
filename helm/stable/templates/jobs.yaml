@@ -1,0 +1,134 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-magnolia-nonpublic
+spec:
+  schedule: "10 5 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-magnolia-nonpublic
+              image: {{ .Values.image.tools.repository }}:{{ .Values.image.tools.tag }}
+              imagePullPolicy: {{ .Values.image.tools.pullPolicy }}
+              command: [ "/root/scripts/backup_nonpublic.sh" ]
+              env:
+                - name: ENV
+                  value: "{{ .Values.env }}"
+                - name: DB_USER
+                  value: "{{  .Values.db.magnolia_publisher.user }}"
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: magnolia-public
+                      key: db-password
+                - name: DB_URL
+                  value: "{{ .Values.db.magnolia_publisher.url }}/magnolia-public-db"
+                - name: DEBUG
+                  value: "true"
+                - name: BACKUP_RETENTION
+                  value: {{ .Values.backup_retention | quote }}
+              volumeMounts:
+                - name: src-volume
+                  mountPath: /src
+                  readOnly: true
+                - name: dst-volume
+                  mountPath: /dst
+          volumes:
+            - name: src-volume
+              nfs:
+                server: {{ .Values.efs.data.host }}
+                path: "/"
+            - name: dst-volume
+              nfs:
+                server: {{ .Values.efs.backup.host }}
+                path: "/public"
+          restartPolicy: Never
+      backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-magnolia-author
+spec:
+  schedule: "0 5 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-magnolia-author
+              image: {{ .Values.image.tools.repository }}:{{ .Values.image.tools.tag }}
+              imagePullPolicy: {{ .Values.image.tools.pullPolicy }}
+              command: [ "/root/scripts/backup_author.sh" ]
+              env:
+                - name: ENV
+                  value: {{ .Values.env | quote }}
+                - name: DEBUG
+                  value: "true"
+                - name: SOURCE_DB
+                  value: 'magnolia-author-db'
+                - name: DB_HOST
+                  value: {{ .Values.db.magnolia_author.host | quote }}
+                - name: DB_PORT
+                  value: '5432'
+                - name: DB_USER
+                  value: {{ .Values.db.magnolia_author.user | quote }}
+                - name: DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: magnolia-author
+                      key: db-password
+                - name: BACKUP_RETENTION
+                  value: {{ .Values.backup_retention | quote }}
+              volumeMounts:
+                - name: src-volume
+                  mountPath: /src
+                  readOnly: true
+                - name: dst-volume
+                  mountPath: /dst
+          volumes:
+            - name: src-volume
+              nfs:
+                server: {{ .Values.efs.data.host }}
+                path: "/"
+            - name: dst-volume
+              nfs:
+                server: {{ .Values.efs.backup.host }}
+                path: "/author"
+          restartPolicy: Never
+      backoffLimit: 0
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: s3-sync-kags-logs
+spec:
+  schedule: "1 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: s3-sync-kags-logs
+              image: {{ .Values.image.tools.repository }}:{{ .Values.image.tools.tag }}
+              command: [ "/root/scripts/s3_sync_kags_logs.sh" ]
+              env:
+                - name: ENV
+                  value: "{{ .Values.env }}"
+                - name: S3_BUCKET
+                  value: "dibh-{{ .Values.env }}-dxp-kags-logs"
+                - name: DEBUG
+                  value: "true"
+              volumeMounts:
+                - name: src-volume
+                  mountPath: /src
+          volumes:
+            - name: src-volume
+              nfs:
+                server: {{ .Values.efs.data.host }}
+                path: "/external-logs"
+          restartPolicy: Never
+      backoffLimit: 0

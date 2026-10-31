@@ -1,0 +1,29 @@
+label: Intro
+form:
+  properties:
+    introField:
+      $type: textField
+      label: Intro
+      rows: 3
+      required: true
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+    forInternals:
+      !include:/kags/includes/internal-access.yaml
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Main
+        fields:
+          - name: introField
+      visibilityTab:
+        label: Component visibility
+        fields:
+          - name: forKeyAccounts
+          - name: forSupertechs
+          - name: forInternals
+  light: false

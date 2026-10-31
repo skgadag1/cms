@@ -1,0 +1,6 @@
+'updateCloudinaryFolders':
+  'catalog': 'cloudinary'
+  'command': 'updateFolders'
+  'cron': '0 */3 * * * *'
+  'description': 'Update cached folder structure from Cloudinary'
+  'enabled': true

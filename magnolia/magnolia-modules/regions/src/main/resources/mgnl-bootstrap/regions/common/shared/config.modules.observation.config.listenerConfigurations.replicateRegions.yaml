@@ -1,0 +1,10 @@
+'replicateRegions': 
+  'active': 'true'
+  'description': 'replicates regions to configured workspaces'
+  'includeSubNodes': 'true'
+  'path': '/'
+  'repository': 'regions'
+  'listener': 
+    'class': 'com.tbscg.doosan.magnolia.regions.observation.RegionsEventListener'
+    'command': 
+      'class': 'com.tbscg.doosan.magnolia.regions.commands.RegionsReplicationCommand'

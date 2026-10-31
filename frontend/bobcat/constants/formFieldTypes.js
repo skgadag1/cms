@@ -1,0 +1,32 @@
+const FORM_FIELD_TYPES = {
+  RADIO: 'radioButtonField',
+  SELECT: 'selectField',
+  QUERY: 'queryStringField',
+  CHECKBOX_GROUP: 'checkboxGroupField',
+  CAPTCHA: 'captchaField',
+  STATES: 'statesListField',
+  HIDDEN: 'hiddenInputField',
+  AREA: 'textAreaField',
+  INPUT: 'inputField',
+  NUMERIC: 'numericField',
+  ADDRESS: 'addressAutocompleteField',
+  PHONE: 'phoneAutocompleteField',
+  PRODUCTS: 'productSelectorField',
+  RELATED_FIELDS: 'relatedFields',
+  RELATED_CHECKBOX: 'relatedCheckboxField',
+  BROCHURE: 'brochureField',
+  CUSTOM_TEXT: 'customText',
+  YES_NO_DYNAMIC_FORM: 'yesNoDynamicFormField',
+  DYNAMIC_DROPDOWN: 'dynamicDropdownParentField',
+  DYNAMIC_HIDDEN_FIELD: 'dynamicHiddenField',
+  PRODUCT_GROUPS: 'productGroupsField',
+  PRODUCT_GROUPS_DROPDOWN: 'productGroupsDropdownField',
+  UPLOAD_FIELD: 'uploadField',
+  PRODUCT_INTEREST: 'dealerLocatorProductInterestField',
+  PRODUCT_INTEREST_SELECTOR: 'productInterestSelectorField',
+  PRODUCT_INTEREST_SF: 'productInterestSfField',
+  PRIVACY_POLICY: 'privacyPolicyField',
+  TERMS_AND_CONDITIONS: 'termsAndConditionsField'
+}
+
+export default FORM_FIELD_TYPES

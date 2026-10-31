@@ -1,0 +1,13 @@
+title: 'Service Videos SPA page'
+templateScript: https://templateScriptUrlPlaceholder
+getTemplateScriptFrom: custom-renderer.config.yaml
+pageType: service-videos
+dialog: service-videos:pages/index
+type: content
+renderType: spaExtended
+class: com.tbscg.doosan.magnolia.custom.renderer.definitions.CustomSpaRenderableDefinition
+areas:
+  main:
+    title: Main area
+    availableComponents:
+      !include:/service-videos/includes/main-area-components.yaml

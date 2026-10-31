@@ -1,0 +1,17 @@
+label: Title Component
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      i18n: true
+      required: true
+  layout:
+    $type: tabbedLayout
+    tabs:
+      main:
+        label: Main
+        fields:
+          - name: titleField
+
+light: false

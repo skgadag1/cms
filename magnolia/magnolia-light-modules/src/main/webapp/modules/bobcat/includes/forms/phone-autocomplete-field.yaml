@@ -1,0 +1,23 @@
+!include:/bobcat/includes/forms/shared/form-field.yaml
+label: Phone Autocomplete
+properties:
+  placeholder:
+    label: Placeholder
+    $type: textField
+    i18n: true 
+  countrySelectorLabel:
+    label: Country selector label
+    $type: textField
+    i18n: true
+  countrySelectorError:
+    label: Country selector error label
+    $type: textField
+    i18n: true
+  exampleLabel:
+    label: Example label
+    $type: textField
+    i18n: true 
+  validationMessage:
+    label: Required validation message
+    $type: textField
+    i18n: true

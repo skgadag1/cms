@@ -1,0 +1,71 @@
+label: Region Selector Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h6
+    caption:
+      label: Caption
+      $type: textField
+      i18n: true
+    htagCaption:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h6
+    logo:
+      !include:/bobcat/includes/image.yaml
+      i18n: true
+    footerContent:
+      label: Footer text
+      $type: cloudinaryRichText
+      alignment: true
+      images: true
+      i18n: true
+    regions:
+      label: Regions
+      $type: jcrMultiField
+      i18n: true
+      buttonSelectAddLabel: Add new region
+      field:
+        label: Regions
+        name: compositeField
+        $type: compositeField
+        properties:
+          title:
+            label: Title
+            $type: textField
+          asset:
+            !include:/bobcat/includes/dam-image.yaml
+            label: Background image
+          links: 
+            label: Languages
+            $type: jcrMultiField
+            buttonSelectAddLabel: Add language
+            field:
+              label: Language
+              name: compositeField
+              $type: compositeField
+              properties:
+                link:
+                  !include:/bobcat/includes/page-link-or-url-field.yaml
+  layout:
+    $type: tabbedLayout
+    tabs:
+      general:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: caption
+          - name: htagCaption
+          - name: logo
+          - name: footerContent
+      regions:
+        label: Regions
+        fields:
+          - name: regions
+light: false
+actions: !include:/bobcat/includes/use-dxp-actions.yaml

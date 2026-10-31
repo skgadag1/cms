@@ -1,0 +1,87 @@
+$type: compositeField
+layout:
+  $type: form
+label: Yes No Dynamic Form
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  label:
+    $type: textField
+    label: Field label
+    i18n: true
+  name:
+    $type: textField
+    label: Field name
+    description: Name needs to be unique
+    i18n: true
+    required: true
+  bold:
+    $type: checkBoxField
+    label: Label bolded
+    buttonLabel: Active
+    defaultValue: false
+    type: java.lang.Boolean
+  required:
+    $type: checkBoxField
+    label: Is required
+    buttonLabel: Required
+    defaultValue: false
+    type: java.lang.Boolean  
+  yesLabel:
+    $type: textField
+    label: Yes label
+    i18n: true
+    required: true
+  yesValue:
+    $type: textField
+    label: Yes value
+    required: true
+  yesId:
+    $type: textField
+    label: Yes mapping ID
+  noLabel:
+    $type: textField
+    label: No label
+    i18n: true
+    required: true
+  noValue:
+    $type: textField
+    label: No value
+    required: true
+  noId:
+    $type: textField
+    label: No mapping ID
+  width:
+    !include:/bobcat/includes/forms/shared/width-option.yaml
+  yesFields:
+    label: Yes fields
+    description: Form fields
+    $type: jcrMultiField
+    i18n: true
+    required: true
+    buttonSelectAddLabel: Add form element
+    itemProvider:
+      $type: jcrChildNodeProvider
+    field:
+      label: Form field selector
+      name: compositeField
+      $type: compositeField
+      properties:
+        component:
+          !include:/forms-configuration/includes/forms/configuration-element-selector.yaml
+  noFields:
+     label: No fields
+     description: Form fields
+     $type: jcrMultiField
+     i18n: true
+     required: true
+     buttonSelectAddLabel: Add form element
+     itemProvider:
+       $type: jcrChildNodeProvider
+     field:
+       label: Form field selector
+       name: compositeField
+       $type: compositeField
+       properties:
+         component:
+           !include:/forms-configuration/includes/forms/configuration-element-selector.yaml

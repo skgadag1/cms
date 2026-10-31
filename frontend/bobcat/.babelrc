@@ -1,0 +1,14 @@
+// this file is needed for tests - it is not being used by nuxt
+
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,201 @@
+label: Visibility
+class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+closable: false
+datasource:
+  $type: jcrDatasource
+  workspace: visibility
+  includeProperties: false
+  allowedNodeTypes:
+    - mgnl:folder
+    - dxp:visibility
+workbench:
+  contentViews:
+    visibility:
+      $type: treeView
+      columns:
+        jcrName:
+          label: Name
+          $type: jcrTitleColumn
+          nodeTypeToIcon:
+            mgnl:folder: icon-language-app
+            dxp:visibility: icon-documents-app
+        type:
+          label: Type
+          valueProvider: com.tbscg.doosan.magnolia.bobcat.field.BobcatContentTypeValueProvider
+        jcrPublishingStatus:
+          $type: jcrStatusColumn
+          label: Status
+        mgnl:lastModified:
+          $type: dateColumn
+actionbar:
+  defaultAction: editTag
+  sections:
+    root:
+      availability:
+        root: true
+      groups:
+        addActions:
+          name: addActions
+          items:
+            - name: addVisibility
+        editActions:
+          name: editActions
+          items:
+            - name: editVisibility
+        publishingActions:
+          name: publishingActions
+          items:
+            - name: publishItem
+            - name: publishRecursive
+            - name: unpublishItem
+        commonActions:
+          name: commonActions
+          items:
+            - name: renameItem
+            - name: deleteItem
+            - name: duplicateItem
+            - name: moveItem
+            - name: copyItem
+            - name: pasteItem
+        exportImportActions:
+          name: exportImportActions
+          items:
+            - name: export
+            - name: import
+actions:
+  addVisibility:
+    label: Add Visibility
+    icon: icon-add-folder
+    $type: chainedAction
+    actions:
+      createItem:
+        $type: addNodeAction
+        nodeType: dxp:visibility
+      openDialog:
+        $type: openDialogAction
+        dialogId: visibility:visibility-details
+        populate: false
+    availability:
+      nodeTypes:
+        - mgnl:folder
+  editVisibility:
+    label: Edit Visibility
+    icon: icon-edit
+    $type: openDialogAction
+    dialogId: visibility:visibility-details
+    availability:
+      nodeTypes:
+        - dxp:visibility
+  publishItem:
+    label: Publish
+    icon: icon-publish
+    $type: jcrCommandAction
+    command: publish
+    catalog: versioned
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublishable:
+          $type: jcrPublishableRule
+  publishRecursive:
+    icon: icon-publish-incl-sub
+    $type: jcrCommandAction
+    command: publish
+    label: Publish recursive
+    asynchronous: true
+    params:
+      recursive: true
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublishable:
+          $type: jcrPublishableRule
+  unpublishItem:
+    label: Unpublish
+    icon: icon-unpublish
+    $type: jcrCommandAction
+    command: unpublish
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublished:
+          $type: jcrPublishedRule
+  renameItem:
+    label: Rename Item
+    icon: icon-edit
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:rename
+    availability:
+      nodeTypes:
+        - dxp:visibility
+  deleteItem:
+    label: Delete Item
+    icon: icon-delete
+    $type: confirmationAction
+    successActionName: delete
+    dialogId: ui-framework-jcr:delete
+    availability:
+      nodeTypes:
+        - dxp:visibility
+  duplicateItem:
+    label: Duplicate Item
+    icon: icon-duplicate
+    $type: duplicateNodeAction
+    availability:
+      nodeTypes:
+        - dxp:visibility
+  moveItem:
+    label: Move Item
+    icon: icon-move
+    $type: dxpMoveAction
+    allowedRoles:
+      - superuser
+    availability:
+      nodeTypes:
+        - dxp:visibility
+  copyItem:
+    label: Copy Item
+    icon: icon-copy
+    $type: copyContentAction
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:visibility
+  pasteItem:
+    label: Paste Item
+    icon: icon-paste
+#    $type: pasteContentAction
+    $type: dxpPasteContentAction
+    allowedRoles:
+      - superuser
+    sendComponentAction: false
+    availability:
+      nodeTypes:
+        - mgnl:folder
+        - dxp:visibility
+  import:
+    label: Import
+    icon: icon-import
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:import
+    availability:
+      root: true
+      rules:
+        isNotDeleted: &isNotDeleted
+          $type: jcrIsDeletedRule
+          negate: true
+  export:
+    label: Export
+    icon: icon-export
+    $type: exportAction
+    dialogName: ui-admincentral:export
+    availability:
+      rules:
+        isNotDeleted: *isNotDeleted
+  delete:
+    $type: jcrCommandAction
+    asynchronous: true
+    command: delete
+    availability:
+      nodeTypes:
+        - dxp:visibility

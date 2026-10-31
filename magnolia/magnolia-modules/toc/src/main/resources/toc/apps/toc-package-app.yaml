@@ -1,0 +1,450 @@
+appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.api.app.registry.ConfiguredAppDescriptor
+icon: icon-packager-app
+label: ToC packages
+subApps:
+  browser:
+    class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
+    label: Package Terms and Conditions
+    subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
+    contentConnector:
+      defaultOrder: jcrName
+      includeProperties: false
+      rootPath: /
+      workspace: toc-packages
+      nodeTypes:
+        tocNodeType:
+          icon: icon-node-content
+          name: dxp:tocPackage
+          strict: true
+        folderNodeType:
+          icon: icon-folder-l
+          name: mgnl:folder
+          strict: true
+    imageProvider:
+      class: info.magnolia.ui.imageprovider.definition.ConfiguredImageProviderDefinition
+      imageProviderClass: info.magnolia.ui.imageprovider.DefaultImageProvider
+      originalImageNodeName: photo
+    workbench:
+      dragAndDrop: false
+      contentViews:
+        tree:
+          class: info.magnolia.ui.workbench.tree.TreePresenterDefinition
+          sortable: false
+          columns: &columns
+            jcrName:
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+              label: Name
+              propertyName: jcrName
+              width: 250
+            title:
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+              label: Title
+              propertyName: title
+              width: 300
+            status:
+              class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
+              label: Status
+              width: 45
+            moddate:
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              label: Modification date
+              propertyName: mgnl:lastModified
+              width: 120
+        search:
+          class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
+          columns:
+            <<: *columns
+    actions:
+      addFolder:
+        class: info.magnolia.ui.framework.action.AddFolderActionDefinition
+        icon: icon-add-folder
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            folder: mgnl:folder
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      editFolder:
+        class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        dialogName: ui-framework:folder
+        icon: icon-edit
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            folder: mgnl:folder
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            isNotPublishedRule:
+              implementationClass: com.tbscg.doosan.magnolia.dxp.core.compatibility.app.availability.IsNotPublishedRule
+      addPackage:
+        appName: toc-package-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        icon: icon-add-item
+        label: Add package
+        nodeType: dxp:tocPackage
+        subAppId: detailPackage
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            folder: mgnl:folder
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      editPackage:
+        appName: toc-package-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        icon: icon-edit
+        label: Edit package
+        nodeType: dxp:tocPackage
+        subAppId: detailPackage
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            toc: dxp:tocPackage
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      renamePackage:
+        class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        dialogName: ui-framework:folder
+        icon: icon-edit
+        label: Rename package
+        availability:
+          writePermissionRequired: true
+          nodeTypes:
+            content: dxp:tocPackage
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      confirmDeletion:
+        availability:
+          multiple: true
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            isNotPublishedRule:
+              implementationClass: com.tbscg.doosan.magnolia.dxp.core.compatibility.app.availability.IsNotPublishedRule
+          writePermissionRequired: true
+        class: info.magnolia.ui.framework.action.DeleteConfirmationActionDefinition
+        icon: icon-delete
+        successActionName: delete
+        label: Delete
+      delete:
+        class: info.magnolia.ui.framework.action.DeleteActionDefinition
+        command: delete
+        asynchronous: true
+        icon: icon-delete
+        label: Delete
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      copy:
+        class: info.magnolia.ui.contentapp.browser.action.CopyContentActionDefinition
+        icon: icon-copy
+        label: Copy
+        availability:
+          multiple: true
+          writePermissionRequired: true
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      paste:
+        class: info.magnolia.ui.contentapp.browser.action.PasteContentActionDefinition
+        icon: icon-paste
+        label: Paste
+        availability:
+          root: true
+          writePermissionRequired: true
+          nodeTypes:
+            - mgnl:folder
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            canPasteRule:
+              implementationClass: info.magnolia.ui.framework.availability.AcceptsClipboardContent
+      activatePackage:
+        catalog: toc
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activatePackage
+        icon: icon-publish
+        successMessage: Publication request needs to be reviewed by an authorized person
+        failureMessage: actions.activate.failureMessage
+        label: actions.activate
+        availability:
+          writePermissionRequired: true
+          rules:
+            isPublishable:
+              implementationClass: info.magnolia.ui.framework.availability.IsPublishableRule
+      activateFolder:
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        label: actions.activate
+        successMessage: actions.activate.successMessage
+        failureMessage: actions.activate.failureMessage
+        availability:
+          writePermissionRequired: true
+          rules:
+            isPublishable:
+              implementationClass: info.magnolia.ui.framework.availability.IsPublishableRule
+      import:
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        dialogName: ui-admincentral:import
+        icon: icon-import
+        availability:
+          root: true
+          writePermissionRequired: true
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      export:
+        class: info.magnolia.ui.framework.action.OpenExportDialogActionDefinition
+        dialogName: ui-admincentral:export
+        icon: icon-export
+        availability:
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      duplicate:
+        class: info.magnolia.ui.framework.action.DuplicateNodeActionDefinition
+        icon: icon-duplicate
+        availability:
+          writePermissionRequired: true
+          rules:
+            isNotDeletedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      showVersions:
+        class: info.magnolia.ui.contentapp.browser.action.ShowVersionsActionDefinition
+        icon: icon-show-versions
+        availability:
+          rules:
+            hasVersionsRule:
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      exportTocPackageTranslation:
+        label: 'Export translations'
+        dialogName: toc:toc-package-translation-file-download
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        icon: icon-export
+      importTocPackageTranslation:
+        label: 'Import translations'
+        dialogName: toc:toc-package-translation-file-upload
+        class: info.magnolia.translation.ui.action.OpenCreateTranslationFileUploadDialogActionDefinition
+        icon: icon-import
+        availability:
+          multiple: true
+          root: true
+          writePermissionRequired: true
+    actionbar:
+      defaultAction: editPackage
+      sections:
+        root:
+          label: Packages
+          availability:
+            nodes: false
+            root: true
+          groups:
+            addActions:
+              items:
+                - name: addFolder
+                - name: addPackage
+            editActions:
+              items:
+                - name: paste
+            eximActions:
+              items:
+                - name: import
+        package:
+          label: Package
+          availability:
+            nodeTypes:
+              toc: dxp:tocPackage
+          groups:
+            editActions:
+              items:
+                - name: editPackage
+                - name: confirmDeletion
+                - name: copy
+                - name: paste
+                - name: duplicate
+            publishingActions:
+              items:
+                - name: activatePackage
+            eximActions:
+              items:
+                - name: import
+                - name: export
+                - name: exportTocPackageTranslation
+                - name: importTocPackageTranslation
+        folder:
+          label: Folder
+          availability:
+            nodeTypes:
+              folder: mgnl:folder
+          groups:
+            addActions:
+              items:
+                - name: addFolder
+                - name: addPackage
+            editActions:
+              items:
+                - name: editFolder
+                - name: confirmDeletion
+                - name: copy
+                - name: paste
+                - name: duplicate
+            publishingActions:
+              items:
+                - name: activateFolder
+            eximActions:
+              items:
+                - name: import
+                - name: export
+                - name: exportTocPackageTranslation
+                - name: importTocPackageTranslation
+            versionsActions:
+              items:
+                - name: showVersions
+  detailPackage:
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: Package terms and conditions
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    contentConnector:
+      defaultOrder: jcrName
+      includeProperties: false
+      rootPath: /
+      workspace: toc-packages
+      nodeTypes:
+        tocNodeType:
+          icon: icon-node-content
+          name: dxp:tocPackage
+          strict: true
+    editor:
+      nodeType:
+        icon: icon-items
+        name: dxp:tocPackage
+      form:
+        description: Define package
+        label: Edit package
+        tabs:
+          package:
+            label: Package
+            fields:
+              name:
+                fieldType: text
+                label: Name
+                name: jcrName
+                required: true
+              title:
+                fieldType: text
+                label: Title
+                required: true
+                i18n: true
+              brand:
+                fieldType: select
+                label: Brand
+                sortOptions: true
+                required: true
+                options:
+                  bobcat:
+                    value: Bobcat
+                    label: Bobcat
+                  doosanPortablePower: # remove after migration to PortablePower is finished
+                    value: Doosan Portable Power
+                    label: Doosan Portable Power (do not use)
+                  portablePower:
+                    value: Portable Power
+                    label: Portable Power
+                  ryan:
+                    value: Ryan
+                    label: Ryan
+                  steiner:
+                    value: Steiner
+                    label: Steiner
+                  geith:
+                    value: Geith
+                    label: Geith
+              region:
+                fieldType: select
+                label: Region
+                sortOptions: true
+                required: true
+                options:
+                  na:
+                    value: NA
+                    label: NA
+                  alao:
+                    value: ALAO
+                    label: ALAO
+                  emea:
+                    value: EMEA
+                    label: EMEA
+              channel:
+                fieldType: select
+                label: Channel
+                sortOptions: true
+                required: true
+                options:
+                  owner:
+                    value: Owner
+                    label: Owner
+                  dealer:
+                    value: Dealer
+                    label: Dealer
+                  internal:
+                    value: Internal
+                    label: Internal
+              application:
+                fieldType: text
+                label: Application
+                name: application
+                required: false
+              documents:
+                fieldType: multiValue
+                label: Documents
+                required: true
+                field:
+                  fieldType: link
+                  targetWorkspace: toc
+                  appName: toc-app
+                  identifierToPathConverter:
+                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+                  validators:
+                    isTocNode:
+                      class: com.tbscg.doosan.magnolia.dxp.core.compatibility.field.validator.PropertyFieldValidatorDefinition
+                      propertyName: jcr:primaryType
+                      propertyValue: dxp:toc
+                      workspace: toc
+                      errorMessage: Only document nodes can be selected
+                    published:
+                      class: com.tbscg.doosan.magnolia.dxp.core.compatibility.field.validator.PropertyFieldValidatorDefinition
+                      propertyName: mgnl:activationStatus
+                      propertyValue: true
+                      workspace: toc
+                      errorMessage: Only published documents can be selected
+      actions:
+        - name: commit
+        - name: cancel
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+        availability:
+          rules:
+            isNotVersionedRule:
+              implementationClass: info.magnolia.ui.framework.availability.IsNotVersionedRule
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition

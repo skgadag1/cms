@@ -1,0 +1,37 @@
+[
+  {
+    "schematic_id": "72301956ca6cd4a1332e7174807591d9",
+    "part_numbers": "V-1650, 7194198",
+    "product_line": "Loader Hydraulic",
+    "product_names": "T870",
+    "schematic_name": "With All Options"
+  },
+  {
+    "schematic_id": "8e785e4ae8720c309bd548734bd34a79",
+    "part_numbers": "7353444, 7329485, 7266824, 7242470, 7267103, 7284703, 7159366, 7214627, 7305995",
+    "product_line": "Loader Electric",
+    "product_names": "T870",
+    "schematic_name": "SJC Control with Options"
+  },
+  {
+    "schematic_id": "55a0e44ba66537b02f312d7812c3f3f3",
+    "part_numbers": "7322353, 7329485, 7266824, 7242470, 7267103, 7284703, 7159366, 7214627, 7305995",
+    "product_line": "Loader Electric",
+    "product_names": "T870",
+    "schematic_name": "Standard Control with Options"
+  },
+  {
+    "schematic_id": "d1f1798ca46a8220ed2cc175e752bb36",
+    "part_numbers": "7175321, 6732730, 7170531, 7180207, 7155024, 7195485, 7171105, 7219294, 7177692, 7190709, 7175017, 7173271, 7151940, 7191339, 6718872, 7201414, 7169753, 7169130, 7175287, 7153090, 7217483, 7231771, 7152108, 7151708, 7152344, 7175581, 7175670, 7308952, 7300058, 7335305, 7335295, 7330941, 7304333, 7354810",
+    "product_line": "Loader Electric",
+    "product_names": "T870",
+    "schematic_name": "Option Harnesses and Kits"
+  },
+  {
+    "schematic_id": "9e356b9a0f60d882e1cce6004364a5d8",
+    "part_numbers": "V-1649, 7194198",
+    "product_line": "Loader Hydraulic",
+    "product_names": "T870",
+    "schematic_name": "With No Options"
+  }
+]

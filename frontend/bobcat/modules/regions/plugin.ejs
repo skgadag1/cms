@@ -1,0 +1,60 @@
+import {inEditorEdit} from '~/helpers/vue-editor'
+import pathUtils from '~/plugins/utils/path'
+
+export default (context, inject) => {
+  if (!context.__hasRegions__) {
+    try {
+      // remove site prefix if needed
+      const path = pathUtils.pathFix(context.route.path) // regions assumption: url format is always: /region/language/node
+      const allRegions = <%= JSON.stringify(options.allRegions || {}, undefined, 2) %> // inject here all regions from module
+      const currentName = path[0]
+      const regionParam = context.route.query?.region
+      const languageParam = context.route.query?.lang
+      const currentRegionObject = allRegions.filter(x => x?.['@name'] ? [currentName, regionParam].includes(x['@name']) : false)?.[0]
+      const currentLabel = currentRegionObject?.title || currentName
+      const currentLanguageName = getCurrentLanguage(path, currentRegionObject, languageParam)
+      const currentLocale = getCurrentLocale(currentLanguageName, currentRegionObject)
+      const currentLanguageObject = currentRegionObject?.[currentLanguageName] || {}
+      const r = {
+        current: {
+          name: currentRegionObject?.['@name'] || currentName,
+          label: currentLabel,
+          language: {
+            ...currentLanguageObject,
+            name: currentLanguageName
+          },
+          locale: currentLocale
+        },
+        all: allRegions
+      }
+
+      context.$regions = r
+      inject('regions', r)
+      context.__hasRegions__ = true
+    } catch (e) {
+      console.warn('[Regions Plugin] Unable to determine region from path:', context.route.fullPath, e)
+    }
+  }
+}
+
+const getCurrentLanguage = (p, _regionNode, _languageParam = null) => {
+  if (_regionNode) { // checking if region exists to grab lang list
+    const _langFromUrl = p[1]
+    if (_regionNode[_langFromUrl]) return _langFromUrl // use language from url
+    else if (_languageParam && _regionNode[_languageParam]) return _languageParam // use language from url query param
+    else {
+      const defaultLang = _regionNode['@nodes']?.map(langName => _regionNode[langName]).find(lang => lang?.enabled === 'true' && lang?.isDefault === 'true')
+      const editorLang = _regionNode[_regionNode?.['@nodes']?.[0]]?.['@name'] || process.env.NUXT_DEFAULT_LANGUAGE
+      if (inEditorEdit) return editorLang
+      return defaultLang?.['@name'] || editorLang
+    }
+  }
+  return process.env.NUXT_DEFAULT_LANGUAGE
+}
+
+const getCurrentLocale = (_languageName, _regionNode) => {
+  if (_regionNode) {
+    return _regionNode?.[_languageName]?.locale || null // use language from url
+  }
+  return null
+}

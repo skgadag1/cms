@@ -1,0 +1,15 @@
+label: Multi Disclaimer Concepts
+$type: jcrMultiLinkField
+chooserId: facet-configuration:concept-chooser
+buttonSelectNewLabel: Select...
+field:
+  label: ''
+  $type: linkField
+  datasource:
+    $type: jcrDatasource
+    workspace: concepts
+    rootPath: /bobcat
+    describeByProperty: valuePlainText
+    allowedNodeTypes:
+      - mgnl:folder
+      - mgnl:content

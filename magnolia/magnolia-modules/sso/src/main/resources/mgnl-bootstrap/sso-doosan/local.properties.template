@@ -1,0 +1,4 @@
+jcr.auth.magnolia.author.okta.secret=<secret>
+jcr.auth.magnolia.kags.okta.secret=<secret>
+jcr.auth.magnolia.kags.smartequip.secret=<secret>
+jcr.auth.magnolia.kags.key.account.okta.secret=<secret>

@@ -1,0 +1,67 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: website
+depth: 30
+bypassWorkspaceAcls: true
+systemProperties:
+ - mgnl:template
+
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:area
+  - mgnl:component
+  - mgnl:contentNode
+
+references:
+  assetReference:
+    propertyName: image
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+  linkReferenceWithRichTextContent:
+    propertyName: content
+    referenceResolver:
+      class: info.magnolia.rest.reference.link.RichTextLinkResolverDefinition
+  pageReference:
+    propertyName: pageUrl
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+  contractCodes:
+    propertyName: contractCodes
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  partsContractCodes:
+    propertyName: partsContractCodes
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  contractTypes:
+    propertyName: contractTypes
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  softwareCategory:
+    propertyName: softwareCategory
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  softwareIcon:
+    propertyName: softwareIcon
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: concepts
+      expand: true
+      generateLink: false
+referenceRepeat: true
+referenceDepth: 10

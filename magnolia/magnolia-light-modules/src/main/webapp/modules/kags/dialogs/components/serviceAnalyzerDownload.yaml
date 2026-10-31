@@ -1,0 +1,53 @@
+form:
+  label: Service Analyzer Downloads
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+        - name: titleField
+          fieldType: text
+          label: Title
+          required: true
+        - name: subtitleField
+          fieldType: text
+          label: Subtitle
+          required: true
+
+        - !include:/kags/includes/separator.yaml
+
+        - name: softwareDownloadlabel
+          fieldType: text
+          label: 'Software Download Link Label'
+          required: true
+
+        - !include:/kags/includes/s3-file.yaml
+          name: softwareDownloadfile
+          label: Software Download File
+          required: true
+
+        - !include:/kags/includes/separator.yaml
+
+        - name: documentDownloads
+          fieldType: multiValue
+          label: Documents Download Links
+          required: true
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: documentDownload
+            label: Document Download Link
+            fieldType: composite
+            layout: vertical
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - !include:/kags/includes/icons-field.yaml
+                required: true
+              - name: label
+                fieldType: text
+                label: 'Label'
+                required: true
+              - !include:/kags/includes/dam-asset.yaml
+                name: asset
+                required: true
+                label: Asset
+
+actions: !include:/kags/includes/common-actions.yaml

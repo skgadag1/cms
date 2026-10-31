@@ -1,0 +1,194 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Dealer Inventory Carousel
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    variant:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Light gray
+            value: light
+      defaultValue: white
+      label: Background color
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    description:
+      $type: cloudinaryRichText
+      label: Search description
+      i18n: true
+    noResultsDescription:
+      $type: cloudinaryRichText
+      label: Not found description
+      i18n: true
+    model:
+      label: Product model or category
+      $type: linkField
+      buttonSelectNewLabel: Select...
+      chooserId: bobcat:chooser/product-chooser
+      required: true
+      datasource:
+        $type: jcrDatasource
+        workspace: products
+        allowedNodeTypes:
+          - mgnl:folder
+          - dxp:category
+          - dxp:subcategory
+          - dxp:product
+          - dxp:productGroup
+    distanceLabel:
+      $type: textField
+      label: Distance Label
+      i18n: true
+      required: true
+    locationLabel:
+      $type: textField
+      label: Location Label
+      i18n: true
+      required: true
+    locationPlaceholder:
+      $type: textField
+      label: Location Placeholder
+      i18n: true
+      required: true
+    autoDetect:
+      $type: textField
+      label: ZipCode Auto Detect label
+      i18n: true
+      required: true
+    searchLabel:
+      $type: textField
+      label: Search Button Label
+      i18n: true
+      required: true
+    changeLocationLabel:
+      $type: textField
+      label: Change Location Label
+      i18n: true
+      required: true
+    exploreInventoryLabel:
+      $type: textField
+      label: Explore more inventory Label
+      i18n: true
+      required: true
+    min:
+      $type: textField
+      type: java.lang.Integer
+      label: Distance minimum value
+      defaultValue: 25
+      description: (max - min) must be divisible by interval
+      required: true
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      validators:
+        number:
+          $type: regexpValidator
+          pattern: ^0*[1-9]\d*$
+          errorMessage: Enter a valid number - the value must be greater than 0
+    max:
+      $type: textField
+      type: java.lang.Integer
+      label: Distance maximum value
+      description: (max - min) must be divisible by interval
+      defaultValue: 100
+      required: true
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      validators:
+        number:
+          $type: regexpValidator
+          pattern: ^(?:[2-9]|\d\d\d*)$
+          errorMessage: Enter a valid number - the value must be greater than 1
+    interval:
+      $type: textField
+      type: java.lang.Integer
+      label: Distance interval value
+      description: (max - min) must be divisible by interval
+      defaultValue: 25
+      required: true
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      validators:
+        number:
+          $type: regexpValidator
+          pattern: ^0*[1-9]\d*$
+          errorMessage: Enter a valid number - the value must be greater than 0
+    apiKey:
+      $type: textField
+      label: Google API Key
+      required: true
+    validationMessage:
+      $type: textField
+      label: Location Validation Message
+      i18n: true
+    limit:
+      $type: textField
+      type: java.lang.Integer
+      label: Maximum results (limit parameter)
+      description: Parameter sent to backend to limit results. Default 16
+      placeholder: '16'
+      defaultValue: 16
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      validators:
+        number:
+          $type: regexpValidator
+          pattern: ^0*[1-9]\d*$
+          errorMessage: Enter a valid number - the value must be greater than 0
+    showCTA:
+      $type: checkBoxField
+      label: Show CTA
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    ctaLabel:
+      label: CTA Label
+      $type: textField
+      i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: variant
+          - name: description
+          - name: noResultsDescription
+          - name: model
+      inputs:
+        label: Inputs
+        fields:
+          - name: distanceLabel
+          - name: locationLabel
+          - name: locationPlaceholder
+          - name: autoDetect
+          - name: min
+          - name: max
+          - name: interval
+      configuration:
+        label: Configuration
+        fields:
+          - name: apiKey
+          - name: limit
+      notifications:
+        label: Notifications
+        fields:
+          - name: validationMessage
+      buttons:
+        label: Buttons
+        fields:
+          - name: searchLabel
+          - name: changeLocationLabel
+          - name: exploreInventoryLabel
+          - name: ctaLabel
+          - name: showCTA
+      inheritableSection:
+      anchor:
+      meta:
+light: false

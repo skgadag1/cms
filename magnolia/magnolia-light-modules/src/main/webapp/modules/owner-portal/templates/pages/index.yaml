@@ -1,0 +1,13 @@
+title: 'Owner Portal SPA page'
+templateScript: https://templateScriptUrlPlaceholder
+getTemplateScriptFrom: custom-renderer.config.yaml
+pageType: owner-portal
+dialog: owner-portal:pages/index
+type: content
+renderType: spaExtended
+class: com.tbscg.doosan.magnolia.custom.renderer.definitions.CustomSpaRenderableDefinition
+areas:
+  main:
+    title: Main area
+    availableComponents:
+      !include:/owner-portal/includes/main-area-components.yaml

@@ -1,0 +1,3 @@
+'backupRegionsApiCommandConfig':
+  's3Bucket': 'db-dxp-magnolia-backup-product-qa'
+  'apiUrl': 'https://bobcat.api.qa.dice-tools.com/content/author/api/content/regions/bobcat/@nodes'

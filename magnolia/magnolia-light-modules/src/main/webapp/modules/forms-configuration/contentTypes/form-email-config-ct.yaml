@@ -1,0 +1,15 @@
+name: dxp:formEmailConfiguration
+
+datasource:
+  workspace: formsEmailConfig
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+model:
+  nodeType: dxp:formEmailConfiguration
+  properties:
+    - name: title
+    - name: emailTemplate
+    - name: senderEmail
+    - name: recipientEmail

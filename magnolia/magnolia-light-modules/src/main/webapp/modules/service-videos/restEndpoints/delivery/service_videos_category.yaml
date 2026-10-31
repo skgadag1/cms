@@ -1,0 +1,9 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: category
+depth: 0
+bypassWorkspaceAcls: true
+rootPath: /
+limit: 100
+strict: true
+nodeTypes:
+  - mgnl:category

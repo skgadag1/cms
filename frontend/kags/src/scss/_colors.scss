@@ -1,0 +1,105 @@
+// Color system
+@use 'sass:map';
+
+$white:    #fff !default;
+$gray-100: #f1f1f1;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #cccccc;
+$gray-500: #afafaf;
+$gray-600: #898989;
+$gray-700: #717171;
+$gray-800: #333333;
+$gray-900: #212529 !default;
+$black: #000000 !default;
+$light-gray: #C8C8C8 !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map.merge(
+                (
+                        "100": $gray-100,
+                        "200": $gray-200,
+                        "300": $gray-300,
+                        "400": $gray-400,
+                        "500": $gray-500,
+                        "600": $gray-600,
+                        "700": $gray-700,
+                        "800": $gray-800,
+                        "900": $gray-900
+                ),
+                $grays
+);
+
+$blue:      #1582E5;
+$indigo:    #6610f2 !default;
+$purple:    #6f42c1 !default;
+$pink:      #e83e8c !default;
+$red:       #992100;
+$orange:    #ff3600;
+$yellow:    #ff9f0a;
+$green:     #0aa656;
+$teal:      #20c997 !default;
+$cyan:      #17a2b8 !default;
+$secondary: #8aaabe;
+$tertiary:  #d5dee3;
+$dark-grey: #777;
+$deep-green:#158737;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map.merge(
+                (
+                        "blue":       $blue,
+                        "indigo":     $indigo,
+                        "purple":     $purple,
+                        "pink":       $pink,
+                        "red":        $red,
+                        "orange":     $orange,
+                        "yellow":     $yellow,
+                        "green":      $green,
+                        "teal":       $teal,
+                        "cyan":       $cyan,
+                        "white":      $white,
+                        "gray":       $gray-600,
+                        "gray-dark":  $gray-800,
+                        "secondary":  $secondary,
+                        "black":      $black
+                ),
+                $colors
+);
+
+$primary:       $orange;
+$secondary:     $secondary;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+$hover-default: rgba(0, 0, 0, 0.075);
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map.merge(
+                (
+                        "primary":    $primary,
+                        "secondary":  $secondary,
+                        "success":    $success,
+                        "info":       $info,
+                        "warning":    $warning,
+                        "danger":     $danger,
+                        "light":      $light,
+                        "dark":       $dark,
+                        "active":     $deep-green
+                ),
+                $theme-colors
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval:      8% !default;
+
+$min-contrast-ratio:        3;
+$color-contrast-dark:       $black;
+$color-contrast-light:      $white !default;
+

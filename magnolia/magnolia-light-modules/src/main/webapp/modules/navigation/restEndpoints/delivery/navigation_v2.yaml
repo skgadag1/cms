@@ -1,0 +1,38 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/navigation
+workspace: navigation
+depth: 10
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:lastModified
+
+nodeTypes:
+  - mgnl:folder
+  - mgnl:contentNode
+  - dxp:navigationMegaMenu
+  - dxp:navigationMegaList
+  - dxp:navigationRow
+  - dxp:navigationColumn
+  - dxp:navigationMegaListColumn
+  - dxp:navigationList
+  - dxp:navigationLink
+  - dxp:navigationItem
+childNodeTypes:
+  - mgnl:folder
+  - mgnl:contentNode
+  - dxp:navigationMegaMenu
+  - dxp:navigationMegaList
+  - dxp:navigationRow
+  - dxp:navigationColumn
+  - dxp:navigationMegaListColumn
+  - dxp:navigationList
+  - dxp:navigationLink
+  - dxp:navigationItem
+references:
+  - name: pageReference
+    propertyName: pageUrl
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.CustomUrlReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true

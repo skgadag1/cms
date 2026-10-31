@@ -1,0 +1,3 @@
+config:
+  customPathResolutionEnabled: true
+  ssrApiKeySecretName: api-gateway/db-dxp-cms/{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-CloudFrontApiKey-Public

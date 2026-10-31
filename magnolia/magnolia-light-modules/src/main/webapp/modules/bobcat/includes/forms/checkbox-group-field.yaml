@@ -1,0 +1,23 @@
+!include:/bobcat/includes/forms/shared/form-field.yaml
+label: Checkbox Group Field
+properties:
+  label:
+    label: Label
+  name:
+    label: Name
+  outputType:
+    !include:/bobcat/includes/forms/shared/output-type.yaml
+  validationMessage:
+    $type: textField
+    label: Validation message
+    i18n: true
+  options:
+    i18n: true
+    $type: jcrMultiField
+    required: true
+    label: Options
+    itemProvider:
+      $type: jcrChildNodeProvider
+    buttonSelectAddLabel: Add option
+    field:
+      !include:/bobcat/includes/forms/shared/list-option.yaml

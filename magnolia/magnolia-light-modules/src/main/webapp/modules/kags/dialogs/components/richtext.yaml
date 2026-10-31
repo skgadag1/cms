@@ -1,0 +1,42 @@
+label: Configuration
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      required: true
+    richText:
+      $type: cloudinaryRichText
+      images: true
+      label: Description
+      required: true
+    halfWidth:
+      $type: checkBoxField
+      label: Display half width
+      buttonLabel: Select to display half width
+      defaultValue: false
+      type: java.lang.Boolean
+    imageUrl:
+      !include:/kags/includes/dam-asset-v2.yaml
+      label: Optional image
+      required: false
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+  layout:
+    $type: tabbedLayout
+    tabs:
+      config:
+        label: Configuration
+        fields:
+          - name: title
+          - name: richText
+          - name: halfWidth
+          - name: imageUrl
+      visibilityTab:
+        label: Component visibility
+        fields:
+          - name: forKeyAccounts
+          - name: forSupertechs
+  light: false

@@ -1,0 +1,83 @@
+$type: switchableField
+field:
+  $type: radioButtonGroupField
+  layout: horizontal
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: page
+        label: Magnolia page
+        value: page
+      - name: custom
+        label: Custom link URL
+        value: custom
+      - name: localAnchor
+        label: Same-page anchor
+        value: localAnchor
+  defaultValue: page
+itemProvider:
+  $type: jcrChildNodeProvider
+forms:
+  custom:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          customUrl:
+            label: Custom link URL
+            description: 'Remember to add protocol (http://, https://) for external links'
+            $type: textField
+            required: true
+          customLabel:
+            label: Link label
+            $type: textField
+            i18n: true
+          target:
+            !include:/bobcat/includes/anchor-target.yaml
+  page:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          pageUrl:
+            label: Magnolia page link
+            $type: pageLinkField
+            required: true
+          pageLabel:
+            label: Link label
+            placeholder: << target page title >>
+            $type: textField
+            i18n: true
+          anchorID:
+            label: Page anchor ID
+            description: 'Optional hash fragment (without #) appended to the page URL'
+            $type: textField
+          target:
+            !include:/bobcat/includes/anchor-target.yaml
+  localAnchor:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          anchorID:
+            label: Anchor ID
+            description: 'Same-page hash target (without #). Must match a component Anchor link ID.'
+            $type: textField
+            required: true
+          localAnchorLabel:
+            label: Link label
+            $type: textField
+            i18n: true
+          target:
+            !include:/bobcat/includes/anchor-target.yaml
+requied: true
+label: Url

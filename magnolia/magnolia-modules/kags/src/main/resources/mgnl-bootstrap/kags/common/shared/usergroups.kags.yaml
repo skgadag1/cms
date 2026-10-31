@@ -1,0 +1,7 @@
+'kags': 
+  jcr:primaryType: 'mgnl:folder'
+  'KeyAccount': 
+    jcr:primaryType: 'mgnl:group'
+    'groups': 
+    'roles': 
+      '0': '8e653df6-1cad-4cde-8200-86704f0dca32'

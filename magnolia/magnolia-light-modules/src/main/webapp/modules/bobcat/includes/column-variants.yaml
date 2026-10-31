@@ -1,0 +1,16 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: 1
+      label: 1 column
+      value: 1
+    - name: 2
+      label: 2 columns
+      value: 2
+    - name: 3
+      label: 3 columns
+      value: 3
+defaultValue: 3
+label: Columns
+required: true

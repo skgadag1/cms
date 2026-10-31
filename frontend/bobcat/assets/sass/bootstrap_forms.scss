@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/functions';
+@import 'variables';
+@import 'utils';
+@import '~bootstrap/scss/mixins';
+
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/input-group';
+@import '~bootstrap/scss/modal';
+
+@import '{/^\.submit-button(.*)/} from ~/assets/sass/forms.scss';
+@import '{/^\.sticky-bar(.*)/} from ~/assets/sass/forms.scss';
+@import '{/^\.ngb-form(.*)/} from ~/assets/sass/forms.scss';

@@ -1,0 +1,34 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: contactUrl
+          label: Url to contact page
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: privacyPolicyUrl
+          label: Url to privacy policy page
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: termOfUseUrl
+          label: Url to term of use page
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+
+actions: !include:/kags/includes/common-actions.yaml

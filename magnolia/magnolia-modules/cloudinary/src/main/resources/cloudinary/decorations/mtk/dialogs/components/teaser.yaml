@@ -1,0 +1,35 @@
+form:
+  tabs:
+    - name: tabMain
+      fields:
+        - !include /mtk/includes/linkSwitchableField.yaml
+        - name: teaserTitle
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+        - name: teaserAbstract
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          rows: 5
+          i18n: true
+        - name: image
+          fieldType: assetLinkField
+          appName: dam-external-app
+          buttonSelectNewLabel: Select asset
+          buttonSelectOtherLabel: Change asset
+          identifierToPathConverter:
+            class: info.magnolia.dam.external.app.field.AssetCompositeIdKeyTranslator
+          contentPreviewDefinition:
+            contentPreviewClass: com.tbscg.doosan.magnolia.cloudinary.field.compatibility.CloudinaryAssetPreviewComponent
+        - name: hideTeaserImage
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          defaultValue: false
+          type: Boolean
+        - name: highlight
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          defaultValue: false
+          type: Boolean
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

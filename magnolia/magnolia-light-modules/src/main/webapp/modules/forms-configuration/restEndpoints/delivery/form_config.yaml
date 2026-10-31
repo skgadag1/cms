@@ -1,0 +1,57 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/forms/config
+workspace: formsConfiguration
+depth: 20
+referenceDepth: 15
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:lastModified
+nodeTypes:
+  - mgnl:folder
+  - dxp:formConfiguration
+  - mgnl:contentNode
+childNodeTypes:
+  - mgnl:folder
+  - dxp:formConfiguration
+  - mgnl:contentNode
+
+references:
+  - name: formsEmailReference
+    propertyName: email
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: formsEmailConfig
+      expand: true
+      generateLink: false
+  - name: formsTypesRefence
+    propertyName: dxpFormConfigurationElement
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: formsType
+      expand: true
+      generateLink: false
+  - name: formsTypeReference
+    propertyName: predefined
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: formsType
+      expand: true
+      generateLink: false
+  - name: excludedCategoriesReference
+    propertyName: excludedCategory
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.KeySelectionProviderDefinition
+      targetWorkspace: products
+      itemsToResolve:
+        - title
+      expand: false
+      generateLink: false
+  - name: excludedSubcategoriesReference
+    propertyName: excludedSubcategory
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.KeySelectionProviderDefinition
+      targetWorkspace: products
+      itemsToResolve:
+        - title
+      expand: false
+      generateLink: false

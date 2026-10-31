@@ -1,0 +1,14 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: displayParamsList
+          fieldType: multiValue
+          label: Parameters to display
+          field:
+            name: param
+            fieldType: text
+            label: Parameter
+
+actions: !include:/kags/includes/common-actions.yaml

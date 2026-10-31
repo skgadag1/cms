@@ -1,0 +1,6 @@
+'workflows':
+  'jcr:primaryType': mgnl:content
+  'localizationsPackagePublication':
+    'id': com.tbscg.doosan.magnolia.dxp.workflow.LocalizationsPackagePublication
+    'resourcePath': localizations/workflows/LocalizationsPackagePublication.bpmn2
+    'type': bpmn

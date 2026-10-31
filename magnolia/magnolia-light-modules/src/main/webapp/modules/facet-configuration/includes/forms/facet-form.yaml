@@ -1,0 +1,105 @@
+properties:
+  jcrName:
+    label: Facet Name
+    description: Facet name must be unique within own group
+    $type: textField
+    required: true
+    validators:
+      isUniqueValidator:
+        $type: IsFacetFieldUnique
+        fieldName: jcrName
+        nodeType: dxp:facet
+  id:
+    $type: textFieldWithValidationAlwaysEnabled
+    label: Facet ID
+    description: Facet ID is required for Numeric and String Facets and for Tag Facets with manual provider
+    validators:
+      isIdRequiredValidator:
+        $type: IsFacetIdFieldRequired
+        facetTypeFieldName: Facet type
+        facetProviderFieldName: Tag Facet ID Provider
+        tagFacet: tagFacets
+        facetProvider: manual
+  tagFacetId:
+    !include:/facet-configuration/dialogs/switchable-facet-id-field.yaml
+  combineAs:
+    label: Tag multi-select behavior
+    $type: comboBoxField
+    datasource:
+      $type: optionListDatasource
+      defaultValue: AND
+      options:
+        - name: AND
+          label: Should match both values (AND)
+          value: AND
+        - name: OR
+          label: Match any one value (OR)
+          value: OR
+    description: How should multiple selections be handled for this facet?
+  label:
+    label: Facet Label
+    description: Facet label must be unique within own group
+    $type: textField
+    i18n: true
+    required: true
+    validators:
+      isUniqueValidator:
+        $type: IsFacetFieldUnique
+        fieldName: label
+        nodeType: dxp:facet
+  sorting:
+    label: Sortable
+    $type: checkBoxField
+    buttonLabel: Select to use for sorting
+  sortDesc:
+    label: Descending sorting
+    $type: checkBoxField
+    buttonLabel: Select to enable descending sorting
+    defaultValue: false
+    description: Default value is ascending
+    type: java.lang.Boolean
+  filtering:
+    label: Faceted filtering
+    $type: checkBoxField
+    buttonLabel: Select to use for faceted filtering
+  hideFacet:
+    label: Hide facet
+    $type: checkBoxField
+    buttonLabel: Select to hide facet on the client side
+  facetType:
+    label: Facet type
+    $type: comboBoxField
+    emptySelectionAllowed: true
+    datasource:
+      $type: optionListDatasource
+      options:
+        - name: numericFacets
+          label: Numeric Facet
+          value: numericFacets
+        - name: stringFacets
+          label: String Facet
+          value: stringFacets
+        - name: tagFacets
+          label: Tag Facet
+          value: tagFacets
+  switchOffSortAlphanumeric:
+    label: Tags sorting alphanumeric
+    $type: checkBoxField
+    buttonLabel: Select to switch off alphabetical order of facet tags
+layout:
+  $type: tabbedLayout
+  tabs:
+    basic:
+      label: Basic Info
+      fields:
+        - name: jcrName
+        - name: id
+        - name: tagFacetId
+        - name: combineAs
+        - name: label
+        - name: sorting
+        - name: sortDesc
+        - name: filtering
+        - name: hideFacet
+        - name: facetType
+        - name: switchOffSortAlphanumeric

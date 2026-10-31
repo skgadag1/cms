@@ -1,0 +1,28 @@
+ ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fsdelete
+spec:
+  template:
+    metadata:
+      name: fsdelete
+    spec:
+      securityContext:
+        runAsUser: 5000
+        runAsGroup: 5000
+      containers:
+        - name: fsdelete
+          image: {{ .Values.image.tools.repository}}:{{ .Values.image.tools.tag }}
+          imagePullPolicy: {{ .Values.image.tools.pullPolicy }}
+          command: ['sh', '-c', 'if [ -d "/data/{{ .Release.Namespace }}-magnolia-author-0" ] || [ -d "/data/{{ .Release.Namespace }}-magnolia-public-0" ] || [ -d "/data/{{ .Release.Namespace }}-magnolia-public-1" ] || [ -d "/data/{{ .Release.Namespace }}-magnolia-public-2" ] || [ -d "/data/{{ .Release.Namespace }}-magnolia-public-3" ] || [ -d "/data/{{ .Release.Namespace }}-magnolia-publisher-0" ]; then rm -rf /data/{{ .Release.Namespace }}-magnolia-author-0 /data/{{ .Release.Namespace }}-magnolia-public-0 /data/{{ .Release.Namespace }}-magnolia-public-1 /data/{{ .Release.Namespace }}-magnolia-public-2 /data/{{ .Release.Namespace }}-magnolia-public-3 /data/{{ .Release.Namespace }}-magnolia-publisher-0;fi']
+          volumeMounts:
+            - name: magnolia-data
+              mountPath: /data
+      volumes:
+      - name: magnolia-data
+        nfs:
+          server: {{ .Values.efs.data.host }}
+          path: {{ .Values.efs.data.dir }}
+      restartPolicy: Never
+  backoffLimit: 0

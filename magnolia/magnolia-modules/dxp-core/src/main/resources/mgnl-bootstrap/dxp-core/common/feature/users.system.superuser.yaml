@@ -1,0 +1,39 @@
+'superuser':
+  'email': ''
+  'enabled': true
+  'failedLoginAttempts': 0
+  'jcr:primaryType': 'mgnl:user'
+  'jcr:uuid': '51ae3379-67cf-4994-9e05-f97cb8bc3e4a'
+  'jcrName': 'superuser'
+  'language': 'en'
+  'lastaccess': 2020-08-27T11:00:49.534Z
+  'permissionConfig': 'true'
+  'permissionConfig_SWITCH': 'true'
+  'permissionRoles': 'true'
+  'permissionRoles_SWITCH': 'true'
+  'permissionUsers': 'true'
+  'permissionUsers_SWITCH': 'true'
+  'pswd': '$2a$12$h89c6FNtBUu2z4cotPEnm.uduDOaQ2iNEEg7uRuRfy3HX6VliWQxe'
+  'title': 'superuser'
+  'roles':
+    '0': 'bc2046da-b3d5-4cf5-9847-c2b6dbe145ff'
+    '00': 'feb7a52a-1704-41af-99d5-975af8c1357a'
+    'jcr:uuid': '5ac453ed-f807-49d9-84e1-452b22654d38'
+  'acl_users':
+    'jcr:uuid': 'd74b0f0e-f65e-403e-b559-4b33ba22365f'
+    '0':
+      'jcr:uuid': '2c323ae8-055a-4987-8480-239227977ffc'
+      'path': '/system/superuser/*'
+      'permissions': 63
+    '00':
+      'jcr:uuid': '0c099b4a-c6e4-46ea-a5a0-26f8066ad2da'
+      'path': '/system/superuser'
+      'permissions': 8
+  'acl_userroles':
+    'jcr:uuid': 'ef79760c-d450-4540-b642-ecbcd916b418'
+  'acl_config':
+    'jcr:uuid': 'f6586259-2ae0-45f3-b775-f2620b32b8d7'
+    'mgnl:activationStatus': true
+  'groups':
+    '0': '14540bfe-4e6f-4920-88d5-534d16156ca3'
+    'jcr:uuid': '1d38b5ed-8d75-46f9-b574-10f4c84eb08f'

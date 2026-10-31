@@ -1,0 +1,73 @@
+id:
+region:
+title:
+  label: Title
+  $type: textField
+  i18n: true
+htag:
+  !include:/bobcat/includes/htag-field.yaml
+variant:
+  $type: comboBoxField
+  label: Color Variant
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: white
+        label: White
+        value: white
+      - name: light
+        label: Light
+        value: light
+      - name: dark
+        label: Dark
+        value: dark
+  defaultValue: white
+content:
+  $type: cloudinaryRichText
+  alignment: true
+  images: true
+  label: Content
+  i18n: true
+cta:
+  label: Buttons (max 3 items)
+  description: Please define 0 - 3 buttons.
+  $type: jcrMultiField
+  i18n: false
+  minItems: 0
+  maxItems: 3
+  itemCountErrorMessage: "Buttons's number should be between 0-3"
+  field:
+    label: CTAs
+    name: compositeField
+    $type: compositeField
+    properties:
+      link:
+        !include:/bobcat/includes/page-link-or-url-field.yaml
+        label: Button
+        required: true
+        defaultValue: none
+        i18n: true
+        field:
+          datasource:
+            options:
+              - name: none
+                label: None
+                value: none
+fontSize:
+  $type: comboBoxField
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: small
+        label: Small
+        value: small
+      - name: regular
+        label: Regular
+        value: regular
+  label: Font Size
+  defaultValue: regular
+truncated:
+  $type: checkBoxField
+  label: Show More
+  type: java.lang.Boolean
+  defaultValue: false

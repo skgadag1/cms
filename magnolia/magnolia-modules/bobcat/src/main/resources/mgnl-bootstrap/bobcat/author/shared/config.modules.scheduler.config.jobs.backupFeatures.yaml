@@ -1,0 +1,11 @@
+backupFeatures:
+  catalog: backup
+  command: backupCommand
+  'cron': '0 0 3 * * *'
+  description: 'Backup website in s3Bucket, It runs everyday at 03:00 a.m. server time (UTC)'
+  enabled: true
+  params:
+    workspacesToSave: "features"
+    destination: "backup"
+    backupOnlyLatest: false
+    backupRoot: false

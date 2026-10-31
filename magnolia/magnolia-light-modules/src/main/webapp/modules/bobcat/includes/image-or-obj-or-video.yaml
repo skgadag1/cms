@@ -1,0 +1,22 @@
+$type: compositeField
+layout:
+  $type: form
+label: Asset
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  src:
+    !include:/bobcat/includes/dam-image-or-obj-or-video.yaml
+    label: Select asset
+  AssetAlt:
+    $type: textField
+    label: Asset alt
+    i18n: true
+  AssetTitle:
+    $type: textField
+    label: Asset title
+    i18n: true
+  poster:
+    !include:/bobcat/includes/dam-image.yaml
+    label: Select video poster
+    description: 'only for videos'

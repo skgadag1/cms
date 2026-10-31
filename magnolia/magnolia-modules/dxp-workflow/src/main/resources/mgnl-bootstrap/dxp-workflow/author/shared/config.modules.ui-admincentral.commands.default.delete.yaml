@@ -1,0 +1,8 @@
+'delete':
+  'deactivate':
+    'class': 'info.magnolia.commands.DelegateCommand'
+    'commandName': 'default-unpublish'
+    'enabled': 'true'
+  'delete':
+    'class': 'com.tbscg.doosan.magnolia.dxp.workflow.command.DxpDeleteCommand'
+    'enabled': true

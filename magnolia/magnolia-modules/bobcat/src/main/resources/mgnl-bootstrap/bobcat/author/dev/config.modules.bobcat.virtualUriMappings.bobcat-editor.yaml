@@ -1,0 +1,6 @@
+'bobcat-editor':
+  'class': 'com.tbscg.doosan.magnolia.bobcat.mapping.RegexpVirtualUriMappingWithKey'
+  'fromUri': '^/bobcat_editor/(.*)'
+  'site': 'bobcat'
+  'toUri': 'key-proxy:https://ssr-author.dev.bobcat.com/$1'
+  'apiKeyType': 'ssr'

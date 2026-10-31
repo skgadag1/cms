@@ -1,0 +1,14 @@
+baseUrl: https://bobcat.api.dev.dice-tools.com/products
+restCalls:
+  specs:
+    method: get
+    entityClass: com.fasterxml.jackson.databind.JsonNode
+    path: /bobcat/{id}/specs
+    queryParameters: { locale: "{locale}", business_unit: "{business_unit}", uom: "{uom}", specLevel: "{specLevel}", region: "{region}", modelType: "{modelType}" }
+    defaultValues:
+      locale: "en-US"
+      business_unit: "emea"
+      uom: "metric"
+      specLevel: "3"
+      region: ""
+      modelType: "product"

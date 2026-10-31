@@ -1,0 +1,4 @@
+renderType: ftlExtended
+title: Downloads Component V2
+templateScript: /kags/templates/components/downloadV2.ftl
+dialog: kags:components/downloadV2

@@ -1,0 +1,5 @@
+renderType: freemarker
+title: Schematics Component
+templateScript: /kags/templates/components/schematics.ftl
+dialog: kags:components/schematics
+moveable: false

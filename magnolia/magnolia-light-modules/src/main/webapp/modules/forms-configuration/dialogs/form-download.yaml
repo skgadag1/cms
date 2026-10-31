@@ -1,0 +1,47 @@
+label: Download Configuration
+form:
+  properties:
+    downloadPeriod:
+      label: Download period
+      $type: compositeField
+      description: The time "from and to" from which you want to create a summary
+      layout:
+        $type: horizontal
+      itemProvider:
+        $type: currentItemProvider
+      properties:
+        from:
+          label: from
+          $type: dateFieldWithValidationAlwaysEnabled
+          defaultValue: now
+          validators:
+            dateRangeValidator:
+              $type: IsValidDateRange
+              startDateFieldName: from
+              endDateFieldName: to
+              period: P6M #TODO To change after business response
+        to:
+          label: to
+          $type: dateFieldWithValidationAlwaysEnabled
+          defaultValue: now
+          validators:
+            dateRangeValidator:
+              $type: IsValidDateRange
+              startDateFieldName: from
+              endDateFieldName: to
+              period: P6M #TODO change after business response
+actions:
+  download:
+    label: Download
+    $type: downloadFormSummary
+  cancel:
+    $type: closeAction
+
+footerLayout:
+  $type: defaultEditorActionLayout
+  primaryActions:
+    - cancel
+  secondaryActions:
+    - download
+
+light: false

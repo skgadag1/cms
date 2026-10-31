@@ -1,0 +1,38 @@
+main-area-components-attachment-required:
+  # temporary list below
+  ModelPricing:
+    id: bobcat:components/modelPricing
+  EvolutionAttachmentPricing:
+    id: bobcat:components/evolution-attachment-pricing
+  ProductOverview:
+    id: bobcat:components/productOverview
+  AttachmentInfo:
+    id: bobcat:components/attachmentInfo
+  AttachmentSpecifications:
+    id: bobcat:components/attachmentSpecifications
+  PartsFinder:
+    id: bobcat:components/partsFinder
+  Separator:
+    id: bobcat:components/separator
+  Features:
+    id: bobcat:components/features
+  AttachmentsPDP:
+    id: bobcat:components/attachment-related-products
+  RegionSelector:
+    id: bobcat:components/region-selector
+  PackagesAndOptions:
+    id: bobcat:components/packages-and-options
+  DealerModelPrint:
+    id: bobcat:components/dealer-model-print
+  EquipmentModelPrint:
+    id: bobcat:components/equipment-model-print
+  DealerModelPricing:
+    id: bobcat:components/dealer-model-pricing
+  DealerModelPricingV2:
+    id: bobcat:components/dealer-model-pricing-v2
+  StickyCTA:
+    id: bobcat:components/sticky-cta
+  SideNavGallery:
+    id: bobcat:components/side-nav-gallery
+  EvolutionTable:
+    id: bobcat:components/evolution-table

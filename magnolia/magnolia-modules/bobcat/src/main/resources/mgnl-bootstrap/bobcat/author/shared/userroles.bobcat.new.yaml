@@ -1,0 +1,162 @@
+'new':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-bobcat-admins':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': feea3890-d943-41a3-bfd2-e9a42a0fc557
+    'acl_userroles':
+      '0':
+        'path': /bobcat/dxp-bobcat-admins
+        'permissions': 8
+    'acl_uri':
+      '0':
+        'path': '*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': /
+        'permissions': 63
+      '00':
+        'path': /*
+        'permissions': 63
+    'acl_config':
+      '0':
+        'path': /
+        'permissions': 63
+      '00':
+        'path': /*
+        'permissions': 63
+    'acl_resources':
+      '0':
+        'path': /
+        'permissions': 8
+      '00':
+        'path': /*
+        'permissions': 8
+    'acl_tasks': &readWriteAccessAllRegions
+      '0':
+        'path': /bobcat
+        'permissions': 63
+      '00':
+        'path': /bobcat/*
+        'permissions': 63
+    'acl_marketing-tags':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_regions':
+      <<: *readWriteAccessAllRegions
+    'acl_website':
+      <<: *readWriteAccessAllRegions
+    'acl_products':
+      <<: *readWriteAccessAllRegions
+    'acl_features':
+      <<: *readWriteAccessAllRegions
+    'acl_attachments':
+      <<: *readWriteAccessAllRegions
+    'acl_dxpTags':
+      <<: *readWriteAccessAllRegions
+    'acl_facets':
+      <<: *readWriteAccessAllRegions
+    'acl_navigation':
+      <<: *readWriteAccessAllRegions
+    'acl_concepts':
+      <<: *readWriteAccessAllRegions
+    'acl_formsMapping':
+      <<: *readWriteAccessAllRegions
+    'acl_formsType':
+      <<: *readWriteAccessAllRegions
+    'acl_formsEmailConfig':
+      <<: *readWriteAccessAllRegions
+    'acl_marketingCampaigns':
+      <<: *readWriteAccessAllRegions
+    'acl_formsConfiguration':
+      <<: *readWriteAccessAllRegions
+    'acl_faq':
+      <<: *readWriteAccessAllRegions
+    'acl_translationBatches':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_translationQueues':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_translationHistories':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-mediatracker-users':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': '10661bdf-635c-43f0-af5d-2830e1a8e5f5'
+    'title': 'Bobcat MediaTracker Users'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/dxp-bobcat-mediatracker-users'
+        'permissions': 8
+      '00':
+        'path': '/dxp-bobcat-mediatracker-users'
+        'permissions': 8
+      '01':
+        'path': '/dxp-bobcat-mediatracker-users/*'
+        'permissions': 8
+    'acl_uri':
+      '0':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-concepts-app-common':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': '32771aca-9f7f-46ba-9d16-d3bb0f8e5efe'
+    'acl_concepts':
+      '0':
+        'path': '/bobcat/common'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/common/*'
+        'permissions': 63
+      '02':
+        'path': '/bobcat'
+        'permissions': 8
+    'acl_uri':
+      '0':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-technical-admins':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': cf89e743-7f03-4cf1-a5df-e99c0fa90b64
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/dxp-bobcat-technical-admins'
+        'permissions': 8
+    'acl_uri':
+      '0':
+        'path': '/*'
+        'permissions': 63
+    'acl_products':
+      '0':
+        'path': '/bobcat'
+        'permissions': 63
+      '00':
+        'path': '/bobcat/*'
+        'permissions': 63
+    'acl_attachments':
+      '0':
+        'path': '/bobcat'
+        'permissions': 63
+      '00':
+        'path': '/bobcat/*'
+        'permissions': 63

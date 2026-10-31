@@ -1,0 +1,13 @@
+'acl_uri':
+  '0':
+    'path': '*/.rest/*'
+    'permissions': 8
+  '00':
+    'path': '/.rest/api/content/config*'
+    'permissions': 0
+  '01':
+    'path': '/.rest/api/content/config/gtmConfig'
+    'permissions': 8
+  '02':
+    'path': '/.rest/api/content/config/shareThisConfig'
+    'permissions': 8

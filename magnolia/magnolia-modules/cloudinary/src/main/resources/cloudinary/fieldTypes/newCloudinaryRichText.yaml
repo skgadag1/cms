@@ -1,0 +1,2 @@
+definitionClass: com.tbscg.doosan.magnolia.cloudinary.field.definition.CloudinaryRichTextFieldDefinition
+factoryClass: com.tbscg.doosan.magnolia.cloudinary.field.factory.CloudinaryAssetsEnabledRichTextFieldFactory

@@ -1,0 +1,76 @@
+label: Blocks component configuration
+form:
+  properties:
+    headline:
+      $type: textField
+      label: Headline
+    subtitle:
+      $type: cloudinaryRichText
+      images: true
+      label: Subtitle
+    separator:
+      $type: staticField
+      label: ''
+      value: ''
+    blocks:
+      $type: jcrMultiField
+      label: Contact blocks
+      field:
+        $type: compositeField
+        label: Contact block
+        properties:
+          title:
+            $type: textField
+            label: Title
+          body:
+            $type: cloudinaryRichText
+            label: Text body
+            images: true
+          phoneNumber:
+            $type: textField
+            label: Phone number
+          phoneLabel:
+            $type: textField
+            label: Phone link label
+          emailAddress:
+            $type: textField
+            label: Email address
+          emailLabel:
+            $type: textField
+            label: Email link label
+          hours:
+            $type: textField
+            label: Operation hours
+          chatLink:
+            $type: textField
+            label: Chat button link
+          chatLabel:
+            $type: textField
+            label: Chat button label
+          separator:
+            $type: staticField
+            label: ''
+            value: ''
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+    forInternals:
+      !include:/kags/includes/internal-access.yaml
+  layout:
+    $type: tabbedLayout
+    tabs:
+      config:
+        label: Blocks component configuration
+        fields:
+          - name: headline
+          - name: subtitle
+          - name: separator
+          - name: blocks
+      visibilityTab:
+        label: Component visibility
+        fields:
+          - name: forKeyAccounts
+          - name: forSupertechs
+          - name: forInternals
+  light: false

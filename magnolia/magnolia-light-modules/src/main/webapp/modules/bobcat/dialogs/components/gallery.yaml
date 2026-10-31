@@ -1,0 +1,61 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Gallery (deprecated) Configuration
+form:
+  properties:
+    title:
+      label: Example title
+      $type: textField
+      i18n: true
+    galleryImages:
+      label: Gallery Items
+      $type: jcrMultiField
+      i18n: true
+      field:
+        name: compositeField
+        $type: compositeField
+        label: ''
+        properties:
+          image:
+           !include:/bobcat/includes/image-or-obj-or-video.yaml
+           properties:
+              src:
+                label: Add asset
+                required: true
+                requiredErrorMessage: This field is required!
+                buttonSelectAddLabel: Select Asset
+    articleColumn:
+      $type: checkBoxField
+      label: In column
+      buttonLabel: Show in article column
+      defaultValue: false
+      type: java.lang.Boolean
+    layout:
+      $type: comboBoxField
+      defaultValue: bottom
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: bottom
+            value: 'bottom'
+            label: Bottom
+          - name: right
+            value: 'right'
+            label: Right
+      label: Carousel Location
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      config:
+        label: Configuration
+        fields:
+          - name: title
+          - name: galleryImages
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: articleColumn
+          - name: layout
+      inheritableSection:
+      anchor:
+      meta:
+light: false

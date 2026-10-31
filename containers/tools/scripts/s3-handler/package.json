@@ -1,0 +1,26 @@
+{
+  "name": "s3-handler",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf ./target",
+    "copy-npm": "copy-node-modules ./ ./target/",
+    "build-tool": "tsc -p .",
+    "build": "run-s clean copy-npm build-tool"
+  },
+  "main": "./target/src/s3-handler.js",
+  "bin": {
+    "feature-environments": "./target/src/s3-handler.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.856.0",
+    "commander": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "copy-node-modules": "^1.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "typescript": "~5.2.2"
+  }
+}

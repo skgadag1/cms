@@ -1,0 +1,11 @@
+label: Form configuration element
+name: dxpFormConfigurationElement
+$type: linkField
+datasource:
+  $type: jcrDatasource
+  workspace: formsType
+  rootPath: /bobcat
+  allowedNodeTypes:
+    - dxp:fieldGroup
+    - dxp:fieldType
+    - mgnl:folder

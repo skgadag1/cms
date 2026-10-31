@@ -1,0 +1,21 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  sort: true
+  options:
+    - name: warranty
+      label: Warranty
+      value: warrantyIcon
+    - name: machine
+      label: Machine
+      value: machineIcon
+    - name: network
+      label: Network
+      value: networkIcon
+    - name: service
+      label: Service
+      value: serviceIcon
+    - name: none
+      label: ' None'
+      value: none
+label: Animated Icon

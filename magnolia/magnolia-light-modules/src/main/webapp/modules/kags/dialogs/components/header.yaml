@@ -1,0 +1,16 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: mainPage
+          label: Main page for logo link
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: false
+
+actions: !include:/kags/includes/common-actions.yaml

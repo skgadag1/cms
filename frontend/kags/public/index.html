@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="<%= BASE_URL %>assets/favicon.ico">
+        <script type="text/javascript" src="<%= BASE_URL %><%= VUE_APP_ASSETS_STATIC_JS_PREFIX %>links.js" defer></script>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <body data-asset-server="<%= VUE_APP_ASSETS_SERVER %>"
+          data-api-servers='{
+            "bd-api":"<%= VUE_APP_BD_API %>",
+            "content-api":"<%= VUE_APP_CONTENT_API %>",
+            "notifications-api":"<%= VUE_APP_NOTIFICATIONS_API %>"
+            }'
+          data-api-token="<% print(process.env.VUE_APP_API_TOKEN || 'abc') %>"
+    >
+        <noscript>
+            <strong>We're sorry but bobcat_default doesn't work properly without JavaScript enabled. Please enable it to
+                continue.</strong>
+        </noscript>
+        <div id="header"
+             data-config='{
+                "user": {
+                  "id": "123",
+                  "name": "Your User",
+                  "givenName": "Your",
+                  "familyName": "User",
+                  "fullName": "Your User",
+                  "email": "me@example.com",
+                  "companyId": "2338",
+                  "expertLevel": "supertech",
+                  "internal": true
+                },
+                "mainPage": "/homepage.html"
+             }'
+        ></div>
+        <div id="notificationbar" data-config='{
+                "user": {
+                  "id": "123"
+                },
+                "closeButton": "Close"
+             }'>
+        </div>
+        <div id="machine"
+             data-config='{
+                "errorInputUrl": "/machine/troubleshooting",
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "historyPageUrl": "/machine/diagnostichistory",
+                "serviceAnalyzerNationalUrl": "/serviceanalyzer",
+                "serviceAnalyzerBobcatUrl": "https://google.com",
+                "engineAnalyzerUrl": "https://google.com",
+                "v2engineAnalyzerUrl": "https://google.com",
+                "orionBMSUrl": "https://google.com",
+                "faultCodesPageUrl": "/machine/faultcodes",
+                "locationHistoryPageUrl": "/machine/locationhistory",
+                "showFaultCodes": "true",
+                "fieldModsPageUrl": "/machine/fieldmodifications",
+                "bulletinsPageUrl": "/machine/manuals",
+                "showFieldMods": "true",
+                "showBulletins": "true",
+                "paginationLimit": "",
+                "SSL": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/w_309,h_200/v1587126317/Kags%20Pics%20Dev/Product%20Images/SSL_S770_we65us",
+                "CT": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/w_309,h_200/v1587126308/Kags%20Pics%20Dev/Product%20Images/CT_1021_ofn87u",
+                "undefinedImage": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/w_309,h_200/v1565344226/sample",
+                "softwareForKeyAccounts": "true"
+             }'
+        ></div>
+        <div id="machinehistory"
+             data-config='{"bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png"}'
+        ></div>
+        <div id="maintenanceschedule"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "title": "Maintenance Schedule",
+                "icon": "calendar-exclamation",
+                "maintenanceDownloadTitle": "Download Maintenace Instructions",
+                "maintenanceInfoLabel": "Maintenance Info",
+                "intervalHeader": "Intervals",
+                "kitHeader": "Kit part numbers",
+                "machineNotFound": "Machine not found"
+              }'
+        ></div>
+        <div id="bats"
+             data-config-second='{"code":"M0116", "serial": "ALJ823531"}'
+             data-config='{"code":"02-16", "serial": "ABRT55555", "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png"}'
+        ></div>
+        <div id="schematics"
+             data-config='{"bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png"}'
+        ></div>
+        <div id="servicelibrary"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "componentTitle": "Service Library",
+                "welcome": "Welcome to the Bobcat Service Library, to the most up-to-date Bobcat service information.",
+                "searchLabel": "Search Library",
+                "resultsLabel": "results",
+                "moreThanResultsLabel": "More than [total] results",
+                "searchInputPlaceholder": "Search Input",
+                "refineSearch": "Refine your Search",
+                "titleHeader": "Title",
+                "descriptionHeader": "Description",
+                "languageHeader": "Language",
+                "categoryHeader": "Category",
+                "bulletin_filter": "Bulletin",
+                "language_filter": "Language",
+                "product_filter": "Product",
+                "manual_filter": "Manual",
+                "instruction_filter": "Instruction",
+                "downloadDetails": "Download file",
+                "defaultEnglishSelected": "true"
+             }'
+        ></div>
+        <div id="softwareregistration"
+             data-config='{
+               "title": "Download",
+               "notice": "After you’ve downloaded and launched BEA V2, you will need the Original Number from the Authorization popup to register your software.",
+               "content": "Email <a href=\"mailto:aa@aa.com\">Service.BEA-V2@Doosan.com</a> for registration support. Please include screen shots of the issue."
+           }'
+        ></div>
+        <div id="machinelibrary"
+             data-config='{"bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png", "componentTitle": "Manuals & Safety"}'
+        ></div>
+        <div id="troubleshooting"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "errorInputUrl": "/machine/troubleshooting",
+                "keyword": "<%= query.keyword || '' %>"
+             }'
+        ></div>
+        <div id="faultcodes"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "icon": "exclamation-triangle",
+                "title": "<%= htmlWebpackPlugin.options.title %>",
+                "activeCodesTitle": "Active Fault Codes",
+                "statusLabel": "Status",
+                "severityLabel": "Severity",
+                "faultCodeLabel": "Code",
+                "descriptionLabel": "Description",
+                "startTimeLabel": "Incident Start",
+                "engineHoursLabel": "Start Engine Hours",
+                "exportCodesLabel": "Export codes",
+                "filterStartDateLabel": "Start Date Range",
+                "filterEngineHoursLabel": "Engine Hours",
+                "filterEngineHoursMinLabel": "Min h",
+                "filterEngineHoursMaxLabel": "Max h",
+                "searchLabel": "Search in Troubleshooting",
+                "descriptionSearchLabel": "Search in description",
+                "codeSearchLabel": "B10 only",
+                "resultsLabel": "results",
+                "noResults": "No results.",
+                "engineHoursNegativeError": "Engine hours value must be positive.",
+                "engineHoursStartGreaterError": "Max Engine hours must be greater than Min Engine hours.",
+                "startDateGreaterError": "Start date must be before End date.",
+                "troubleshootingUrl": "/machine/troubleshooting",
+                "showFilters": "Show filters",
+                "hideFilters": "Hide filters",
+                "paginationLimit": "12"
+             }'
+        ></div>
+        <div id="fieldmods"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "icon": "customicon-fieldmods",
+                "title": "<%= htmlWebpackPlugin.options.title %>",
+                "statusHeader": "Status",
+                "classHeader": "Class",
+                "codeHeader": "Code",
+                "descriptionHeader": "Description",
+                "expiresOnHeader": "Expires on",
+                "noPending": "No Pending."
+             }'
+        ></div>
+        <div id="builtoptions"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "icon": "plus-circle",
+                "title": "Built Options",
+                "itemNumberLabel": "Item number",
+                "descriptionLabel": "Description"
+             }'
+        ></div>
+        <div id="warranty"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "icon": "shield-check",
+                "title": "<%= htmlWebpackPlugin.options.title %>",
+                "statusHeader": "Status",
+                "descriptionHeader": "Plan Description",
+                "typeHeader": "Type",
+                "startDateHeader": "Start date",
+                "endDateHeader": "End date",
+                "hoursHeader": "Hours",
+                "noWarrantyInclusions": "There is no warranty inclusions"
+             }'
+        ></div>
+        <div id="locationhistory"
+             data-config='{
+                "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png",
+                "showBreadcrumb": "true",
+                "icon": "map-marker-alt",
+                "title": "Location History",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "startDateLabel": "Start date",
+                "endDateLabel": "End date",
+                "dateTimeLabel": "Date & Time",
+                "locationLabel": "Location",
+                "googleMapsAPIKey": "<%= VUE_APP_GOOGLE_MAPS_API_KEY %>",
+                "noLocationsFound": "No locations found."
+             }'
+        ></div>
+        <div id="contact"
+             data-config='{"bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png", "chatUrl": "https://testconnect.doosan.com/api/start_session.ns?issue_menu=4&codeName=kags_chat&c2cjs=1"}'
+        ></div>
+        <div id="footer"
+             data-config='{"contactUrl": "/contactus.html", "privacyPolicyUrl": "#", "termOfUseUrl": "#"}'
+        ></div>
+        <div id="feedback"
+             data-config='{"surveyId": "5322546", "latency": "10000", "feedbackButton": "Feedback", "feedbackTitle": "Your Feedback", "feedbackSubmit": "Submit ", "feedbackThankyou": "Thank you for your feedback" }'
+        ></div>
+    </body>
+</html>

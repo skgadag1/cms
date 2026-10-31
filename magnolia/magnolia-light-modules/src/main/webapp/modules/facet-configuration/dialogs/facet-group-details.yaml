@@ -1,0 +1,4 @@
+label: Facet Group Details
+form:
+  !include:/facet-configuration/includes/forms/facet-group-form.yaml
+light: false

@@ -1,0 +1,3 @@
+removeOldTasks:
+  class: com.tbscg.doosan.magnolia.bobcat.commands.RemoveOldTasksCommand
+  commandName: removeOldTasks

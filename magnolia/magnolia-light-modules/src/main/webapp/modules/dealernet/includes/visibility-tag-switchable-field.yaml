@@ -1,0 +1,25 @@
+$type: tagSwitchableField
+label: ""
+i18n: true
+root: dealernet
+defaultValue: default
+field:
+  $type: comboBoxField
+  layout: horizontal
+  emptySelectionAllowed: false
+  defaultValue: default
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: default
+        label: default
+        value: default
+itemProvider:
+  $type: jcrChildNodeProvider
+forms:
+  default:
+    properties:
+      default:
+        $type: textField
+        label: ""
+        i18n: true

@@ -1,0 +1,7 @@
+'ownerportal':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-ownerportal':
+    'jcr:uuid': 79df1cd6-1f69-3d33-bf8a-adb3a1d7da76
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 8932e895-80dd-3a77-897c-c1f57cb3a9b1

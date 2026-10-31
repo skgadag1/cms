@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+    <name>facet-configuration</name>
+    <displayName>Facet Configuration</displayName>
+    <description>Facet Configuration</description>
+    <class>com.tbscg.doosan.magnolia.facet.configuration.FacetConfigurationModule</class>
+    <versionHandler>com.tbscg.doosan.magnolia.facet.configuration.setup.FacetConfigurationVersionHandler</versionHandler>
+    <version>1.0.0</version>
+
+    <components>
+        <id>app-facet-configuration</id>
+        <component>
+            <type>info.magnolia.ui.framework.ContentClipboard</type>
+            <implementation>info.magnolia.ui.contentapp.action.clipboard.JcrClipboard</implementation>
+        </component>
+    </components>
+
+    <dependencies>
+        <dependency>
+            <name>core</name>
+            <version>*</version>
+        </dependency>
+    </dependencies>
+
+</module>

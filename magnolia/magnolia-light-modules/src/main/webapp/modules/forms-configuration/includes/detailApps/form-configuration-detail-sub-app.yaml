@@ -1,0 +1,19 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Edit Form Configuration
+datasource:
+  $type: jcrDatasource
+  workspace: formsConfiguration
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: formsConfiguration
+  nodeType: dxp:formConfiguration
+form:
+  !include:/forms-configuration/includes/forms/form-configuration-form.yaml
+actions:
+  commit:
+    class: info.magnolia.ui.contentapp.detail.action.SaveDetailSubAppActionDefinition
+    browserName: formsConfiguration
+    label: Save
+  cancel:
+    $type: closeAction
+    label: Cancel

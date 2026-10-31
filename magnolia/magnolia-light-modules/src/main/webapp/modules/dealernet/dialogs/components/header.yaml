@@ -1,0 +1,34 @@
+label: Header Configuration
+form:
+  properties:
+    logo:
+      !include:/bobcat/includes/image.yaml
+      label: Select image
+    topLinks:
+      label: Top links items
+      i18n: true
+      $type: jcrMultiField
+      field:
+        label: Top link
+        name: compositeField
+        $type: compositeField
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            required: true
+          icon:
+            !include:/bobcat/includes/icons.yaml
+    pageUrl:
+      label: Search Page Url
+      $type: pageLinkField
+      required: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: logo
+          - name: topLinks
+          - name: pageUrl
+light: false

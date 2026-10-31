@@ -1,0 +1,59 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/pages/native
+workspace: website
+depth: 2
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:template
+  - mgnl:lastModified
+
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:area
+  - mgnl:contentNode
+
+references:
+  - name: assetReference
+    propertyName: image
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+  - name: assetFieldReference
+    propertyName: field
+    referenceResolver:
+      class: info.magnolia.rest.reference.dam.AssetReferenceResolverDefinition
+  - name: pageReference
+    propertyName: pageUrl
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.CustomUrlReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+  - name: marketingCampaignsConfigurationRefence
+    propertyName: marketingCampaigns
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: marketingCampaigns
+      expand: true
+      generateLink: false
+  - name: RegionRefence
+    propertyName: region
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: regions
+      expand: true
+      generateLink: false
+  - name: pageTitleReference
+    propertyName: titleWithAffix
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.PageTitleResolverDefinition
+      targetWorkspace: website
+      regionWorkspace: regions
+  - name: facetReference
+    propertyName: facet
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: facets
+      expand: true
+      generateLink: false
+referenceDepth: 2

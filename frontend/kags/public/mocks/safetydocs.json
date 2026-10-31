@@ -1,0 +1,21 @@
+[
+  {
+    "title": "SSL Safety doc",
+    "description": "Short description of safety doc 1",
+    "product_model": "SSL",
+    "publish_date": "2019-10-30T00:00:00.000Z",
+    "download_link_template": "https://res.cloudinary.com/doosan-bobcat/image/upload/{transformation}/v1571219732/feature-KP-443/dummy_qpksfh"
+  },{
+    "title": "CTL Safety doc",
+    "description": "Short description of safety doc 1",
+    "product_model": "CTL",
+    "publish_date": "2019-10-30T00:00:00.000Z",
+    "download_link_template": "https://res.cloudinary.com/doosan-bobcat/image/upload/{transformation}/v1571219732/feature-KP-443/dummy_qpksfh"
+  },{
+    "title": "MEX Safety doc",
+    "description": "SSL Safety doc",
+    "product_model": "MEX",
+    "publish_date": "2019-10-26T00:00:00.000Z",
+    "download_link_template": "https://res.cloudinary.com/doosan-bobcat/image/upload/{transformation}/v1560339298/test_tfaxtm"
+  }
+]

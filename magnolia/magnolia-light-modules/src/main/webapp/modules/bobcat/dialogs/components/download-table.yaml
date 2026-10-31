@@ -1,0 +1,92 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Download Table Configuration
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    fileNameLabel:
+      $type: textField
+      label: File name label
+      i18n: true
+    headerLabel:
+      $type: textField
+      label: Header label
+      i18n: true
+    versionLabel:
+      $type: textField
+      label: Version label
+      i18n: true
+    downloadLinkLabel:
+      $type: textField
+      label: Download link label
+      i18n: true
+    downloadLabel:
+      $type: textField
+      label: Download label
+      i18n: true
+    rows:
+      label: Rows
+      $type: jcrMultiField
+      i18n: true
+      buttonSelectAddLabel: Add new row
+      field:
+        $type: compositeField
+        label: Row
+        properties:
+          fileName:
+            $type: textField
+            label: File name
+            required: true
+          version:
+            $type: textField
+            label: Description
+            required: false
+          asset:
+            label: Asset source
+            $type: switchableField
+            field:
+              $type: radioButtonGroupField
+              layout: horizontal
+              required: true
+              datasource:
+                $type: optionListDatasource
+                options:
+                  - name: doc
+                    label: Document
+                    value: doc
+                  - name: pdf
+                    label: Pdf
+                    value: pdf
+            itemProvider:
+              $type: jcrChildNodeProvider
+            forms:
+              doc:
+                properties:
+                  filePath:
+                    !include:/bobcat/includes/dam-doc.yaml
+              pdf:
+                properties:
+                  filePath:
+                    !include:/bobcat/includes/dam-pdf.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: headerLabel
+          - name: fileNameLabel
+          - name: versionLabel
+          - name: downloadLinkLabel
+          - name: downloadLabel
+          - name: rows
+      inheritableSection:
+      anchor:
+      meta:
+light: false

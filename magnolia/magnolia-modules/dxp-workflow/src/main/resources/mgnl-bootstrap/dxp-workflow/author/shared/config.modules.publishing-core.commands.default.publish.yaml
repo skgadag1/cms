@@ -1,0 +1,3 @@
+publish:
+  class: com.tbscg.doosan.magnolia.dxp.workflow.command.DxpPublicationCommand
+  modifiedOnly: true

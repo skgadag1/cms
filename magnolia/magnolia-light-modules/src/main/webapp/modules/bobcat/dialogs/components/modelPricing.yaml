@@ -1,0 +1,143 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Model/Attachment Pricing Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+      description: 'If used: %TITLE% and %ID% tags will be replaced by model title/id (from product catalog) and %NAME% will be replaced by @name (from product api)'
+      required: true
+    subtitle:
+      label: Subtitle
+      description: 'i.e. product line/category name. Will be combined with Title (in second line)'
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h1
+    selectCurrencyLabel:
+      label: '"Select currency" label'
+      $type: textField
+      i18n: true
+    netPriceLabel:
+      label: '"Est. net price" label'
+      description: 'It will overwrite concepts. If not present value will be taken from concepts if exists (/bobcat/common/labels/netPriceLabel, /bobcat/%REGION%/common/labels/netPriceLabel)'
+      $type: textField
+      i18n: true
+    rebateLabel:
+      label: '"Cash rebate" label'
+      description: 'It will overwrite concepts. If not present value will be taken from concepts if exists (/bobcat/common/labels/rebateLabel, /bobcat/%REGION%/common/labels/rebateLabel)'
+      $type: textField
+      i18n: true
+    paymentLabel:
+      label: '"Est. payment" label'
+      description: 'It will overwrite concepts. If not present value will be taken from concepts if exists (/bobcat/common/labels/paymentLabel, /bobcat/%REGION%/common/labels/paymentLabel)'
+      $type: textField
+      i18n: true
+    financingLabel:
+      label: '"Manufacturer financing" label'
+      description: 'It will overwrite concepts. If not present value will be taken from concepts if exists (/bobcat/common/labels/financingLabel, /bobcat/%REGION%/common/labels/financingLabel)'
+      $type: textField
+      i18n: true
+    productionYearsLabel:
+      label: '"Year(s) of production" label'
+      description: 'It will overwrite concepts. If not present value will be taken from concepts if exists (/bobcat/common/labels/productionYearsLabel, /bobcat/%REGION%/common/labels/productionYearsLabel)'
+      $type: textField
+      i18n: true
+    switchable:
+      $type: switchableField
+      label: 'Use Build&Price API'
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        defaultValue: manual
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: automatic
+              label: Yes, use API
+              value: automatic
+            - name: manual
+              label: No, manual entry
+              value: manual
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        automatic:
+          properties:
+            automaticInfo:
+              label: Additional info (will overwrite API if filled in)
+              description: 'If used: %DESC% will be replaced by model overview (from product catalog)'
+              $type: cloudinaryRichText
+              alignment: true
+              images: true
+              i18n: true
+        manual:
+          properties:
+            manualInfo:
+              label: Additional info
+              description: 'If used: %DESC% will be replaced by model overview (from product catalog)'
+              $type: cloudinaryRichText
+              alignment: true
+              images: true
+              i18n: true
+    bqLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      label: CTA button
+      defaultValue: none
+      i18n: true
+      field:
+        datasource:
+          options:
+            - name: none
+              label: None
+              value: none
+      forms:
+        none:
+          properties:
+            link:
+              label: ''
+              $type: hiddenField
+    quickLinks:
+      !include:/bobcat/includes/link-list.yaml
+      label: Quick links
+      required: false
+      i18n: false
+    printPDF:
+      label: Print PDF Button (max 1 item)
+      description: Please define 0 - 1 button.
+      $type: jcrMultiField
+      i18n: false
+      minItems: 0
+      maxItems: 1
+      itemCountErrorMessage: "Print PDF Button's number should be between 0-1"
+      field:
+        !include:/bobcat/includes/print-button-style.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: subtitle
+          - name: htag
+          - name: htagSubtitle
+          - name: switchable
+          - name: bqLink
+          - name: quickLinks
+          - name: printPDF
+      labels:
+        label: Labels
+        fields:
+          - name: selectCurrencyLabel
+          - name: netPriceLabel
+          - name: rebateLabel
+          - name: paymentLabel
+          - name: financingLabel
+          - name: productionYearsLabel
+      inheritableSection:
+      anchor:
+      meta:
+light: false

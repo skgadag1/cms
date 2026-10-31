@@ -1,0 +1,10 @@
+'commands':
+  'jcr:primaryType': mgnl:content
+  'localizations':
+    'jcr:primaryType': mgnl:content
+    'publishLocalizationsPackage':
+      'activate':
+        'class': info.magnolia.module.workflow.commands.PublicationWorkflowCommand
+        'commandName': activate
+        'parameterMapName': mgnlData
+        'workflow': localizationsPackagePublication

@@ -1,0 +1,40 @@
+form:
+  properties:
+    parentVisibility:
+      !include:/dealernet/includes/parent-visibility-field.yaml
+    componentVisibility:
+      !include:/dealernet/includes/visibility-field.yaml
+    contentVisibility:
+      label: Restrict Content Visibility
+      $type: jcrMultiField
+      buttonSelectAddLabel: Add
+      field:
+        $type: compositeField
+        label: ""
+        properties:
+          visibility:
+            !include:/dealernet/dialogs/chooser/visibility-chooser.yaml
+          nodes:
+            $type: twinColSelectField
+            label: ""
+            leftColumnCaption: Available component nodes
+            rightColumnCaption: Selected component nodes
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: default
+                  label: default
+                  value: default
+  layout:
+    $type: tabbedLayout
+    tabs:
+      componentVisibility:
+        label: Component Visibility
+        fields:
+          - name: componentVisibility
+          - name: parentVisibility
+      contentVisibility:
+        label: Content Visibility
+        fields:
+          - name: contentVisibility
+actions: !include:/dealernet/includes/use-dxp-actions.yaml

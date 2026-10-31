@@ -1,0 +1,24 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Product Overview Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      description: 'If used: %TITLE% and %ID% tags will be replaced by model title/id (from product catalog) and %NAME% will be replaced by @name (from product api)'
+      i18n: true
+      required: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+      inheritableSection:
+      anchor:
+      meta:
+light: false

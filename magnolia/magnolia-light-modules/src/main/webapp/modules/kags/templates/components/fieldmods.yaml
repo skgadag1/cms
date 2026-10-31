@@ -1,0 +1,5 @@
+renderType: ftlExtended
+title: Field modifications Component
+templateScript: /kags/templates/components/fieldmods.ftl
+dialog: kags:components/fieldmods
+moveable: false

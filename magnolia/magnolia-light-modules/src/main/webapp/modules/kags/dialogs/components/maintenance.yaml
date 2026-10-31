@@ -1,0 +1,38 @@
+form:
+  tabs:
+    - name: config
+      label: Main configuration
+      fields:
+        - name: title
+          fieldType: text
+          label: Title
+          required: true
+        - name: showBreadcrumb
+          fieldType: checkbox
+          label: Enable breadcrumb
+          buttonLabel: Select to display breadcrumbs based on sitemap
+          defaultValue: false
+          type: Boolean
+        - !include:/kags/includes/banner-field.yaml
+        - name: maintenanceDownloadTitle
+          fieldType: text
+          label: Maintenance download title
+          required: true
+        - name: maintenanceInfoLabel
+          fieldType: text
+          label: Maintenance info label
+          required: true
+        - name: intervalHeader
+          fieldType: text
+          label: Interval table header
+          required: true
+        - name: kitHeader
+          fieldType: text
+          label: Kit table header
+          required: true
+        - name: machineNotFound
+          fieldType: text
+          label: Machine not found message
+          required: true
+
+actions: !include:/kags/includes/common-actions.yaml

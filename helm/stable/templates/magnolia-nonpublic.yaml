@@ -1,0 +1,128 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: magnolia-nonpublic
+  labels:
+    app: magnolia-nonpublic
+spec:
+  selector:
+    matchLabels:
+      app: magnolia-nonpublic
+  serviceName: magnolia-nonpublic
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: magnolia-nonpublic
+      labels:
+        app: magnolia-nonpublic
+        version: v1
+    spec:
+      terminationGracePeriodSeconds: 60
+      securityContext:
+        runAsUser: 5000
+        runAsGroup: 5000
+      containers:
+        - name: magnolia-nonpublic
+          image: {{ .Values.image.magnolia.repository }}:{{ .Values.image.magnolia.tag }}
+          imagePullPolicy: {{ .Values.image.magnolia.pullPolicy }}
+          resources:
+            limits:
+              cpu: {{ .Values.resources.magnolia_public.limits.cpu }}
+              memory: {{ .Values.resources.magnolia_public.limits.memory }}
+            requests:
+              cpu: {{ .Values.resources.magnolia_public.requests.cpu }}
+              memory: {{ .Values.resources.magnolia_public.requests.memory }}
+          env:
+          - name: INSTANCE_TYPE
+            value: "public"
+          - name: ENVIRONMENT
+            value: "{{  .Values.env }}"
+          - name: CATALINA_OPTS
+            value: >-
+              -Xms{{ .Values.service.magnolia_public.java_heap }}
+              -Xmx{{ .Values.service.magnolia_public.java_heap }}
+              -Dmagnolia.clusterid=magnolia-non-public-instance
+          - name: DB_TYPE
+            value: "postgres"
+          - name: DB_USER
+            value: "{{  .Values.db.magnolia_public.user }}"
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-public
+                key: db-password
+          - name: JCR_CLOUDINARY_API_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-cloudinary
+                key: api-secret
+          - name: JCR_MAGNOLIA_KAGS_OKTA_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-kags
+                key: okta-secret
+          - name: JCR_MAGNOLIA_KAGS_SMARTEQUIP_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-kags
+                key: smartequip-secret
+          - name: JCR_MAGNOLIA_KAGS_KEY_ACCOUNT_OKTA_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-kags-key-account
+                key: okta-secret
+          - name: JCR_MAGNOLIA_LICENSE
+            valueFrom:
+              secretKeyRef:
+                name: magnolia-license
+                key: secret
+          - name: DB_URL
+            value: "{{ .Values.db.magnolia_public.url }}/magnolia-public-db"
+          - name: DB_URL_RW
+            value: "{{ .Values.db.magnolia_author.url }}/magnolia-public-db"
+          - name: AWS_XRAY_DAEMON_ADDRESS
+            value: "xray-service.default:2000"
+          - name: AWS_XRAY_CONTEXT_MISSING
+            value: "LOG_ERROR"
+          - name: AWS_XRAY_TRACING_NAME
+            value: "magnolia-nonpublic.{{ .Values.domain_name }}"
+          - name: JCR_GOOGLE_TRANSLATION_API_KEY
+            value: google_translate_is_not_used_on_public
+          livenessProbe:
+            httpGet:
+              path: /.rest/monitoring/status
+              port: {{ .Values.service.magnolia_public.port }}
+            initialDelaySeconds: 240
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /.rest/monitoring/status
+              port: {{ .Values.service.magnolia_public.port }}
+            initialDelaySeconds: 180
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+              - name: magnolia-public-data
+                mountPath: /var/magnolia
+              - name: magnolia-public-backup
+                mountPath: /mnt/backup
+              - name: random
+                mountPath: /dev/random
+      volumes:
+       - name: random
+         hostPath:
+           path: /dev/urandom
+       - name: magnolia-public-data
+         nfs:
+          server: {{ .Values.efs.data.host }}
+          path: "/public"
+       - name: magnolia-public-backup
+         nfs:
+          server: {{ .Values.efs.backup.host }}
+          path: "/public"

@@ -1,0 +1,7 @@
+'config':
+  'divisions': 'GLOBAL_BOBCAT,GLOBAL_PORTABLE_POWER'
+  jcr:primaryType: 'mgnl:content'
+  'contractCodesApiBaseUrl': 'https://bobcat.api.bobcat.com'
+  'downloadFormSummaryConfig':
+    'bucketName': 'dibh-prod-dxp-bobcat-forms'
+    'pathToDynamoDBTableName': '/cf/ngb/storage/dynamodb/BobcatFormsDynamoDBTableName'

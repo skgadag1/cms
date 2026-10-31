@@ -1,0 +1,32 @@
+!include:/kags/includes/inheritable-config.yaml
+label: Page Title Component
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      required: true
+    showBreadcrumb:
+      label: Enable breadcrumb
+      $type: checkBoxField
+      buttonLabel: Select to display breadcrumbs based on sitemap
+      defaultValue: false
+      type: java.lang.Boolean
+    icon:
+      !include:/kags/includes/icons-field-v2.yaml
+    banner:
+      !include:/kags/includes/dam-asset-v2.yaml
+      label: Background banner image
+      required: false
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: showBreadcrumb
+          - name: icon
+          - name: banner
+      inheritableSection:
+actions: !include:/kags/includes/common-actions.yaml

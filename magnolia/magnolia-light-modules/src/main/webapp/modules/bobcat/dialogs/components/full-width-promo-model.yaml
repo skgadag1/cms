@@ -1,0 +1,32 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Full Width Promo Banner Configuration
+form:
+  properties:
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    marketingCampaigns:
+      $type: linkField
+      label: Marketing Campaigns Configuration
+      required: true
+      buttonSelectNewLabel: Select configuration
+      i18n: true
+      datasource:
+        $type: jcrDatasource
+        workspace: marketingCampaigns
+        rootPath: /bobcat
+        allowedNodeTypes:
+          - dxp:region
+          - mgnl:folder
+          - dxp:marketingCampaign
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: htag
+          - name: marketingCampaigns
+      inheritableSection:
+      anchor:
+      meta:
+light: false

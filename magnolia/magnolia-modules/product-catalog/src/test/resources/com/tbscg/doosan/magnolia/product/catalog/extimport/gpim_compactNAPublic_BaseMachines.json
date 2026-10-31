@@ -1,0 +1,25 @@
+{
+  "$": "Root category",
+  "name": "Root category",
+  "description": null,
+  "@code": "compactNAPublic_BaseMachines",
+  "@catalog": "Products",
+  "@catalogVersion": "Online",
+  "visibility": "PUBLIC",
+  "subCategories": [
+    {
+      "$": "Simplified category",
+      "name": "Simplified category",
+      "description": null,
+      "@code": "simplifiedCategoryWithAgrupation",
+      "@catalog": "Products",
+      "@catalogVersion": "Online",
+      "visibility": "PUBLIC",
+      "productsCount": 0,
+      "productsCountIncludingHidden": 0,
+      "suitableFor": {}
+    }
+  ],
+  "relatedCategories": [],
+  "products": []
+}

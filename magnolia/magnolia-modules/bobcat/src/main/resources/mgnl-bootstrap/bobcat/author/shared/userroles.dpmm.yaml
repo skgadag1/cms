@@ -1,0 +1,63 @@
+'dpmm':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-dealerportal-mymachine':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': 0a896442-cc56-3767-bd60-7e65ef500eaf
+    'acl_userroles':
+      '0':
+        'path': /dpmm/dxp-dealerportal-mymachine
+        'permissions': 8
+    'acl_website':
+      '0':
+        'path': '/dp-software'
+        'permissions': 63
+      '00':
+        'path': '/dp-software/*'
+        'permissions': 63
+      '01':
+        'path': '/service-videos'
+        'permissions': 63
+      '10':
+        'path': '/service-videos/*'
+        'permissions': 63
+    'acl_concepts':
+      '0':
+        'path': '/dealer-portal'
+        'permissions': 63
+      '00':
+        'path': '/dealer-portal/*'
+        'permissions': 63
+      '01':
+        'path': '/service-videos'
+        'permissions': 63
+      '10':
+        'path': '/service-videos/*'
+        'permissions': 63
+    'acl_faq':
+      '0':
+        'path': '/dealer-portal'
+        'permissions': 63
+      '00':
+        'path': '/dealer-portal/*'
+        'permissions': 63
+      '01':
+        'path': '/service-videos'
+        'permissions': 63
+      '10':
+        'path': '/service-videos/*'
+        'permissions': 63
+    'acl_uri':
+      '0':
+        'path': '*'
+        'permissions': 63
+    'acl_tasks':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63

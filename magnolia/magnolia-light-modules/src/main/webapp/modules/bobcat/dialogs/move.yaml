@@ -1,0 +1,48 @@
+class: info.magnolia.ui.chooser.definition.SingleItemWorkbenchChooserDefinition
+
+actions:
+  choose:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpChooseActionDefinition
+    availability: &availability
+      root: true
+      rules:
+        CanMoveRuleDefinition:
+          class: info.magnolia.ui.availability.rule.CanMoveRuleDefinition
+  above:
+    name: above
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpChooseActionDefinition
+    availability: *availability
+  below:
+    name: below
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpChooseActionDefinition
+    availability: *availability
+  cancel:
+    $type: closeAction
+
+footerLayout:
+  $type: defaultEditorActionLayout
+  primaryActions:
+    - choose
+    - cancel
+  secondaryActions:
+    - above
+    - below
+
+workbenchChooser:
+  workbench:
+    contentViews:
+      - name: tree
+        $type: treeView
+        readOnly: true
+        columns:
+          jcrName: &jcrNameColumn
+            $type: jcrTitleColumn
+            nodeTypeToIcon:
+              mgnl:page: icon-webpages-app
+      - name: list
+        $type: listView
+        readOnly: true
+        columns:
+          jcrName: *jcrNameColumn
+          jcrPath:
+            $type: jcrPathColumn

@@ -1,0 +1,5 @@
+renderType: freemarker
+title: Menu Component
+templateScript: /kags/templates/components/menu.ftl
+dialog: kags:components/menu
+moveable: false

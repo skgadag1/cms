@@ -1,0 +1,19 @@
+efs:
+  data:
+    host: fs-05ad6d2c074b69a7f.efs.us-east-1.amazonaws.com
+    dir: /
+
+image:
+  tools:
+    repository: 994669786680.dkr.ecr.us-east-1.amazonaws.com/dxp/tools-dev
+    tag: latest
+    pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

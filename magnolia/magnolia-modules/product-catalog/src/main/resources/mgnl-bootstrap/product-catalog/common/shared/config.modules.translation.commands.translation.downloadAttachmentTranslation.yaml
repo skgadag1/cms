@@ -1,0 +1,4 @@
+'downloadAttachmentTranslation':
+  'class': 'info.magnolia.translation.commands.TranslationFileDownloadCommand'
+  'formPath': '/modules/product-catalog/apps/product-catalog/subApps/attachmentCategoryDetails/form|/modules/product-catalog/apps/product-catalog/subApps/attachmentGroupDetails/form|/modules/product-catalog/apps/product-catalog/subApps/attachmentDetails/form'
+  'workspace': 'attachments'

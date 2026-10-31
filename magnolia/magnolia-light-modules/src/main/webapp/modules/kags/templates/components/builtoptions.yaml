@@ -1,0 +1,5 @@
+renderType: ftlExtended
+title: Built Options Component
+templateScript: /kags/templates/components/builtoptions.ftl
+dialog: kags:components/builtoptions
+moveable: false

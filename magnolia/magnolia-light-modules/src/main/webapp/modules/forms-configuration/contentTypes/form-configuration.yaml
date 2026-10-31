@@ -1,0 +1,12 @@
+name: dxp:formConfiguration
+
+datasource:
+  workspace: formsConfiguration
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+model:
+  nodeType: dxp:formConfiguration
+  properties:
+    - name: title

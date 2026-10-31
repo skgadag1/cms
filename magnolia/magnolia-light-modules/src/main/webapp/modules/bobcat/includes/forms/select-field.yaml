@@ -1,0 +1,44 @@
+!include:/bobcat/includes/forms/shared/form-field.yaml
+label: Select
+properties:
+  label:
+    label: Select label text
+  name:
+    label: Select name
+  outputType:
+    !include:/bobcat/includes/forms/shared/output-type.yaml
+  placeholder:
+    label: Placeholder
+    $type: textField
+    i18n: true
+  multiple:
+    $type: checkBoxField
+    label: Multiple selected options
+    buttonLabel: Accept multiple
+    defaultValue: false
+    type: java.lang.Boolean
+  icon:
+    !include:/bobcat/includes/icons.yaml
+    required: false
+  noResultsMsg:
+    label: No results message (filtering)
+    $type: textField
+    i18n: true
+  clearLabel:
+    label: Clear all button label
+    $type: textField
+    i18n: true
+  selectedLabel:
+    label: Selected options label
+    $type: textField
+    i18n: true
+    description: Label shown when multiple options are selected (e.g., "2 Selected options")
+  options:
+    $type: jcrMultiField
+    required: true
+    label: Options
+    itemProvider:
+      $type: jcrChildNodeProvider
+    buttonSelectAddLabel: Add option
+    field:
+      !include:/bobcat/includes/forms/shared/list-option.yaml

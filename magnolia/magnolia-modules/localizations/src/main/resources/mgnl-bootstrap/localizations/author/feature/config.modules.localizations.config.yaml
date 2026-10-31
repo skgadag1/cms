@@ -1,0 +1,4 @@
+'config':
+  'jcr:primaryType': mgnl:content
+  'sqsQueueParamName': /cf/api/content/localizations/package/env-{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-sqsUrl
+  'sqsS3BucketParamName': /cf/api/content/localizations/package/env-{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-sqsS3BucketName

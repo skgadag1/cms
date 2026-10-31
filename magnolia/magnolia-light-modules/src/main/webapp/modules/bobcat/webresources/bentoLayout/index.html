@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bento layout</title>
+    <link rel="stylesheet" href="./dist/bento-layout.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <mgnl-bento-layout id="mgnl-bento-field"></mgnl-bento-layout>
+    <script src="./dist/bento-layout.js"></script>
+    <script>
+      (function () {
+        var correlationId = null;
+        var el = document.getElementById("mgnl-bento-field");
+
+        function postValue(json) {
+          if (!correlationId) return;
+          parent.window.postMessage(
+            {
+              action: "changeValue",
+              correlationId: correlationId,
+              value: json,
+            },
+            "*",
+          );
+        }
+
+        var lastHeight = 0;
+
+        function postHeight(px) {
+          if (!correlationId) return;
+          var n = Math.round(px);
+          if (n < 80) n = 80;
+          if (n === lastHeight) return;
+          lastHeight = n;
+          parent.window.postMessage(
+            {
+              action: "changeHeight",
+              correlationId: correlationId,
+              value: n,
+            },
+            "*",
+          );
+        }
+
+        el.addEventListener("change", function (e) {
+          var d = e.detail && e.detail[0];
+          if (typeof d === "string") postValue(d);
+        });
+
+        window.addEventListener(
+          "message",
+          function (event) {
+            var data = event.data;
+            if (!data || data.action !== "init") return;
+            correlationId = data.correlationId;
+            var state = data.state || {};
+            var parameters = state.parameters || {};
+            if (parameters.cloudName) {
+              el.setAttribute("cloud-name", parameters.cloudName);
+            }
+            if (parameters.apiKey) {
+              el.setAttribute("api-key", parameters.apiKey);
+            }
+            var raw =
+              state.value != null && state.value !== ""
+                ? state.value
+                : state.defaultValue;
+            if (raw == null || raw === "") {
+              el.setAttribute("value", "");
+              return;
+            }
+            el.setAttribute(
+              "value",
+              typeof raw === "string" ? raw : JSON.stringify(raw),
+            );
+          },
+          false,
+        );
+
+        if (typeof ResizeObserver !== "undefined") {
+          var ro = new ResizeObserver(function () {
+            postHeight(el.scrollHeight + 24);
+          });
+          ro.observe(el);
+        }
+      })();
+    </script>
+  </body>
+</html>

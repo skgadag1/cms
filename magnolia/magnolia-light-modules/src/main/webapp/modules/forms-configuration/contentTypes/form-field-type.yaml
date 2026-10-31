@@ -1,0 +1,13 @@
+name: dxp:fieldType
+
+datasource:
+  workspace: formsType
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+model:
+  nodeType: dxp:fieldType
+  properties:
+    - name: elements
+      type: reference:jcrMultiField

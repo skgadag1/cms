@@ -1,0 +1,334 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Coveo Search Configuration
+form:
+  properties:
+    orgId:
+      label: Organization ID
+      $type: textField
+      required: true
+    tokenUri:
+      label: Token Generation URI
+      $type: textField
+      required: true
+    fieldsToInclude:
+      label: Fields To Include
+      $type: textField
+      required: true
+    googleApiKey:
+      label: Google API Key
+      $type: textField
+      required: true
+    mapId:
+      label: Google Map ID
+      $type: textField
+      required: true
+    searchBoxLabel:
+      label: Search Box Label
+      $type: textField
+      i18n: true
+      required: true
+    searchBoxPlaceholder:
+      label: Placeholder
+      $type: textField
+      i18n: true
+      required: true
+    autoDetectLabel:
+      label: Auto Detect Label
+      $type: textField
+      i18n: true
+      required: true
+    searchButtonLabel:
+      label: Search Button Label
+      $type: textField
+      i18n: true
+      required: true
+    completeFieldsLabel:
+      label: Complete Required Fields Label
+      $type: textField
+      i18n: true
+      required: true
+    noResultsLabel:
+      label: No Results Found Label
+      $type: textField
+      i18n: true
+      required: true
+    modelPlaceholder:
+      label: Facet Placeholder
+      $type: textField
+      i18n: true
+      required: true
+      defaultValue: "Select"
+    othersCategoryLabel: 
+      label: Others Category Label
+      $type: textField
+      i18n: true
+      required: true
+      defaultValue: "Others"
+    productModelEnabled:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Product Facet Enabled
+      type: java.lang.Boolean
+    productModelField:
+      $type: textField
+      label: Product Facet Field
+      required: true
+      defaultValue: "bobc_accountproduct"
+    productModelLabel:
+      label: Product Facet Label
+      $type: textField
+      i18n: true
+      required: true
+    isProductModelRequired:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Is Product Facet Required?
+      type: java.lang.Boolean
+    productTypeLabel:
+      label: Product Type Label
+      $type: textField
+      i18n: true
+      required: true
+    productModelPlaceholder:
+      label: Product Facet Placeholder
+      $type: textField
+      i18n: true
+      required: true
+    productDefaultValues:
+      label: Product Default Values
+      $type: textField
+      rows: 5
+      i18n: true
+      required: true
+      validators:
+        jsonValidator:
+          $type: regexpValidator
+          pattern: ^\[\s*\{\s*"category":\s*".*?",\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\}(\s*,\s*\{\s*"category":\s*".*?",\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\})*\s*\]$
+          errorMessage: 'Invalid JSON format.'
+    productModelSearchEnabled:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Product Facet Search Enabled
+      type: java.lang.Boolean
+    productModelSearchPlaceholder:
+      label: Product Facet Searchbox Placeholder
+      $type: textField
+      i18n: true
+    productModelNoResultsLabel:
+      label: Product Facet No Results Label
+      $type: textField
+      i18n: true
+    productDependentOn:
+      label: Product Facet Dependent On
+      $type: textField
+    industryModelEnabled:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Industry Facet Enabled
+      type: java.lang.Boolean
+    industryModelField:
+      $type: textField
+      label: Industry Facet Field
+      required: true
+    industryModelLabel:
+      label: Industry Facet Label
+      $type: textField
+      i18n: true
+      required: true
+    isIndustryModelRequired:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Is Industry Facet Required?
+      type: java.lang.Boolean
+    industryDefaultValues:
+      label: Industry Default Values
+      $type: textField
+      rows: 5
+      i18n: true
+      required: true
+      validators:
+        jsonValidator:
+          $type: regexpValidator
+          pattern: ^\[\s*(\{\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\}){1}\s*\]$
+          errorMessage: 'Invalid JSON format.'
+    servicesModelEnabled:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Services Facet Enabled
+      type: java.lang.Boolean
+    servicesModelField:
+      $type: textField
+      label: Services Facet Field
+      required: true
+    servicesModelLabel:
+      label: Services Facet Label
+      $type: textField
+      i18n: true
+      required: true
+    servicesPillLabel:
+      label: Services Pill Label
+      $type: textField
+      i18n: true
+      required: true
+    isServicesModelRequired:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Is Services Facet Required?
+      type: java.lang.Boolean
+    servicesSelectedLabel:
+      label: Selected Services Label
+      $type: textField
+      i18n: true
+      required: true
+    servicesDefaultValues:
+      label: Services Default Values
+      $type: textField
+      rows: 5
+      i18n: true
+      required: true
+      validators:
+        jsonValidator:
+          $type: regexpValidator
+          pattern: ^\[\s*(\{\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\}){1}\s*\]$
+          errorMessage: 'Invalid JSON format.'
+    servicesDependentOn:
+      label: Services Facet Dependent On
+      $type: textField
+    locationsByCountryOnly:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: Return Country-Specific Locations
+      type: java.lang.Boolean
+    resultsLabel:
+      label: Results Label
+      $type: textField
+      i18n: true
+      required: true
+    unitsLabel:
+      label: Units Label
+      $type: textField
+      i18n: true
+      required: true
+    kilometerLabel:
+      label: Kilometers Label
+      $type: textField
+      i18n: true
+      required: true
+    kmLabel:
+      label: Kilometers abbreviation Label
+      $type: textField
+      i18n: true
+      required: true
+    milesLabel:
+      label: Miles Label
+      $type: textField
+      i18n: true
+      required: true
+    miLabel:
+      label: Miles abbreviation Label
+      $type: textField
+      i18n: true
+      required: true
+    visitWebsiteLabel:
+      label: Visit Website Label
+      $type: textField
+      i18n: true
+      required: true
+    getDirectionsLabel:
+      label: Get Directions Label
+      $type: textField
+      i18n: true
+      required: true
+    mapSearchButtonLabel:
+      label: Map Search Button Label
+      $type: textField
+      i18n: true
+      required: true
+    mapInvalidAddressLabel:
+      label: Invalid Address Label
+      $type: textField
+      i18n: true
+      required: true
+    zoomLevel:
+      label: Zoom level
+      $type: textField
+      type: java.lang.Integer
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      required: true
+      defaultValue: 10
+      validators:
+        numberValidator:
+          $type: regexpValidator
+          pattern: ^$|^\d{1,2}$
+          errorMessage: 'Enter valid number within range: 0-22'
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      coveo:
+        label: Coveo
+        fields:
+          - name: orgId
+          - name: tokenUri
+          - name: fieldsToInclude
+          - name: completeFieldsLabel
+          - name: noResultsLabel
+          - name: locationsByCountryOnly
+      searchBox:
+        label: Search Box
+        fields:
+          - name: searchBoxLabel
+          - name: searchBoxPlaceholder
+          - name: searchButtonLabel
+          - name: autoDetectLabel
+      facets:
+        label: Facets
+        fields:
+          - name: modelPlaceholder
+          - name: othersCategoryLabel
+          - name: productModelEnabled
+          - name: productModelField
+          - name: productModelLabel
+          - name: isProductModelRequired
+          - name: productDefaultValues
+          - name: productTypeLabel
+          - name: productModelPlaceholder
+          - name: productModelSearchEnabled
+          - name: productModelSearchPlaceholder
+          - name: productModelNoResultsLabel
+          - name: productDependentOn
+          - name: industryModelEnabled
+          - name: industryModelField
+          - name: industryModelLabel
+          - name: isIndustryModelRequired
+          - name: industryDefaultValues
+          - name: servicesModelEnabled
+          - name: servicesModelField
+          - name: servicesModelLabel
+          - name: servicesPillLabel
+          - name: isServicesModelRequired
+          - name: servicesDefaultValues
+          - name: servicesSelectedLabel
+          - name: servicesDependentOn
+      resultTemplate:
+        label: Result Template
+        fields:
+          - name: resultsLabel
+          - name: unitsLabel
+          - name: kilometerLabel
+          - name: kmLabel
+          - name: milesLabel
+          - name: miLabel
+          - name: visitWebsiteLabel
+          - name: getDirectionsLabel
+      google:
+        label: Google Map
+        fields:
+          - name: googleApiKey
+          - name: mapId
+          - name: zoomLevel
+          - name: mapSearchButtonLabel
+          - name: mapInvalidAddressLabel
+      inheritableSection:
+      anchor:
+      meta:
+light: false

@@ -1,0 +1,3 @@
+updatePagesWithCustomPath:
+  class: com.tbscg.doosan.magnolia.dxp.workflow.command.DxpCommitPagesCommand
+  commandName: updatePagesWithCustomPath

@@ -1,0 +1,3 @@
+spa-page-prototype:
+  baseUrl: 'http://localhost:3000'
+  routeTemplate: '/{{@path}}?lang={language}'

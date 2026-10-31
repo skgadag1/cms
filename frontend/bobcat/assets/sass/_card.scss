@@ -1,0 +1,140 @@
+.card {
+  box-shadow: 0 2px 4px rgba(12, 24, 30, 0.2);
+
+  .indicators-wrapper {
+    top: 0.25rem;
+    left: 1rem;
+  }
+
+  &.evolution-listing-item {
+    border-top: 5px solid transparent !important;
+
+    &:hover {
+      border-top: 5px solid $primary !important;
+    }
+
+    .card-footer {
+      background: white !important;
+    }
+
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+
+      background: linear-gradient(to right, $tertiary, rgba(213, 222, 227, 0)) top,
+      linear-gradient(to right, $tertiary, rgba(213, 222, 227, 0)) bottom,
+      linear-gradient(to bottom, $tertiary, $tertiary) left;
+
+      background-repeat: no-repeat;
+      background-size: 100% 1px, /* top */
+      100% 1px, /* bottom */
+      1px 100%; /* left */
+    }
+  }
+
+  &.evolution-listing-attachment-item {
+    box-shadow: none;
+    border: 1px solid $tertiary;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #ff0000; /* your color */
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 150ms linear;
+      z-index: 2; /* above the image */
+      pointer-events: none;
+    }
+
+    &:hover::after {
+      transform: scaleY(1);
+    }
+
+    .indicators-wrapper {
+      top: 0.5rem;
+      left: 0;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(12, 24, 30, 0.2);
+  }
+
+  &.with-hover:hover {
+    a:not(.btn-primary) {
+      text-decoration: $link-hover-decoration;
+      color: $primary !important;
+    }
+  }
+
+  &.with-no-hover {
+    &:hover {
+      box-shadow: 0 2px 4px rgba(12, 24, 30, 0.2);
+    }
+  }
+
+  &.evolution-shadow {
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      padding: .5rem 1rem;
+      border-bottom: 1px solid transparent;
+      border-top: 1px solid transparent;
+    }
+
+    .card-title {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &-indicator {
+    left: 0;
+    top: 1rem;
+    font-size: .875rem;
+    line-height: 1.75;
+
+    &__right {
+      left: auto;
+      right: 0;
+    }
+
+    & + & {
+      top: 3rem;
+    }
+  }
+
+  &-horizontal {
+    .card-header {
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .card-footer {
+    padding: 0.5rem;
+    border-top: none;
+  }
+
+  .stretched-link {
+    height: 0;
+    text-indent: -9999px;
+  }
+}
+
+.card-title {
+  margin-bottom: 0 !important;
+}

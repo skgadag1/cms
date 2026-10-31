@@ -1,0 +1,12 @@
+'config':
+  'indexerTableParam': /cf/ngb/storage/dynamodb/indexing/{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-cmsIndexerTableName
+  'sqsQueueParamName': /cf/api/content/{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-inner-CacheCleanupQueue
+  'publishingCommandsConfig':
+    sendToSqs:
+      commandCatalog: 'publication'
+      commandName: 'dxpSQSSenderCommand'
+      supportedOperations:
+        - 'publish'
+        - 'unpublish'
+      supportedApps:
+        - 'dp-software'

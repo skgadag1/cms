@@ -1,0 +1,50 @@
+label: Visibility tags
+form:
+  properties:
+    contractTypes:
+      label: "Contract types"
+      $type: comboBoxField
+      layout: horizontal
+      emptySelectionAllowed: true
+      datasource:
+        $type: jcrDatasource
+        workspace: category
+        rootPath: /dealernet/dealer-contract-types
+        describeByProperty: displayName
+        allowedNodeTypes:
+          - mgnl:category
+    contractCodes:
+      label: "Contract codes"
+      $type: comboBoxField
+      layout: horizontal
+      emptySelectionAllowed: true
+      datasource:
+        $type: jcrDatasource
+        workspace: category
+        rootPath: /dealernet/dealer-contract-codes
+        describeByProperty: displayName
+        allowedNodeTypes:
+          - mgnl:category
+    dealerRole:
+      label: "Dealer role"
+      $type: comboBoxField
+      layout: horizontal
+      emptySelectionAllowed: true
+      datasource:
+        $type: jcrDatasource
+        workspace: category
+        rootPath: /dealernet/dealer-roles
+        describeByProperty: displayName
+        allowedNodeTypes:
+          - mgnl:category
+  layout:
+    $type: tabbedLayout
+    tabs:
+      basic:
+        label: Basic Info
+        fields:
+          - name: contractTypes
+          - name: contractCodes
+          - name: dealerRole
+wide: true
+light: false

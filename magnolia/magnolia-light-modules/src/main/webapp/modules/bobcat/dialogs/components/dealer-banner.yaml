@@ -1,0 +1,149 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Dealer Banner Configuration
+form:
+  properties:
+    websiteLabel:
+      label: Website link label
+      $type: textField
+      i18n: true
+      required: true
+    directionsLabel:
+      label: Directions link label
+      $type: textField
+      i18n: true
+      required: true
+    contactLabel:
+      label: Contact button label
+      $type: textField
+      i18n: true
+    checkOtherDealersLabel:
+      label: Check Other Dealer button label
+      $type: textField
+      i18n: true
+      required: true
+    equipmentLabel:
+      label: Equipment label
+      $type: textField
+      i18n: true
+      required: true
+    servicesLabel:
+      label: Services label
+      description: Only for EMEA
+      $type: textField
+      i18n: true
+    industriesLabel:
+      label: Industries label
+      description: Only for EMEA
+      $type: textField
+      i18n: true
+    partnerLabel:
+      label: Bobcat Partner label
+      description: Only for EMEA importers
+      $type: textField
+      i18n: true
+      defaultValue: Bobcat Partner
+    partnerNote:
+      label: Bobcat Partner note
+      description: Only for EMEA importers
+      $type: cloudinaryRichText
+      i18n: true
+      alignment: false
+      images: false
+    partnerMarkerIcon:
+      !include:/bobcat/includes/dam-image.yaml
+      description: 'Only for EMEA importers. 64x64 and svg format for best quality. Falls back to the default marker icon when empty'
+      label: Select Bobcat Partner marker icon for Google Map
+    formId:
+      label: Form ID
+      $type: textField
+      i18n: true
+      required: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h2'
+    googleApiKey:
+      label: Google API Key
+      description: Google Maps Geocoding API & Google Maps API
+      $type: textField
+      i18n: true
+      required: true
+    markerIcon:
+      !include:/bobcat/includes/dam-image.yaml
+      description: '64x64 and svg format for best quality'
+      label: Select marker icon for Google Map
+      required: true
+    hoursLabel:
+      label: Hours label
+      $type: textField
+      i18n: true
+      required: true
+    hourLabel:
+      label: Single hour label
+      $type: textField
+      i18n: true
+      required: true
+    minutesLabel:
+      label: Minutes label
+      $type: textField
+      i18n: true
+      required: true
+    minuteLabel:
+      label: Single minute label
+      $type: textField
+      i18n: true
+      required: true
+    mappings:
+      label: Contract codes mappings list
+      i18n: true
+      $type: jcrMultiField
+      field:
+        $type: compositeField
+        label: Mapping
+        properties:
+          name:
+            $type: textField
+            label: Contract Code
+          page:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: websiteLabel
+          - name: directionsLabel
+          - name: contactLabel
+          - name: checkOtherDealersLabel
+          - name: equipmentLabel
+          - name: industriesLabel
+          - name: servicesLabel
+          - name: htag
+      mappings:
+        label: Contract codes mappings
+        fields:
+          - name: mappings
+      apiKeys:
+        label: Google
+        fields:
+          - name: googleApiKey
+          - name: markerIcon
+          - name: hoursLabel
+          - name: hourLabel
+          - name: minutesLabel
+          - name: minuteLabel
+      buttons:
+        label: Buttons
+        fields:
+          - name: formId
+      partner:
+        label: Bobcat Partner
+        fields:
+          - name: partnerLabel
+          - name: partnerNote
+          - name: partnerMarkerIcon
+      inheritableSection:
+      anchor:
+      meta:
+light: false

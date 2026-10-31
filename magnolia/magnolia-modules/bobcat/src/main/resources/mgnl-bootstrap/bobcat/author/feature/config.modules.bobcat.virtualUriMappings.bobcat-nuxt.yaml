@@ -1,0 +1,6 @@
+'bobcat-nuxt':
+  'class': 'com.tbscg.doosan.magnolia.bobcat.mapping.RegexpVirtualUriMappingWithKey'
+  'fromUri': '^/bobcat_nuxt/(.*).(js|css|woff2|woff|ttf|eot|jpg|png|jpeg)'
+  'site': 'bobcat'
+  'toUri': 'key-proxy:https://{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}-author.dev.bobcat.com/bobcat_nuxt/$1.$2'
+  'apiKeyType': 'ssr'

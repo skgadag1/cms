@@ -1,0 +1,24 @@
+actions:
+  approve:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.task.action.DxpResolveTaskActionDefinition
+    label: Approve
+    decision: approve
+    icon: icon-publish
+    availability:
+      multiple: true
+      rules:
+        CanProceedTaskRule:
+          class: info.magnolia.ui.admincentral.shellapp.pulse.task.action.availability.TaskAvailabilityRuleDefinition
+          status:
+            InProgress: InProgress
+
+actionbar:
+  sections:
+    - name: tasksRoot
+      groups:
+        - name: actions
+          items:
+            - name: approve
+            - name: claim
+            - name: abort
+            - name: archive

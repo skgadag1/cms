@@ -1,0 +1,225 @@
+// Opacity
+
+$opacity-0:                   0;
+$opacity-1:                   0.2;
+$opacity-2:                   0.4;
+$opacity-3:                   0.6;
+$opacity-4:                   0.8;
+$opacity-5:                   1;
+
+$opacities: () !default;
+$opacities: map-merge(
+    (
+      "0":     $opacity-0,
+      "1":     $opacity-1,
+      "2":     $opacity-2,
+      "3":     $opacity-3,
+      "4":     $opacity-4,
+      "5":     $opacity-5,
+    ),
+    $opacities
+);
+
+// Height
+
+$height-1:                   1rem;
+$height-2:                   1.5rem;
+$height-3:                   2rem;
+$height-4:                   2.5rem;
+$height-5:                   3rem;
+
+$height-setup: ();
+$height-setup: map-merge(
+    (
+      "1":     $height-1,
+      "2":     $height-2,
+      "3":     $height-3,
+      "4":     $height-4,
+      "5":     $height-5,
+    ),
+    $height-setup
+);
+
+// Border
+
+$border-width-2:              2px;
+$border-width-3:              3px;
+$border-width-4:              4px;
+
+$borders-width: ();
+$borders-width: map-merge(
+    (
+      "1":     $border-width,
+      "2":     $border-width-2,
+      "3":     $border-width-3,
+      "4":     $border-width-4
+    ),
+    $borders-width
+);
+
+$rounded-1:                   1px;
+$rounded-2:                   2px;
+$rounded-3:                   3px;
+$rounded-4:                   4px;
+
+$borders-radius: ();
+$borders-radius: map-merge(
+    (
+      "1":     $rounded-1,
+      "2":     $rounded-2,
+      "3":     $rounded-3,
+      "4":     $rounded-4,
+    ),
+    $borders-radius
+);
+
+@for $i from 0 through 5 {
+  .z-index-#{$i} {
+    z-index: $i !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .z-index-n#{$i} {
+    z-index: -$i !important;
+  }
+}
+
+@each $n, $v in map-merge($colors, ("gray-600" : $gray-600)) {
+  .text-#{$n} {
+    color: $v;
+  }
+  .bg-#{$n} {
+    background-color: $v !important;
+  }
+  .border-color-#{$n} {
+    border-color: $v !important;
+  }
+}
+
+@each $n, $v in $borders-width {
+  .border-#{$n} {
+    border-width: $v !important;
+  }
+}
+
+@each $n, $v in $borders-radius {
+  .rounded-#{$n} {
+    border-radius: $v !important;
+  }
+}
+
+@each $n, $v in $opacities {
+  .opacity-#{$n} {
+    opacity: $v !important;
+  }
+}
+
+@each $n, $v in $height-setup {
+  .height-#{$n} {
+    height: $v !important;
+  }
+}
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+[type='text'].form-control:focus,
+[type='password'].form-control:focus,
+[type='email'].form-control:focus,
+[type='tel'].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: none;
+}
+
+input {
+  &::placeholder {
+    color: $gray-500;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $gray-500;
+  }
+
+  &::-ms-input-placeholder {
+    color: $gray-500;
+  }
+
+  &[type='text'] {
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &[type='search'] {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+}
+
+input,
+textarea,
+.form-control-wrapper {
+  i {
+    transition: $transition-base;
+  }
+
+  .input-icon {
+    color: $gray-500;
+  }
+
+  &:focus {
+    border-color: $dark !important;
+  }
+
+  &:hover {
+    border-color: $dark !important;
+
+    .input-icon {
+      color: $dark;
+    }
+  }
+}
+
+@mixin position-full-width {
+  left: 0;
+  right: 0;
+}
+
+@mixin position-top {
+  top: 0;
+  @include position-full-width;
+}
+
+@mixin position-bottom {
+  bottom: 0;
+  @include position-full-width;
+}
+
+@mixin absolute-bottom {
+  position: absolute;
+  @include position-bottom;
+}
+
+@mixin absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+

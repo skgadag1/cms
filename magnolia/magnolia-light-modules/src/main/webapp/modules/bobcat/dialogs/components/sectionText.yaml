@@ -1,0 +1,32 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Section Text Configuration
+form:
+  properties:
+    !include:/bobcat/includes/section-text-props.yaml
+    id:
+      label: ID of section text
+      $type: textField
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: content
+          - name: fontSize
+          - name: id
+          - name: truncated
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+      inheritableSection:
+      anchor:
+      meta:
+light: false

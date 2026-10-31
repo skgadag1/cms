@@ -1,0 +1,9 @@
+'config':
+  jcr:primaryType: 'mgnl:content'
+  'customPathResolutionEnabled': false
+  'ssrApiKeySecretName': 'api-gateway/db-dxp-cms/CloudFrontApiKey-Author'
+  'bobcatApiKeySecretName': '/cf/ngb/bobcat-api/CDABobcatApiKeySecret'
+  'backupCommandConfig':
+    's3Bucket': 'db-dxp-magnolia-backup-product-dev'
+    'groupNamePath': '/cf/ngb/scheduler/groups/AvengersScheduleGroup'
+    'roleArnPath': '/cf/ngb/iam/roles/scheduler/SchedulerPutMetricRole'

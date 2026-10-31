@@ -1,0 +1,6 @@
+SectionDownload:
+  id: owner-portal:components/sectionDownload
+SectionRTE:
+  id: owner-portal:components/sectionRTE
+SectionSoftwaresAutomated:
+  id: owner-portal:components/sectionSoftwaresAutomated

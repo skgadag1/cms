@@ -1,0 +1,113 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Herospot Configuration
+form:
+  properties:
+    slides:
+      label: Slides (max 5 items)
+      description: Please define 1 - 5 slides.
+      $type: jcrMultiField
+      i18n: false
+      minItems: 0
+      maxItems: 5
+      itemCountErrorMessage: "Slide's number should be between 1-5"
+      field:
+        label: Slide
+        name: compositeField
+        $type: compositeField
+        properties:
+          header:
+            $type: textField
+            label: Title
+            i18n: true
+          text:
+            $type: textField
+            label: Paragraph
+            rows: 5
+            i18n: true
+          asset:
+            label: Asset source
+            $type: switchableField
+            i18n: false
+            field:
+              $type: radioButtonGroupField
+              layout: horizontal
+              datasource:
+                $type: optionListDatasource
+                options:
+                  - name: video
+                    label: Video
+                    value: video
+                  - name: img
+                    label: Image
+                    value: img
+            itemProvider:
+              $type: jcrChildNodeProvider
+            forms:
+              video:
+                properties:
+                  video:
+                    !include:/bobcat/includes/dam-video.yaml
+                    label: Select video
+                    properties: !override
+                      src:
+                        !include:/bobcat/includes/dam-asset.yaml
+                        label: Video
+                        description: '3:1 aspect ratio, 3840x1280 for best quality'
+                        filters:
+                          resource_type:
+                            class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                            value: video
+              img:
+                properties:
+                  img:
+                    !include:/bobcat/includes/image.yaml
+                    description: '3:1 aspect ratio, 3840x1280 for best quality'
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            label: Button
+            required: true
+            defaultValue: none
+            i18n: true
+            field:
+              datasource:
+                options:
+                 - name: none
+                   label: None
+                   value: none
+    interval:
+      $type: textField
+      i18n: false
+      type: java.lang.Integer
+      label: Delay between slides (ms)
+      defaultValue: 4000
+      required: true
+      converterClass: com.vaadin.data.converter.StringToIntegerConverter
+      validators:
+        number:
+          $type: regexpValidator
+          pattern: ^([0-9\W]*)$
+          errorMessage: Enter a valid value in ms (number)
+    spacingBottom:
+      $type: checkBoxField
+      label: Spacing bottom
+      buttonLabel: Add spacing below component
+      type: java.lang.Boolean
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: slides
+          - name: interval
+      look:
+        label: Look & Feel
+        fields:
+          - name: spacingBottom
+          - name: htag
+      inheritableSection:
+      anchor:
+      meta:
+light: false

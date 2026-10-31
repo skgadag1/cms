@@ -1,0 +1,11 @@
+backupAttachments:
+  catalog: backup
+  command: backupCommand
+  'cron': '0 30 3 * * *'
+  description: 'Backup website in s3Bucket, It runs everyday at 03:30 a.m. server time (UTC)'
+  enabled: true
+  params:
+    workspacesToSave: "attachments"
+    destination: "backup"
+    backupOnlyLatest: false
+    backupRoot: false

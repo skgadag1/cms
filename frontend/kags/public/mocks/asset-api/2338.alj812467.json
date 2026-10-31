@@ -1,0 +1,5 @@
+{
+  "error_message": "Asset with id 'inventedAssetId' not found.",
+  "aws_request_id": "a9fd347c-84cb-4abf-9a2f-4b69ae793931",
+  "error_code": 404
+}

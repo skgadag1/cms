@@ -1,0 +1,124 @@
+workbench:
+  contentViews:
+    tree:
+      $type: treeView
+      dropConstraint: !override
+      columns: !override
+        jcrName:
+          name: jcrName
+        title:
+          name: title
+        regionInfo: &regionInfo
+          label: Region
+          valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.RegionNameValueProvider
+          width: 100
+          sortable: false
+        mgnl:template:
+          name: mgnl:template
+          width: 300
+        activationStatus:
+          name: activationStatus
+          $type: lockingStatusColumn
+          width: 80
+        jcr:lockOwner:
+          name: jcr:lockOwner
+          width: 130
+          label: Locked by
+        tags: &tags
+          name: dxpTags
+          class: com.tbscg.doosan.magnolia.bobcat.ui.contentapp.column.CustomHTMLColumn
+          valueProvider: com.tbscg.doosan.magnolia.bobcat.field.BobcatTagValueProvider
+          width: 100
+          editor:
+            field:
+              $type: tokenField
+              comboBox:
+                datasource:
+                  $type: jcrDatasource
+                  workspace: dxpTags
+                  allowedNodeTypes:
+                    - dxp:tag
+        mgnl:lastModified:
+          name: mgnl:lastModified
+          width: 170
+          label: Last change
+        mgnl:lastModifiedBy:
+          name: mgnl:lastModifiedBy
+          width: 130
+          label: Last change by
+    list:
+      columns:
+        regionInfo: *regionInfo
+        tags: *tags
+actions:
+  !include:/commons/includes/lock-unlock-action-definition.yaml
+  export:
+    format: xml
+  selectCampaignAction:
+    availability:
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  publish:
+    availability:
+      multiple: true
+
+  publishRecursive:
+    availability:
+      multiple: true
+  unpublish:
+    availability:
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+      multiple: true
+  move:
+    $type: dxpMoveAction
+    dialogId: bobcat:move
+    allowedRoles:
+      - superuser
+  paste:
+    $type: dxpPasteContentAction
+    allowedRoles:
+      - superuser
+      - dxp-bobcat-admin
+      - dxp-bobcat-admin-na
+      - dxp-bobcat-admin-alao
+      - dxp-bobcat-admin-emea
+      - dxp-bobcat-publishers-na
+      - dxp-bobcat-uploaders-na
+      - dxp-bobcat-publishers-alao
+      - dxp-bobcat-uploaders-alao
+      - dxp-bobcat-publishers-emea
+      - dxp-bobcat-uploaders-emea
+  duplicate:
+    $type: dxpDuplicateNodeAction
+    availability:
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  edit:
+    $type: dxpOpenDetailSubappAction
+  editPage:
+    availability:
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  changeTemplate:
+    availability:
+      rules:
+        hasMultipleTemplates:
+          $type: hasMultipleTemplates
+  preview:
+    $type: dxpOpenDetailSubappAction
+  previewAsVisitor:
+    $type: dxpOpenDetailSubappAction
+  addToTranslationBatch:
+    availability:
+      access:
+        roles:
+          - dxp-bobcat-admin
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+          - dxp-bobcat-content-uploaders-na
+          - superuser

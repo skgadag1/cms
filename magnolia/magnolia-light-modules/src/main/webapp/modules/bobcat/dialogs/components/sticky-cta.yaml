@@ -1,0 +1,11 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Sticky CTA
+form:
+  properties:
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      inheritableSection:
+      anchor:
+      meta:
+light: false

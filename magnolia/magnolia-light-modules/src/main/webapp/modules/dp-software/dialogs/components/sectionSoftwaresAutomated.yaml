@@ -1,0 +1,87 @@
+label: Softwares Automated Component
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      i18n: true
+      required: true
+    subtitleField:
+      $type: textField
+      label: Subtitle
+      i18n: true
+      rows: 5
+    separator:
+      $type: staticField
+      label: ''
+      value: ''
+    softwareItems:
+      label: Software items (max 2 items)
+      $type: jcrMultiField
+      required: true
+      field:
+        label: Software
+        name: compositeField
+        $type: compositeField
+        properties:
+          softwareLabel:
+            label: Software label
+            $type: textField
+            i18n: true
+            required: true
+            description: 'Available placeholders: [software], [version], [release] (release date)'
+          softwareCategory:
+            label: Links
+            $type: comboBoxField
+            required: true
+            datasource:
+              $type: jcrDatasource
+              describeByProperty: displayName
+              workspace: category
+              rootPath: /dealer-portal/software-types
+              allowedNodeTypes:
+                - mgnl:folder
+                - mgnl:category
+          releaseNoteLabel:
+            label: Release notes label
+            $type: textField
+            i18n: true
+            description: 'Available placeholders: [software], [version], [release] (release date)'
+    documentDownloads:
+      label: Documents Download Links (max 1 item)
+      description: Please define a download link.
+      $type: jcrMultiField
+      #      min and maxItems properties do not work in Magnolia 6.2.8, added in 6.2.11
+      #      minItems: 1
+      #      maxItems: 2
+      field:
+        name: documentDownload
+        label: Document Download Link
+        $type: compositeField
+        properties:
+          icon:
+            !include:/dp-software/includes/icons.yaml
+          label:
+            $type: textField
+            label: 'Label'
+            i18n: true
+          softwareDownloadDocument:
+            !include:/bobcat/includes/dam-asset.yaml
+            label: Software Download Document
+            i18n: true
+            required: true
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      main:
+        label: Main
+        fields:
+          - name: titleField
+          - name: subtitleField
+          - name: separator
+          - name: softwareItems
+          - name: separator
+          - name: documentDownloads
+
+light: false

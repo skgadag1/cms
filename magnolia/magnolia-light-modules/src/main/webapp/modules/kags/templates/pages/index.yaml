@@ -1,0 +1,138 @@
+title: Kags index page
+templateScript: /kags/templates/pages/index.ftl
+renderType: siteExtended
+dialog: kags:pages/index
+visible: true
+areas:
+  header:
+    type: single
+    inheritance:
+      enabled: true
+      components: all
+    availableComponents:
+      footer:
+        id: kags:components/header
+  headerScripts:
+    createAreaNode: false
+    type: noComponent
+    modelClass: info.magnolia.marketingtags.model.ScriptsAreaModel
+    templateScript: /templates/scriptsArea.ftl
+  bodyBeginScripts:
+    createAreaNode: false
+    type: noComponent
+    modelClass: info.magnolia.marketingtags.model.ScriptsAreaModel
+    templateScript: /templates/scriptsArea.ftl
+  notificationbararea:
+    type: single
+    inheritance:
+      enabled: false
+      components: all
+    availableComponents:
+      notificationbar:
+        id: kags:components/notificationbar
+  main:
+    type: list
+    inheritance:
+      enabled: true
+      components: filtered
+    availableComponents:
+      builtoptions:
+        id: kags:components/builtoptions
+      blocks:
+        id: kags:components/blocks
+      faultcodes:
+        id: kags:components/faultcodes
+      fieldmods:
+        id: kags:components/fieldmods
+      machinehistory:
+        id: kags:components/machinehistory
+      machinelibrary:
+        id: kags:components/machinelibrary
+      machinesearch:
+        id: kags:components/machinesearch
+      maintenance:
+        id: kags:components/maintenance
+      machine:
+        id: kags:components/machine
+      mike:
+        id: kags:components/mike
+      pageTitle:
+        id: kags:components/pageTitle
+      schematics:
+        id: kags:components/schematics
+      servicelibrary:
+        id: kags:components/servicelibrary
+      download:
+        id: kags:components/download
+      downloadV2:
+        id: kags:components/downloadV2
+      softwareregistration:
+        id: kags:components/softwareregistration
+      intro:
+        id: kags:components/intro
+      text:
+        id: kags:components/text
+      troubleshooting:
+        id: kags:components/troubleshooting
+      warranty:
+        id: kags:components/warranty
+      locationhistory:
+        id: kags:components/locationhistory
+      html:
+        id: kags:components/customhtml
+      error:
+        id: kags:components/error
+  columnCentered:
+    type: list
+    inheritance:
+      enabled: true
+      components: filtered
+    availableComponents:
+      richtext:
+        id: kags:components/richtext
+      video:
+        id: kags:components/video
+  menu:
+    type: single
+    inheritance:
+      enabled: true
+      components: all
+    availableComponents:
+      menu:
+        id: kags:components/menu
+  content:
+    type: list
+    inheritance:
+      enabled: true
+      components: filtered
+    availableComponents:
+      blocks:
+        id: kags:components/blocks
+      download:
+        id: kags:components/download
+      downloadV2:
+        id: kags:components/downloadV2
+      softwareregistration:
+        id: kags:components/softwareregistration
+      html:
+        id: mtk:components/html
+      intro:
+        id: kags:components/intro
+      text:
+        id: kags:components/text
+  feedback:
+    type: single
+    inheritance:
+      enabled: true
+      components: all
+    availableComponents:
+      feedback:
+        id: kags:components/feedback
+  footer:
+    type: single
+    inheritance:
+      enabled: true
+      components: all
+    availableComponents:
+      footer:
+        id: kags:components/footer

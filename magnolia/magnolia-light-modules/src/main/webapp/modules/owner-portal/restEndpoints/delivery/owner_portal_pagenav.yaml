@@ -1,0 +1,43 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: website
+depth: 5
+bypassWorkspaceAcls: true
+rootPath: /owner-portal
+limit: 50
+strict: true
+nodeTypes:
+  - mgnl:page
+childNodeTypes:
+  - mgnl:page
+  - mgnl:contentNode
+references:
+  pageReference:
+    propertyName: pageUrl
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true
+  productFamilyNames:
+    propertyName: productFamilyNames
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  productFamily:
+    propertyName: productFamily
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+  package:
+    propertyName: package
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category
+      expand: true
+      generateLink: false
+referenceRepeat: true
+referenceDepth: 10

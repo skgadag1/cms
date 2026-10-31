@@ -1,0 +1,15 @@
+name: dxp:navigationMegaList
+
+datasource:
+  workspace: navigation
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+
+model:
+  nodeType: dxp:navigationMegaList
+  properties:
+    - name: label
+      i18n: true
+    - name: hideFromNavigation

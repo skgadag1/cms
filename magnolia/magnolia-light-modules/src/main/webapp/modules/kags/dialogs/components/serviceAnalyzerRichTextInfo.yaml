@@ -1,0 +1,23 @@
+form:
+  label: Service Analyzer Information
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+        - name: titleField
+          fieldType: text
+          label: Title
+          required: true
+        - name: descriptionField
+          fieldType: cloudinaryRichText
+          images: true
+          label: Description
+          required: true
+        - !include:/kags/includes/dam-asset.yaml
+          name: sectionImage
+          label: Section Image
+        - name: imageTransformation
+          fieldType: text
+          label: Cloudinary image transformation
+
+actions: !include:/kags/includes/common-actions.yaml

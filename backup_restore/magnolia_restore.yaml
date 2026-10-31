@@ -1,0 +1,43 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: restore-magnolia
+spec:
+  template:
+    metadata:
+      name: restore-magnolia
+    spec:
+      containers:
+        - name: restore-magnolia
+          image: "129363003223.dkr.ecr.us-east-1.amazonaws.com/dxp/magnolia:20200325.12.204"
+          command: ["sh", "-c", "sleep 9999999"]
+          env:
+            - name: DB_USER
+              value: magnolia-author
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: magnolia-author
+                  key: password
+            - name: DB_URL
+              value: "jdbc:postgresql://dibh-dev-magnolia.cluster-cfzrzmzspb3b.us-east-1.rds.amazonaws.com:5432/magnolia-author-db-feature-dxp-912"
+          volumeMounts:
+            - name: backup-volume
+              mountPath: /src
+            - name: dst-volume
+              mountPath: /dst
+      volumes:
+        - name: backup-volume
+          nfs:
+            server: "fs-4afaaaa8.efs.us-east-1.amazonaws.com"
+            path: "/author"
+        - name: dst-volume
+          persistentVolumeClaim:
+            claimName: magnolia-author-magnolia-author-0
+#       - name: dst-volume
+#         nfs:
+#           server: 
+#           path: "/author"
+      restartPolicy: Never
+  backoffLimit: 0

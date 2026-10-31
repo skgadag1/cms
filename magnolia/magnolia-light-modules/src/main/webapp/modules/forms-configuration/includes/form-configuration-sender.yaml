@@ -1,0 +1,76 @@
+$type: switchableField
+field:
+  $type: radioButtonGroupField
+  layout: horizontal
+  required: true
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: salesforce
+        label: Salesforce
+        value: salesforce
+      - name: email
+        label: Email
+        value: email
+      - name: dynamodb
+        label: DynamoDb
+        value: dynamodb
+      - name: salesforce-salescloud
+        label: Salesforce Sales Cloud
+        value: salesforce-salescloud
+itemProvider:
+  $type: jcrChildNodeProvider
+forms:
+  email:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          email:
+            label: Email Sender Configuration
+            $type: linkField
+            name: email
+            required: true
+            buttonSelectNewLabel: Select new ...
+            chooserId: bobcat:chooser/form-email-chooser
+            datasource:
+              $type: jcrDatasource
+              workspace: formsEmailConfig
+              rootPath: /bobcat
+              allowedNodeTypes:
+                - mgnl:folder
+                - dxp:formEmailConfiguration
+  salesforce:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          requestUrl:
+            label: Request URL
+            $type: textField
+            required: true
+  salesforce-salescloud:
+    properties:
+      link:
+        label: ''
+        $type: compositeField
+        itemProvider:
+          $type: jcrChildNodeProvider
+        properties:
+          recordType:
+            label: Record Type
+            $type: textField
+            description: 'Salesforce Lead RecordType developer name for this form (obtain from Salesforce admin)'
+          currency:
+            label: Currency
+            $type: textField
+            description: 'ISO 4217 currency code for this form (e.g. USD, EUR, KRW)'
+            defaultValue: USD
+required: true
+label: Sender configuration

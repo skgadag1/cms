@@ -1,0 +1,4 @@
+renderType: freemarker
+title: Error component
+templateScript: /kags/templates/components/error.ftl
+dialog: kags:components/error

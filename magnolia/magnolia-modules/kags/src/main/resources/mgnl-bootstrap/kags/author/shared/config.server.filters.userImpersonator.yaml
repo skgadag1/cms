@@ -1,0 +1,4 @@
+userImpersonator:
+  'jcr:primaryType': mgnl:content
+  enabled: true
+  class: com.tbscg.doosan.magnolia.kags.filters.UserImpersonatorFilter

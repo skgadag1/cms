@@ -1,0 +1,67 @@
+'alao':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-bobcat-content-uploader-alao':
+    'jcr:uuid': a292d68a-60e0-4db8-9851-ad3acb37fe86
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': f8586e7e-9585-41c3-ba48-1e08a693a59c
+
+  'dxp-bobcat-publisher-alao':
+    'jcr:uuid': a1e9e9bf-b739-47dd-a5a6-bc5e3cb1b888
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 1565f6af-0959-48d2-9d1e-0e96a4eca948
+      
+  'dxp-bobcat-forms-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': 'bf727bf6-35db-4e31-a282-f2dcec2e6756'
+    'roles':
+      '0': '7a40c120-6d0e-41d0-ad03-60e651e8ba8c'
+
+  'dxp-bobcat-campaign-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '402c98c3-e550-405e-98e2-6da4c52d8953'
+    'roles':
+      '0': '389d1b50-027c-47b6-9ad6-4b26b0361c2c'
+
+  'dxp-bobcat-read-only-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '8a6ae43b-da89-4b9c-a77d-6bfdafcb78a5'
+    'roles':
+      '0': 'd725813f-49ae-48bc-b4ba-134c3ecc112b'
+
+  'dxp-bobcat-admin-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '8afec8b1-bba5-4bd4-b7ee-3c49589974a1'
+    'roles':
+      '0': '64e04401-5e53-402a-833d-468408f14e54'
+
+  'dxp-bobcat-concepts-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '68b851eb-d023-4add-826d-505e22ee2160'
+    'roles':
+      '0': 'e55957ed-0fb3-4bbf-80b9-e05760999de1'
+
+  'dxp-bobcat-filters-facets-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '98680525-aeec-4d48-b287-e18166566895'
+    'roles':
+      '0': 'd4c9e7f0-cde3-4d37-8699-56b5542e8e01'
+
+  'dxp-bobcat-tags-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': 'fca0831f-17be-4034-9e87-9b446b2daa9c'
+    'roles':
+      '0': 'f6aa205e-f648-471a-b13c-67e3c762bfee'
+
+  'dxp-bobcat-faq-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '3f249625-165a-4000-97f2-68d75d144ab5'
+    'roles':
+      '0': '7c717812-9891-4b8b-b9c1-a6ac3fc864ce'
+
+  'dxp-bobcat-navigation-app-alao':
+    'jcr:primaryType': 'mgnl:group'
+    'jcr:uuid': '8323e605-0cac-4483-9ac1-cfe02a95c77c'
+    'roles':
+      '0': 'b145ae43-faa3-4ead-a5e0-99a3b2e17b6b'

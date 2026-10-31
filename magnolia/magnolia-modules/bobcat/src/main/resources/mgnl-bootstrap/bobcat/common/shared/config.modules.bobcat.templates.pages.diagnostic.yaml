@@ -1,0 +1,81 @@
+diagnostic:
+  extends: '/modules/bobcat/templates/pages/index'
+  title: 'Bobcat.com Diagnostic Landing Page'
+  dialog: bobcat:pages/diagnostic
+
+  areas:
+    main:
+      title: Diagnostic main section
+      availableComponents:
+        extends: override
+        TextSection:
+          id: bobcat:components/sectionText
+        EvolutionTextSection:
+          id: bobcat:components/evolutionSectionText
+        FlexibleListing:
+          id: bobcat:components/flexiblelisting
+        RelatedLinks:
+          id: bobcat:components/related-links
+        DiagnosticModelInformation:
+          id: bobcat:components/diagnostic-model-information
+        HTMLSlot:
+          id: bobcat:components/HTMLSlot
+        IFrame:
+          id: bobcat:components/iframe
+        Breadcrumb:
+          id: bobcat:components/breadcrumb
+        HeroSpot:
+          id: bobcat:components/herospot
+        Gallery:
+          id: bobcat:components/gallery
+        CTA:
+          id: bobcat:components/cta
+        FAQ:
+          id: bobcat:components/faq
+        PromotionalContent:
+          id: bobcat:components/promotional-content
+        NotificationBar:
+          id: bobcat:components/notification-bar
+        ContentCarousel:
+          id: bobcat:components/content-carousel
+        EvolutionContentCarousel:
+          id: bobcat:components/evolution-content-carousel
+        CaptionedImage:
+          id: bobcat:components/captioned-image
+        CategorizedCaptionedImage:
+          id: bobcat:components/categorized-captioned-image
+        PartsFinder:
+          id: bobcat:components/partsFinder
+        DownloadTable:
+          id: bobcat:components/download-table
+        SeriesNavigation:
+          id: bobcat:components/series-navigation
+        ModelSpecificLead:
+          id: bobcat:components/model-specific-lead
+        Form:
+          id: bobcat:components/form
+        AccordionGroup:
+          id: bobcat:components/accordion-group
+        EvolutionAccordionGroup:
+          id: bobcat:components/evolution-accordion-group
+        BackToTopButton:
+          id: bobcat:components/back-to-top-button
+        TableManual:
+          id: bobcat:components/tableManual
+        ProductsNavigation:
+          id: bobcat:components/products-navigation
+        Separator:
+          id: bobcat:components/separator
+        MediaSpotlight:
+          id: bobcat:components/media-spotlight
+        FeatureHeroSpot:
+          id: bobcat:components/feature-hero-spot
+        MidPageHeroGallery:
+          id: bobcat:components/mid-page-hero-gallery
+        StickyCTA:
+          id: bobcat:components/sticky-cta
+        SideNavGallery:
+          id: bobcat:components/side-nav-gallery
+        AnchorLinksAlternativeNavigation:
+          id: bobcat:components/anchor-links-alternative-navigation
+

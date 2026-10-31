@@ -1,0 +1,28 @@
+.animation-on-hover {
+  svg path.transform-center {
+    transition: $transition-base;
+    transform-origin: center;
+  }
+
+  &:hover svg path.animation-scale {
+    transform: scale(1.5);
+  }
+}
+
+.color-dark svg path {
+  &.colored-stroke {
+    stroke: $white;
+  }
+
+  &.transparent-stroke {
+    stroke: $gray-800;
+  }
+
+  &.colored-fill {
+    fill: $white;
+  }
+
+  &.transparent-fill {
+    fill: $gray-800;
+  }
+}

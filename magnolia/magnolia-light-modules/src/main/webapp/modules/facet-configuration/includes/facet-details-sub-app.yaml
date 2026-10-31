@@ -1,0 +1,8 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Edit Facet
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: facets
+  nodeType: dxp:facet
+form:
+  !include:/facet-configuration/includes/forms/facet-form.yaml

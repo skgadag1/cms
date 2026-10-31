@@ -1,0 +1,64 @@
+openapi: "3.0.1"
+info:
+  title: "[DXP] Public Bobcat Web Page Server Side Rendering"
+  description: "Server Side Rendering API for Public Bobcat Web Page with Nuxt framework"
+  version: "1.0"
+
+paths:
+  /{proxy+}:
+    x-amazon-apigateway-any-method:
+      parameters:
+        - name: "proxy"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      security:
+        - api_key: [ ]
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri:
+          Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SsrFunction.Arn}/invocations"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+  /robots.txt:
+    get:
+      operationId: "robots.txt"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            text/plain:
+              schema:
+                $ref: "#/components/schemas/SsrRobots"
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: "200"
+            responseTemplates:
+              text/plain: "User-Agent: *
+
+              Disallow: /"
+        requestTemplates:
+          application/json: "{\"statusCode\": 200}"
+        passthroughBehavior: "when_no_templates"
+        type: "mock"
+  /:
+    x-amazon-apigateway-any-method:
+      x-amazon-apigateway-integration:
+        httpMethod: "POST"
+        uri:
+          Fn::Sub: "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SsrFunction.Arn}/invocations"
+        passthroughBehavior: "when_no_match"
+        type: "aws_proxy"
+
+components:
+  schemas:
+    SsrRobots:
+      type: "object"
+
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"

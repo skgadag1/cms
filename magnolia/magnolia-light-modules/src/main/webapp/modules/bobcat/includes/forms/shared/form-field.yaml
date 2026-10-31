@@ -1,0 +1,35 @@
+$type: compositeField
+layout:
+  $type: form
+label: Form Field
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  label:
+    $type: textField
+    label: Field label
+    i18n: true
+  name:
+    $type: textField
+    label: Field name
+    description: Name needs to be unique
+    i18n: true
+    required: true
+  id:
+    $type: textField
+    label: Mapping field ID
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.
+  required:
+    $type: checkBoxField
+    label: Is required
+    buttonLabel: Required
+    defaultValue: false
+    type: java.lang.Boolean
+  bold:
+    $type: checkBoxField
+    label: Label bolded
+    buttonLabel: active
+    defaultValue: false
+    type: java.lang.Boolean
+  width:
+    !include:/bobcat/includes/forms/shared/width-option.yaml

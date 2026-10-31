@@ -1,0 +1,17 @@
+properties:
+  jcrName:
+    label: Facet Group Name
+    $type: textField
+    required: true
+  label:
+    label: Facet Label
+    $type: textField
+    i18n: true
+layout:
+  $type: tabbedLayout
+  tabs:
+    basic:
+      label: Basic Info
+      fields:
+        - name: jcrName
+        - name: label

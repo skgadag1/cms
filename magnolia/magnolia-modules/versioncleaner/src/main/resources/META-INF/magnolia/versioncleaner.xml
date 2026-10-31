@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>versioncleaner</name>
+  <displayName>${project.name}</displayName>
+  <description>${project.description}</description>
+  <class>info.magnolia.services.VersionCleaner</class>
+  <versionHandler>info.magnolia.services.setup.VersionCleanerVersionHandler</versionHandler>
+  <version>${project.version}</version>
+
+  <dependencies>
+    <dependency>
+      <name>core</name>
+      <version>5.7/*</version>
+    </dependency>
+  </dependencies>
+</module>

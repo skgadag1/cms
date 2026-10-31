@@ -1,0 +1,70 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: ThreeKit Configurator Configuration
+form:
+  properties:
+    title:
+      label: Section title
+      $type: textField
+      i18n: true
+    paragraph:
+      $type: cloudinaryRichText
+      alignment: true
+      label: Content
+      i18n: true
+    src:
+      label: ThreeKit configurator URL
+      description: 'Full URL provided by ThreeKit, including protocol (https://). The cat, subcat, model, b and build (shared build) page URL parameters, plus any additional URL parameters listed below, are appended to it.'
+      $type: textField
+      i18n: true
+      required: true
+    iframeTitle:
+      label: iFrame title
+      description: 'Invisible attribute used by screen readers, please describe the configurator.'
+      $type: textField
+      i18n: true
+    allowedParams:
+      label: Additional URL parameters
+      description: 'cat, subcat, model, b and build (shared build) are always passed to the configurator. Enter a comma separated list of any additional page URL parameters to pass. Leave empty to pass no additional parameters.'
+      $type: textField
+    desktopHeight:
+      label: Desktop / tablet fallback height (in px)
+      description: 'The configurator normally fills the remaining screen height automatically. This value is only used on older browsers, or when the configurator is placed too far down the page to fit on screen (safe to leave the default.)'
+      $type: textField
+      defaultValue: '800'
+      validators:
+        numberValidator:
+          $type: regexpValidator
+          pattern: ^$|^\d{1,5}$
+          errorMessage: 'Enter valid number within range: 0-99999'
+    mobileHeight:
+      label: Mobile fallback height (in px)
+      description: 'Fallback height on small screens (below 768px wide), used on older browsers or when the configurator cannot fit in the first viewport (safe to leave the default.)'
+      $type: textField
+      defaultValue: '600'
+      validators:
+        numberValidator:
+          $type: regexpValidator
+          pattern: ^$|^\d{1,5}$
+          errorMessage: 'Enter valid number within range: 0-99999'
+    preloaded:
+      defaultValue: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: paragraph
+          - name: src
+          - name: iframeTitle
+          - name: allowedParams
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: desktopHeight
+          - name: mobileHeight
+      inheritableSection:
+      anchor:
+      meta:
+light: false

@@ -1,0 +1,7 @@
+'dpmm':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-dealerportal-mymachine':
+    'jcr:uuid': 734cd527-e77b-3529-a0d4-4232157a2302
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 0a896442-cc56-3767-bd60-7e65ef500eaf

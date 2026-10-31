@@ -1,0 +1,141 @@
+main-area-components:
+  HeroSpot:
+    id: bobcat:components/herospot
+  EvolutionHeroSpotV2:
+    id: bobcat:components/evolution-herospot-v2
+  Gallery:
+    id: bobcat:components/gallery
+  GalleryV2:
+    id: bobcat:components/gallery-v2
+  FlexibleListing:
+    id: bobcat:components/flexiblelisting
+  CTA:
+    id: bobcat:components/cta
+  Disclaimer:
+    id: bobcat:components/disclaimer
+  MultiDisclaimers:
+    id: bobcat:components/multi-disclaimers
+  FAQ:
+    id: bobcat:components/faq
+  PromotionalContent:
+    id: bobcat:components/promotional-content
+  NotificationBar:
+    id: bobcat:components/notification-bar
+  ContentCarousel:
+    id: bobcat:components/content-carousel
+  EvolutionContentCarousel:
+    id: bobcat:components/evolution-content-carousel
+  SectionText:
+    id: bobcat:components/sectionText
+  EvolutionSectionText:
+    id: bobcat:components/evolutionSectionText
+  SectionTextRegionalized:
+    id: bobcat:components/sectionTextRegionalized
+  CaptionedImage:
+    id: bobcat:components/captioned-image
+  CategoriesLandingPage:
+    id: bobcat:components/categories-landing-page
+  CategorizedCaptionedImage:
+    id: bobcat:components/categorized-captioned-image
+  HTMLSlot:
+    id: bobcat:components/HTMLSlot
+  Features:
+    id: bobcat:components/features
+  AttachmentsPDP:
+    id: bobcat:components/attachment-related-products
+  MidBuyingTools:
+    id: bobcat:components/mid-buying-tools
+  PartsFinder:
+    id: bobcat:components/partsFinder
+  DownloadTable:
+    id: bobcat:components/download-table
+  SeriesNavigation:
+    id: bobcat:components/series-navigation
+  Form:
+    id: bobcat:components/form
+  ModelSpecificLead:
+    id: bobcat:components/model-specific-lead
+  IFrame:
+    id: bobcat:components/iframe
+  VntanaIframe:
+    id: bobcat:components/vntana-iframe
+  ThreekitConfigurator:
+    id: bobcat:components/threekit-configurator
+  BuildQuoteSelector:
+    id: bobcat:components/buildQuoteSelector
+  ProductListing:
+    id: bobcat:components/product-listing
+  EvolutionModelListing:
+    id: bobcat:components/evolution-model-listing
+  ModelSelector:
+    id: bobcat:components/model-selector
+  EvolutionCompareComponent:
+    id: bobcat:components/evolution-compare-component
+  EvolutionCompatibleAttachments:
+    id: bobcat:components/evolution-compatible-attachments
+  PageListing:
+    id: bobcat:components/page-listing
+  SocialShare:
+    id: bobcat:components/socialShare
+  RegionSelector:
+    id: bobcat:components/region-selector
+  Breadcrumb:
+    id: bobcat:components/breadcrumb
+  TextListing:
+    id: bobcat:components/text-listing
+  AccordionGroup:
+    id: bobcat:components/accordion-group
+  EvolutionAccordionGroup:
+    id: bobcat:components/evolution-accordion-group
+  BackToTopButton:
+    id: bobcat:components/back-to-top-button
+  TableManual:
+    id: bobcat:components/tableManual
+  ModelLookup:
+    id: bobcat:components/model-lookup
+  ProductsNavigation:
+    id: bobcat:components/products-navigation
+  RelatedLinks:
+    id: bobcat:components/related-links
+  FullWidthPromoModel:
+    id: bobcat:components/full-width-promo-model
+  Separator:
+    id: bobcat:components/separator
+  DealerInventorySearch:
+    id: bobcat:components/dealer-inventory-search
+  DealerInventoryCarousel:
+    id: bobcat:components/dealer-inventory-carousel
+  DealerInventoryCategorySearch:
+    id: bobcat:components/dealer-inventory-category-search
+  PackagesAndOptions:
+    id: bobcat:components/packages-and-options
+  DealerModelPrint:
+    id: bobcat:components/dealer-model-print
+  EquipmentModelPrint:
+    id: bobcat:components/equipment-model-print
+  DealerModelPricing:
+    id: bobcat:components/dealer-model-pricing
+  DealerModelPricingV2:
+    id: bobcat:components/dealer-model-pricing-v2
+  MediaSpotlight:
+    id: bobcat:components/media-spotlight
+  FeatureHeroSpot:
+    id: bobcat:components/feature-hero-spot
+  MidPageHeroGallery:
+    id: bobcat:components/mid-page-hero-gallery
+  StickyCTA:
+    id: bobcat:components/sticky-cta
+  SideNavGallery:
+    id: bobcat:components/side-nav-gallery
+  LocationModal:
+    id: bobcat:components/location-modal
+  ProductSpecificationsInventory:
+    id: bobcat:components/product-specifications-inventory
+  AnchorLinksAlternativeNavigation:
+    id: bobcat:components/anchor-links-alternative-navigation
+  EvolutionValueProposition:
+    id: bobcat:components/evolution-value-proposition
+  InfographicTable:
+    id: bobcat:components/infographic-table
+  EvolutionTable:
+    id: bobcat:components/evolution-table

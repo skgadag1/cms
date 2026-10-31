@@ -1,0 +1,67 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: magnolia-gateway-{{ .Release.Namespace }}-internal
+  annotations:
+    external-dns.alpha.kubernetes.io/controller: hacktonotmanagethesehostswithexternaldns
+spec:
+  selector:
+    istio: ingressgateway-internal # use istio internal default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "magnolia-cms-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "magnolia-publisher-{{ .Release.Namespace }}.dev.dice-tools.com"
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTP
+    hosts:
+    - "magnolia-cms-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "magnolia-publisher-{{ .Release.Namespace }}.dev.dice-tools.com"
+    tls:
+      minProtocolVersion: TLSV1_2
+      maxProtocolVersion: TLSV1_2
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: magnolia-gateway-{{ .Release.Namespace }}-public
+spec:
+  selector:
+    istio: ingressgateway-public # use istio default controller
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "magnolia-public-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "magnolia-api-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "dxp-poc-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "internal-dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "keyaccount-dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    tls:
+      httpsRedirect: true
+  - port:
+      number: 443
+      name: https
+      protocol: HTTP
+    hosts:
+    - "magnolia-public-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "magnolia-api-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "dxp-poc-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "internal-dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    - "keyaccount-dxp-kags-{{ .Release.Namespace }}.dev.dice-tools.com"
+    tls:
+      minProtocolVersion: TLSV1_2
+      maxProtocolVersion: TLSV1_2

@@ -1,0 +1,160 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Model Header Configuration
+form:
+  properties:
+    startingPriceLabel:
+      label: Starting Price Label
+      $type: textField
+      i18n: true
+    startingPriceValue:
+      label: Starting Price Value
+      $type: textField
+      i18n: true
+    horsepowerLabel:
+      label: Horsepower Label
+      $type: textField
+      i18n: true
+    rocLabel:
+      label: Rated Operating Capacity Label
+      $type: textField
+      i18n: true
+    attachmentsLabel:
+      label: Available Attachments Label
+      $type: textField
+      i18n: true
+    headline:
+      label: Headline
+      $type: textField
+      i18n: true
+    category:
+      label: Category title
+      $type: textField
+      i18n: true
+    spec1Label:
+      label: "Label: Spec 1"
+      description: Leave blank for value from API
+      $type: textField
+      i18n: true
+    spec1Value:
+      label: "Value: Spec 1"
+      $type: textField
+      i18n: true
+    spec2Label:
+      label: "Label: Spec 2"
+      description: Leave blank for value from API
+      $type: textField
+      i18n: true
+    spec2Value:
+      label: "Value: Spec 2"
+      $type: textField
+      i18n: true
+    spec3Label:
+      label: "Label: Spec 3"
+      description: Leave blank for value from API
+      $type: textField
+      i18n: true
+    spec3Value:
+      label: "Value: Spec 3"
+      $type: textField
+      i18n: true
+    dynamicSpecs:
+      label: Key Specifications (max 3 items)
+      $type: dynamicSpecField
+      limitedOptions: 3
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h2'
+    asset:
+      label: Asset source
+      $type: switchableField
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        required: true
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: video
+              label: Video
+              value: video
+            - name: img
+              label: Image
+              value: img
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        video:
+          properties:
+            video:
+              !include:/bobcat/includes/dam-video.yaml
+              label: Select video
+              properties:
+                src:
+                  !include:/bobcat/includes/dam-asset.yaml
+                  label: Video
+                  filters:
+                    resource_type:
+                      class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                      value: video
+        img:
+          properties:
+            img:
+              !include:/bobcat/includes/image.yaml
+    cta:
+      label: Buttons (max 3 items)
+      description: Please define 0 - 3 buttons.
+      $type: jcrMultiField
+      i18n: false
+      minItems: 0
+      maxItems: 3
+      itemCountErrorMessage: "Buttons's number should be between 0-3"
+      field:
+        !include:/bobcat/includes/button-style-chooser.yaml
+        i18n: true
+    printPDF:
+      label: Print PDF Button (max 1 item)
+      description: Please define 0 - 1 button.
+      $type: jcrMultiField
+      i18n: false
+      minItems: 0
+      maxItems: 1
+      itemCountErrorMessage: "Print PDF Button's number should be between 0-1"
+      field:
+        !include:/bobcat/includes/print-button-style.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      general:
+        label: General
+        fields:
+          - name: htag
+          - name: asset
+      labels:
+        label: Labels
+        fields:
+          - name: headline
+          - name: category
+          - name: startingPriceLabel
+          - name: startingPriceValue
+          - name: rocLabel
+          - name: horsepowerLabel
+          - name: attachmentsLabel
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+          - name: printPDF
+      dynamicSpecs:
+        label: Key Specifications
+        fields:
+          - name: dynamicSpecs
+          - name: spec1Label
+          - name: spec1Value
+          - name: spec2Label
+          - name: spec2Value
+          - name: spec3Label
+          - name: spec3Value
+      inheritableSection:
+      anchor:
+      meta:
+light: false

@@ -1,0 +1,15 @@
+'pmd-admin':
+  'jcr:primaryType': 'mgnl:role'
+  'jcr:uuid': '0a57cbc7-9ce6-45bc-be96-2740ccd75c7b'
+  'acl_userroles':
+    'jcr:uuid': 'f8706c91-ef96-46ad-9954-af80725a67f5'
+    '0':
+      'jcr:uuid': '011c9032-70bb-4c68-85b4-e7208d3c45af'
+      'path': '/dxp/pmd-admin'
+      'permissions': 8
+  'acl_uri':
+    'jcr:uuid': 'cef7dfa9-0b45-4c55-ad30-56d603d2d200'
+    '0':
+      'jcr:uuid': '24170f24-0ff6-4fbf-911a-95e0eccbc65d'
+      'path': '/*'
+      'permissions': 63

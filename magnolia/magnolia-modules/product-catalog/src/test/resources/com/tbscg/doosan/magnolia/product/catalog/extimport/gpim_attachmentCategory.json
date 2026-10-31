@@ -1,0 +1,46 @@
+{
+  "$": "Attachment category",
+  "name": "Attachment category",
+  "description": null,
+  "@code": "theAttachmentCategory",
+  "@catalog": "Products",
+  "@catalogVersion": "Online",
+  "visibility": "PUBLIC",
+  "subCategories": [],
+  "relatedCategories": [],
+  "products": [
+    {
+      "@code": "1111111",
+      "@catalog": "CompactNA",
+      "@catalogVersion": "Online",
+      "$": "Attachment 1",
+      "name": "Attachment 1",
+      "shortName": "Attachment 1",
+      "lifecycleStatus": "ACTIVE",
+      "visibility": "PUBLIC",
+      "attributePriority": "P1"
+    },
+    {
+      "@code": "2222222",
+      "@catalog": "CompactNA",
+      "@catalogVersion": "Online",
+      "$": "Attachment 2",
+      "name": "Attachment 2",
+      "shortName": "Attachment 2",
+      "lifecycleStatus": "ACTIVE",
+      "visibility": "PUBLIC",
+      "attributePriority": "P1"
+    },
+    {
+      "@code": "3333333",
+      "@catalog": "CompactNA",
+      "@catalogVersion": "Online",
+      "$": "Another Attachment 3",
+      "name": "Another Attachment 3",
+      "shortName": "Another Attachment 3",
+      "lifecycleStatus": "ACTIVE",
+      "visibility": "PUBLIC",
+      "attributePriority": "P1"
+    }
+  ]
+}

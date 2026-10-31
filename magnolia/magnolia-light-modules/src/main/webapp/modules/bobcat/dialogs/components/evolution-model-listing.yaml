@@ -1,0 +1,340 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Model / Attachment Listing Configuration
+form:
+  properties:
+    title:
+      label: Upper-title
+      $type: cloudinaryRichText
+      alignment: true
+      i18n: true
+    variant:
+      !include:/bobcat/includes/variants/evolution-model-listing-color-variants.yaml
+    headline:
+      label: Title
+      $type: cloudinaryRichText
+      alignment: true
+      i18n: true
+    additionalCTAHeadline:
+      label: Additional CTA Headline
+      $type: textField
+      i18n: true
+    mainCTA:
+      !include:/bobcat/includes/page-link-or-url-field-with-none.yaml
+      label: Main CTA
+      required: false
+      i18n: true
+    additionalCTA:
+      !include:/bobcat/includes/page-link-or-url-field-with-none.yaml
+      label: Additional CTA
+      required: false
+      i18n: true
+      forms:
+        custom:
+          properties:
+            link:
+              label: ''
+              $type: compositeField
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                customUrl:
+                  label: Custom link URL
+                  description: 'Remember to add protocol (http://, https://) for external links'
+                  $type: textField
+                  required: false
+                customLabel:
+                  label: Link label
+                  $type: textField
+                  i18n: true
+                  required: false
+                target:
+                  !include:/bobcat/includes/anchor-target.yaml
+                  required: false
+        page:
+          properties:
+            link:
+              label: ''
+              $type: compositeField
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                pageUrl:
+                  label: Magnolia page link
+                  $type: pageLinkField
+                  required: false
+                pageLabel:
+                  label: Link label
+                  placeholder: << target page title >>
+                  $type: textField
+                  i18n: true
+                  required: false
+                target:
+                  !include:/bobcat/includes/anchor-target.yaml
+                  required: false
+    group:
+      $type: switchableField
+      label: Listing type
+      field:
+        $type: comboBoxField
+        layout: horizontal
+        defaultValue: product
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: Products
+              label: Products
+              value: products
+            - name: Attachments
+              label: Attachments
+              value: attachments
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: products
+          properties:
+            productCategory:
+              label: Product category
+              $type: linkField
+              buttonSelectNewLabel: Select...
+              chooserId: bobcat:chooser/product-chooser
+              required: true
+              datasource:
+                $type: jcrDatasource
+                workspace: products
+                allowedNodeTypes:
+                  - mgnl:folder
+                  - dxp:category
+                  - dxp:subcategory
+        - name: attachments
+          properties:
+            attachmentCategory:
+              label: Attachment category
+              required: true
+              $type: linkField
+              buttonSelectNewLabel: Select...
+              datasource:
+                $type: jcrDatasource
+                describeByProperty: label
+                workspace: attachments
+                rootPath: /
+                allowedNodeTypes:
+                  - mgnl:folder
+                  - dxp:attachmentCategory
+                  - dxp:attachment
+                  - dxp:attachmentGroup
+            searchByModel:
+              $type: switchableField
+              label: Display Search Attachments By Product Component
+              field:
+                $type: radioButtonGroupField
+                layout: horizontal
+                datasource:
+                  $type: optionListDatasource
+                  options:
+                    - name: 'yes'
+                      label: 'yes'
+                      value: 'yes'
+                    - name: 'no'
+                      label: 'no'
+                      value: 'no'
+              itemProvider:
+                $type: jcrChildNodeProvider
+              forms:
+                - name: 'yes'
+                  properties:
+                    productTypeFieldLabel:
+                      $type: textField
+                      label: Product type field label (Optional)
+                    modelFieldLabel:
+                      $type: textField
+                      label: Model field label (Optional)
+                    defaultProductType:
+                      label: Default product type (optional)
+                      $type: linkField
+                      buttonSelectNewLabel: Select...
+                      chooserId: bobcat:chooser/product-chooser
+                      datasource:
+                        $type: jcrDatasource
+                        workspace: products
+                        allowedNodeTypes:
+                          - mgnl:folder
+                          - dxp:category
+                          - dxp:subcategory
+    facet:
+      !include:/bobcat/dialogs/chooser/facet-chooser.yaml
+    hideSorting:
+      $type: checkBoxField
+      label: Hide Sorting
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    resultsPerPage:
+      !include:/bobcat/includes/per-page-results.yaml
+    useShowMore:
+      $type: checkBoxField
+      label: Use Show More button instead of pagination
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    floatingFilters:
+      $type: checkBoxField
+      label: Filters slide from left
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showMoreVariant:
+      !include:/bobcat/includes/button-style-chooser-no-links.yaml
+      label: Show More button style
+    hideView:
+      $type: checkBoxField
+      label: Hide Pagination View
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    hideFilters:
+      $type: checkBoxField
+      label: Hide Facet Filters
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    hideCaption:
+      $type: checkBoxField
+      label: Hide caption text
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    hideDescription:
+      $type: checkBoxField
+      label: Hide description text
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    useCompare:
+      $type: checkBoxField
+      label: Show Compare Checkboxes
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showUnits:
+      $type: checkBoxField
+      label: Show Units Selector
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showCurrencySelector:
+      $type: checkBoxField
+      label: Show Currency Selector
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    useCollapse:
+      $type: checkBoxField
+      label: Collapse facets
+      description: 'If more than 5 facets it will use collapse with "Show more/less" option'
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showCTA:
+      $type: checkBoxField
+      label: Show Card listing CTA
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    ctaLabel:
+      label: Card listing CTA Label
+      $type: textField
+      i18n: true
+    ctaLabelUrlTarget:
+      !include:/bobcat/includes/anchor-target.yaml
+      label: Card listing CTA link target
+      defaultValue: _parent
+      required: false
+    ctaVariant:
+      !include:/bobcat/includes/button-style-chooser-no-links.yaml
+      label: Card listing CTA style
+    bqVariant:
+      !include:/bobcat/includes/button-style-chooser-no-links.yaml
+      label: Build & Price style
+    showBuildAndQuoteButton:
+      $type: checkBoxField
+      label: Show Build & Price Button
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showInventorySearchButton:
+      $type: checkBoxField
+      label: Show Search Inventory Button
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    showSuggestedPrice:
+      $type: checkBoxField
+      label: Show Suggested Price
+      defaultValue: false
+      buttonLabel: ''
+      type: java.lang.Boolean
+    inventorySearchLink:
+      !include:/bobcat/includes/page-link-or-url-field-with-none.yaml
+      label: Search Inventory Link
+      required: false
+      i18n: true
+    inventorySearchVariant:
+      !include:/bobcat/includes/button-style-chooser-no-links.yaml
+      label: Inventory Link style
+    hideSelectedVariants:
+      $type: checkBoxField
+      label: Hide variants
+      defaultValue: false
+      buttonLabel: ''
+      description: Hide Variants selected in Product Catalog
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: headline
+          - name: group
+          - name: facet
+          - name: hideSelectedVariants
+      buttons:
+        label: Buttons
+        fields:
+          - name: mainCTA
+          - name: additionalCTAHeadline
+          - name: additionalCTA
+          - name: showBuildAndQuoteButton
+          - name: bqVariant
+          - name: showCTA
+          - name: ctaVariant
+          - name: ctaLabel
+          - name: ctaLabelUrlTarget
+          - name: showInventorySearchButton
+          - name: inventorySearchVariant
+          - name: inventorySearchLink
+          - name: showMoreVariant
+          - name: useShowMore
+      settings:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: hideSorting
+          - name: hideView
+          - name: hideFilters
+          - name: hideDescription
+          - name: hideCaption
+          - name: useCompare
+          - name: showUnits
+          - name: showCurrencySelector
+          - name: useCollapse
+          - name: resultsPerPage
+          - name: showSuggestedPrice
+          - name: floatingFilters
+      inheritableSection:
+      anchor:
+      meta:
+light: false
+actions: !include:/bobcat/includes/use-dxp-actions.yaml
+

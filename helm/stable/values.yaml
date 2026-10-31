@@ -1,0 +1,45 @@
+# Default values for magnolia.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+env: dev
+
+# domain_name: dev.dice-tools.com
+# public_domain_name: dev.dice-tools.com
+# bobcat_public_domain_name: dev.bobcat.com
+# ssl_cert_arn: ''
+
+db:
+  magnolia_author:
+    user: magnolia-author
+  magnolia_publisher:
+    user: magnolia-public
+  magnolia_public:
+    user: magnolia-public
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  apache:
+    type: ClusterIP
+    port: 80
+  magnolia_author:
+    type: ClusterIP
+    port: 8080
+    jmx_port: 1099
+    catalina_extra_options: ""
+  magnolia_publisher:
+    type: ClusterIP
+    port: 8080
+  magnolia_public:
+    type: ClusterIP
+    port: 8080
+    java_heap: 4480M
+
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

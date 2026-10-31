@@ -1,0 +1,2 @@
+class: info.magnolia.rest.registry.ConfiguredEndpointDefinition
+implementationClass: com.tbscg.doosan.magnolia.monitoring.rest.MonitoringEndpoint

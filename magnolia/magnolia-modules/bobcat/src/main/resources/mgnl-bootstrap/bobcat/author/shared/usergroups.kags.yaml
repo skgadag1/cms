@@ -1,0 +1,7 @@
+'kags':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-bobcatdirect':
+    'jcr:uuid': 277cd168-4096-3a73-ae71-2239b2fb1194
+    'jcr:primaryType': mgnl:group
+    'roles':
+      '0': 5ea86317-635b-3558-9425-723488b7223d

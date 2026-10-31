@@ -1,0 +1,5 @@
+'workItemHandlers':
+  'jcr:primaryType': mgnl:content
+  'localizationsPackagePublication':
+    'class': info.magnolia.module.workflow.jbpm.workitem.handler.definition.ConfiguredWorkItemHandlerDefinition
+    'implementationClass': com.tbscg.doosan.magnolia.localizations.workflow.LocalizationsSqsWorkItemHandler

@@ -1,0 +1,181 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Parameters:
+  Environment:
+    Description: Deployment environment
+    Type: String
+    AllowedValues: [ dev, qa, prod ]
+  SsrFunction:
+    Type: String
+  DXPBobcatNotificationsTopic:
+    Description: ARN of SNS topic
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: '/cf/ngb/messaging/sns/topic/DXPBobcatNotificationsTopic'
+  IsAuthorStack:
+    Description: Is this stack for author environment?
+    Type: String
+    AllowedValues: [ 'true', 'false' ]
+    Default: 'false'
+
+Conditions:
+  IsDev: !Equals [ !Ref Environment, 'dev' ]
+  IsAuthor: !Equals [ 'true', !Ref IsAuthorStack ]
+
+Resources:
+  SSRAlarmError:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: !Sub 'SSR Error alarm for FN:${SsrFunction}'
+      AlarmName: !Sub '${SsrFunction}-SSR-Error'
+
+      AlarmActions:
+        - !Ref DXPBobcatNotificationsTopic
+      EvaluationPeriods: 1
+      DatapointsToAlarm: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 5
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Sub '${SsrFunction}'
+      Period: 300
+
+  SSRAlarmErrorSSM:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub
+            - '/cf/ngb/cloudwatch/alarms/SSR/lambda/SSRAlarmError${Author}'
+            - Author: !If [ IsAuthor, '-author', '' ]
+      Value: !GetAtt SSRAlarmError.Arn
+      Type: String
+      Tags:
+        Name: SSRAlarmErrorSSM
+        doosan:cloudformation:stack-name: !Ref AWS::StackName
+        doosan:owner: CDA_OPS
+        doosan:repo: https://github.com/DoosanICA/db-dxp-cms
+
+  SSRAlarmDuration:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: !Sub 'SSR Duration alarm for FN:${SsrFunction}'
+      AlarmName: !Sub '${SsrFunction}-SSR-Duration'
+      AlarmActions:
+        - !Ref DXPBobcatNotificationsTopic
+      EvaluationPeriods: 1
+      DatapointsToAlarm: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 2000
+      Namespace: AWS/Lambda
+      Statistic: Average
+      MetricName: Duration
+      Dimensions:
+        - Name: FunctionName
+          Value: !Sub '${SsrFunction}'
+      Period: 300
+
+  SSRAlarmDurationSSM:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub
+            - '/cf/ngb/cloudwatch/alarms/SSR/lambda/SSRAlarmDuration${Author}'
+            - Author: !If [ IsAuthor, '-author', '' ]
+      Value: !GetAtt SSRAlarmDuration.Arn
+      Type: String
+      Tags:
+        Name: SSRAlarmDurationSSM
+        doosan:cloudformation:stack-name: !Ref AWS::StackName
+        doosan:owner: CDA_OPS
+        doosan:repo: https://github.com/DoosanICA/db-dxp-cms
+
+  SSRAlarmThrottling:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: !Sub 'SSR Throttling alarm for FN:${SsrFunction}'
+      AlarmName: !Sub '${SsrFunction}-SSR-Throttling'
+      AlarmActions:
+        - !Ref DXPBobcatNotificationsTopic
+      EvaluationPeriods: 3
+      DatapointsToAlarm: 3
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 1
+      Namespace: AWS/Lambda
+      Statistic: Sum
+      MetricName: Throttles
+      Dimensions:
+        - Name: FunctionName
+          Value: !Sub '${SsrFunction}'
+      Period: 60
+
+  SSRAlarmThrottlingSSM:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub
+            - '/cf/ngb/cloudwatch/alarms/SSR/lambda/SSRAlarmThrottling${Author}'
+            - Author: !If [ IsAuthor, '-author', '' ]
+      Value: !GetAtt SSRAlarmThrottling.Arn
+      Type: String
+      Tags:
+        Name: SSRAlarmThrottlingSSM
+        doosan:cloudformation:stack-name: !Ref AWS::StackName
+        doosan:owner: CDA_OPS
+        doosan:repo: https://github.com/DoosanICA/db-dxp-cms
+
+  SSRAlarmConcurrentExecutions:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: !Sub 'SSR ConcurrentExecutions alarm for FN:${SsrFunction}'
+      AlarmName: !Sub '${SsrFunction}-SSR-ConcurrentExecutions'
+      AlarmActions:
+        - !Ref DXPBobcatNotificationsTopic
+      EvaluationPeriods: 2
+      DatapointsToAlarm: 2
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 20
+      Namespace: AWS/Lambda
+      Statistic: Maximum
+      MetricName: Throttles
+      Dimensions:
+        - Name: FunctionName
+          Value: !Sub '${SsrFunction}'
+      Period: 60
+
+  SSRAlarmConcurrentExecutionsSSM:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub
+        - '/cf/ngb/cloudwatch/alarms/SSR/lambda/SSRAlarmConcurrentExecutions${Author}'
+        - Author: !If [ IsAuthor, '-author', '' ]
+      Value: !GetAtt SSRAlarmConcurrentExecutions.Arn
+      Type: String
+      Tags:
+        Name: SSRAlarmConcurrentExecutionsSSM
+        doosan:cloudformation:stack-name: !Ref AWS::StackName
+        doosan:owner: CDA_OPS
+        doosan:repo: https://github.com/DoosanICA/db-dxp-cms
+
+  CompositeSSRLambdaAlarms:
+    Type: 'AWS::CloudWatch::CompositeAlarm'
+    Properties:
+      AlarmName: !Sub
+        - 'CompositeSSRLambdaAlarm${Author}'
+        - Author: !If [ IsAuthor, '-author', '' ]
+      AlarmRule: !If [ "IsDev", "FALSE", !Sub 'ALARM(${SSRAlarmError}) OR
+        ALARM(${SSRAlarmDuration}) OR
+        ALARM(${SSRAlarmConcurrentExecutions}) OR
+        ALARM(${SSRAlarmThrottling})' ]
+
+  CompositeSSRLambdaAlarmsSSM:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub
+            - '/cf/ngb/cloudwatch/alarms/SSR/lambda/CompositeSSRLambdaAlarm${Author}'
+            - Author: !If [ IsAuthor, '-author', '' ]
+      Value: !GetAtt CompositeSSRLambdaAlarms.Arn
+      Type: String
+      Tags:
+        Name: CompositeSSRLambdaAlarmSSM
+        doosan:cloudformation:stack-name: !Ref AWS::StackName
+        doosan:owner: CDA_OPS
+        doosan:repo: https://github.com/DoosanICA/db-dxp-cms

@@ -1,0 +1,22 @@
+'cors':
+  'class': 'info.magnolia.cors.SelfConfiguredCorsFilter'
+  'jcr:primaryType': 'mgnl:content'
+  'uris':
+    'rest':
+      'patternString': '/.rest/*'
+    'vaadin-theme':
+      'patternString': '/VAADIN/*'
+    'bobcat-api':
+      'patternString': '/bobcat_api/*'
+  'allowedHeaders':
+    'all': '*'
+  'allowedMethods':
+    'all': '*'
+  'allowedOrigins':
+    'site1': 'https://ssr.bobcat.com'
+    'site2': 'https://new.bobcat.com'
+    'site3': 'https://bobcat.com'
+    'site4': 'https://www.new.bobcat.com'
+    'site5': 'https://www.bobcat.com'
+    'site6': 'https://magnolia-cms.dibhids.net'
+    'site7': 'https://ssr-author.bobcat.com'

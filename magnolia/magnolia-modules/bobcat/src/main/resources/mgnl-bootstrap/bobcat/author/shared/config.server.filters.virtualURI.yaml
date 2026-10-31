@@ -1,0 +1,3 @@
+virtualURI:
+  class: com.tbscg.doosan.magnolia.bobcat.filters.DxpVirtualUriFilter
+  enabled: true

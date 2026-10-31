@@ -1,0 +1,99 @@
+label: Page properties
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      required: true
+    sectionName:
+      $type: textField
+      label: Section nav label
+      required: true
+      requiredErrorMessage: Enter label for section navigation.
+    icon:
+      !include:/kags/includes/icons-field-v2.yaml
+    text:
+      $type: textField
+      label: Extra content text
+      description: Extra content diplayed in Header component after hovering over selected page in navigation
+    image:
+      !include:/kags/includes/dam-asset-v2.yaml
+      label: Image in extra content
+    alt:
+      $type: textField
+      description: Image description
+      label: Image alt
+    excludePageFromSitemap:
+      $type: checkBoxField
+      label: Page excluded
+      buttonLabel: Select to exclude the page from the sitemap
+      defaultValue: false
+      type: java.lang.Boolean
+    hideSubmenu:
+      $type: checkBoxField
+      label: Without submenu
+      buttonLabel: Select to hide submenu for this page on top menu bar
+      defaultValue: false
+      type: java.lang.Boolean
+    hideHeader:
+      $type: checkBoxField
+      label: Hide header
+      buttonLabel: Do not show header area on this page
+      defaultValue: false
+      type: java.lang.Boolean
+    hideFooter:
+      $type: checkBoxField
+      label: Hide footer
+      buttonLabel: Do not show footer area on this page
+      defaultValue: false
+      type: java.lang.Boolean
+    hideFeedback:
+      $type: checkBoxField
+      label: Hide feedback
+      buttonLabel: Do not show feedback area on this page
+      defaultValue: false
+      type: java.lang.Boolean
+    showColumnCentered:
+      $type: checkBoxField
+      label: Show column container
+      buttonLabel: Show column centered area on this page
+      defaultValue: false
+      type: java.lang.Boolean
+    showMenu:
+      $type: checkBoxField
+      label: Show menu and content areas
+      buttonLabel: Show menu and content areas on this page
+      defaultValue: false
+      type: java.lang.Boolean
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+    forInternals:
+      !include:/kags/includes/internal-access.yaml
+  layout:
+    $type: tabbedLayout
+    tabs:
+      general:
+        label: Page properties
+        fields:
+          - name: title
+          - name: sectionName
+          - name: icon
+          - name: text
+          - name: image
+          - name: alt
+      details:
+        label: Page visibility
+        fields:
+          - name: excludePageFromSitemap
+          - name: hideSubmenu
+          - name: hideHeader
+          - name: hideFooter
+          - name: hideFeedback
+          - name: showColumnCentered
+          - name: showMenu
+          - name: forKeyAccounts
+          - name: forSupertechs
+          - name: forInternals
+  light: false

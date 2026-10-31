@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: preview-dev
+  namespace: bamboo
+  labels:
+    app: preview-dev
+spec:
+  selector:
+    matchLabels:
+      app: preview-dev
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: preview-dev
+    spec:
+      containers:
+      - name: preview-dev
+        image: {{ .Values.image.runner.repository }}:{{ .Values.image.runner.tag}}
+        imagePullPolicy: {{ .Values.image.runner.pullPolicy }}
+        command: [ "/root/scripts/preview-dev.sh" ]
+        env:
+        - name: BRANCH_NAME
+          value: {{ .Values.environment.branch | quote }}
+        - name: ENV
+          value: {{ .Values.environment.env | quote }}
+        resources:
+          limits:
+            cpu: "{{ .Values.resources.runner.limits.cpu }}"
+            memory: "{{ .Values.resources.runner.limits.memory }}"
+          requests:
+            cpu: "{{ .Values.resources.runner.requests.cpu }}"
+            memory: "{{ .Values.resources.runner.requests.memory }}"
+        volumeMounts:
+        - name: aws-config
+          mountPath: /root/.aws
+        - name: bamboo-data
+          mountPath: /bamboo/d11
+        - name: bamboo-data
+          nfs:
+            server: {{ .Values.efs.data.host }}
+            path: {{ .Values.efs.data.dir }}
+      volumes:
+      - name: aws-config
+        configMap:
+          name: aws-creds
+          items:
+            - key: config
+              path: config
+            - key: credentials
+              path: credentials

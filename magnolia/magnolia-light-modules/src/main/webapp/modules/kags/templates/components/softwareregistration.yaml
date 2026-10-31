@@ -1,0 +1,4 @@
+renderType: freemarker
+title: Software Registration Component
+templateScript: /kags/templates/components/softwareregistration.ftl
+dialog: kags:components/softwareregistration

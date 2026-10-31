@@ -1,0 +1,13 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: default
+      label: Default
+      value: default
+    - name: number
+      label: Number only
+      value: number
+label: Output type
+defaultValue: default
+description: Set Default if you want to submit a field with a String value, set Number if you want to submit a field with a Number value

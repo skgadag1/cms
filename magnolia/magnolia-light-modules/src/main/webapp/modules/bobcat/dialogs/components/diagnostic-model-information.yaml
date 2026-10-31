@@ -1,0 +1,66 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Diagnostic Model Information Configuration
+form:
+  properties:
+    title:
+      label: Component Title
+      $type: textField
+      i18n: true
+      required: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h2
+    codeLabel:
+      label: Code Label
+      $type: textField
+      i18n: true
+      required: true
+    descriptionLabel:
+      label: Description Label
+      $type: textField
+      i18n: true
+      required: true
+    serialNumberLabel:
+      label: Serial Number input label
+      $type: textField
+      i18n: true
+      required: true
+    diagnosticCodeLabel:
+      label: Diagnostic Code input label
+      $type: textField
+      i18n: true
+      required: true
+    checkCodeButton:
+      label: Submit button label
+      $type: textField
+      i18n: true
+      required: true
+    whereToFindLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      defaultValue: none
+      i18n: true
+      field:
+        datasource:
+          options:
+            - name: none
+              label: No link
+              value: none
+      label: Link "Where to find your Serial Number"
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: codeLabel
+          - name: descriptionLabel
+          - name: serialNumberLabel
+          - name: diagnosticCodeLabel
+          - name: checkCodeButton
+          - name: whereToFindLink
+      inheritableSection:
+      anchor:
+      meta:
+light: false

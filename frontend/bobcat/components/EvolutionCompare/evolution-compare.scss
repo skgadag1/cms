@@ -1,0 +1,317 @@
+@import '~bootstrap/scss/functions';
+@import '~/assets/sass/variables';
+@import '~bootstrap/scss/mixins';
+@import '~/assets/sass/_colors';
+
+section[data-test-id="evolution-compare-component"]
+:is(
+  [data-test-id="evolution-compare-component-title"],
+  [data-test-id="evolution-compare-component-subtitle"],
+  [data-test-id="evolution-compare-component-description"]
+)
+:is(p, h1, h2, h3, h4, h5, h6) {
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-header.constrained {
+  max-width: 41.875rem;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-header.constrained.justify-content-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot--stretch {
+  min-height: 0;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot__inner {
+  flex: 1 1 0%;
+  min-height: 0;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot-empty {
+  min-height: 18rem;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot-empty__title {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: $font-size-base;
+  line-height: $headings-line-height;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot-empty__text {
+  font-family: $font-family-base;
+  font-weight: 400;
+  font-size: $font-size-sm;
+  line-height: $line-height-base;
+}
+
+/* The dropdown renders its own w-100 root, so it needs a shrinkable flex wrapper
+   to keep the remove button inside the slot width. */
+section[data-test-id="evolution-compare-component"] .evolution-compare-slot__dropdown {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-remove-model {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  cursor: pointer;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-remove-model:hover {
+  color: $primary !important;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-add-model-btn {
+  white-space: nowrap;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-footer-hr {
+  border: 0;
+  border-top: 1px solid $gray-200;
+  opacity: 1;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-preview-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(9.5rem, 48vw, 15rem);
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    #fff 0%,
+    rgba(255, 255, 255, 0.98) 12%,
+    rgba(255, 255, 255, 0.88) 28%,
+    rgba(255, 255, 255, 0.5) 58%,
+    rgba(255, 255, 255, 0.18) 82%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-show-more-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: -2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-end-sentinel {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-slider {
+  position: relative;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--ec-dropdown-sticky-top, 0px);
+  z-index: 1020;
+  box-sizing: border-box;
+  background-color: $white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $gray-200;
+  box-shadow: none;
+}
+
+section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__scroll {
+  overflow-x: visible;
+}
+
+@include media-breakpoint-down(lg) {
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar > .ec-compare-hscroll-wrap {
+    min-width: 0;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__row.evolution-compare-specs-sticky-bar__inner {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    column-gap: 0.25rem;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__col[class*="col-lg-"] {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: min(68vw, 33.333333%) !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  section[data-test-id="evolution-compare-component"] .ec-compare-hscroll-wrap {
+    position: relative;
+  }
+
+  section[data-test-id="evolution-compare-component"] .ec-compare-hscroll-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: clamp(32px, 10vw, 56px);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.35) 45%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  section[data-test-id="evolution-compare-component"] .ec-compare-hscroll-wrap--at-end::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 6px;
+    width: clamp(32px, 10vw, 56px);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.35) 45%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-slider--at-end::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.evolution-compare-tiles-row--responsive.row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 12px;
+    -webkit-overflow-scrolling: touch;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 16px;
+    align-items: stretch;
+    padding-bottom: 6px;
+  }
+
+  /*
+   * 2.5 columns visible: two full tiles + half of the third (two 16px gaps in view).
+   * 2.5 * s + 32px = 100%  =>  s = (100% - 32px) / 2.5
+   */
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row--responsive.row > [class*="col-"]:not(.evolution-compare-add-model-col) {
+    flex: 0 0 calc((100% - 32px) / 2.5) !important;
+    max-width: none !important;
+    width: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    scroll-snap-align: start;
+    margin-bottom: 0 !important;
+    min-width: 0;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-add-model-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-slider::after {
+    display: none;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.evolution-compare-tiles-row--responsive.row {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    scroll-snap-type: none;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.row {
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.row > [class*="col-"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  section[data-test-id="evolution-compare-component"] .ec-compare-hscroll-wrap::after {
+    display: none;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: none;
+    box-shadow: 0 2px 8px rgba(12, 24, 30, 0.12);
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__row {
+    margin-left: -32px !important;
+    margin-right: -32px !important;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-specs-sticky-bar__col {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.row {
+    margin-left: -32px !important;
+    margin-right: -32px !important;
+  }
+
+  section[data-test-id="evolution-compare-component"] .evolution-compare-tiles-row.row > [class*="col-"] {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+}

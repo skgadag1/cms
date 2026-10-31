@@ -1,0 +1,5 @@
+renderType: ftlExtended
+title: Fault codes Component
+templateScript: /kags/templates/components/faultcodes.ftl
+dialog: kags:components/faultcodes
+moveable: false

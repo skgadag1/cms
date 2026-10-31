@@ -1,0 +1,6 @@
+'sessionInvalidate': 
+  'class': 'com.tbscg.doosan.magnolia.sso.filter.SessionInvalidateFilter'
+  'enabled': 'true'
+  'paramName': 'session'
+  'paramValue': 'invalidate'
+  jcr:primaryType: 'mgnl:content'

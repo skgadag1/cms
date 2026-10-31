@@ -1,0 +1,60 @@
+label: Download CTA
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      i18n: true
+      required: true
+    documentDownloads:
+      label: Documents Download Links (max 3 items)
+      description: Please define max 3 download links.
+      $type: jcrMultiField
+      maxItems: 3
+      field:
+        name: documentDownload
+        label: Document Download Link
+        $type: compositeField
+        properties:
+          label:
+            $type: textField
+            label: 'Label'
+            i18n: true
+          softwareDownloadDocument:
+            !include:/bobcat/includes/dam-asset.yaml
+            label: Software Download Document
+            i18n: true
+            required: true
+    alignment:
+      label: Button Alignment
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            value: left
+            label: Left
+          - name: center
+            value: center
+            label: Center
+          - name: right
+            value: right
+            label: Right
+      defaultValue: left
+    description:
+      $type: cloudinaryRichText
+      label: Description Text
+      i18n: true
+      rows: 3
+
+
+layout:
+  $type: tabbedLayout
+  tabs:
+    main:
+      label: Main
+      fields:
+        - name: titleField
+        - name: documentDownloads
+        - name: alignment
+        - name: description

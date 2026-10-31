@@ -1,0 +1,63 @@
+'ownerportal':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-ownerportal':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': 8932e895-80dd-3a77-897c-c1f57cb3a9b1
+    'acl_userroles':
+      '0':
+        'path': /ownerportal/dxp-ownerportal
+        'permissions': 8
+    'acl_website':
+      '0':
+        'path': '/owner-portal'
+        'permissions': 63
+      '00':
+        'path': '/owner-portal/*'
+        'permissions': 63
+      '01':
+        'path': '/irp'
+        'permissions': 63
+      '02':
+        'path': '/irp/*'
+        'permissions': 63
+    'acl_concepts':
+      '0':
+        'path': '/owner-portal'
+        'permissions': 63
+      '00':
+        'path': '/owner-portal/*'
+        'permissions': 63
+      '01':
+        'path': '/irp'
+        'permissions': 63
+      '02':
+        'path': '/irp/*'
+        'permissions': 63
+    'acl_faq':
+      '0':
+        'path': '/owner-portal'
+        'permissions': 63
+      '00':
+        'path': '/owner-portal/*'
+        'permissions': 63
+      '01':
+        'path': '/irp'
+        'permissions': 63
+      '02':
+        'path': '/irp/*'
+        'permissions': 63
+    'acl_uri':
+      '0':
+        'path': '*'
+        'permissions': 63
+    'acl_tasks':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63

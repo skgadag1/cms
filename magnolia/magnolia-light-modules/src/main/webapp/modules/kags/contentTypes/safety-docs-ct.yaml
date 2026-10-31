@@ -1,0 +1,16 @@
+datasource:
+    workspace: safety-docs
+    rootPath: /
+    namespaces:
+      lib: https://www.magnolia-travel.com/jcr/1.0/lib
+    autoCreate: true
+
+model:
+  nodeType: lib:safety-doc
+  properties:
+    - name: title
+    - name: description
+    - name: product_model
+    - name: publish_date
+      type: Date
+    - name: url

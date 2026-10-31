@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>concepts</name>
+  <displayName>${project.name}</displayName>
+  <class>com.tbscg.doosan.magnolia.concepts.ConceptsModule</class>
+  <versionHandler>com.tbscg.doosan.magnolia.concepts.setup.ConceptsModuleVersionHandler</versionHandler>
+  <version>2020.4.7</version>
+
+  <components>
+    <id>app-concepts-app-browser</id>
+
+    <component>
+      <type>info.magnolia.ui.framework.ContentClipboard</type>
+      <implementation>info.magnolia.ui.contentapp.action.clipboard.JcrClipboard</implementation>
+    </component>
+  </components>
+
+  <components>
+    <id>main</id>
+    <component>
+      <type>com.tbscg.doosan.magnolia.concepts.service.ConceptsService</type>
+      <implementation>com.tbscg.doosan.magnolia.concepts.service.impl.ConceptsServiceImpl</implementation>
+    </component>
+  </components>
+
+  <components>
+    <id>subapp</id>
+    <component>
+      <type>info.magnolia.ui.contentapp.detail.DetailPresenter</type>
+      <implementation>com.tbscg.doosan.magnolia.concepts.action.ui.ConceptsDetailPresenter</implementation>
+    </component>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>core</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>rest-integration</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>translation</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>dxp-core</name>
+      <version>*</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <name>magnolia</name>
+      <workspaces>
+        <workspace>concepts</workspace>
+      </workspaces>
+    </repository>
+  </repositories>
+</module>

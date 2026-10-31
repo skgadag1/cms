@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+	<name>monitoring</name>
+	<displayName>${project.name}</displayName>
+	<description>${project.description}</description>
+	<versionHandler>com.tbscg.doosan.magnolia.monitoring.setup.MonitoringVersionHandler</versionHandler>
+	<version>2021.2.12</version>
+
+	<dependencies>
+		<dependency>
+			<name>core</name>
+			<version>*</version>
+		</dependency>
+		<dependency>
+			<name>rest-integration</name>
+			<version>*</version>
+		</dependency>
+		<dependency>
+			<name>dxp-core</name>
+			<version>*</version>
+		</dependency>
+	</dependencies>
+</module>

@@ -1,0 +1,15 @@
+openUploadAssetDialog:
+  class: info.magnolia.amazon.s3.ui.action.OpenDialogActionDefinition
+  dialogName: amazon-s3-connector-module:uploadAsset
+  icon: icon-upload
+  availability:
+    root: false
+    rules:
+      sitemapBucketRule:
+        $type: sitemapBucketAssetActions
+        blockAccessFilesList:
+          - 'sitemap_images_index.xml'
+          - 'sitemap_index.xml'
+          - 'sitemap_videos_index.xml'
+      isBucketOrFolder:
+        implementationClass: info.magnolia.amazon.s3.ui.action.availability.IsBucketOrFolderRule

@@ -1,0 +1,54 @@
+!content-type:safety-docs-ct
+name: safety-docs
+label: Safety Docs
+icon: icon-content-app
+
+subApps:
+  detail:
+    label: Safety Document details
+    form:
+      properties:
+        name:
+          $type: textField
+          label: Node name
+        description:
+          $type: textField
+          label: Description
+          i18n: true
+          rows: 3
+        title:
+          $type: textField
+          label: Title
+          i18n: true
+        product_model:
+          $type: textField
+          label: Product family code
+          description: i.e. SSL, CTL, MEX, UTV, TTC, UWM, AWS, CT, MT
+          placeholder: Enter product abbreviation here
+          maxLength: 3
+          required: true
+        publish_date:
+          $type: dateField
+          label: Date published
+        url:
+          $type: assetLinkField
+          label: Document link
+          description: Link to cloudinary asset to download
+          i18n: true
+      layout:
+        $type: tabbedLayout
+        tabs:
+          deafult:
+            fields:
+              - name: name
+              - name: product_model
+              - name: publish_date
+              - name: title
+              - name: description
+              - name: url
+
+permissions:
+  roles:
+    superuser: superuser
+    content-author: content-author
+    content-approver: content-approver

@@ -1,0 +1,31 @@
+label: Privacy policy
+$type: compositeField
+layout:
+  $type: form
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  name:
+    $type: textField
+    label: Field name
+    description: Name needs to be unique
+    i18n: true
+    required: true
+  id:
+    $type: textField
+    label: Mapping field ID
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.
+  required:
+    $type: checkBoxField
+    label: Is required
+    buttonLabel: Required
+    defaultValue: true
+    type: java.lang.Boolean
+  validationMessage:
+    $type: textField
+    label: Validation message
+    i18n: true
+  text:
+    $type: cloudinaryRichText
+    label: Text
+    i18n: true

@@ -1,0 +1,45 @@
+pmd:
+  class: info.magnolia.ui.api.app.AppDescriptor
+  appClass: com.tbscg.doosan.magnolia.pmd.app.PmdApp
+  name: pmd
+  icon: icon-favorites
+  label: Product Master Data
+  subApps:
+    pmiBrowser:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.pmd.app.pmiBrowser.PmiBrowserSubApp
+      closable: false
+      label: Products
+#    documentBrowser:
+#      class: info.magnolia.ui.api.app.SubAppDescriptor
+#      subAppClass: com.tbscg.doosan.magnolia.pmd.app.documentBrowser.DocumentBrowserSubApp
+#      closable: false
+#      label: Documents
+#    documentView:
+#      class: info.magnolia.ui.api.app.SubAppDescriptor
+#      subAppClass: com.tbscg.doosan.magnolia.pmd.app.documentView.DocumentViewSubApp
+#      closable: true
+#      label: Document view
+    schematicBrowser:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.pmd.app.schematicBrowser.SchematicBrowserSubApp
+      closable: false
+      label: Schematics
+    schematicView:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.pmd.app.schematicView.SchematicViewSubApp
+      closable: true
+      label: Schematic details
+    scheduleBrowser:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.pmd.app.service.ScheduleBrowserSubApp
+      closable: false
+      label: Maint. Schedules
+    scheduleView:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.pmd.app.service.ScheduleViewSubApp
+      closable: true
+      label: Schedule details
+  permissions:
+    roles:
+      pmd-admin: pmd-admin

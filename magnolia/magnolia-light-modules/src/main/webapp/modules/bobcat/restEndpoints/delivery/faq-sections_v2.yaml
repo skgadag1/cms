@@ -1,0 +1,16 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: faq
+endpointPath: /api/content/faq-sections
+rootPath: /
+depth: 0x7fffffff
+includeSystemProperties: false
+bypassWorkspaceAcls: true
+nodeTypes:
+  - dxp:faqSection
+
+references:
+  - name: tagsReference
+    propertyName: tags
+    referenceResolver:
+      class: info.magnolia.rest.reference.jcr.JcrReferenceResolverDefinition
+      targetWorkspace: category

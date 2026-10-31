@@ -1,0 +1,29 @@
+$type: switchableField
+label: Color Variant
+description: Select a color variant for the infographic table background and cards.
+required: true
+field:
+  $type: comboBoxField
+  layout: horizontal
+  defaultValue: LIGHT_GRAY
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: LIGHT_GRAY
+        label: Light gray
+        value: LIGHT_GRAY
+      - name: WHITE_VARIANT
+        label: White
+        value: WHITE
+      - name: BLACK_GRADIENT
+        label: Black with gradient (hyperspace)
+        value: BLACK_GRADIENT
+        selected: true
+      - name: DARK_GRAY
+        label: Dark gray
+        value: DARK_GRAY
+      - name: DARK_AND_WHITE
+        label: Medium dark gray 
+        value: DARK_AND_WHITE
+itemProvider:
+  $type: jcrChildNodeProvider

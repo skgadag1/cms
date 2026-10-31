@@ -1,0 +1,246 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .d-block-ie-only {
+    display: block !important;
+  }
+
+  .input-group {
+    input:focus {
+      border-color: $input-border-color;
+    }
+
+    &:hover {
+      input,
+      .input-group-text {
+        border-color: $black;
+      }
+    }
+  }
+
+  header {
+    .col-12 {
+      flex: 1 0 auto !important;
+    }
+  }
+
+  #bobcat-nav {
+    .nav-item {
+      .subnavigation {
+        left: 0;
+      }
+    }
+  }
+
+  .troubleshooting_table {
+    tr {
+      background: $white;
+
+      td {
+        border-top: 5px solid $gray-100;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .bg-dotted {
+    .col {
+      &-md-auto {
+        flex: 0 0 15%;
+      }
+    }
+  }
+
+  .feedback {
+    &-body {
+      flex-basis: auto !important;
+    }
+  }
+
+  .add-serial-control {
+    min-width: 15rem;
+  }
+
+  .btn-indicator__label {
+    flex: 1 0 auto;
+  }
+
+  .grid-table {
+    &-row,
+    &-header {
+      display: -ms-grid !important;
+      -ms-grid-columns: 1fr;
+      -ms-grid-rows: 1fr;
+
+      & > div {
+        margin: 0 1.5rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @for $v from 1 to 9 {
+          &:nth-child(#{$v}) {
+            display: block;
+            -ms-grid-row: 1;
+            -ms-grid-column: $v;
+          }
+        }
+      }
+
+      .item__select {
+        display: -ms-inline-grid !important;
+      }
+    }
+
+    &__faultcodes {
+      .grid-table {
+        &-row {
+          -ms-grid-columns: 4rem 6.25rem 6.75rem 1fr 10rem 7.5rem;
+        }
+
+        &-header {
+          display: none !important;
+
+          @include media-breakpoint-up('md') {
+            display: -ms-grid !important;
+            -ms-grid-columns: 4rem 6.25rem 6.75rem 1fr 10rem 5.5rem;
+          }
+        }
+      }
+    }
+
+    &__fieldmods {
+      .grid-table {
+        &-row {
+          display: flex !important;
+
+          @include media-breakpoint-up('md') {
+            display: -ms-grid !important;
+            -ms-grid-columns: 7rem 3rem 7rem 1fr 7rem 3.5rem;
+          }
+
+          div {
+            margin: 0;
+          }
+        }
+
+        &-header {
+          display: none !important;
+
+          @include media-breakpoint-up('md') {
+            display: -ms-grid !important;
+            -ms-grid-columns: 7rem 3rem 7rem 1fr 7rem 3.5rem;
+          }
+
+          div {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &__service-library {
+      .grid-table {
+        &-row {
+          display: block !important;
+
+          @include media-breakpoint-up('md') {
+            display: -ms-grid !important;
+            -ms-grid-columns: 6rem 1fr 13rem 6rem 1rem;
+          }
+
+          div {
+            margin: 0;
+          }
+        }
+
+        &-header {
+          display: none !important;
+
+          div {
+            margin: 0;
+          }
+
+          @include media-breakpoint-up('md') {
+            display: -ms-grid !important;
+            -ms-grid-columns: 6rem 1fr 13rem 6rem 1rem;
+          }
+        }
+        &-row {
+
+        }
+      }
+    }
+
+    &__warranty {
+      .grid-table {
+        &-header,
+        &-row {
+          -ms-grid-columns: 5rem 1fr 7rem 6.5rem 6.5rem 4.5rem;
+        }
+      }
+    }
+
+    &__builtoptions {
+      .grid-table {
+        &-header,
+        &-row {
+          -ms-grid-columns: 20% 1fr;
+        }
+      }
+    }
+
+    &__maintenance-schedule {
+      .grid-table {
+        &-header,
+        &-row {
+          -ms-grid-columns: 50% 50%;
+        }
+      }
+    }
+
+    &__locationhistory {
+      .grid-table {
+        &-header,
+        &-row {
+          -ms-grid-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+        }
+      }
+    }
+
+    &__diagnostichistory {
+      .grid-table {
+        @include media-breakpoint-down('md') {
+          &-header {
+            display: none!important;
+          }
+          &-row {
+            display: flex!important;
+            > div {
+              margin: 0;
+            }
+          }
+        }
+
+        &-row {
+          padding-right: 2rem!important;
+        }
+        @include media-breakpoint-up('md') {
+          &-header {
+            -ms-grid-columns: 6rem 6rem 6.5rem 1fr 8.5rem;
+          }
+          &-row {
+            -ms-grid-columns: 6rem 6rem 6.5rem 1fr 3rem 5rem;
+          }
+        }
+      }
+    }
+  }
+}

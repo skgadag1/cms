@@ -1,0 +1,9 @@
+label: Visibility App
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+name: visibility-app
+icon: icon-sitemaps-app
+subApps:
+  visibility:
+    !include:/visibility/includes/visibility-hierarchy-sub-app.yaml
+

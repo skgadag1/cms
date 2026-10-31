@@ -1,0 +1,102 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Footer Configuration
+form:
+  properties:
+    logo:
+      !include:/bobcat/includes/image.yaml
+      label: Doosan logo image
+    social:
+      label: Social links
+      $type: jcrMultiField
+      i18n: false
+      field:
+        $type: compositeField
+        properties:
+          url:
+            label: Social page url
+            description: Remember to add protocol (http://, https://) for external links
+            $type: textField
+            required: true
+            validators:
+              external:
+                $type: regexpValidator
+                pattern: ^(http:|https:)?//(.*)$
+                errorMessage: Valid external url needs protocol (http://, https://)
+          icon:
+            !include:/bobcat/includes/icons.yaml
+    links:
+      label: Groups
+      $type: jcrMultiField
+      i18n: false
+      buttonSelectAddLabel: Add new group
+      field:
+        label: Group
+        $type: compositeField
+        required: true
+        properties:
+          title:
+            label: Group title (optional)
+            $type: textField
+            i18n: true
+          items:
+            !include:/bobcat/includes/link-list.yaml
+            i18n: false
+    regionLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      forms:
+        custom: 
+          properties:
+            link:
+              properties:
+                customLabel:
+                  description: 'If used: %REGION% and %LANG% tags will be replaced by model region and language (from Region App)'
+        page: 
+          properties:
+            link:
+              properties:
+                pageLabel:
+                  description: 'If used: %REGION% and %LANG% tags will be replaced by model region and language (from Region App)'
+      label: Region Selector Link
+      i18n: true
+    rightSection:
+      !include:/bobcat/includes/link-list.yaml
+      label: Right section links
+      i18n: false
+      required: false
+    oneTough:
+      !include:/bobcat/includes/image.yaml
+      label: One tough image
+    disclaimer:
+      label: Disclaimer
+      $type: cloudinaryRichText
+      alignment: true
+      required: true
+      i18n: true
+    preloaded:
+      defaultValue: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      socialSection:
+        label: Logo & social
+        fields:
+          - name: oneTough
+          - name: social
+      linkSection:
+        label: Link groups
+        fields:
+          - name: links
+      langSection:
+        label: Language picker
+        fields:
+          - name: regionLink
+          - name: rightSection
+      disclaimerSection:
+        label: Disclaimer
+        fields:
+          - name: disclaimer
+          - name: logo
+      inheritableSection:
+      meta:
+wide: true
+light: false

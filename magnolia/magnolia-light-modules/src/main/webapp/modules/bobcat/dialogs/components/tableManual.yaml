@@ -1,0 +1,126 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Table Configuration
+form:
+  properties:
+    title:
+      $type: textField
+      label: Title
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h2
+    showHeaders:
+      $type: checkBoxField
+      label: ''
+      buttonLabel: 'Show headers for columns'
+      defaultValue: true
+      type: java.lang.Boolean
+    manualTable:
+      label: Table content
+      $type: jcrMultiField
+      i18n: false
+      buttonSelectAddLabel: Add new section
+      field:
+        label: ''
+        $type: compositeField
+        properties:
+          sectionTitle:
+            label: Section title
+            $type: textField
+            i18n: true
+          column1:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 1'
+          column2:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 2'
+          column3:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 3'
+          column4:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 4'
+          column5:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 5'
+          column6:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 6'
+          column7:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 7'
+          column8:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 8'
+          column9:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 9'
+          column10:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 10'
+          column11:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 11'
+          column12:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 12'
+          column13:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 13'
+          column14:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 14'
+          column15:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 15'
+          column16:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 16'
+          column17:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 17'
+          column18:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 18'
+          column19:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 19'
+          column20:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 20'
+          column21:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 21'
+          column22:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 22'
+          column23:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 23'
+          column24:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 24'
+          column25:
+            !include:/bobcat/includes/table/table-column.yaml
+            label: 'Column 25'
+
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: showHeaders
+      table:
+        label: Manual table
+        fields:
+          - name: manualTableHeaders
+          - name: manualTable
+      inheritableSection:
+      anchor:
+      meta:
+wide: true
+width: wide
+light: false

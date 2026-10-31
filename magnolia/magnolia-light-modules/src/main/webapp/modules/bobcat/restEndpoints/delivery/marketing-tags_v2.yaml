@@ -1,0 +1,12 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/marketing-tags
+bypassWorkspaceAcls: true
+workspace: marketing-tags
+depth: 2
+systemProperties:
+  - mgnl:lastModified
+nodeTypes:
+  - mgnl:marketing-tag
+childNodeTypes:
+  - mgnl:contentNode
+  - mgnl:marketing-tag

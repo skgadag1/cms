@@ -1,0 +1,85 @@
+//// korean
+//@font-face {
+//    font-family: 'BobcatMain';
+//    src: local('NotoSansKR-Regular'), url('~/assets/fonts/noto-sans/NotoSansKR-Regular.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+1100−11FF,U+A960−A97F,U+AC00–D7FF,U+3130—318F';
+//}
+//
+//@font-face {
+//    font-family: 'BobcatMain-Roman';
+//    src: local('NotoSansKR-Regular'), url('~/assets/fonts/noto-sans/NotoSansKR-Regular.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+1100−11FF,U+A960−A97F,U+AC00–D7FF,U+3130—318F';
+//}
+//
+//@font-face {
+//    font-family: 'BobcatMain-BoldCondensed';
+//    src: local('NotoSansKR-Bold'), url('~/assets/fonts/noto-sans/NotoSansKR-Bold.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+1100−11FF,U+A960−A97F,U+AC00–D7FF,U+3130—318F';
+//}
+//
+//// chinese
+//@font-face {
+//    font-family: 'BobcatMain';
+//    src: local('NotoSansSC-Regular'), url('~/assets/fonts/noto-sans/NotoSansSC-Regular.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+2E80-30FF,U+31C0-9FFF';
+//}
+//
+//@font-face {
+//    font-family: 'BobcatMain-Roman';
+//    src: local('NotoSansSC-Regular'), url('~/assets/fonts/noto-sans/NotoSansSC-Regular.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+3000-30FF,U+31C0-9FFF';
+//}
+//
+//@font-face {
+//    font-family: 'BobcatMain-BoldCondensed';
+//    src: local('NotoSansSC-Bold'), url('~/assets/fonts/noto-sans/NotoSansSC-Bold.otf') format('opentype');
+//    font-display: swap;
+//    unicode-range: 'U+3000-30FF,U+31C0-9FFF';
+//}
+
+// rest of world
+@font-face {
+    font-family: 'BobcatMain';
+    src: local('HelveticaNeueLT'), local('HelveticaNeueLT-Roman');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot?#iefix') format('embedded-opentype'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff2') format('woff2'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff') format('woff'), url('~/assets/fonts/helvetica/2CA9B8_0_0.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue'; // duplication needed to be backward compatible (some font's are hardcoded in RichText fields)
+    src: local('HelveticaNeueLT'), local('HelveticaNeueLT-Roman');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot?#iefix') format('embedded-opentype'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff2') format('woff2'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff') format('woff'), url('~/assets/fonts/helvetica/2CA9B8_0_0.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'BobcatMain-Roman';
+    src: local('HelveticaNeueLT-Roman'), local('Helvetica Neue LT Pro 55 Roman'), local('Helvetica Neue LT Pro');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot');
+    src: url('~/assets/fonts/helvetica/2CA9B8_0_0.eot?#iefix') format('embedded-opentype'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff2') format('woff2'), url('~/assets/fonts/helvetica/2CA9B8_0_0.woff') format('woff'), url('~/assets/fonts/helvetica/2CA9B8_0_0.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BobcatMain-BoldCondensed';
+    src: local('HelveticaNeueLTStd-BdCn'), local('Helvetica Neue LT Bold Condensed'), local('Helvetica Neue LT Pro 77 Bold Condensed');
+    src: url('~/assets/fonts/helvetica/2CA9B8_1_0.eot');
+    src: url('~/assets/fonts/helvetica/2CA9B8_1_0.eot?#iefix') format('embedded-opentype'), url('~/assets/fonts/helvetica/2CA9B8_1_0.woff2') format('woff2'), url('~/assets/fonts/helvetica/2CA9B8_1_0.woff') format('woff'), url('~/assets/fonts/helvetica/2CA9B8_1_0.ttf') format('truetype');
+    font-display: swap;
+}
+
+.font-weight-bold {
+    font-family: $headings-font-family;
+}
+
+.font-weight-light {
+    font-family: $font-family-sans-serif;
+}

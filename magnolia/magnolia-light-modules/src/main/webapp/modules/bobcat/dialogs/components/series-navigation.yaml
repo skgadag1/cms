@@ -1,0 +1,119 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Series Navigation Configuration
+form:
+  properties:
+    gridTitle:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    cards:
+      label: Series Navigation cards
+      $type: jcrMultiField
+      i18n: true
+      buttonSelectAddLabel: Add new card
+      field:
+        label: Card
+        name: compositeField
+        $type: compositeField
+        properties:
+          title:
+            $type: textField
+            label: Card title
+          htag:
+            !include:/bobcat/includes/htag-field.yaml
+            defaultValue: h4
+          subtitle:
+            $type: textField
+            label: Card subtitle
+          htagSubtitle:
+            !include:/bobcat/includes/htag-field.yaml
+            defaultValue: h5
+          newIndicator:
+            $type: checkBoxField
+            label: Show new indicator
+            buttonLabel: Select to display new indicator
+          asset:
+            !include:/bobcat/includes/image.yaml
+            description: '3:2 aspect ratio. 1140x760 for best quality'
+          points:
+            label: Points
+            $type: jcrMultiField
+            buttonSelectAddLabel: Add new point
+            field:
+              label: Point
+              name: compositeField
+              $type: compositeField
+              properties:
+                text:
+                  $type: textField
+                  label: Text
+          preLinksLabel:
+            $type: textField
+            label: Before links start label
+          links:
+            label: Links
+            $type: jcrMultiField
+            buttonSelectAddLabel: Add new link
+            field:
+              label: Link
+              name: compositeField
+              $type: compositeField
+              properties:
+                link:
+                  !include:/bobcat/includes/page-link-or-url-field.yaml
+          cta:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            label: CTA
+            required: false
+            defaultValue: none
+            i18n: true
+            field:
+              datasource:
+                options:
+                  - name: none
+                    label: None
+                    value: none
+        layout:
+          $type: tabbedLayout
+          tabs:
+            basicInformation:
+              label: Basic information
+              fields:
+                - name: title
+                - name: htag
+                - name: subtitle
+                - name: htagSubtitle
+                - name: newIndicator
+            image:
+              label: Image
+              fields:
+                - name: asset
+            points:
+              label: Points
+              fields:
+                - name: points
+            links:
+              label: Links
+              fields:
+                - name: preLinksLabel
+                - name: links
+            cta:
+              label: CTA
+              fields:
+                - name: cta
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: gridTitle
+          - name: htag
+          - name: cards
+      inheritableSection:
+      anchor:
+      meta:
+light: false
+wide: true

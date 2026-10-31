@@ -1,0 +1,26 @@
+[
+  {
+    "key": "title",
+    "value": "Field Mods"
+  },
+  {
+    "key": "viewAll",
+    "value": "View All"
+  },
+  {
+    "key": "showMore",
+    "value": "show more"
+  },
+  {
+    "key": "showLess",
+    "value": "show less"
+  },
+  {
+    "key": "expiresOnLabel",
+    "value": "Expires on"
+  },
+  {
+    "key": "downloadDetails",
+    "value": "Download details"
+  }
+]

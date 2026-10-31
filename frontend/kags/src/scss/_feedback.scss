@@ -1,0 +1,39 @@
+@import 'grid';
+
+#feedback {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: $zindex-tooltip + 10;
+
+  .feedback {
+    &-container {
+      @extend .rounded;
+      @extend .overflow-hidden;
+      @extend .d-flex;
+      @extend .flex-column;
+      min-height: 15rem;
+      transition: $transition-fade;
+      width: 100vw;
+
+      @include media-breakpoint-up('sm') {
+        width: 25rem;
+      }
+    }
+
+    &-title {
+      @extend .p-2;
+      @extend .bg-dark;
+      @extend .text-white;
+      @extend .font-condensed;
+    }
+
+    &-body {
+      @extend .p-4;
+      @extend .bg-white;
+      @extend .d-flex;
+      @extend .flex-column;
+      flex: 1;
+    }
+  }
+}

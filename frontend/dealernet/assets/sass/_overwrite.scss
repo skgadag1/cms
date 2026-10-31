@@ -1,0 +1,17 @@
+.badge {
+    font-size: 12px !important;
+}
+
+.accordion {
+    &-light {
+        .accordion-button {
+            &::after {
+                filter: grayscale(100) contrast(0);
+            }
+
+            @extend .bg-white;
+            @extend .text-black;
+            @extend .shadow-none;
+        }
+    }
+}

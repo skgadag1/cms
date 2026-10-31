@@ -1,0 +1,13 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/sites
+workspace: config
+depth: 1
+bypassWorkspaceAcls: true
+rootPath: /modules/multisite/config/sites
+systemProperties:
+  - mgnl:lastModified
+nodeTypes:
+  - mgnl:contentNode
+
+childNodeTypes:
+  - mgnl:contentNode

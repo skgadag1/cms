@@ -1,0 +1,167 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Dealer Inventory Listing Configuration
+form:
+  properties:
+    content:
+      $type: cloudinaryRichText
+      alignment: true
+      images: true
+      label: Content
+      i18n: true
+    productFacetLabel:
+      $type: textField
+      label: Product Facet Label
+      i18n: true
+    modelFacetLabel:
+      $type: textField
+      label: Model Facet Label
+      i18n: true
+    noResultsMsg:
+      $type: cloudinaryRichText
+      alignment: true
+      label: No Results Message
+      i18n: true
+    selectProductMsg:
+      $type: cloudinaryRichText
+      alignment: true
+      label: Select Product Message
+      description: Displayed when no product is selected in the Product filter
+      i18n: true
+    searchHeadline:
+      $type: textField
+      label: Search Box Headline
+      i18n: true
+      required: true
+    searchDescription:
+      $type: cloudinaryRichText
+      label: Search Box Description
+      i18n: true
+    searchProductLabel:
+      $type: textField
+      label: Product Dropdown Label
+      i18n: true
+      required: true
+    searchPlaceholder:
+      $type: textField
+      label: Product Dropdown Placeholder
+      i18n: true
+      required: true
+    searchKeywordPlaceholder:
+      $type: textField
+      label: Product Dropdown Searchbox Placeholder
+      i18n: true
+      required: true
+    searchNoResultsLabel:
+      $type: textField
+      label: Product Dropdown No Results Label
+      i18n: true
+    searchButtonLabel:
+      $type: textField
+      label: Search Button Label
+      i18n: true
+      required: true
+    productDefaultValues:
+      $type: textField
+      label: Product Categories
+      description: 'Groups the product dropdown, same format as the Dealer Locator product facet: [{"category": "Loaders", "values": ["Compact Track Loader"]}]'
+      rows: 5
+      i18n: true
+      validators:
+        jsonValidator:
+          $type: regexpValidator
+          pattern: ^\[\s*\{\s*"category":\s*".*?",\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\}(\s*,\s*\{\s*"category":\s*".*?",\s*"values":\s*\[\s*(".*?"(\s*,\s*".*?")*)?\s*\]\s*\})*\s*\]$
+          errorMessage: 'Invalid JSON format.'
+    othersCategoryLabel:
+      $type: textField
+      label: Others Category Label
+      i18n: true
+      required: true
+      defaultValue: Others
+    showCTA:
+      $type: checkBoxField
+      label: Show CTA
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    ctaLabel:
+      label: CTA Label
+      $type: textField
+      i18n: true
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Gray Light
+            value: light
+          - name: darkMedium
+            label: Gray Medium
+            value: darkMedium
+          - name: dark
+            label: Gray Dark
+            value: dark
+          - name: black
+            label: Black
+            value: black
+      defaultValue: light
+    sectionAlignment:
+      $type: comboBoxField
+      label: Text alignment
+      defaultValue: left
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: left
+            label: Left Constrained
+            value: left
+          - name: center
+            label: Center Constrained
+            value: center
+          - name: fullWidth
+            label: Left Full Width
+            value: fullWidth
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: content
+          - name: productFacetLabel
+          - name: modelFacetLabel
+      searchBox:
+        label: Search Box
+        fields:
+          - name: searchHeadline
+          - name: searchDescription
+          - name: searchProductLabel
+          - name: searchPlaceholder
+          - name: searchKeywordPlaceholder
+          - name: searchNoResultsLabel
+          - name: searchButtonLabel
+          - name: productDefaultValues
+          - name: othersCategoryLabel
+      notifications:
+        label: Notifications
+        fields:
+          - name: noResultsMsg
+          - name: selectProductMsg
+      buttons:
+        label: Buttons
+        fields:
+          - name: showCTA
+          - name: ctaLabel
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: sectionAlignment
+      inheritableSection:
+      anchor:
+      meta:
+light: false

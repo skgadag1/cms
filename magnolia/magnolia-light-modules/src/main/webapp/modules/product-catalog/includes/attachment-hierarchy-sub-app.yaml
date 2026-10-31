@@ -1,0 +1,485 @@
+label: Attachments
+icon: icon-files
+class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+closable: false
+datasource:
+  $type: jcrDatasource
+  workspace: attachments
+  includeProperties: false
+  allowedNodeTypes: &allowedNodeTypes
+    - mgnl:folder
+    - dxp:attachment
+    - dxp:attachmentGroup
+    - dxp:attachmentCategory
+workbench:
+  contentViews:
+    products:
+      $type: treeView
+      multiSelect: true
+      multiSelectByRowClick: false
+      columns:
+        jcrName:
+          label: Name
+          $type: jcrTitleColumn
+          expandRatio: 4
+          nodeTypeToIcon:
+            mgnl:folder: icon-language-app
+            dxp:attachment: icon-documents-app
+            dxp:attachmentGroup: icon-packager-app
+            dxp:attachmentCategory: icon-view-thumbnails            
+        regionInfo:
+          label: Region
+          valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.RegionNameValueProvider
+          expandRatio: 1
+          sortable: false
+        id:
+          label: ID
+          expandRatio: 1
+          filterComponent:
+            $type: textField
+        serialCode:
+          label: Serial Code
+          expandRatio: 1
+          filterComponent:
+            $type: textField
+        jcr:primaryType:
+          label: Type
+          expandRatio: 2
+          valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.ProductTypeValueProvider
+          filterComponent:
+            $type: textField
+        jcrPublishingStatus:
+          $type: lockingStatusColumn
+          expandRatio: 1
+          label: Status
+        jcr:lockOwner:
+          name: jcr:lockOwner
+          label: Locked by
+          expandRatio: 2
+        mgnl:lastModified:
+          $type: dateColumn
+          expandRatio: 2
+        mgnl:lastModifiedBy:
+          label: Last change by
+          $type: textField
+          expandRatio: 2
+actionbar:
+  defaultAction: editAttachment
+  sections:
+    root:
+      availability:
+        root: true
+      groups:
+        addActions:
+          name: addActions
+          items:
+            - name: addAttachment
+            - name: addAttachmentSubcategory
+            - name: addAttachmentCategory
+        editActions:
+          name: editActions
+          items:
+            - name: editAttachment
+            - name: editAttachmentSubcategory
+            - name: editAttachmentCategory
+            - name: lock
+            - name: unlock
+        publishingActions:
+          name: publishingActions
+          items:
+            - name: publishItem
+            - name: confirmPublishRecursive
+            - name: unpublishItem
+        commonActions:
+          name: commonActions
+          items:
+            - name: renameItem
+            - name: deleteItem
+            - name: duplicateItem
+            - name: moveItem
+            - name: copyItem
+            - name: pasteItem
+        translationActions:
+          name: translationActions
+          items:
+            - name: addToTranslationBatch
+        exportImportActions:
+          name: exportImportActions
+          items:
+            - name: export
+            - name: import
+            - name: exportAttachmentHierarchyTranslation
+            - name: importAttachmentHierarchyTranslation
+            - name: importFromGPIM
+            - name: importFromPIMPP
+actions:
+  !include:/commons/includes/lock-unlock-action-definition.yaml
+  addToTranslationBatch:
+    label: Add to translation batch
+    dialogName: content-translation-support-ext-core:addToTranslationBatch
+    icon: icon-add-folder
+    class: info.magnolia.translation.ext.core.app.batch.action.OpenMultiEditDialogAction$Definition
+    availability:
+      writePermissionRequired: true
+      access:
+        roles: 
+          - dxp-bobcat-admins
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+      nodeTypes: *allowedNodeTypes
+      rules:
+        - name: IsNotDeletedRule
+          implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      multiple: true
+      root: false
+  addAttachment:
+    label: Add Attachment
+    icon: icon-documents-app
+    $type: openDetailSubappAction
+    subAppName: attachmentDetails
+    appName: product-catalog
+    viewType: add
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachmentGroup
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  addAttachmentSubcategory:
+    label: Add Attachment Subcategory
+    icon: icon-view-thumbnails
+    $type: openDetailSubappAction
+    subAppName: attachmentGroupDetails
+    appName: product-catalog
+    viewType: add
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  addAttachmentCategory:
+    label: Add Attachment Category
+    icon: icon-packager-app
+    $type: openDetailSubappAction
+    subAppName: attachmentCategoryDetails
+    appName: product-catalog
+    viewType: add
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  editAttachment:
+    label: Edit Attachment
+    icon: icon-edit
+    $type: openDetailSubappAction
+    subAppName: attachmentDetails
+    appName: product-catalog
+    viewType: edit
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachment
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  editAttachmentSubcategory:
+    label: Edit Attachment Subcategory
+    icon: icon-edit
+    $type: openDetailSubappAction
+    subAppName: attachmentGroupDetails
+    appName: product-catalog
+    viewType: edit
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachmentGroup
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  editAttachmentCategory:
+    label: Edit Attachment Category
+    icon: icon-edit
+    $type: openDetailSubappAction
+    subAppName: attachmentCategoryDetails
+    appName: product-catalog
+    viewType: edit
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  publishItem:
+    label: Publish
+    icon: icon-publish
+    $type: jcrCommandAction
+    command: publish
+    availability:
+      access:
+        roles:
+          - dxp-bobcat-admins
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+          - dxp-bobcat-admin-emea
+          - dxp-bobcat-publishers-emea
+          - dxp-bobcat-admin-alao
+          - dxp-bobcat-publishers-alao
+      writePermissionRequired: true
+      rules:
+        canBePublishedByUser:
+          implementationClass: com.tbscg.doosan.magnolia.product.catalog.action.AccessToPublishDefinition
+        isPublishable:
+          $type: jcrPublishableRule
+        isNotLockedRule:
+          $type: isNotLocked
+  confirmPublishRecursive:
+    label: Publish recursive
+    icon: icon-publish-incl-sub
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.field.PublishConfirmationActionDefinition
+    successActionName: publishRecursive
+    confirmationHeader: Publish recursive
+    cancelLabel: Cancel
+    proceedLabel: Publish
+    availability:
+      access:
+        roles:
+          - dxp-bobcat-admins
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+          - dxp-bobcat-admin-emea
+          - dxp-bobcat-publishers-emea
+          - dxp-bobcat-admin-alao
+          - dxp-bobcat-publishers-alao
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+      rules:
+        canBePublishedByUser:
+          implementationClass: com.tbscg.doosan.magnolia.product.catalog.action.AccessToPublishDefinition
+        isPublished:
+          $type: jcrPublishedRule
+        isNotLockedRule:
+          $type: isNotLocked
+        hasSubPages:
+          $type: jcrHasChildrenRule
+          nodeTypes: *allowedNodeTypes
+  publishRecursive:
+    icon: icon-publish-incl-sub
+    $type: jcrCommandAction
+    command: publish
+    label: Publish recursive
+    asynchronous: true
+    params:
+      recursive: true
+
+  unpublishItem:
+    label: Unpublish
+    icon: icon-unpublish
+    $type: jcrCommandAction
+    command: unpublish
+    availability:
+      access:
+        roles:
+          - dxp-bobcat-admins
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+          - dxp-bobcat-admin-emea
+          - dxp-bobcat-publishers-emea
+          - dxp-bobcat-admin-alao
+          - dxp-bobcat-publishers-alao
+      writePermissionRequired: true
+      rules:
+        canBePublishedByUser:
+          implementationClass: com.tbscg.doosan.magnolia.product.catalog.action.AccessToPublishDefinition
+        isPublished:
+          $type: jcrPublishedRule
+        isNotLockedRule:
+          $type: isNotLocked
+  renameItem:
+    label: Rename Item
+    icon: icon-edit
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:rename
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  deleteItem:
+    label: Delete Item
+    icon: icon-delete
+    $type: confirmationAction
+    successActionName: delete
+    dialogId: ui-framework-jcr:delete
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  duplicateItem:
+    label: Duplicate Item
+    icon: icon-duplicate
+    $type: duplicateNodeAction
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  moveItem:
+    label: Move Item
+    icon: icon-move
+    $type: dxpMoveAction
+    allowedRoles:
+      - superuser
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  copyItem:
+    label: Copy Item
+    icon: icon-copy
+    $type: copyContentAction
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  pasteItem:
+    label: Paste Item
+    icon: icon-paste
+    $type: dxpPasteContentAction
+    allowedRoles:
+      - superuser
+    sendComponentAction: false
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  import:
+    label: Import
+    icon: icon-import
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:import
+    availability:
+      writePermissionRequired: true
+      root: true
+      rules:
+        isNotDeleted: &isNotDeleted
+          $type: jcrIsDeletedRule
+          negate: true
+  export:
+    label: Export
+    icon: icon-export
+    $type: exportAction
+    format: xml
+    dialogName: ui-admincentral:export
+    availability:
+      rules:
+        isNotDeleted: *isNotDeleted
+  importFromGPIM:
+    label: Import data from GPIM
+    icon: icon-import
+    $type: importExternalAction
+    targetPath: /bobcat
+    source: GPIM_ATTACHMENTS
+    workspace: attachments
+    availability:
+      root: true
+      writePermissionRequired: true
+      access:
+        roles: [ dxp-bobcat-technical-admins ]
+  importFromPIMPP:
+    label: Import /eu data from PIM++
+    icon: icon-import
+    $type: importExternalAction
+    targetPath: /bobcat/eu
+    source: PIMPP_ATTACHMENTS
+    workspace: attachments
+    availability:
+      root: true
+      writePermissionRequired: true
+      access:
+        roles: [ dxp-bobcat-technical-admins ]
+  delete:
+    $type: jcrCommandAction
+    asynchronous: true
+    command: delete
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  exportAttachmentHierarchyTranslation:
+    label: 'Export translations'
+    dialogName: product-catalog:attachment-translation-file-download
+    class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+    icon: icon-export
+    availability:
+      nodeTypes:
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  importAttachmentHierarchyTranslation:
+    label: 'Import translations'
+    dialogName: product-catalog:attachment-translation-file-upload
+    class: info.magnolia.translation.ui.action.OpenCreateTranslationFileUploadDialogActionDefinition
+    icon: icon-import
+    availability:
+      multiple: true
+      root: true
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  lock:
+    label: actions.lockItem
+    availability:
+      nodeTypes: &lockableTypes
+        - dxp:attachment
+        - dxp:attachmentGroup
+        - dxp:attachmentCategory
+  unlock:
+    availability:
+      nodeTypes: *lockableTypes

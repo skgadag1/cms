@@ -1,0 +1,59 @@
+replicaCount: 2
+replicaCountMax: 8
+
+secret_store_name: dxp-prod-secretstore-secretsmanager
+env: prod
+
+image:
+  apache:
+    repository: 994669786680.dkr.ecr.us-east-1.amazonaws.com/dxp/apache
+    tag: "prod-latest"
+    pullPolicy: Always
+  magnolia:
+    repository: 994669786680.dkr.ecr.us-east-1.amazonaws.com/dxp/magnolia
+    tag: "prod-latest"
+    pullPolicy: Always
+  tools:
+    repository: 994669786680.dkr.ecr.us-east-1.amazonaws.com/dxp/tools
+    tag: "prod-latest"
+    pullPolicy: Always
+
+service:
+  magnolia_author:
+    java_heap: 6144M
+  magnolia_publisher:
+    java_heap: 4096M
+  magnolia_public: # and non-public
+    java_heap: 3072M
+
+resources:
+  magnolia_author:
+    limits:
+      cpu: 4.0
+      memory: 8Gi
+    requests:
+      cpu: 2.0
+      memory: 8Gi
+  magnolia_publisher:
+    limits:
+      cpu: 2.0
+      memory: 6Gi
+    requests:
+      cpu: 1.25
+      memory: 6Gi
+  magnolia_public: # and non-public
+    limits:
+      cpu: 2.0
+      memory: 4.5Gi
+    requests:
+      cpu: 1.25
+      memory: 3Gi
+  apache:
+    limits:
+      cpu: 500m
+      memory: 500Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+backup_retention: 30 # number of days, older backups will be removed

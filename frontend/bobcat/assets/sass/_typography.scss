@@ -1,0 +1,220 @@
+// korean
+@font-face {
+  font-family: 'BobcatMain-Roman';
+  src: local('NotoSansKR-Regular'), url('~assets/fonts/noto-sans/NotoSansKR-Regular.otf') format('opentype');
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+A960-A97F, U+AC00-D7FF, U+3130-318F;
+}
+
+@font-face {
+  font-family: 'BobcatMain-BoldCondensed';
+  src: local('NotoSansKR-Bold'), url('~assets/fonts/noto-sans/NotoSansKR-Bold.otf') format('opentype');
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+A960-A97F, U+AC00-D7FF, U+3130-318F;
+}
+
+html[lang="ko"] body {
+  word-break: keep-all;
+}
+
+// chinese
+@font-face {
+  font-family: 'BobcatMain-Roman';
+  src: local('NotoSansSC-Regular'), url('~assets/fonts/noto-sans/NotoSansSC-Regular.otf') format('opentype');
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31C0-9FFF;
+}
+
+@font-face {
+  font-family: 'BobcatMain-BoldCondensed';
+  src: local('NotoSansSC-Bold'), url('~assets/fonts/noto-sans/NotoSansSC-Bold.otf') format('opentype');
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31C0-9FFF;
+}
+
+// rest of world
+@font-face {
+  font-family: 'Helvetica Neue'; // duplication needed to be backward compatible (some font's are hardcoded in RichText fields)
+  src: local('HelveticaNeueLT'), local('HelveticaNeueLT-Roman');
+  src: url('~assets/fonts/helvetica/HelveticaNeue.eot');
+  src: url('~assets/fonts/helvetica/HelveticaNeue.eot?#iefix') format('embedded-opentype'), url('~assets/fonts/helvetica/HelveticaNeue.woff2') format('woff2'), url('~assets/fonts/helvetica/HelveticaNeue.woff') format('woff'), url('~assets/fonts/helvetica/HelveticaNeue.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BobcatMain-Roman';
+  src: local('HelveticaNeueLT-Roman'), local('Helvetica Neue LT Pro 55 Roman'), local('Helvetica Neue LT Pro');
+  src: url('~assets/fonts/helvetica/HelveticaNeue.eot');
+  src: url('~assets/fonts/helvetica/HelveticaNeue.eot?#iefix') format('embedded-opentype'), url('~assets/fonts/helvetica/HelveticaNeue.woff2') format('woff2'), url('~assets/fonts/helvetica/HelveticaNeue.woff') format('woff'), url('~assets/fonts/helvetica/HelveticaNeue.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BobcatMain-BoldCondensed';
+  src: local('HelveticaNeueLTStd-BdCn'), local('Helvetica Neue LT Bold Condensed'), local('Helvetica Neue LT Pro 77 Bold Condensed');
+  src: url('~assets/fonts/helvetica/HelveticaNeue-CondensedBold.eot');
+  src: url('~assets/fonts/helvetica/HelveticaNeue-CondensedBold.eot?#iefix') format('embedded-opentype'), url('~assets/fonts/helvetica/HelveticaNeue-CondensedBold.woff2') format('woff2'), url('~assets/fonts/helvetica/HelveticaNeue-CondensedBold.woff') format('woff'), url('~assets/fonts/helvetica/HelveticaNeue-CondensedBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+.font-weight-bold {
+  font-family: $headings-font-family;
+}
+
+.font-weight-light {
+  font-family: $font-family-sans-serif;
+}
+
+.text-large {
+  font-size: 1.125rem;
+}
+
+.text-normal {
+  font-size: $font-size-base;
+}
+
+.text-small {
+  font-size: $font-size-sm;
+}
+
+.lh-base {
+  line-height: normal;
+}
+
+.text-smallest {
+  font-size: $font-size-base * .75;
+}
+
+a.text-primary-hover:hover {
+  color: $primary!important;
+}
+
+.text-muted {
+  &.text-white {
+    color: $white!important;
+  }
+}
+
+.text-underline-hover {
+  position: relative;
+
+  &, & * {
+    text-decoration: none !important;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .15rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover:after {
+    border-bottom: 1px solid $primary;
+  }
+}
+
+.evolution-heading {
+  &.h1 {
+    font-size: $font-size-base * 3.5; //56px
+  }
+  &.h2 {
+    font-size: $font-size-base * 3; //48px
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Rich-text-editor headings
+// ---------------------------------------------------------------------------
+/* 
+ CMS rich text wraps copy in inline-styled spans, e.g.
+ <h2><span style="font-size:24px">Title</span></h2>
+ The inner span renders at the requested size, but the outer heading tag
+ keeps its own font-size/line-height/margin and creates a much taller line
+ box than intended. The mixin below targets every heading tag (h1–h6) that
+ contains an inline font-size span and applies a single declaration block.
+ When $size is provided, both "font-size:24px" and "font-size: 24px"
+ variants are matched (the rich text editor emits both shapes).
+*/
+$rich-text-heading-tags: h1, h2, h3, h4, h5, h6;
+
+@mixin rich-text-headings($size: null) {
+  @each $tag in $rich-text-heading-tags {
+    @if $size == null {
+      #{$tag}:has(span[style*="font-size:"]) {
+        @content;
+      }
+    } @else {
+      #{$tag}:has(span[style*="font-size:#{$size}"]),
+      #{$tag}:has(span[style*="font-size: #{$size}"]) {
+        @content;
+      }
+    }
+  }
+}
+
+body {
+  @include rich-text-headings {
+    margin-bottom: 0 !important;
+  }
+
+  // Match the heading wrapper to the rich-text size used inside it
+  // (applies at all breakpoints) so the wrapper line box collapses.
+  @include rich-text-headings(24px) {
+    font-size: $h4-font-size !important;
+    line-height: normal !important;
+  }
+
+  @include rich-text-headings(36px) {
+    font-size: $h3-font-size !important;
+    line-height: normal !important;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Mobile heading scaling
+// ---------------------------------------------------------------------------
+/* On mobile, scale plain semantic headings down (H1 & H2 → H3 size, H3 → H4
+ size; H4+ unchanged), keep utility-class headings (.h1–.h6) on the standard
+ heading line-height so mixed semantic+visual headings (e.g. <h2 class="h4">)
+ stay readable, and collapse the wrapper for large rich-text inline sizes.
+*/
+@include media-breakpoint-down(md) {
+  /* Selectors that exclude headings already styled via utility classes or via
+   a rich-text inline font-size span (those have their own dedicated rules). */
+  $not-utility: ':not(.h1):not(.h2):not(.h3):not(.h4):not(.h5):not(.h6)';
+  $not-rich-text: ':not(:has(span[style*="font-size:"]))';
+
+  body {
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      line-height: $headings-line-height !important;
+    }
+
+    h1#{$not-utility}#{$not-rich-text},
+    h2#{$not-utility}#{$not-rich-text},
+    .h1, .h2,
+    span[style*="font-size:56px"],
+    span[style*="font-size:44px"] {
+      font-size: $h3-font-size !important;
+      line-height: $headings-line-height !important;
+    }
+
+    h3#{$not-utility}#{$not-rich-text},
+    span[style*="font-size:36px"] {
+      font-size: $h4-font-size !important;
+      line-height: $headings-line-height !important;
+    }
+
+    // Mobile-only: shrink the heading wrapper when the rich text editor
+    // used a large inline font-size (the inner span is already downsized
+    // via the span[style*=...] rules above; this collapses the line box).
+    @each $size in (44px, 56px) {
+      @include rich-text-headings($size) {
+        font-size: $h3-font-size !important;
+        line-height: normal !important;
+      }
+    }
+  }
+}

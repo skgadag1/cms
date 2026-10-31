@@ -1,0 +1,52 @@
+[
+  {
+    "policy_code": "PRO-SL-36-3000-POWERTRAIN-LP-CTL4",
+    "policy_name": "Promotional-36Months-3000Hours-POWERTRAIN-CTL",
+    "type": "PROMOTIONAL",
+    "status": "ACTIVE",
+    "start_date": "2017-12-11",
+    "end_date": "2020-12-10",
+    "months_covered": "36",
+    "hours_covered": 3000
+  },
+  {
+    "policy_code": "STD-S-60-3000-Emissions-LP",
+    "policy_name": "Standard-60Months-3000Hours-Emissions",
+    "type": "STANDARD",
+    "status": "ACTIVE",
+    "start_date": "2017-12-11",
+    "end_date": "2022-12-10",
+    "months_covered": "60",
+    "hours_covered": 3000
+  },
+  {
+    "policy_code": "STD-S-36-99999-DRIVEBELT-P",
+    "policy_name": "Standard-36Months-Unlimited Hours-Drivebelt",
+    "type": "STANDARD",
+    "status": "ACTIVE",
+    "start_date": "2017-12-11",
+    "end_date": "2020-12-10",
+    "months_covered": "36",
+    "hours_covered": 99999
+  },
+  {
+    "policy_code": "STD-S-12-99999-FULL-LP",
+    "policy_name": "Standard-12Months-Unlimited Hours-Full",
+    "type": "STANDARD",
+    "status": "INACTIVE",
+    "start_date": "2017-12-11",
+    "end_date": "2018-12-10",
+    "months_covered": "12",
+    "hours_covered": 99999
+  },
+  {
+    "policy_code": "STD-S-24-99999-BATTERY-LP",
+    "policy_name": "Standard-24Months-Unlimited Hours-Battery",
+    "type": "STANDARD",
+    "status": "INACTIVE",
+    "start_date": "2017-12-11",
+    "end_date": "2019-12-10",
+    "months_covered": "24",
+    "hours_covered": 99999
+  }
+]

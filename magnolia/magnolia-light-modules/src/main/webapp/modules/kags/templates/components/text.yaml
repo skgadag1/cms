@@ -1,0 +1,4 @@
+renderType: freemarker
+title: Text Component
+templateScript: /kags/templates/components/text.ftl
+dialog: kags:components/text

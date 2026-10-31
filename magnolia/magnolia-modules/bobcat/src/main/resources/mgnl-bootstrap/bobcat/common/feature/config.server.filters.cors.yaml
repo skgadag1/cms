@@ -1,0 +1,16 @@
+'cors':
+  'class': 'info.magnolia.cors.SelfConfiguredCorsFilter'
+  'jcr:primaryType': 'mgnl:content'
+  'uris':
+    'rest':
+      'patternString': '/.rest/*'
+    'vaadin-theme':
+      'patternString': '/VAADIN/*'
+    'bobcat-api':
+      'patternString': '/bobcat_api/*'
+  'allowedHeaders':
+    'all': '*'
+  'allowedMethods':
+    'all': '*'
+  'allowedOrigins':
+    'all': '*'

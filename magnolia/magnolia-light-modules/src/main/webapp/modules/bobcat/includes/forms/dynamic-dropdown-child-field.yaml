@@ -1,0 +1,37 @@
+$type: compositeField
+layout:
+  $type: form
+label: Dynamic Dropdown (dependent)
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  dropdownValues:
+    label: Dropdown values
+    $type: jcrMultiField
+    i18n: true
+    required: true
+    buttonSelectAddLabel: Add new value
+    itemProvider:
+      $type: jcrChildNodeProvider
+    field:
+      label: Dropdown value
+      name: compositeField
+      $type: compositeField
+      properties:
+        text:
+          $type: textField
+          label: Option text
+          i18n: true
+          required: true
+        selected:
+          $type: checkBoxField
+          label: Is selected
+          buttonLabel: Selected
+          description: Only one value can be selected
+          defaultValue: false
+          type: java.lang.Boolean
+        value:
+          $type: textField
+          label: Mapping field ID
+          description: The ID should be unique, otherwise, the component will not work.
+          required: true

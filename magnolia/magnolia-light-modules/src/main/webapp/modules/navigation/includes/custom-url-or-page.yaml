@@ -1,0 +1,14 @@
+!include:/bobcat/includes/page-link-or-url-field.yaml
+forms:
+  custom:
+    properties:
+      link:
+        properties:
+          customLabel: !override
+            $type: hiddenField
+  page:
+    properties:
+      link:
+        properties:
+          pageLabel: !override
+            $type: hiddenField

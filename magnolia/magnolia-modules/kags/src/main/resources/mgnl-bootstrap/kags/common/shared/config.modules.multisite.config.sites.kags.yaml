@@ -1,0 +1,77 @@
+'kags':
+  'templates':
+    'class': info.magnolia.module.site.templates.ReferencingPrototypeTemplateSettings
+    'prototypeId': kags:pages/prototype
+    'availability':
+      'templates':
+        'index':
+          'id': kags:pages/index
+  'mappings':
+    'website':
+      'URIPrefix': /
+      'handlePrefix': /kags
+      'repository': website
+    'concepts':
+      'URIPrefix': /concepts-kags
+      'handlePrefix': /kags
+      'repository': concepts
+    'safety-docs':
+      'URIPrefix': /safety-docs-kags
+      'handlePrefix': /kags
+      'repository': safety-docs
+  'theme':
+    'name': kags-site-theme
+  'i18n':
+    'class': info.magnolia.cms.i18n.DefaultI18nContentSupport
+    'enabled': true
+    'locales':
+      'en':
+        'country': ''
+        'enabled': true
+        'language': en
+      'fr':
+        'country': ''
+        'enabled': true
+        'language': fr
+      'es':
+        'country': ''
+        'enabled': true
+        'language': es
+  'domains':
+    'extends': override
+    'publisher.dev':
+      'name': magnolia-publisher.dev.dice-tools.com
+    'publisher.qa':
+      'name': magnolia-publisher.qa.dice-tools.com
+    'publisher.prod':
+      'name': magnolia-publisher.dibhids.net
+    'public.dev':
+      'name': magnolia-public.dev.dice-tools.com
+    'public.qa':
+      'name': magnolia-public.qa.dice-tools.com
+    'public.prod':
+      'name': magnolia-public.dibhids.net
+    'api.dev':
+      'name': magnolia-api.dev.dice-tools.com
+    'api.qa':
+      'name': magnolia-api.qa.dice-tools.com
+    'api.prod':
+      'name': magnolia-api.dibhids.net
+    'kags.dev':
+      'name': dxp-kags.dev.dice-tools.com
+    'kags.dev.internal':
+      'name': internal.dxp-kags.dev.dice-tools.com
+    'kags.dev.keyaccount':
+      'name': keyaccount.dxp-kags.dev.dice-tools.com
+    'kags.qa':
+      'name': dxp-kags.qa.dice-tools.com
+    'kags.qa.internal':
+      'name': internal.dxp-kags.qa.dice-tools.com
+    'kags.qa.keyaccount':
+      'name': keyaccount.dxp-kags.qa.dice-tools.com
+    'kags.prod':
+      'name': direct.bobcat.com
+    'kags.prod.internal':
+      'name': internal.direct.bobcat.com
+    'kags.prod.keyaccount':
+      'name': keyaccount.direct.bobcat.com

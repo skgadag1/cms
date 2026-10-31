@@ -1,0 +1,10 @@
+!include:/dxp-core/dialogs/uploadTranslationFile.yaml
+actions:
+  commit:
+    label: 'Yes, import'
+    command: uploadProductTranslation
+    catalog: translation
+    class: info.magnolia.translation.ui.action.TranslationFileUploadDialogActionDefinition
+    successMessage: concepts.uploadTranslationFile.executionSuccess
+  cancel:
+    class: info.magnolia.ui.dialog.action.CancelDialogActionDefinition

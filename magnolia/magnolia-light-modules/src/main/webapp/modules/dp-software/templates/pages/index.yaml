@@ -1,0 +1,14 @@
+title: 'Dealer Portal Service Software SPA page'
+templateScript: https://templateScriptUrlPlaceholder
+getTemplateScriptFrom: custom-renderer.config.yaml
+pageType: dp-software
+dialog: dp-software:pages/index
+type: content
+renderType: spaExtended
+class: com.tbscg.doosan.magnolia.custom.renderer.definitions.CustomSpaRenderableDefinition
+
+areas:
+  main:
+    title: Main area
+    availableComponents:
+      !include:/dp-software/includes/main-area-components.yaml

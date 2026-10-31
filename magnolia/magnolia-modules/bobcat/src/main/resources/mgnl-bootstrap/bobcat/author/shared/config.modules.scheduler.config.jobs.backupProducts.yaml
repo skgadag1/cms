@@ -1,0 +1,11 @@
+backupProducts:
+  catalog: backup
+  command: backupCommand
+  'cron': '0 30 2 * * *'
+  description: 'Backup website in s3Bucket, It runs everyday at 02:30 a.m. server time (UTC)'
+  enabled: true
+  params:
+    workspacesToSave: "products"
+    destination: "backup"
+    backupOnlyLatest: false
+    backupRoot: false

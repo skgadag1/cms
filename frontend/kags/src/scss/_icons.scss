@@ -1,0 +1,10 @@
+bicon {
+  font-family: "bobcaticons";
+  vertical-align: middle;
+}
+
+.disabled {
+  svg {
+    color: $gray-600;
+  }
+}

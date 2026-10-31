@@ -1,0 +1,49 @@
+label: Videos Component Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    content:
+      $type: cloudinaryRichText
+      images: true
+      label: Content
+      i18n: true
+    videos:
+      label: Videos (12 max)
+      $type: jcrMultiField
+      minItems: 0
+      maxItems: 12
+      field:
+        $type: compositeField
+        label: video
+        i18n: true
+        properties:
+          title:
+            $type: textField
+            label: Title
+          video:
+            !include:/bobcat/includes/dam-asset.yaml
+            label: Video
+            filters:
+              resource_type:
+                class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                value: video
+          thumbnail:
+            !include:/service-videos/includes/thumbnail.yaml
+          paragraph:
+            $type: cloudinaryRichText
+            images: true
+            label: Description
+            i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs:
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: content
+          - name: videos
+light: false

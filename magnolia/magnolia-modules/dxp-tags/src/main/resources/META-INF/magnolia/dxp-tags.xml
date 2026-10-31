@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+    <name>dxp-tags</name>
+    <displayName>DXP Tags</displayName>
+    <description>DXP Tags</description>
+    <class>com.tbscg.doosan.magnolia.tags.DxpTagsModule</class>
+    <versionHandler>com.tbscg.doosan.magnolia.tags.setup.DxpTagsVersionHandler</versionHandler>
+    <version>1.0.0</version>
+
+    <components>
+        <id>app-dxp-tags</id>
+        <component>
+            <type>info.magnolia.ui.framework.ContentClipboard</type>
+            <implementation>info.magnolia.ui.contentapp.action.clipboard.JcrClipboard</implementation>
+        </component>
+    </components>
+
+    <dependencies>
+        <dependency>
+            <name>core</name>
+            <version>*</version>
+        </dependency>
+    </dependencies>
+
+</module>

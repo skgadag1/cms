@@ -1,0 +1,18 @@
+[
+  {
+    "value": "MC",
+    "label": "Metropolitan City"
+  },
+  {
+    "value": "SMC",
+    "label": "Sub-Metropolitan City"
+  },
+  {
+    "value": "M",
+    "label": "Municipality"
+  },
+  {
+    "value": "RM",
+    "label": "Rural Municipality"
+  }
+]

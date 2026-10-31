@@ -1,0 +1,48 @@
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: download
+      label: Download
+      value: download
+    - name: cog
+      label: Cog
+      value: cog
+    - name: file
+      label: File
+      value: file
+    - name: filealt
+      label: File Text
+      value: file-alt
+    - name: filepdf
+      label: File PDF
+      value: file-pdf
+    - name: fileword
+      label: File Word
+      value: file-word
+    - name: filearchive
+      label: File Archive
+      value: file-archive
+    - name: bobcaticonfile
+      label: Bobcat File
+      value: bobcaticon-file
+    - name: infocircle
+      label: Info circle
+      value: info-circle
+    - name: externallink
+      label: External link
+      value: external-link-alt
+    - name: book
+      label: Book
+      value: book
+    - name: books
+      label: Books
+      value: books
+    - name: tools
+      label: Tools
+      value: tools
+    - name: wrench
+      label: Wrench
+      value: wrench
+label: Icon
+required: true

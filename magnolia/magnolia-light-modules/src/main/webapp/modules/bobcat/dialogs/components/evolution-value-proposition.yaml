@@ -1,0 +1,129 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Value proposition
+form:
+  properties:
+    title:
+      $type: cloudinaryRichText
+      alignment: false
+      images: false
+      label: Title
+      i18n: true
+    subtitle:
+      $type: cloudinaryRichText
+      alignment: false
+      images: false
+      label: Subtitle
+      i18n: true
+    cards:
+      label: Cards (max 4)
+      description: Please define 0 - 4 cards.
+      $type: jcrMultiField
+      minItems: 0
+      maxItems: 4
+      i18n: true
+      buttonSelectAddLabel: Add new card
+      itemCountErrorMessage: "The card number should be between 0 and 4."
+      field:
+        $type: compositeField
+        label: Card
+        properties:
+          title:
+            label: Card title
+            $type: cloudinaryRichText
+            i18n: true
+            rows: 1
+          description:
+            label: Card description
+            $type: cloudinaryRichText
+            images: false
+            rows: 5
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            defaultValue: none
+            field:
+              datasource:
+                options:
+                  - name: none
+                    label: No link
+                    value: none
+            label: Link
+          asset:
+            label: Asset source
+            $type: switchableField
+            field:
+              $type: radioButtonGroupField
+              layout: horizontal
+              required: true
+              defaultValue: none
+              datasource:
+                $type: optionListDatasource
+                options:
+                  - name: img
+                    label: Image
+                    value: img
+                  - name: svg-animation
+                    label: SVG Animation
+                    value: svg-animation
+                  - name: none
+                    label: None
+                    value: none
+            itemProvider:
+              $type: jcrChildNodeProvider
+            forms:
+              svg-animation:
+                properties:
+                  svg-animation:
+                    !include:/bobcat/includes/animated-icons.yaml
+              img:
+                properties:
+                  img:
+                    !include:/bobcat/includes/image.yaml
+                    description: 'The image option does not support animation'
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Gray Lighter
+            value: light
+          - name: dark
+            label: Gray Darker
+            value: dark
+      defaultValue: white
+    buttonColor:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: primary
+            label: Primary Red
+            value: primary
+          - name: white
+            label: White
+            value: white
+      defaultValue: primary
+      label: Button color
+
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: subtitle
+          - name: cards
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: buttonColor
+      inheritableSection:
+      anchor:
+      meta:
+light: false

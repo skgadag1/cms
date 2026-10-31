@@ -1,0 +1,111 @@
+.modal, .modal-xl {
+  padding-left: 0!important;
+
+  &-header {
+    border: none;
+    align-items: flex-start;
+  }
+
+  &-title {
+    text-align: left;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    padding-right: 3rem;
+    margin-left: 2rem;
+    @include media-breakpoint-down('md') {
+      margin-left: 0.8rem;
+    }
+  }
+
+  button.btn-close {
+    font-size: 1.75rem;
+    position: absolute;
+    right: 1rem;
+    @include media-breakpoint-up('md') {
+      position: relative;
+    }
+  }
+
+  &-footer {
+    padding: 1rem;
+    @include media-breakpoint-up('md') {
+      padding: 2rem 3rem;
+    }
+
+    & > * {
+      margin: 0;
+    }
+
+    button {
+      width: 100%;
+
+      @include media-breakpoint-up('sm') {
+        width: auto;
+      }
+    }
+  }
+
+  &.resume-existing-session-modal {
+
+    .modal-header {
+      justify-content: space-between;
+      padding: 1rem 1rem 1rem 2rem;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    .modal-body {
+      padding: 1rem 2rem 2rem 2rem;
+      gap: 0.625rem;
+    }
+
+    .modal-footer {
+      gap: 0.625rem;
+      padding: 1rem 2rem 2rem;
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+
+      @include media-breakpoint-down('lg') {
+        flex-direction: column-reverse;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+
+    .modal-title {
+      margin-left: 0;
+    }
+
+    .modal-footer {
+      @include media-breakpoint-down('md') {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &-transparent {
+    .modal {
+      &-content {
+        background: transparent !important;
+        border: none;
+      }
+
+      &-header {
+        border: none;
+
+        .btn-close {
+          filter: $btn-close-white-filter;
+        }
+      }
+    }
+  }
+}
+
+// Plain <div class="modal-backdrop"> overlays (search box, serial input, mobile select, profile
+// menu, feedback) don't get the .show class, so set their opacity here.
+.modal-backdrop {
+  opacity: $modal-backdrop-opacity;
+}

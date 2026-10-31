@@ -1,0 +1,11 @@
+$type: twinColSelectField
+label: Key Account tags
+leftColumnCaption: Available Key Accounts
+rightColumnCaption: "Content visible only to key accounts:"
+datasource:
+  $type: jcrDatasource
+  workspace: category
+  rootPath: /kags/key-accounts
+  describeByProperty: displayName
+  allowedNodeTypes:
+    - mgnl:category

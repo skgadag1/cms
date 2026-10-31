@@ -1,0 +1,145 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Attachment Category Details
+datasource:
+  $type: jcrDatasource
+  workspace: attachments
+  includeProperties: false
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: attachments
+  nodeType: dxp:attachmentCategory
+form:
+  properties:
+    jcrName:
+      label: Attachment Category Name
+      $type: textField
+      required: true
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    id:
+      label: B&Q ID
+      $type: textField
+      description: 'Obligatory field for categories and subcategories to fetch data for sales options.'
+    description:
+      label: Description
+      $type: textField
+      rows: 5
+      i18n: true
+    pageLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      label: Attachment Category page link
+      field:
+        defaultValue: none
+        datasource:
+          options:
+            - name: none
+              label: No link
+              value: none
+      forms:
+        none:
+          properties:
+            link:
+              $type: hiddenField
+              type: java.lang.Boolean
+              defaultValue: true
+        custom:
+          properties:
+            link:
+              properties:
+                customLabel:
+                  $type: hiddenField
+        page:
+          properties:
+            link:
+              properties:
+                pageLabel:
+                  $type: hiddenField
+    facet:
+      !include:/product-catalog/includes/facet-category-chooser.yaml
+      required: false
+    image:
+      !include:/bobcat/includes/image.yaml
+      label: Attachment Category image
+      properties:
+        src:
+          required: false
+          buttonSelectAddLabel: Select image
+    sfId:
+      label: SF ID
+      $type: textField
+      description: 'Required field for Product Listing Field to map products with SF fields.'
+    IRWProductName:
+      label: IRW Product Name
+      $type: textField
+      description: 'Obligatory field for categories, subcategories and models to fetch dealers, pricing and product catalogue data.'
+    IRWContractCode:
+      label: IRW Contract Code
+      $type: textField
+    DINVSortRank:
+      label: 'DINV Product Type Dropdown Rank'
+      $type: textField
+      defaultValue: '1'
+      placeholder: 'Higher numbers put category on top of the dropdown list. Default is 1.'
+      validators:
+        sortValidator:
+          $type: regexpValidator
+          pattern: ^$|^([1-9]|1[0-5])$
+          errorMessage: 'Enter valid number within range: 1-15'
+    specialOfferDetails:
+      label: Special Offer Details
+      $type: textField
+      i18n: true
+    relatedAttachments:
+      !include:/product-catalog/includes/related-attachments.yaml
+    page:
+      $type: associatedPageField
+      itemType: page
+      storeProperty: attachmentModel
+      i18n: true
+      itemProvider:
+        $type: currentItemProvider
+      layout:
+        $type: form
+  layout:
+    $type: tabbedLayout
+    tabs:
+      relatedAttachments:
+        label: Related Attachments
+        fields:
+          - name: relatedAttachments
+      basic:
+        label: Basic Info
+        fields:
+          - name: jcrName
+          - name: title
+          - name: IRWProductName
+          - name: IRWContractCode
+          - name: DINVSortRank
+          - name: id
+          - name: description
+          - name: pageLink
+          - name: facet
+          - name: sfId
+      images:
+        label: Images
+        fields:
+          - name: image
+      page:
+        label: Associated page
+        fields:
+          - name: page
+      SPM:
+        label: Sales Program
+        fields:
+          - name: specialOfferDetails
+actions:
+  commit:
+    class: info.magnolia.ui.contentapp.detail.action.SaveDetailSubAppActionDefinition
+    browserName: attachments
+  cancel:
+    $type: closeAction
+wide: true
+light: false
+

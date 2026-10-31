@@ -1,0 +1,150 @@
+form:
+  tabs:
+    - name: config
+      label: Main configuration
+      fields:
+        - !include:/kags/includes/banner-field.yaml
+        - name: troubleshootingPage
+          label: Troubleshooting results page
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: historyPageUrl
+          label: Machine history page
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: false
+        - name: serviceAnalyzerNationalUrl
+          label: Service Analyzer URL (National Account)
+          fieldType: text
+          required: false
+        - name: serviceAnalyzerBobcatUrl
+          fieldType: text
+          label: Service Analyzer URL (Full/Dealer)
+          required: false
+        - name: engineAnalyzerUrl
+          fieldType: text
+          label: Engine Analyzer URL
+          required: false
+        - name: v2engineAnalyzerUrl
+          fieldType: text
+          label: V2 Engine Analyzer URL
+          required: false
+        - name: orionBMSUrl
+          fieldType: text
+          label: Orion BMS URL
+          required: false
+        - name: locationHistoryPageUrl
+          label: Location history page url
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+    - name: fieldmods
+      label: Field Mods widget
+      fields:
+        - name: fieldModsPageUrl
+          label: Field mods page url
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: showFieldMods
+          fieldType: checkbox
+          label: Show Field Mods
+          buttonLabel: Display field mods widget
+          defaultValue: false
+          type: Boolean
+    - name: bulletins
+      label: Bulletins widget
+      fields:
+        - name: bulletinsPageUrl
+          label: Bulletins page url
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: showBulletins
+          fieldType: checkbox
+          label: Show Bulletins
+          buttonLabel: Display Bulletins widget
+          defaultValue: false
+          type: Boolean
+    - name: faultcodes
+      label: Fault Codes widget
+      fields:
+        - name: showFaultCodes
+          fieldType: checkbox
+          label: Show Fault Codes
+          buttonLabel: Display fault code widget
+          defaultValue: false
+          type: Boolean
+        - name: faultCodesPageUrl
+          label: Fault codes page url
+          fieldType: link
+          identifierToPathConverter:
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          appName: pages
+          targetTreeRootPath: /kags
+          targetWorkspace: website
+          required: true
+        - name: paginationLimit
+          fieldType: text
+          label: Pagination batch limit
+          required: false
+    - name: images
+      label: Machine images
+      fields:
+        - !include:/kags/includes/dam-asset.yaml
+          name: udefinedImage
+          label: Undefined image
+          required: true
+        - name: blocks
+          fieldType: multiValue
+          label: Machine image blocks
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: block
+            label: Machine image block
+            fieldType: composite
+            layout: vertical
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: abbreviation
+                fieldType: text
+                label: Machine abbr.
+                required: true
+              - !include:/kags/includes/dam-asset.yaml
+                name: dam_url
+                label: Image path
+                required: true
+    - name: softwareSectionVisibility
+      label: Software Section Visibility
+      fields:
+        - name: softwareForKeyAccounts
+          fieldType: twinColSelect
+          label: Key Account tags
+          leftColumnCaption: Available Key Accounts
+          rightColumnCaption: "Content visible only to key accounts:"
+          repository: category
+          path: /kags/key-accounts
+          labelProperty: displayName
+
+actions: !include:/kags/includes/common-actions.yaml

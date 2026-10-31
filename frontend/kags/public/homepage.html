@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>assets/favicon.ico">
+    <script type="text/javascript" src="<%= BASE_URL %><%= VUE_APP_ASSETS_STATIC_JS_PREFIX %>links.js" defer></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body data-asset-server="<%= VUE_APP_ASSETS_SERVER %>"
+        data-api-servers='{"content-api":"<%= VUE_APP_CONTENT_API %>","bd-api":"<%= VUE_APP_BD_API %>"}'
+        data-api-token="<% print(process.env.VUE_APP_API_TOKEN || 'abc') %>"
+  >
+    <noscript>
+      <strong>We're sorry but bobcat_default doesn't work properly without JavaScript enabled. Please enable it to
+        continue.</strong>
+    </noscript>
+    <div id="header"
+         data-config='{
+            "user": {
+              "id": "123",
+              "name": "Your User",
+              "givenName": "Your",
+              "familyName": "User",
+              "fullName": "Your User",
+              "email": "me@example.com"
+            },
+            "mainPage": "/homepage.html"
+         }'
+    ></div>
+
+    <div id="machinesearch"
+         data-config='{
+            "bannerUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/Homepage_Picture_1900_ba5grp.jpg",
+            "title": "<%= htmlWebpackPlugin.options.title %>",
+            "subtitle": "You will find all the info needed for your machine maintenance.",
+            "recentLabel": "Recent serials",
+            "machineUrl": "/machine/machine.html"
+         }'
+    ></div>
+
+    <!-- START columnCentered area -->
+    <div class="container flex-shrink-0">
+      <div class="row">
+
+        <div id="video"
+             data-config='{
+                "title": "Welcome to the new Bobcat Direct Portal",
+                "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+                "halfWidth": "true",
+                "buttonLabel": "Watch the tutorial",
+                "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+                "videoImg": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/laptop.png",
+                "videoError": "No video, error here"
+             }'
+        ></div>
+        <div id="downloadV2"
+             data-config='{
+               "title": "Download",
+               "subtitle": "abc",
+               "softwares": [
+                  {
+                      "softwareLabel": "ServiceAnalyzer",
+                      "chosenSoftware": "ServiceAnalyzer",
+                      "softwareCategory": "perkins-edt",
+                      "releaseNotesLabel": "[software] released [release] version [version]"
+                  }
+              ],
+              "documents": [
+                 {
+                      "documentDownloadsLabel": "Document1",
+                      "assetLink": "Link",
+                      "icon": "book"
+                 }
+              ]
+           }'
+        ></div>
+        <div id="richtext"
+             data-config='{
+                 "title": "RichText component",
+                 "text": "<ul><li>item 1</li> <li>item 2</li> </ul> <p>&nbsp;</p> <p>Non bulleted text</p> <p><strong>Bold</strong> text</p> <p>Link to a file:&nbsp;&nbsp;<a href=\"https://res.cloudinary.com/doosan-bobcat-dev/image/upload/v1583951225/Kags%20Safety%20Dev/Toolcat_Safety_xng53y.pdf\">Toolcat_Safety_xng53y</a></p> <p>Link to a page:&nbsp; Service Analzyer</p>",
+                 "halfWidth": "true",
+                 "imageUrl": "<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/example1.png"
+             }'
+        ></div>
+      </div>
+    </div>
+    <!-- END columnCentered area -->
+
+    <div id="footer"
+         data-config='{"contactUrl": "/contactus.html", "privacyPolicyUrl": "#", "termOfUseUrl": "#"}'
+    ></div>
+    <div id="feedback"
+         data-config='{"surveyId": "5322546", "latency": "10000", "feedbackButton": "Feedback", "feedbackTitle": "Your Feedback", "feedbackSubmit": "Submit ", "feedbackThankyou": "Thank you for your feedback" }'
+    ></div>
+  </body>
+</html>

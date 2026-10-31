@@ -1,0 +1,30 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Footer Configuration
+form:
+  properties:
+    links:
+      !include:/bobcat/includes/link-list.yaml
+    oneTough:
+      !include:/bobcat/includes/image.yaml
+      label: One tough image
+    disclaimer:
+      label: Disclaimer
+      $type: cloudinaryRichText
+      required: true
+      i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      socialSection:
+        label: General
+        fields:
+          - name: oneTough
+          - name: links
+      disclaimerSection:
+        label: Disclaimer
+        fields:
+          - name: disclaimer
+      inheritableSection:
+      meta:
+wide: true
+light: false

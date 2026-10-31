@@ -1,0 +1,2 @@
+definitionClass: info.magnolia.dam.external.app.field.definition.AssetMetadataFieldDefinition
+factoryClass: com.tbscg.doosan.magnolia.cloudinary.field.compatibility.factory.CloudinaryAssetMetadataFieldFactory

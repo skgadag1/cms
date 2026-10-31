@@ -1,0 +1,39 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/navigation/dealernet
+workspace: navigation
+rootPath: /dealernet
+depth: 10
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:lastModified
+
+nodeTypes:
+  - mgnl:folder
+  - mgnl:contentNode
+  - dxp:navigationMegaMenu
+  - dxp:navigationRow
+  - dxp:navigationColumn
+  - dxp:navigationList
+  - dxp:navigationLink
+  - dxp:navigationItem
+childNodeTypes:
+  - mgnl:folder
+  - mgnl:contentNode
+  - dxp:navigationMegaMenu
+  - dxp:navigationRow
+  - dxp:navigationColumn
+  - dxp:navigationList
+  - dxp:navigationLink
+  - dxp:navigationItem
+references:
+  - name: pageVisibilityReference
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.PageVisibilityResolverDefinition
+      targetWorkspace: navigation
+  - name: pageReference
+    propertyName: pageUrl
+    referenceResolver:
+      class: com.tbscg.doosan.magnolia.bobcat.rest.delivery.CustomUrlReferenceResolverDefinition
+      targetWorkspace: website
+      expand: false
+      generateLink: true

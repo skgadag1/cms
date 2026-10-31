@@ -1,0 +1,7 @@
+# gtm configuration
+# used by nuxt gtm-module https://github.com/nuxt-community/gtm-module
+
+gtmConfig:
+  id: 'GTM-K8JRBX3'
+  eu:
+   id: 'GTM-547JSBN'

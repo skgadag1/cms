@@ -1,0 +1,10 @@
+# sharethis.com configuration
+# format:
+#   HOST: SHARE_THIS_ID
+#
+# script url format is: https://platform-api.sharethis.com/js/sharethis.js#property=SHARE_THIS_ID&product=sop
+
+shareThisConfig:
+  localhost: 5fbe19717530e20012b5f02e
+  na:
+    localhost: 5fbe19717530e20012b5f02e

@@ -1,0 +1,12 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: title
+          fieldType: text
+          label: Title
+          required: true
+        - !include:/kags/includes/banner-field.yaml
+
+actions: !include:/kags/includes/common-actions.yaml

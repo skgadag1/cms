@@ -1,0 +1,6 @@
+'downloadConceptTranslation': 
+  'class': 'info.magnolia.translation.commands.TranslationFileDownloadCommand'
+  'formPath': '/modules/concepts/apps/concepts-app/subApps/conceptDetail/form'
+  'workspace': 'concepts'
+
+

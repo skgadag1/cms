@@ -1,0 +1,167 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Side Nav Gallery Configuration
+form:
+  properties:
+    content:
+      $type: cloudinaryRichText
+      label: Content
+      images: false
+      i18n: true
+    cta:
+      !include:/bobcat/includes/page-link-or-url-field-with-none.yaml
+      label: Call to action
+    showCTA:
+      $type: checkBoxField
+      label: Show CTA
+      defaultValue: true
+      buttonLabel: ''
+      type: java.lang.Boolean
+    tabs:
+      label: Tabs
+      $type: jcrMultiField
+      field:
+        label: Tab
+        name: compositeField
+        $type: compositeField
+        properties:
+          title:
+            $type: cloudinaryRichText
+            label: Title
+            images: false
+            i18n: true
+          subtitle:
+            $type: cloudinaryRichText
+            label: SubTitle
+            images: false
+            i18n: true
+          tabLink:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            label: Button
+            required: true
+            defaultValue: none
+            i18n: true
+            field:
+              datasource:
+                options:
+                 - name: none
+                   label: None
+                   value: none
+            label: Link to action
+          description:
+            $type: cloudinaryRichText
+            alignment: true
+            label: Description
+            i18n: true
+          galleryImages:
+            styleName: sng-asset-image
+            label: Gallery images
+            $type: jcrMultiField
+            i18n: true
+            field:
+              label: Asset source
+              $type: switchableField
+              i18n: false
+              field:  
+                $type: radioButtonGroupField
+                layout: horizontal
+                datasource:
+                  $type: optionListDatasource
+                  options:
+                    - name: video
+                      label: Video
+                      value: video
+                    - name: img
+                      label: Image
+                      value: img
+                    - name: youtube
+                      label: YouTube
+                      value: youtube
+              itemProvider:
+                $type: jcrChildNodeProvider
+              forms:
+                video:
+                  properties:
+                    video:
+                      !include:/bobcat/includes/dam-video.yaml
+                      label: Select video
+                      properties: !override
+                        src:
+                          !include:/bobcat/includes/dam-asset.yaml
+                          label: Video
+                          description: '3:1 aspect ratio, 3840x1280 for best quality'
+                          filters:
+                            resource_type:
+                              class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                              value: video
+                img:
+                  properties:
+                    img:
+                      !include:/bobcat/includes/image.yaml
+                      description: '3:1 aspect ratio, 3840x1280 for best quality'
+                youtube:
+                  properties:
+                    youtube:
+                      $type: textField
+                      label: YouTube link source
+                      description: '16:9 aspect ratio'
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Gray Lighter
+            value: light
+          - name: dark
+            label: Gray Darker
+            value: dark
+          - name: black
+            label: Black with gradient
+            value: black
+      defaultValue: white
+    buttonColor:
+      $type: comboBoxField
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: primary
+            label: Primary Red
+            value: primary
+          - name: white
+            label: White
+            value: white
+      defaultValue: primary
+      label: Button color
+    animationEnabled:
+      $type: checkBoxField
+      label: Animate cards
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: content
+          - name: tabs
+      cta:
+        label: CTA
+        fields:
+          - name: cta
+          - name: showCTA
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: buttonColor
+          - name: animationEnabled
+      inheritableSection:
+      anchor:
+      meta:
+light: false

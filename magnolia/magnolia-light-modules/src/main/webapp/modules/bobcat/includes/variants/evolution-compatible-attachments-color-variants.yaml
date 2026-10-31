@@ -1,0 +1,25 @@
+$type: switchableField
+label: Background Color Variant
+required: true
+field:
+  $type: comboBoxField
+  layout: horizontal
+  defaultValue: WHITE
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: WHITE
+        label: White
+        value: WHITE
+        selected: true
+      - name: LIGHT_GRAY
+        label: Light gray
+        value: LIGHT_GRAY
+      - name: DARK_GRAY
+        label: Dark gray
+        value: DARK_GRAY
+      - name: BLACK
+        label: Black
+        value: BLACK
+itemProvider:
+  $type: jcrChildNodeProvider

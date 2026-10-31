@@ -1,0 +1,27 @@
+label: Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    content:
+      $type: cloudinaryRichText
+      images: true
+      label: Content
+      i18n: true
+    image:
+      !include:/irp/includes/dam-image.yaml
+      label: Software Image
+      i18n: true
+      required: false
+  layout:
+    $type: tabbedLayout
+    tabs:
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: content
+          - name: image
+light: false

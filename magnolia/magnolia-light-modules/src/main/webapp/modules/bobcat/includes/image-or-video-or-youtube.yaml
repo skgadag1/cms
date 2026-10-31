@@ -1,0 +1,57 @@
+label: Assets
+$type: jcrMultiField
+i18n: false
+field:
+  name: compositeField
+  $type: compositeField
+  label: Asset
+  properties:
+    asset:
+      label: ''
+      $type: switchableField
+      i18n: false
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: video
+              label: Video
+              value: video
+            - name: img
+              label: Image
+              value: img
+            - name: spinset
+              label: Spinset
+              value: spinset
+            - name: youtube
+              label: YouTube
+              value: youtube
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        video:
+          properties:
+            video:
+              !include:/bobcat/includes/dam-video.yaml
+              label: Select video
+        img:
+          properties:
+            img:
+              !include:/bobcat/includes/image.yaml
+              properties:
+                src:
+                  label: ''
+        spinset:
+          properties:
+            tag:
+              $type: textField
+              label: Cloudinary tag
+              required: true
+              requiredErrorMessage: This field is required!
+        youtube:
+          properties:
+            youtube:
+              $type: textField
+              label: YouTube link source

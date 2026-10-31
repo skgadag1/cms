@@ -1,0 +1,4 @@
+label: Facet Details
+form:
+  !include:/facet-configuration/includes/forms/facet-form.yaml
+light: false

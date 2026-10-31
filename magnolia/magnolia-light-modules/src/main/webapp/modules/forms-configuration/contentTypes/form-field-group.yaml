@@ -1,0 +1,12 @@
+name: dxp:fieldGroup
+
+datasource:
+  workspace: formsType
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+model:
+  nodeType: dxp:fieldGroup
+  properties:
+    - name: title

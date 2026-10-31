@@ -1,0 +1,249 @@
+@import 'variables';
+
+.custom {
+  &-control {
+    &.custom-control-input__dark {
+      .custom-control-input {
+        & ~ .custom-control-label {
+          &:before {
+            border-color: $dark;
+          }
+        }
+
+        &:checked ~ .custom-control-label {
+          &:before {
+            border-color: $dark;
+            background-color: $black;
+          }
+        }
+      }
+    }
+
+    &.custom-checkbox {
+      label {
+        // somehow $font-family-base is not working in this case
+        font-family: 'BobcatMain-Roman', 'Helvetica Neue' !important;
+      }
+      .custom-control-input {
+        & ~ .custom-control-label {
+          &:before {
+            border-color: $black !important;
+          }
+        }
+      }
+    }
+  }
+
+  &-checkbox, &-radio {
+    .custom-control-input[disabled] ~ .custom-control-label::before,
+    .custom-control-input:disabled ~ .custom-control-label::before {
+      border-color: transparent !important;
+    }
+  }
+
+  &-control-label {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &-select {
+    height: 50px;
+  }
+}
+
+.submit-button {
+  &:disabled {
+    background-color: $gray-200 !important;
+    color: $gray-800 !important;
+    border-color: $gray-200 !important;
+  }
+}
+
+.ngb-form {
+  .form-control {
+    background-position: right $input-height-inner-quarter center;
+    background-repeat: no-repeat;
+    background-size: $input-height-inner-half $input-height-inner-half;
+  }
+
+  .input-group, textarea.form-control {
+    transition: $input-transition;
+
+    &:hover {
+      box-shadow: $btn-box-shadow;
+      .border {
+        transition: $input-transition;
+      }
+    }
+  }
+
+  .dropdown {
+    .dropdown-toggle::after {
+      transform: rotate(0);
+    }
+
+    button {
+      border: 1px solid $gray-600;
+      border-radius: $rounded-2 !important;
+
+      &:not([disabled]) {
+        color: $black !important;
+      }
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    &.show {
+      .dropdown-toggle:after {
+        transform: rotateX(180deg);
+      }
+    }
+
+    ul {
+      border: 1px solid $gray-300;
+      border-radius: 0;
+
+      &[x-placement="bottom-start"] {
+        top: -2px !important;
+        border-top: none;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+
+      &[x-placement="top-start"] {
+        top: 2px !important;
+        border-bottom: none;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      right: 1.8rem;
+      top: calc(50% - 0.5rem);
+    }
+
+    &.show {
+      button, ul {
+        border-color: $black;
+      }
+
+      ul {
+        overflow-y: auto;
+        max-height: 12rem;
+      }
+    }
+  }
+
+  .is-valid {
+    .dropdown {
+      &::after {
+        content: escape-svg($form-feedback-icon-valid);
+      }
+    }
+  }
+
+  label.is-invalid {
+    color: $form-feedback-icon-invalid-color;
+  }
+
+  .form-control {
+    &:hover {
+      border-color: $gray-600 !important;
+    }
+
+    &.is-valid {
+      border-color: $success !important;
+    }
+
+    &.is-invalid {
+      border-color: $danger !important;
+    }
+  }
+
+  .is-invalid {
+    &::placeholder {
+      color: $danger;
+    }
+
+    .dropdown {
+      ul {
+        border-color: $danger;
+      }
+
+      button {
+        border-color: $danger !important;
+      }
+
+      &::after {
+        content: escape-svg($form-feedback-icon-invalid);
+      }
+    }
+  }
+
+  .input-group {
+
+    .form-control:focus {
+      transition: $transition-base;
+      outline: 0 !important;
+      border-color: initial;
+      box-shadow: none;
+    }
+  }
+}
+
+.sticky-bar {
+  .progress {
+    padding: 4px;
+    background: rgba(255, 54, 0, 0.05);
+
+    .progress-bar {
+      border-radius: 2px;
+    }
+  }
+}
+
+.input-tel, .country-selector {
+  input {
+    box-shadow: none !important;
+  }
+
+  .form-arr {
+    font-size: 0.62rem;
+  }
+
+  &.is-valid {
+    .input-tel__input, .country-selector__input {
+      border-color: $gray-300 !important;
+    }
+  }
+
+  &.has-error {
+    input::placeholder, label {
+      color: $danger !important;
+    }
+  }
+}
+
+// overwrite bootstrap radio buttons
+.custom-control-label::before {
+  border-color: $black;
+}
+
+.custom-control-input[type="radio"]:checked ~ .custom-control-label::after {
+  top: 0.5rem;
+  left: -1.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background-color: $black;
+  background-image: none !important;
+}
+
+.custom-control-input[type="radio"]:checked ~ .custom-control-label::before {
+  background-color: $white;
+  border-color: $black;
+}

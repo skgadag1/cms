@@ -1,0 +1,13 @@
+datasource:
+  workspace: attachments
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+model:
+  nodeType: dxp:attachmentGroup
+  properties:
+    - name: title
+      i18n: true
+    - name: description
+      i18n: true

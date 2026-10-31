@@ -1,0 +1,29 @@
+properties:
+  jcrName:
+    label: FieldTypeId
+    $type: textField
+    description: Logical ID of the field.
+    required: true
+  elements:
+    label: Elements
+    description: Form elements
+    $type: jcrMultiField
+    i18n: true
+    buttonSelectAddLabel: Add form element
+    itemProvider:
+      $type: jcrChildNodeProvider
+    field:
+      label: Form element selector
+      name: compositeField
+      $type: compositeField
+      properties:
+        component:
+          !include:/bobcat/includes/forms/component-selector.yaml
+layout:
+  $type: tabbedLayout
+  tabs:
+    basic:
+      label: Basic Info
+      fields:
+        - name: jcrName
+        - name: elements

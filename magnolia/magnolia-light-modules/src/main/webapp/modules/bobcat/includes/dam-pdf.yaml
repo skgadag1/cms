@@ -1,0 +1,7 @@
+!include:/bobcat/includes/dam-asset.yaml
+label: Select pdf
+required: true
+filters:
+  - class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+    name: format
+    value: pdf

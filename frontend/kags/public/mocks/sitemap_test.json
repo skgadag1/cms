@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Parts",
+    "icon": "tools",
+    "url": "/kags/parts",
+    "extraContent": {
+      "image": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/{transformation}/v1566924414/sample",
+      "alt": "Some sample image",
+      "text": "Some extra content text"
+    },
+    "items": [
+      {
+        "title": "Parts",
+        "icon": "tools",
+        "url": "/kags/parts",
+        "extraContent": {
+          "image": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/{transformation}/v1566924414/sample",
+          "alt": "Some sample image",
+          "text": "Some extra content text"
+        },
+        "items": null,
+        "active": false
+      },
+      {
+        "title": "Field mods",
+        "icon": "comments",
+        "url": "/kags/parts/field_mods",
+        "extraContent": {
+          "image": "https://res.cloudinary.com/doosan-bobcat-dev/image/upload/{transformation}/v1561141943/success_quote"
+        },
+        "active": false
+      },
+      {
+        "title": "Reman program",
+        "url": "/kags/parts/reaman_program",
+        "extraContent": {}
+      },
+      {
+        "title": "Policy & Procedures",
+        "icon": "file-pdf",
+        "url": "/kags/parts/policy",
+        "extraContent": {}
+      }
+    ]
+  }
+]

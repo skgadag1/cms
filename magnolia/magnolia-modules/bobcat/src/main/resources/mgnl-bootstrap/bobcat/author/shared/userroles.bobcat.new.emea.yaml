@@ -1,0 +1,402 @@
+'emea':
+  'jcr:primaryType': 'mgnl:folder'
+
+  'dxp-bobcat-forms-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '0889390d-4e6b-416f-9ce1-91f2da5b980a'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-forms-app-emea'
+        'permissions': 8
+    'acl_uri': &uliReadWriteAccess
+      '0':
+        'path': '*'
+        'permissions': 63
+    'acl_formsType': &readWriteAccess
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_formsConfiguration':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_formsEmailConfig':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+
+  'dxp-bobcat-publishers-emea':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': e8163f39-465a-490b-87cf-3d85916589d8
+    'acl_userroles':
+      '0':
+        'path': /bobcat/new/emea/dxp-bobcat-publishers-emea
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_website':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_features':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_products':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_attachments':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_regions':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63
+    'acl_config':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+    'acl_resources':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+    'acl_tasks':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-content-uploaders-emea':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': 272ef199-a4c4-4fe6-a0b0-249035554605
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_userroles':
+      '0':
+        'path': /bobcat/new/emea/dxp-bobcat-content-uploaders-emea
+        'permissions': 8
+    'acl_website':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_features':
+      <<: *readWriteAccess
+    'acl_products':
+      <<: *readWriteAccess
+    'acl_attachments':
+      <<: *readWriteAccess
+    'acl_regions':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63
+    'acl_config':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+    'acl_resources':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+    'acl_tasks':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-campaign-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': 'f6bde189-89ae-4d20-9129-23b201e0734b'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-campaign-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_marketingCampaigns':
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_marketing-tags':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+
+  'dxp-bobcat-read-only-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '1ab04f97-c229-4e84-b954-bf958a66e76c'
+    'acl_userroles':
+      '0':
+        'mgnl:lastModifiedBy': 'superuser'
+        'path': '/bobcat/new/emea/dxp-bobcat-read-only-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_concepts': &readOnlyAccess
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 8
+      '01':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 8
+    'acl_website':
+      <<: *readOnlyAccess
+    'acl_marketing-tags':
+      <<: *readOnlyAccess
+    'acl_features':
+      <<: *readOnlyAccess
+    'acl_dxpTags':
+      <<: *readOnlyAccess
+    'acl_formsType':
+      <<: *readOnlyAccess
+    'acl_faq':
+      <<: *readOnlyAccess
+    'acl_formsConfiguration':
+      <<: *readOnlyAccess
+    'acl_products':
+      <<: *readOnlyAccess
+    'acl_attachments':
+      <<: *readOnlyAccess
+    'acl_formsEmailConfig':
+      <<: *readOnlyAccess
+    'acl_facets':
+      <<: *readOnlyAccess
+    'acl_tasks':
+      <<: *readOnlyAccess
+    'acl_marketingCampaigns':
+      <<: *readOnlyAccess
+    'acl_navigation':
+      <<: *readOnlyAccess
+
+  'dxp-bobcat-admin-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '3441e210-f878-4255-85cd-a1fc0015d500'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-admin-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_website': &adminAccess
+      '0':
+        'path': '/bobcat'
+        'permissions': 8
+      '00':
+        'path': '/bobcat/*'
+        'permissions': 8
+      '01':
+        'path': '/bobcat/(eu|mea|cis)'
+        'permissions': 63
+      '02':
+        'path': '/bobcat/(eu|mea|cis)/*'
+        'permissions': 63
+    'acl_concepts':
+      <<: *adminAccess
+    'acl_marketing-tags':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63
+    'acl_features':
+      <<: *adminAccess
+    'acl_dxpTags':
+      <<: *adminAccess
+    'acl_formsType':
+      <<: *adminAccess
+    'acl_faq':
+      <<: *adminAccess
+    'acl_formsConfiguration':
+      <<: *adminAccess
+    'acl_products':
+      <<: *adminAccess
+    'acl_attachments':
+      <<: *adminAccess
+    'acl_formsEmailConfig':
+      <<: *adminAccess
+    'acl_facets':
+      <<: *adminAccess
+    'acl_tasks':
+      <<: *adminAccess
+    'acl_marketingCampaigns':
+      <<: *adminAccess
+    'acl_navigation':
+      <<: *adminAccess
+    'acl_regions':
+      <<: *adminAccess
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63
+    'acl_config':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+    'acl_resources':
+      '0':
+        'path': '/'
+        'permissions': 8
+      '00':
+        'path': '/*'
+        'permissions': 8
+
+  'dxp-bobcat-concepts-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '4e2f8a08-01fd-4939-a194-f7ef7dab9498'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-concepts-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_concepts':
+      <<: *readWriteAccess
+
+  'dxp-bobcat-filters-facets-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': 'ba81765b-297b-4ab4-9aed-bebbad7ec3cd'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-filters-facets-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_facets':
+      <<: *readWriteAccess
+
+  'dxp-bobcat-tags-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': 'ddc4f64e-d6a6-4b1c-a16f-09298ba87202'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-tags-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_dxpTags':
+      <<: *readWriteAccess
+
+  'dxp-bobcat-faq-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '45882ac8-f13e-45fa-b339-bc9e87a065d6'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-faq-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_faq':
+      <<: *readWriteAccess
+
+  'dxp-bobcat-navigation-app-emea':
+    'jcr:primaryType': 'mgnl:role'
+    'jcr:uuid': '18d9113e-50d1-45d4-a39c-c0f33d2d08a7'
+    'acl_userroles':
+      '0':
+        'path': '/bobcat/new/emea/dxp-bobcat-navigation-app-emea'
+        'permissions': 8
+    'acl_uri':
+      <<: *uliReadWriteAccess
+    'acl_navigation':
+      <<: *readWriteAccess

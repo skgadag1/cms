@@ -1,0 +1,96 @@
+label: Downloads v2
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      required: true
+    subtitleField:
+      $type: textField
+      label: Subtitle
+      rows: 5
+    separator:
+      $type: staticField
+      label: ''
+      value: ''
+    softwareItems:
+      $type: jcrMultiField
+      label: Software items (max 2 items)
+      required: true
+      field:
+        $type: compositeField
+        label: Software item
+        properties:
+          softwareLabel:
+            $type: textField
+            label: Software Label
+            required: true
+            description: 'Available placeholders: [software], [version], [release] (release date)'
+          chosenSoftware:
+            !include:/kags/includes/softwares-field.yaml
+            readOnly: true
+            description: 'Deprecated! Use software Category'
+          softwareCategory:
+            label: Software
+            $type: comboBoxField
+            required: true
+            datasource:
+              $type: jcrDatasource
+              describeByProperty: displayName
+              workspace: category
+              rootPath: /kags/software-types
+              allowedNodeTypes:
+                - mgnl:folder
+                - mgnl:category
+          softwareIcon:
+            !include:/kags/includes/icons-software.yaml
+            required: false
+            readOnly: true
+            description: 'Deprecated! Use concepts'
+          releaseNotesLabel:
+            $type: textField
+            label: Release notes label
+            description: 'Available placeholders: [software], [version], [release] (release date)'
+    documentDownloads:
+      $type: jcrMultiField
+      label: Documents Download Links (max 1 item)
+      field:
+        $type: compositeField
+        label: Documents Download Link
+        properties:
+          icon:
+            !include:/kags/includes/icons-field-v2.yaml
+            required: true
+          label:
+            $type: textField
+            label: Label
+          asset:
+            !include:/kags/includes/dam-asset-v2.yaml
+            label: Asset
+            required: true
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+    forInternals:
+      !include:/kags/includes/internal-access.yaml
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Main
+        fields:
+          - name: titleField
+          - name: subtitleField
+          - name: separator
+          - name: softwareItems
+          - name: separator
+          - name: documentDownloads
+      visibilityTab:
+        label: Component visibility
+        fields:
+          - name: forKeyAccounts
+          - name: forSupertechs
+          - name: forInternals
+  light: false

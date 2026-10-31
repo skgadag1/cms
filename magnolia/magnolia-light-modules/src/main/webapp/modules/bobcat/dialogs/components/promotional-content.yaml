@@ -1,0 +1,59 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Promotional Banner Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    paragraph:
+      $type: textField
+      label: Paragraph
+      rows: 5
+      i18n: true
+    link:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      i18n: true
+    avatar:
+      !include:/bobcat/includes/image.yaml
+      label: Select avatar
+      i18n: true
+    backgroundImg:
+      !include:/bobcat/includes/dam-image.yaml
+      description: '1440x692 for best quality'
+      label: Select background image
+      required: true
+      i18n: true
+    variant:
+      !include:/bobcat/includes/content-variants.yaml
+    opacity:
+      !include:/bobcat/includes/opacity-variants.yaml
+    spacingBottom:
+      $type: checkBoxField
+      label: Spacing bottom
+      buttonLabel: Add spacing below component
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: title
+          - name: htag
+          - name: paragraph
+          - name: link
+          - name: avatar
+          - name: backgroundImg
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: spacingBottom
+          - name: opacity
+      inheritableSection:
+      anchor:
+      meta:
+light: false

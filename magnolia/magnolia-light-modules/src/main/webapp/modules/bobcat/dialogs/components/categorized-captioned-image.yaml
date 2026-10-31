@@ -1,0 +1,151 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Categorized Captioned Image Configuration
+form:
+  properties:
+    gridTitle:
+      $type: textField
+      label: Grid title
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: light
+            label: Light
+            value: light
+          - name: dark
+            label: Dark
+            value: dark
+      defaultValue: white
+    tabs:
+      label: Tabs (max 6 items)
+      description: Please define 1 - 6 tabs.
+      $type: jcrMultiField
+      i18n: false
+      field:
+        label: Tab
+        name: compositeField
+        $type: compositeField
+        properties:
+          title:
+            $type: textField
+            label: Title
+            required: true
+            i18n: true
+            description: Title must be unique.
+          cards:
+            label: Captioned Image cards (max 6 items)
+            description: Please define 1 - 6 cards.
+            $type: jcrMultiField
+            i18n: false
+            field:
+              label: Card
+              name: compositeField
+              $type: compositeField
+              properties:
+                title:
+                  $type: textField
+                  label: Title
+                  i18n: true
+                htag:
+                  !include:/bobcat/includes/htag-field.yaml
+                  defaultValue: h4
+                paragraph:
+                  $type: cloudinaryRichText
+                  alignment: true
+                  images: true
+                  label: Paragraph
+                  rows: 5
+                  i18n: true
+                asset:
+                  label: Asset source
+                  $type: switchableField
+                  i18n: false
+                  field:
+                    $type: radioButtonGroupField
+                    layout: horizontal
+                    required: true
+                    datasource:
+                      $type: optionListDatasource
+                      options:
+                        - name: video
+                          label: Video
+                          value: video
+                        - name: img
+                          label: Image
+                          value: img
+                        - name: youtube
+                          label: YouTube
+                          value: youtube
+                  itemProvider:
+                    $type: jcrChildNodeProvider
+                  forms:
+                    video:
+                      properties:
+                        video:
+                          !include:/bobcat/includes/dam-video.yaml
+                          label: Select video
+                          properties:
+                            src:
+                              !include:/bobcat/includes/dam-asset.yaml
+                              label: Video
+                              required: true
+                              filters:
+                                resource_type:
+                                  class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                                  value: video
+                    img:
+                      properties:
+                        img:
+                          !include:/bobcat/includes/image.yaml
+                          description: '3:2 aspect ratio for preview'
+                          properties:
+                            src:
+                              !include:/bobcat/includes/dam-image.yaml
+                              required: true
+                              label: Select image
+                            imageAlt:
+                              $type: textField
+                              label: Asset alt
+                              i18n: true
+                            imageTitle:
+                              $type: textField
+                              label: Asset title
+                              i18n: true
+                    youtube:
+                      properties:
+                        youtube:
+                          $type: textField
+                          required: true
+                          label: YouTube link source
+    columns:
+      !include:/bobcat/includes/column-variants.yaml
+      i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: gridTitle
+          - name: htag
+      categories:
+        label: Tabs
+        fields:
+          - name: tabs
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: columns
+          - name: variant
+      inheritableSection:
+      anchor:
+      meta:
+light: false

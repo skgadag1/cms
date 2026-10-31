@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>assets/favicon.ico">
+    <script type="text/javascript" src="<%= BASE_URL %><%= VUE_APP_ASSETS_STATIC_JS_PREFIX %>links.js" defer></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body data-asset-server="<%= VUE_APP_ASSETS_SERVER %>"
+        data-api-servers='{"content-api":"<%= VUE_APP_CONTENT_API %>"}'
+  >
+    <noscript>
+      <strong>We're sorry but bobcat_default doesn't work properly without JavaScript enabled. Please enable it to
+        continue.</strong>
+    </noscript>
+    <div id="header"
+         data-config='{
+                "user": {
+                  "id": "321",
+                  "name": "Your User",
+                  "givenName": "Your",
+                  "familyName": "User",
+                  "fullName": "Your User",
+                  "email": "me@example.com"
+                },
+                "mainPage": "/machine/machine.html"
+             }'
+    ></div>
+
+    <!--- COMPONENT pageTitle START --->
+    <section class="position-relative">
+      <div class="banner-main no-navigation" style="background-image: url('<%= VUE_APP_ASSETS_SERVER %>/assets/img/examples/banner.png')"></div>
+
+      <div class="container pt-2">
+        <div class="row">
+          <div class="col-12 pt-4">
+            <h1 class="py-4 mt-4 mb-5 mb-lg-4 text-white d-flex align-items-center justify-content-center flex-column flex-sm-row">
+              { GenericTitle }
+            </h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mt-md-1 mt-lg-4 pt-lg-1">
+            <div id="breadcrumb"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--- COMPONENT END --->
+
+    <!--- COMPONENT serviceAnalyzerIntro START --->
+    <section class="container mb-4">
+      <div class="row">
+        <div class="col-12">
+          <p class="font-condensed">Diagnostic software designed to interact with Bobcat machines for performing diagnostic testing, monitoring critical components, viewing current an machine performance, installation of dealer information in machine controller and update software for selected controllers.</p>
+        </div>
+      </div>
+    </section>
+    <!--- COMPONENT END --->
+
+    <!--- COMPONENT serviceAnalyzerDownload START --->
+    <section class="container mb-4">
+      <div class="box">
+        <div class="row">
+          <div class="col-12 col-md-7">
+            <h2>{ title }</h2>
+            <p>{ subtitle }</p>
+          </div>
+
+          <div class="col-12 col-md-5 text-md-end font-condensed">
+            <a href="#" data-download-link="/mocks/handled-external.json"><i class="fas fa-file text-primary me-2"></i>{ View release notes }</a><br/>
+            <a href="#" data-download-link="/mocks/handled-external.json"><i class="fas fa-download text-primary me-2"></i>{ Window compatibility chart }</a>
+          </div>
+
+          <div class="col-12 mt-3 mt-md-0">
+            <div class="box border">
+              <a href="#" data-download-link="/mocks/handled-external.json" class="font-condensed text-black"><img src="/assets/img/icons/service-analyzer.svg" height="24" class="me-2">{ National sth }</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--- COMPONENT END --->
+
+    <!--- COMPONENT serviceAnalyzerRichTextInfo START --->
+    <section class="container mb-5">
+      <div class="box">
+        <div class="row">
+          <div class="col-12">
+            <h2>{ title }</h2>
+          </div>
+
+          <div class="col-12 col-md-7">
+            { Description here }
+          </div>
+
+          <div class="col-12 col-md-5">
+            <img src="/assets/img/examples/loader.png" class="img-fluid w-100 mt-4 mt-md-0 px-5" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--- COMPONENT END --->
+
+    <div id="feedback"
+         data-config='{"surveyId": "5322546", "latency": "10000", "feedbackButton": "Feedback", "feedbackTitle": "Your Feedback", "feedbackSubmit": "Submit ", "feedbackThankyou": "Thank you for your feedback" }'
+    ></div>
+
+    <div id="footer"
+         data-config='{"contactUrl": "/contactus.html"}'
+    ></div>
+  </body>
+</html>

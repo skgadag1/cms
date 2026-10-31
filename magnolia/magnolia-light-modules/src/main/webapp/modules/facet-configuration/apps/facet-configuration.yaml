@@ -1,0 +1,14 @@
+label: 'Filtering & Sorting'
+class: info.magnolia.ui.contentapp.configuration.ContentAppDescriptor
+appClass: info.magnolia.ui.framework.app.BaseApp
+name: facet-configuration
+icon: icon-tag-2-app
+subApps:
+  facetHierarchy:
+    !include:/facet-configuration/includes/facet-hierarchy-sub-app.yaml
+  facetGroupDetails:
+    !include:/facet-configuration/includes/facet-group-details-sub-app.yaml
+  facetCategoryDetails:
+    !include:/facet-configuration/includes/facet-category-details-sub-app.yaml
+  facetDetails:
+    !include:/facet-configuration/includes/facet-details-sub-app.yaml

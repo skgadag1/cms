@@ -1,0 +1,23 @@
+'pulse-insights':
+  'jcr:primaryType': 'mgnl:folder'
+  'kags':
+    'jcr:primaryType': 'mgnl:folder'
+    'Setup':
+      'activeAuthor': false
+      'content': "<script>\r\n    (function() {\r\n        var w = window, d = document;\r\
+        \n        w['pi']=function() {\r\n            w['pi'].commands = w['pi'].commands\
+        \ || [];\r\n            w['pi'].commands.push(arguments);\r\n        };  \
+        \      var s = d.createElement('script'); s.async = 1;\r\n        s.src =\
+        \ '//js.pulseinsights.com/pi-08917801_feedback.js'; \r\n        var f = d.getElementsByTagName('script')[0];\r\
+        \n        f.parentNode.insertBefore(s, f);         var s = d.createElement('script');\
+        \ s.async = 1;\r\n        s.src = '//js.pulseinsights.com/surveys.js';   \
+        \     var f = d.getElementsByTagName('script')[0];\r\n        f.parentNode.insertBefore(s,\
+        \ f);        pi('identify', 'PI-08917801');\r\n        pi('pushBeforeGet',\
+        \ true);\r\n        pi('get', 'surveys');\r\n    })();\r\n</script>"
+      'name': 'Setup'
+      'placeToPut': 'headerScripts'
+      'jcr:primaryType': 'mgnl:marketing-tag'
+      'pageLink':
+        '0':
+          'insertInSubPages': true
+          'path': '/kags'

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>dxp-analytics</name>
+  <displayName>${project.name}</displayName>
+  <class>com.tbscg.doosan.magnolia.analytics.DxpAnalyticsModule</class>
+  <versionHandler>com.tbscg.doosan.magnolia.analytics.setup.DxpAnalyticsVersionHandler</versionHandler>
+  <version>2020.4.21</version>
+
+  <dependencies>
+    <dependency>
+      <name>dxp-core</name>
+      <version>*</version>
+    </dependency>
+  </dependencies>
+</module>

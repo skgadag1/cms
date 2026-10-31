@@ -1,0 +1,19 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Edit Field Group
+datasource:
+  $type: jcrDatasource
+  workspace: formsType
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: formsType
+  nodeType: dxp:fieldGroup
+form:
+  !include:/forms-configuration/includes/forms/form-fields-group-form.yaml
+actions:
+  commit:
+    class: info.magnolia.ui.contentapp.detail.action.SaveDetailSubAppActionDefinition
+    browserName: formsFieldType
+    label: Save
+  cancel:
+    $type: closeAction
+    label: Cancel

@@ -1,0 +1,359 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Content Carousel Configuration
+form:
+  properties:
+    evolutionTitle:
+      label: Rich Text Title
+      $type: cloudinaryRichText
+      alignment: true
+      i18n: true
+    link:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      defaultValue: none
+      i18n: true
+      field:
+        datasource:
+          options:
+            - name: none
+              label: No link
+              value: none
+      label: Link "view more"
+    slidesSource:
+      $type: switchableField
+      label: Items
+      field:
+        $type: comboBoxField
+        layout: horizontal
+        defaultValue: manual
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: manual
+              label: Manual
+              value: manual
+            - name: api
+              label: From API
+              value: api
+            - name: mgnlPages
+              label: From Magnolia Pages
+              value: mgnlPages
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        - name: manual
+          properties:
+            cards:
+              label: Cards
+              $type: jcrMultiField
+              i18n: false
+              buttonSelectAddLabel: Add new card
+              field:
+                $type: compositeField
+                label: Card
+                properties:
+                  image:
+                    !include:/bobcat/includes/image.yaml
+                    description: '3:2 aspect ratio'
+                    i18n: false
+                  newIndicator:
+                    $type: checkBoxField
+                    label: ''
+                    buttonLabel: "Show 'NEW' indicator"
+                    type: java.lang.Boolean
+                    i18n: false
+                  videoIndicator:
+                    $type: checkBoxField
+                    label: ''
+                    buttonLabel: "Show 'VIDEO' indicator"
+                    type: java.lang.Boolean
+                    i18n: false
+                  title:
+                    label: Title
+                    $type: textField
+                    required: true
+                    i18n: true
+                  htag:
+                    !include:/bobcat/includes/htag-field.yaml
+                    defaultValue: h4
+                    i18n: false
+                  description:
+                    label: Description
+                    $type: cloudinaryRichText
+                    alignment: true
+                    images: true
+                    rows: 5
+                    i18n: true
+                  caption:
+                    label: Caption
+                    $type: textField
+                    i18n: true
+                  info:
+                    label: Extra info label
+                    $type: textField
+                    i18n: true
+                  link:
+                    !include:/bobcat/includes/page-link-or-url-field.yaml
+                    label: Link
+                    i18n: true
+                  chips:
+                    label: Chips
+                    $type: jcrMultiField
+                    i18n: false
+                    buttonSelectAddLabel: Add chip
+                    field:
+                      label: Chip
+                      $type: compositeField
+                      idPropertyName: name
+                      properties:
+                        title:
+                          label: Pill title
+                          $type: textField
+                          i18n: true
+        - name: api
+          properties:
+            contentType:
+              $type: switchableField
+              label: Items
+              field:
+                $type: comboBoxField
+                layout: horizontal
+                required: true
+                defaultValue: product
+                datasource:
+                  $type: optionListDatasource
+                  options:
+                    - name: product
+                      label: Products
+                      value: product
+                    - name: attachment
+                      label: Attachments
+                      value: attachment
+                    - name: page
+                      label: Pages
+                      value: page
+              itemProvider:
+                $type: jcrChildNodeProvider
+              forms:
+                - name: product
+                  properties:
+                    hideSelectedVariants:
+                      $type: checkBoxField
+                      label: Hide variants
+                      defaultValue: false
+                      buttonLabel: ''
+                      description: Hide Variants selected in Product Catalog
+                      type: java.lang.Boolean
+                    productCategory:
+                      label: Product category
+                      $type: linkField
+                      buttonSelectNewLabel: Select...
+                      chooserId: bobcat:chooser/product-chooser
+                      required: true
+                      datasource:
+                        $type: jcrDatasource
+                        workspace: products
+                        allowedNodeTypes:
+                          - mgnl:folder
+                          - dxp:category
+                          - dxp:subcategory
+                - name: page
+                  properties:
+                    pageType:
+                      label: Page types
+                      $type: jcrMultiField
+                      i18n: false
+                      buttonSelectAddLabel: Add new type
+                      required: true
+                      field:
+                        label: Type
+                        $type: switchableField
+                        field:
+                          $type: comboBoxField
+                          layout: horizontal
+                          defaultValue: article
+                          required: true
+                          datasource:
+                            $type: optionListDatasource
+                            options:
+                              - name: videos
+                                label: Videos
+                                value: video
+                              - name: articles
+                                label: Articles
+                                value: article
+                              - name: page
+                                label: General information
+                                value: page
+                              - name: attachment
+                                label: Attachment
+                                value: attachment
+                              - name: product
+                                label: Model
+                                value: product
+                              - name: historical
+                                label: Non-current model
+                                value: historical-product
+                      itemProvider:
+                        $type: jcrChildNodeProvider
+                - name: attachment
+                  properties:
+                    displayAtGroupLevel:
+                      $type: checkBoxField
+                      label: Display at group level
+                      defaultValue: false
+                      buttonLabel: ''
+                      description: Display attachments at group level
+                      type: java.lang.Boolean
+                    hideSelectedVariants:
+                      $type: checkBoxField
+                      label: Hide variants
+                      defaultValue: false
+                      buttonLabel: ''
+                      description: Hide Variants selected in Product Catalog
+                      type: java.lang.Boolean
+            facet:
+              label: Sorting facet
+              required: true
+              $type: linkField
+              buttonSelectNewLabel: Select...
+              datasource:
+                $type: jcrDatasource
+                describeByProperty: label
+                workspace: facets
+                rootPath: /
+                allowedNodeTypes:
+                  - mgnl:folder
+                  - dxp:facetGroup
+                  - dxp:facet
+                  - dxp:facetCategory
+            sortingDirection:
+              $type: switchableField
+              label: Sorting Direction
+              field:
+                $type: comboBoxField
+                layout: horizontal
+                required: true
+                defaultValue: asc
+                datasource:
+                  $type: optionListDatasource
+                  options:
+                    - name: ascending
+                      label: Ascending
+                      value: asc
+                    - name: descending
+                      label: Descending
+                      value: desc
+              itemProvider:
+                $type: jcrChildNodeProvider
+            dxpTags:
+              !include:/product-catalog/includes/tag-chooser.yaml
+              label: Tags (optional)
+            maxItems:
+              label: Max number of items
+              $type: textField
+              required: true
+              defaultValue: '10'
+              validators:
+                numberValidator:
+                  $type: regexpValidator
+                  pattern: ^$|^\d{1,5}$
+                  errorMessage: 'Enter valid number within range: 0-20'
+            linkLabel:
+              $type: textField
+              i18n: true
+              label: CTA
+              description: Will be used for all cards pulled in with the API
+        - name: mgnlPages
+          properties:
+            maxItems:
+              label: Max number of items
+              $type: textField
+              required: true
+              defaultValue: '10'
+              validators:
+                numberValidator:
+                  $type: regexpValidator
+                  pattern: ^$|^(1[012]|[3-9])$
+                  errorMessage: 'Enter valid number within range: 3-12'
+            linkLabel:
+              $type: textField
+              i18n: true
+              label: CTA
+              description: Will be used for all cards
+            cards:
+              $type: jcrMultiField
+              i18n: false
+              label: Pages
+              buttonSelectAddLabel: Add new page
+              field:
+                $type: compositeField
+                label: Page
+                properties:
+                  mgnlPage:
+                    label: Magnolia page
+                    $type: pageLinkField
+                    required: true
+    indicators:
+      $type: checkBoxField
+      label: Display indicators
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: true
+    showChips:
+      $type: checkBoxField
+      label: Display chips
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: true
+    showImages:
+      $type: checkBoxField
+      label: Display card images
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: true
+    showPublishDate:
+      $type: checkBoxField
+      label: Display item publish date (i.e. for article)
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+    hideCaption:
+      $type: checkBoxField
+      label: Hide caption text
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+    hideDescription:
+      $type: checkBoxField
+      label: Hide description text
+      buttonLabel: ''
+      type: java.lang.Boolean
+      defaultValue: false
+    variant:
+      !include:/bobcat/includes/variants/evolution-carousel-color-variants.yaml
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      general:
+        label: General
+        fields:
+          - name: evolutionTitle
+          - name: link
+      cardConfiguration:
+        label: Cards
+        fields:
+          - name: slidesSource
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: indicators
+          - name: showChips
+          - name: showImages
+          - name: showPublishDate
+          - name: hideCaption
+          - name: hideDescription
+          - name: variant
+      inheritableSection:
+      anchor:
+      meta:
+light: false

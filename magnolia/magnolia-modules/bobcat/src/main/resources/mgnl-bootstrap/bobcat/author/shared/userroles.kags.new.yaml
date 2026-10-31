@@ -1,0 +1,38 @@
+'new':
+  'jcr:primaryType': 'mgnl:folder'
+  'dxp-bobcatdirect':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': 5ea86317-635b-3558-9425-723488b7223d
+    'acl_userroles':
+      '0':
+        'path': /kags/new/dxp-bobcatdirect
+        'permissions': 8
+    'acl_website':
+      '0':
+        'path': '/kags'
+        'permissions': 63
+      '00':
+        'path': '/kags/*'
+        'permissions': 63
+    'acl_concepts':
+      '0':
+        'path': '/kags'
+        'permissions': 63
+      '00':
+        'path': '/kags/*'
+        'permissions': 63
+    'acl_uri':
+      '0':
+        'path': '*'
+        'permissions': 63
+    'acl_workflow':
+      '0':
+        'path': '/'
+        'permissions': 63
+    'acl_tasks':
+      '0':
+        'path': '/'
+        'permissions': 63
+      '00':
+        'path': '/*'
+        'permissions': 63

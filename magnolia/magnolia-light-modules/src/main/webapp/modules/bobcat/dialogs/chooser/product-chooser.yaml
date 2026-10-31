@@ -1,0 +1,41 @@
+class: info.magnolia.ui.chooser.definition.SingleItemWorkbenchChooserDefinition
+actions:
+  choose:
+    $type: chooseAction
+  cancel:
+    $type: closeAction
+workbenchChooser:
+  workbench:
+    extensionViews:
+      - name: fullTextSearch
+        class: info.magnolia.ui.chooser.definition.FullTextSearchExtensionViewDefinition
+    contentViews:
+      model:
+        $type: treeView
+        columns:
+          jcrName:
+            label: Name
+            $type: jcrTitleColumn
+            expandRatio: 5
+            nodeTypeToIcon:
+              mgnl:folder: icon-language-app
+              dxp:category: icon-node-content
+              dxp:subcategory: icon-packager-app
+              dxp:product: icon-documents-app
+          regionInfo:
+            label: Region
+            valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.RegionNameValueProvider
+            expandRatio: 1
+            sortable: false
+          jcr:primaryType:
+            label: Type
+            valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.ProductTypeValueProvider
+            expandRatio: 3
+            filterComponent:
+              $type: textField
+          jcrPublishingStatus:
+            $type: jcrStatusColumn
+            label: Status
+          mgnl:lastModified:
+            $type: dateColumn
+            expandRatio: 3

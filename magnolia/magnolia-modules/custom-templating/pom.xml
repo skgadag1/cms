@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.doosan.dxp.cms</groupId>
+		<artifactId>magnolia-modules</artifactId>
+		<version>${revision}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>magnolia-module-custom-templating</artifactId>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>info.magnolia.resources</groupId>
+			<artifactId>magnolia-resources</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>info.magnolia.resources</groupId>
+			<artifactId>magnolia-resources-templating</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>info.magnolia.templating</groupId>
+			<artifactId>magnolia-jsonfn</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.doosan.dxp.cms</groupId>
+			<artifactId>magnolia-module-dxp-core</artifactId>
+		</dependency>
+	</dependencies>
+</project>

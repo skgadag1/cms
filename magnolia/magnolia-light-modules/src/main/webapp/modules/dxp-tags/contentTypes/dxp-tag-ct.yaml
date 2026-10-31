@@ -1,0 +1,13 @@
+name: dxp:tag
+datasource:
+  workspace: dxpTags
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+
+model:
+  nodeType: dxp:tag
+  properties:
+    - name: label
+      i18n: true

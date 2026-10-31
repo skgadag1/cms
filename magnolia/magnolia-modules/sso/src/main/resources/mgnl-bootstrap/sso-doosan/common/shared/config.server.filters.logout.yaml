@@ -1,0 +1,4 @@
+'logout': 
+  'class': 'com.tbscg.doosan.magnolia.sso.filter.CustomSSOLogoutFilter'
+  'enabled': true
+  jcr:primaryType: 'mgnl:content'

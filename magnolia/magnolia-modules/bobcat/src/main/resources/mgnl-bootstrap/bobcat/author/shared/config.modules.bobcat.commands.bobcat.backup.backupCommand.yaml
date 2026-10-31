@@ -1,0 +1,3 @@
+backupCommand:
+  class: com.tbscg.doosan.magnolia.bobcat.commands.BackupCommand
+  commandName: backupCommand

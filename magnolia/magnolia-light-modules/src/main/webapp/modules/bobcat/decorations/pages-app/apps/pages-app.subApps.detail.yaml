@@ -1,0 +1,23 @@
+actions:
+  deactivate:
+    availability:
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  stopMoveComponent:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpMoveComponentActionDefinition
+  delete:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpDeleteElementActionDefinition
+  paste:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpPasteComponentsActionDefinition
+  duplicateComponent:
+    class: com.tbscg.doosan.magnolia.dxp.workflow.action.ui.DxpDuplicateNodeActionDefinition
+  instantTranslation:
+    availability:
+      access:
+        roles:
+          - dxp-bobcat-admin
+          - dxp-bobcat-admin-na
+          - dxp-bobcat-publishers-na
+          - dxp-bobcat-content-uploaders-na
+          - superuser

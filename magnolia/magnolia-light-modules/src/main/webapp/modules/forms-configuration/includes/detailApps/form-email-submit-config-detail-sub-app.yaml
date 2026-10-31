@@ -1,0 +1,19 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Edit Form Email Configuration
+datasource:
+  $type: jcrDatasource
+  workspace: formsEmailConfig
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: formsEmailConfig
+  nodeType: dxp:formEmailConfiguration
+form:
+  !include:/forms-configuration/includes/forms/form-email-submit-detail-form.yaml
+actions:
+  commit:
+    class: info.magnolia.ui.contentapp.detail.action.SaveDetailSubAppActionDefinition
+    browserName: formsEmailConfig
+    label: Save
+  cancel:
+    $type: closeAction
+    label: Cancel

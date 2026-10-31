@@ -1,0 +1,50 @@
+label: Text
+form:
+  properties:
+    titleField:
+      $type: textField
+      label: Title
+      required: true
+    ctaLink:
+      label: Call To Action Button Link
+      $type: textField
+    ctaLabel:
+      label: Call To Action Button Label
+      $type: textField
+    descriptionField:
+      $type: cloudinaryRichText
+      images: true
+      label: Description
+      required: true
+    sectionImage:
+      !include:/kags/includes/dam-asset-v2.yaml
+      label: Section Image
+    imageTransformation:
+      $type: textField
+      label: Cloudinary image transformation
+    forKeyAccounts:
+      !include:/kags/includes/key-accounts-tags.yaml
+    forSupertechs:
+      !include:/kags/includes/expert-level.yaml
+    forInternals:
+      !include:/kags/includes/internal-access.yaml
+
+  layout:
+    $type: tabbedLayout
+    tabs:
+      tabMain:
+        label: Main
+        fields:
+          - name: titleField
+          - name: descriptionField
+          - name: sectionImage
+          - name: imageTransformation
+          - name: ctaLink
+          - name: ctaLabel
+      visibilityTab:
+        label: Component visibility
+        fields:
+          - name: forKeyAccounts
+          - name: forSupertechs
+          - name: forInternals
+  light: false

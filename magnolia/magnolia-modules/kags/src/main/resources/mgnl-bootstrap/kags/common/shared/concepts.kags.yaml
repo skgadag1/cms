@@ -1,0 +1,370 @@
+'kags':
+  'jcr:primaryType': 'mgnl:folder'
+  'components':
+    'jcr:primaryType': 'mgnl:folder'
+    'InPageNavigation':
+      'jcr:primaryType': 'mgnl:folder'
+      'safetyLabel':
+        'value': 'Safety Informations'
+        'jcr:primaryType': 'mgnl:content'
+    'Footer':
+      'jcr:primaryType': 'mgnl:folder'
+      'safetyDocsTitle':
+        'value': 'Safety Informations'
+        'jcr:primaryType': 'mgnl:content'
+      'contactTitle':
+        'value': 'Help Center'
+        'jcr:primaryType': 'mgnl:content'
+      'contactSubtitle':
+        'value': 'Contact us'
+        'jcr:primaryType': 'mgnl:content'
+      'disclaimer':
+        'value': 'This site is CONFIDENTIAL and is intended for use by Bobcat employees and dealers only. Bobcat®, the Bobcat logo and the colors of the Bobcat machine are registered trademarks of Bobcat Company in the United States and various other countries. ©2019 Bobcat Company. All Rights Reserved.'
+        'jcr:primaryType': 'mgnl:content'
+      'privacyPolicy':
+        'value': 'Privacy Policy'
+        'jcr:primaryType': 'mgnl:content'
+      'termsOfUse':
+        'value': 'Terms of Use'
+        'jcr:primaryType': 'mgnl:content'
+    'MachineDetails':
+      'jcr:primaryType': 'mgnl:folder'
+      'lastModified':
+        'value': 'Last Modified'
+        'jcr:primaryType': 'mgnl:content'
+      'fuelLevel':
+        'value': 'Fuel Level'
+        'jcr:primaryType': 'mgnl:content'
+      'machineImage':
+        'value': 'Machine Image'
+        'jcr:primaryType': 'mgnl:content'
+      'machineIQ':
+        'value': 'Machine IQ'
+        'jcr:primaryType': 'mgnl:content'
+      'operatingHoursLabel':
+        'value': 'Operating Hours'
+        'jcr:primaryType': 'mgnl:content'
+      'fuelLevelLabel':
+        'value': 'Fuel Level'
+        'jcr:primaryType': 'mgnl:content'
+      'defLevelLabel':
+        'value': 'DEF Level'
+        'jcr:primaryType': 'mgnl:content'
+      'locationLabel':
+        'value': 'Location'
+        'jcr:primaryType': 'mgnl:content'
+      'viewMapLink':
+        'value': 'View the map link'
+        'jcr:primaryType': 'mgnl:content'
+      'latestVersionsOfSoftware':
+        'value': 'Latest versions of software'
+        'jcr:primaryType': 'mgnl:content'
+      'serviceAnalyzerLabel':
+        'value': 'Service Analyzer'
+        'jcr:primaryType': 'mgnl:content'
+      'engineAnalyzerLabel':
+        'value': 'Engine Analyzer'
+        'jcr:primaryType': 'mgnl:content'
+      'v2engineAnalyzerLabel':
+        'value': 'V2 Engine Analyzer'
+        'jcr:primaryType': 'mgnl:content'
+      'orionBMSLabel':
+        'value': 'OrionBMS'
+        'jcr:primaryType': 'mgnl:content'
+      'noSoftwareError':
+        'value': 'No Software found'
+        'jcr:primaryType': 'mgnl:content'
+      'serviceAnalyzer':
+        'value': 'Service Analyzer'
+        'jcr:primaryType': 'mgnl:content'
+      'bobcatDigital':
+        'value': 'Bobcat Digital...'
+        'jcr:primaryType': 'mgnl:content'
+      'iNeedToTroubleshootErrorCode':
+        'value': 'I need to troubleshoot error code'
+        'jcr:primaryType': 'mgnl:content'
+      'noSerialNumber':
+        'value': 'No serial number'
+        'jcr:primaryType': 'mgnl:content'
+      'noDataError':
+        'value': 'No data'
+        'jcr:primaryType': 'mgnl:content'
+    'AddSerialControl':
+      'jcr:primaryType': 'mgnl:folder'
+      'enterSerialHere':
+        'value': 'Enter Serial Here'
+        'jcr:primaryType': 'mgnl:content'
+      'addASerialNumber':
+        'value': 'Add a serial number'
+        'jcr:primaryType': 'mgnl:content'
+      'wrongSerialNumberFormat':
+        'value': 'Wrong serial number format'
+        'jcr:primaryType': 'mgnl:content'
+      'unauthorizedAccessError':
+        'value': 'User is not authorized to access this asset'
+        'jcr:primaryType': 'mgnl:content'
+    'CommonErrors':
+      'jcr:primaryType': 'mgnl:folder'
+      'defaultError':
+        'value': 'Error occured. Please refresh page or try again later.'
+        'jcr:primaryType': 'mgnl:content'
+      'unauthorizedError':
+        'value': 'No Data. Advanced details are not available for this asset. It either doesn’t have a machine IQ package or isn’t assigned to your organization’s inventory. If this is unexpected please contact the support line at 1-833-678-6140'
+        'jcr:primaryType': 'mgnl:content'
+      'searchingError':
+        'value': 'An error has occured, please refresh the page.'
+        'jcr:primaryType': 'mgnl:content'
+      'noResults':
+        'value': 'No results found.'
+        'jcr:primaryType': 'mgnl:content'
+      'noPendingFieldmods':
+        'value': 'No pending field mods.'
+        'jcr:primaryType': 'mgnl:content'
+      'noSerialFound':
+        'value': 'This serial does not exists'
+        'jcr:primaryType': 'mgnl:content'
+      'downloadError':
+        'value': 'Download Error'
+        'jcr:primaryType': 'mgnl:content'
+      'sessionExpired':
+        'value': 'Session Expired Error'
+        'jcr:primaryType': 'mgnl:content'
+      'notSubscribedError':
+        'value': 'Not subscribed. Fault Codes and Warranty Status details are not available on this asset. To see details, the asset must have an active Health & Security subscription.'
+        'jcr:primaryType': 'mgnl:content'
+    'CommonDateTime':
+      'jcr:primaryType': 'mgnl:folder'
+      'fromLabel':
+        'value': 'From'
+        'jcr:primaryType': 'mgnl:content'
+      'toLabel':
+        'value': 'To'
+        'jcr:primaryType': 'mgnl:content'
+      'expiresOnLabel':
+        'value': 'Expires on'
+        'jcr:primaryType': 'mgnl:content'
+      'todayLabel':
+        'value': 'Today'
+        'jcr:primaryType': 'mgnl:content'
+      'beforeLabel':
+        'value': 'Before'
+        'jcr:primaryType': 'mgnl:content'
+    'CommonFunctional':
+      'jcr:primaryType': 'mgnl:folder'
+      'viewAll':
+        'value': 'View all'
+        'jcr:primaryType': 'mgnl:content'
+      'clearAll':
+        'value': 'Clear all'
+        'jcr:primaryType': 'mgnl:content'
+      'showMore':
+        'value': 'Show more'
+        'jcr:primaryType': 'mgnl:content'
+      'showLess':
+        'value': 'Show less'
+        'jcr:primaryType': 'mgnl:content'
+      'loadMore':
+        'value': 'Load more'
+        'jcr:primaryType': 'mgnl:content'
+      'clearFilters':
+        'value': 'Clear filters'
+        'jcr:primaryType': 'mgnl:content'
+      'clearLabel':
+        'value': 'Clear'
+        'jcr:primaryType': 'mgnl:content'
+      'selectFiltersLabel':
+        'value': 'Sort & Filters'
+        'jcr:primaryType': 'mgnl:content'
+      'searchButton':
+        'value': 'Search button'
+        'jcr:primaryType': 'mgnl:content'
+      'emptySearchButton':
+        'value': 'Empty search button'
+        'jcr:primaryType': 'mgnl:content'
+      'showLabel':
+        'value': 'Show'
+        'jcr:primaryType': 'mgnl:content'
+      'gotoPageLabel':
+        'value': 'Go to page'
+        'jcr:primaryType': 'mgnl:content'
+      'sortByLabel':
+        'value': 'Sort by label'
+        'jcr:primaryType': 'mgnl:content'
+      'ascendingLabel':
+        'value': 'Ascending sorting label'
+        'jcr:primaryType': 'mgnl:content'
+      'descendingLabel':
+        'value': 'Descending sorting label'
+        'jcr:primaryType': 'mgnl:content'
+    'MachineLibraryComponent':
+      'jcr:primaryType': 'mgnl:folder'
+      'manuals':
+        'value': 'Manuals'
+        'jcr:primaryType': 'mgnl:content'
+      'serviceManuals':
+        'value': 'Service Manuals'
+        'jcr:primaryType': 'mgnl:content'
+      'error':
+        'value': 'Error'
+        'jcr:primaryType': 'mgnl:content'
+    'Header':
+      'jcr:primaryType': 'mgnl:folder'
+      'logoutLabel':
+        'value': 'Logout'
+        'jcr:primaryType': 'mgnl:content'
+    'SchematicsTableComponent':
+      'jcr:primaryType': 'mgnl:folder'
+      'schematics':
+        'value': 'Schematics'
+        'jcr:primaryType': 'mgnl:content'
+      'electricSchematics':
+        'value': 'Electric schematics'
+        'jcr:primaryType': 'mgnl:content'
+      'hydraulicSchematics':
+        'value': 'Hydraulic schematics'
+        'jcr:primaryType': 'mgnl:content'
+    'BasicTableHeader':
+      'jcr:primaryType': 'mgnl:folder'
+      'status':
+        'value': 'Status'
+        'jcr:primaryType': 'mgnl:content'
+      'title':
+        'value': 'Title'
+        'jcr:primaryType': 'mgnl:content'
+      'date':
+        'value': 'Date'
+        'jcr:primaryType': 'mgnl:content'
+      'description':
+        'value': 'Description'
+        'jcr:primaryType': 'mgnl:content'
+    'ErrorInput':
+      'jcr:primaryType': 'mgnl:folder'
+      'enterYourErrorCode':
+        'value': 'Enter your error code'
+        'jcr:primaryType': 'mgnl:content'
+      'seeAll':
+        'value': 'See All'
+        'jcr:primaryType': 'mgnl:content'
+      'search':
+        'value': 'Search'
+        'jcr:primaryType': 'mgnl:content'
+    'HistoryWidget':
+      'jcr:primaryType': 'mgnl:folder'
+      'noHistoryRecords':
+        'value': 'No history records for your machine yet.'
+        'jcr:primaryType': 'mgnl:content'
+      'showAll':
+        'value': 'View all'
+        'jcr:primaryType': 'mgnl:content'
+      'title':
+        'value': 'Machine history'
+        'jcr:primaryType': 'mgnl:content'
+      'resumeSession':
+        'value': 'Resume Session'
+        'jcr:primaryType': 'mgnl:content'
+      'exportToPDF':
+        'value': 'Export to PDF'
+        'jcr:primaryType': 'mgnl:content'
+      'diagnosticSessionHistory':
+        'value': 'Diagnostic Session History'
+        'jcr:primaryType': 'mgnl:content'
+      'diagnosticSessionStarted':
+        'value': 'Session started by'
+        'jcr:primaryType': 'mgnl:content'
+      'diagnosticSessionFinished':
+        'value': 'Finished session'
+        'jcr:primaryType': 'mgnl:content'
+      'vehicleSessionSummary':
+        'value': 'Vehicle Session Summary'
+        'jcr:primaryType': 'mgnl:content'
+      'downloadDetails':
+        'value': 'Download Details'
+        'jcr:primaryType': 'mgnl:content'
+      'diagnosticSessionResumed':
+        'value': 'Session resumed by:'
+        'jcr:primaryType': 'mgnl:content'
+      'diagnosticSessionPaused':
+        'value': 'Paused'
+        'jcr:primaryType': 'mgnl:content'
+    'TroubleshootingTable':
+      'jcr:primaryType': 'mgnl:folder'
+      'troubleshootingProcedure':
+        'value': 'Troubleshooting procedure'
+        'jcr:primaryType': 'mgnl:content'
+    'WarningAlert':
+      'jcr:primaryType': 'mgnl:folder'
+      'warning':
+        'value': 'Warning'
+        'jcr:primaryType': 'mgnl:content'
+    'MachineHistory':
+      'jcr:primaryType': 'mgnl:folder'
+      'allHistory':
+        'value': 'All history'
+        'jcr:primaryType': 'mgnl:content'
+    'TroubleshootingProcedures':
+      'jcr:primaryType': 'mgnl:folder'
+      'procedureName':
+        'value': 'Procedure Name'
+        'jcr:primaryType': 'mgnl:content'
+      'rank':
+        'value': 'Rank'
+        'jcr:primaryType': 'mgnl:content'
+      'description':
+        'value': 'Description'
+        'jcr:primaryType': 'mgnl:content'
+      'action':
+        'value': 'Action'
+        'jcr:primaryType': 'mgnl:content'
+      'startSession':
+        'value': 'Start Session'
+        'jcr:primaryType': 'mgnl:content'
+    'FaultCodes':
+      'jcr:primaryType': 'mgnl:folder'
+      'title':
+        'value': 'Widget title'
+        'jcr:primaryType': 'mgnl:content'
+      'searchLabel':
+        'value': 'Search code label'
+        'jcr:primaryType': 'mgnl:content'
+      'noCodes':
+        'value': 'No codes message'
+        'jcr:primaryType': 'mgnl:content'
+      'codesOccured':
+        'value': 'codes occured in last 1 hour of operation'
+        'jcr:primaryType': 'mgnl:content'
+      'codesCriticalLabel':
+        'value': 'critical'
+        'jcr:primaryType': 'mgnl:content'
+      'codesWarningLabel':
+        'value': 'warning'
+        'jcr:primaryType': 'mgnl:content'
+      'codesInformationLabel':
+        'value': 'information'
+        'jcr:primaryType': 'mgnl:content'
+      'defaultError':
+        'value': 'Error: cannot display codes'
+        'jcr:primaryType': 'mgnl:content'
+    'FieldMods':
+      'jcr:primaryType': 'mgnl:folder'
+      'title':
+        'value': 'Widget title'
+        'jcr:primaryType': 'mgnl:content'
+      'downloadDetails':
+        'value': 'Download Details'
+        'jcr:primaryType': 'mgnl:content'
+  'shared':
+    'jcr:primaryType':
+    'example':
+      'jcr:primaryType': 'mgnl:folder'
+      'cancel':
+        'jcr:primaryType': 'mgnl:content'
+        'value': 'Cancel'
+      'ok':
+        'jcr:primaryType': 'mgnl:content'
+        'value': 'OK'
+      'yes':
+        'jcr:primaryType': 'mgnl:content'
+        'value': 'Yes'
+      'no':
+        'jcr:primaryType': 'mgnl:content'
+        'value': 'No'

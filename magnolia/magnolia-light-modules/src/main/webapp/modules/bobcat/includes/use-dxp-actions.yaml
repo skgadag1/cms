@@ -1,0 +1,6 @@
+cancel:
+  $type: closeAction
+commit:
+  $type: dxpCommit
+  customOnSaveProcessors:
+    - com.tbscg.doosan.magnolia.dxp.workflow.action.ui.processors.CleanSwitchableFieldsOnSaveProcessor

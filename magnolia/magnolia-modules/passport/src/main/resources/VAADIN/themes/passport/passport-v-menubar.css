@@ -1,0 +1,19 @@
+div.v-menubar {
+    border-radius: 5px;
+}
+
+div.v-menubar > .v-menubar-menuitem {
+    background: white;
+}
+
+div.v-menubar > .v-menubar-menuitem::before {
+    transition: background-color 0.2s;
+}
+
+div.v-menubar > .v-menubar-menuitem:first-child {
+    border-radius: 5px 0  0 5px;
+}
+
+div.v-menubar > .v-menubar-menuitem:last-child {
+    border-radius: 0 5px 5px 0;
+}

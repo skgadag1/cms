@@ -1,0 +1,5 @@
+$type: checkBoxField
+label: Hide for non-internal user
+buttonLabel: Show this page only to internals
+defaultValue: false
+type: java.lang.Boolean

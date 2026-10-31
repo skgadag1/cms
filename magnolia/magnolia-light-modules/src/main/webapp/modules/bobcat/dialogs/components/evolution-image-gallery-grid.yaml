@@ -1,0 +1,50 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Image Gallery Grid Configuration
+form:
+  properties:
+    title:
+      $type: cloudinaryRichText
+      alignment: true
+      images: true
+      label: Title
+      description: Rich text content for the gallery header. You can customize colors for each word using the color picker.
+      i18n: true
+    secondaryTitle:
+      $type: cloudinaryRichText
+      alignment: true
+      images: true
+      label: Secondary Title
+      description: Rich text content for the gallery header. You can customize colors for each word using the color picker.
+      i18n: true
+    variant:
+      $type: comboBoxField
+      label: Color Variant
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: white
+            label: White
+            value: white
+          - name: dark
+            label: Grey
+            value: dark
+          - name: black
+            label: Black
+            value: black
+      defaultValue: white
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: title
+          - name: secondaryTitle
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+      inheritableSection:
+      anchor:
+      meta:
+light: false 

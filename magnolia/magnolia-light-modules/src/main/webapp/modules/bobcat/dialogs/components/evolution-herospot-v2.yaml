@@ -1,0 +1,89 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Evolution Herospot V2 Configuration
+form:
+  properties:
+    title:
+      $type: cloudinaryRichText
+      alignment: false
+      images: false
+      label: Title
+      i18n: true
+    description:
+      $type: cloudinaryRichText
+      alignment: false
+      images: false
+      label: Description
+      i18n: true
+    asset:
+      label: Asset source
+      $type: switchableField
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: video
+              label: Video
+              value: video
+            - name: img
+              label: Image
+              value: img
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        video:
+          properties:
+            video:
+              !include:/bobcat/includes/dam-video.yaml
+              label: Select video
+              properties: !override
+                src:
+                  !include:/bobcat/includes/dam-asset.yaml
+                  label: Video
+                  description: '3:1 aspect ratio, 3840x1280 for best quality'
+                  filters:
+                    resource_type:
+                      class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                      value: video
+                poster:
+                  !include:/bobcat/includes/dam-image.yaml
+                  label: Poster Image
+                  description: 'Required still shown while the video buffers. Crop to the same aspect ratio as the video (e.g. 3:1) to avoid layout shift. Upload a representative JPG or PNG; delivery is auto-optimized to WebP/JPG under 100 KB.'
+                  required: true
+        img:
+          properties:
+            img:
+              !include:/bobcat/includes/image.yaml
+              description: '3:1 aspect ratio, 3840x1280 for best quality'
+    cta:
+      label: Buttons (max 2 items)
+      description: Please define 0 - 2 buttons.
+      $type: jcrMultiField
+      i18n: false
+      minItems: 0
+      maxItems: 2
+      itemCountErrorMessage: "Button''s count should be between 0-2"
+      field:
+        !include:/bobcat/includes/button-style-chooser.yaml
+        i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: description
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+      look:
+        label: Look & Feel
+        fields:
+          - name: asset
+      inheritableSection:
+      anchor:
+      meta:
+light: false

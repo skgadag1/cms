@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.doosan.dxp.cms</groupId>
+	<artifactId>cms-parent</artifactId>
+	<version>${revision}</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<maven.deploy.skip>true</maven.deploy.skip>
+		<revision>1.0.0-SNAPSHOT</revision>
+	</properties>
+
+	<modules>
+		<module>dxp-bom</module>
+		<module>frontend</module>
+		<module>magnolia</module>
+	</modules>
+</project>

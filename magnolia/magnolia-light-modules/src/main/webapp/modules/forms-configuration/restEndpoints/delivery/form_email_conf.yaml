@@ -1,0 +1,13 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/forms/email/config
+workspace: formsEmailConfig
+depth: 10
+bypassWorkspaceAcls: true
+systemProperties:
+  - mgnl:lastModified
+nodeTypes:
+  - mgnl:folder
+  - dxp:formEmailConfiguration
+childNodeTypes:
+  - mgnl:folder
+  - dxp:formEmailConfiguration

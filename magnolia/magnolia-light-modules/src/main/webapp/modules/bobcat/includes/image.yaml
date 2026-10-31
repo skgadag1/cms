@@ -1,0 +1,43 @@
+$type: imageCompositeField
+layout:
+  $type: form
+label: Image
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  src:
+    !include:/bobcat/includes/dam-image.yaml
+    label: Select image
+  imageAlt:
+    $type: textField
+    label: Asset alt
+    i18n: true
+  imageTitle:
+    $type: textField
+    label: Asset title
+    i18n: true
+  imageWidth:
+    $type: textField
+    label: Width (px)
+    description: 'Optional. Enter the original image width as a number only (e.g. 1200). Do NOT add "px". Helps prevent layout shift (CLS). If left blank, the dimension is derived from the selected image.'
+    validators:
+      number:
+        $type: regexpValidator
+        pattern: ^0*[1-9]\d*$
+        errorMessage: 'Enter a valid width in pixels (number only, greater than 0). Do not include "px".'
+  imageHeight:
+    $type: textField
+    label: Height (px)
+    description: 'Optional. Enter the original image height as a number only (e.g. 800). Do NOT add "px". Helps prevent layout shift (CLS). If left blank, the dimension is derived from the selected image.'
+    validators:
+      number:
+        $type: regexpValidator
+        pattern: ^0*[1-9]\d*$
+        errorMessage: 'Enter a valid height in pixels (number only, greater than 0). Do not include "px".'
+  maintainAspectRatio:
+    $type: checkBoxField
+    label: Maintain Aspect Ratio (3:2)
+    description: 'Keep this checked to preserve the original 3:2 aspect ratio of the image. Uncheck to crop/stretch the image so it fills the container'
+    defaultValue: true
+    buttonLabel: ''
+    type: java.lang.Boolean

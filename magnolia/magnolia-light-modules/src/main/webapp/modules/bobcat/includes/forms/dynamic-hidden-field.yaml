@@ -1,0 +1,136 @@
+$type: compositeField
+layout:
+  $type: form
+label: Dynamic Hidden Field
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  name:
+    $type: textField
+    label: Name
+    required: true
+  id:
+    $type: textField
+    label: Mapping field ID
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.
+  dataSource:
+    $type: switchableField
+    label: Data source
+    field:
+      $type: comboBoxField
+      layout: horizontal
+      defaultValue: productPages
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: productPages
+            label: Product Pages & Dealer Inventory
+            value: productPages
+          - name: dealerLocator
+            label: Dealer Locator
+            value: dealerLocator
+          - name: otherPages
+            label: All other pages
+            value: otherPages
+    itemProvider:
+      $type: jcrChildNodeProvider
+    forms:
+      - name: productPages
+        properties:
+          type:
+            label: ID Fetched From
+            $type: comboBoxField
+            defaultValue: model
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: model
+                  label: Product Model (name)
+                  value: model
+                - name: modelId
+                  label: Product Model ID
+                  value: modelId
+                - name: modelTitle
+                  label: Product Model Title
+                  value: modelTitle
+                - name: modelCategory
+                  label: Product Model Category
+                  value: modelCategory
+                - name: subcategory
+                  label: Product Model Subcategory (name)
+                  value: subcategory
+                - name: parentTitle
+                  label: Product / Attachment Parent (title)
+                  value: parentTitle
+                - name: parentSfId
+                  label: Product / Attachment Parent (SF ID)
+                  value: parentSfId
+                - name: dealerAR
+                  label: Dealer AR
+                  value: dealerAR
+                - name: dealerName
+                  label: Dealer Name
+                  value: dealerName
+                - name: type
+                  label: Product Type
+                  value: type
+                - name: serial
+                  label: Product Serial
+                  value: serial
+                - name: price
+                  label: Product Price
+                  value: price
+                - name: estPayment
+                  label: Est. Payment
+                  value: estPayment
+                - name: manufacturing
+                  label: Manufacturing Financing
+                  value: manufacturing
+                - name: rebate
+                  label: Product Rebate
+                  value: rebate
+      - name: dealerLocator
+        properties:
+          type:
+            label: ID Fetched From
+            $type: comboBoxField
+            defaultValue: dealerLocatorDealerName
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: dealerLocatorDealerName
+                  label: Dealer Locator Dealer Name
+                  value: dealerLocatorDealerName
+                - name: dealerLocatorMDMID
+                  label: Dealer Locator MDM ID
+                  value: dealerLocatorMDMID
+                - name: dealerLocatorOptIn
+                  label: Dealer Locator Marketing Opt In Status
+                  value: dealerLocatorOptIn
+                - name: dealerLocatorArNumber
+                  label: Dealer Locator AR Number
+                  value: dealerLocatorArNumber
+                - name: dealerLocatorService
+                  label: Dealer Locator Service
+                  value: dealerLocatorService
+                - name: dealerLocatorIndustry
+                  label: Dealer Locator Industry
+                  value: dealerLocatorIndustry
+      - name: otherPages
+        properties:
+          type:
+            label: ID Fetched From
+            $type: comboBoxField
+            defaultValue: url
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: url
+                  label: Product Detail Page URL
+                  value: url
+                - name: siteLanguage
+                  label: Site Language
+                  value: siteLanguage
+                - name: googleID
+                  label: Google ID
+                  value: googleID

@@ -1,0 +1,112 @@
+# Default values for magnolia.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Do NOT change the value above 4 as we need to create folders for each magnolia instance inside EFS folder via feature-fscreate chart
+replicaCount: 2
+
+db:
+  magnolia_author:
+    url: jdbc:postgresql://dibh-dev-magnolia.cluster-cfzrzmzspb3b.us-east-1.rds.amazonaws.com:5432
+    user: magnolia-author
+    password: magnolia-author
+  magnolia_publisher:
+    url: jdbc:postgresql://dibh-dev-magnolia.cluster-cfzrzmzspb3b.us-east-1.rds.amazonaws.com:5432
+    user: magnolia-public
+    password: magnolia-public
+  magnolia_public:
+    url: jdbc:postgresql://dibh-dev-magnolia.cluster-cfzrzmzspb3b.us-east-1.rds.amazonaws.com:5432
+    user: magnolia-public
+    password: magnolia-public
+  aurora_db_copy:
+    host: dibh-dev-magnolia.cluster-cfzrzmzspb3b.us-east-1.rds.amazonaws.com
+    port: 5432
+    user: backup
+    password: backup
+
+efs:
+  data:
+    host: fs-250393c7.efs.us-east-1.amazonaws.com
+    dir: /
+  backup:
+    host: fs-4afaaaa8.efs.us-east-1.amazonaws.com
+    dir: /
+
+image:
+  apache:
+    repository: 452295442916.dkr.ecr.us-east-1.amazonaws.com/dxp/apache
+    tag: latest
+    pullPolicy: Always
+  magnolia:
+    repository: 452295442916.dkr.ecr.us-east-1.amazonaws.com/dxp/magnolia-feature-env
+    tag: nonexistent
+    pullPolicy: Always
+  aurora_db_copy:
+    repository: 452295442916.dkr.ecr.us-east-1.amazonaws.com/dxp/aurora-db-copy
+    tag: latest
+    pullPolicy: Always
+  tools:
+    repository: 452295442916.dkr.ecr.us-east-1.amazonaws.com/dxp/tools
+    tag: latest
+    pullPolicy: Always
+  runner:
+    repository: 452295442916.dkr.ecr.us-east-1.amazonaws.com/dxp/runner
+    tag: latest
+    pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  apache:
+    type: ClusterIP
+    port: 80
+  magnolia_author:
+    type: ClusterIP
+    port: 8080
+    debug_port: 6666
+    java_heap: 1536M
+  magnolia_publisher:
+    type: ClusterIP
+    port: 8080
+    java_heap: 1024M
+  magnolia_public:
+    type: ClusterIP
+    port: 8080
+    java_heap: 1536M
+
+resources:
+  apache:
+    limits:
+      cpu: 500m
+      memory: 500Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+  magnolia_author:
+    limits:
+      cpu: 2.0
+      memory: 4Gi
+    requests:
+      cpu: 1.25
+      memory: 3Gi
+  magnolia_publisher:
+    limits:
+      cpu: 2.0
+      memory: 1.5Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
+  magnolia_public:
+    limits:
+      cpu: 2.0
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 1.5Gi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

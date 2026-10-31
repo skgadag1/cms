@@ -1,0 +1,13 @@
+label: Facet category
+$type: linkField
+required: true
+buttonSelectNewLabel: Select...
+datasource:
+  $type: jcrDatasource
+  describeByProperty: label
+  workspace: facets
+  rootPath: /bobcat
+  allowedNodeTypes:
+    - mgnl:folder
+    - dxp:facetGroup
+    - dxp:facetCategory

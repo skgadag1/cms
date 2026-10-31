@@ -1,0 +1,11 @@
+label: Software
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: DealerServiceAnalyzer
+      value: DealerServiceAnalyzer
+      label: Dealer Service Analyzer
+    - name: ServiceAnalyzer
+      value: ServiceAnalyzer
+      label: National Service Analyzer

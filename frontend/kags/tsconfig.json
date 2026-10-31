@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+
+    // Mixed JS/TS codebase: .ts files are type-checked, existing .js files are allowed to be
+    // imported from .ts but not type-checked (flip checkJs per file with `// @ts-check`).
+    "allowJs": true,
+    "checkJs": false,
+
+    // TODO: Loose to start with so the migration can go file by file; tighten once more of src/ is TS.
+    "strict": false,
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "paths": {
+      // Mirrors the vite.config.ts / jest.config.js aliases.
+      "@/*": ["./src/*"],
+      "vue": ["./node_modules/@vue/compat"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "jest.setup.ts"],
+  "exclude": ["node_modules", "dist", "dist-preview"]
+}

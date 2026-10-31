@@ -1,0 +1,88 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Parts Search Configuration
+form:
+  properties:
+    title:
+      $type: textField
+      description: ''
+      required: true
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h3
+    subtitle:
+      $type: textField
+      description: Visible only when showing link, not form
+      i18n: true
+    htagSubtitle:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: h4
+    partsUrl:
+      label: Parts portal url
+      $type: compositeField
+      itemProvider:
+        $type: jcrChildNodeProvider
+      properties:
+        url:
+          label: Search result URL
+          description: 'Remember to add protocol (http://, https://) for external links'
+          $type: textField
+          required: true
+          i18n: true
+        label:
+          label: Link label
+          $type: textField
+          required: true
+          i18n: true
+        target:
+          !include:/bobcat/includes/anchor-target.yaml
+          defaultValue: _blank
+        placeholder:
+          $type: textField
+          label: Placeholder
+          i18n: true
+    bgImage:
+      !include:/bobcat/includes/dam-image.yaml
+      description: '1440x200 height for best quality'
+      label: BackgroundImage
+    variant:
+      label: Background variant
+      $type: radioButtonGroupField
+      layout: horizontal
+      defaultValue: gray
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: gray
+            label: Gray
+            value: gray
+          - name: white
+            label: White
+            value: white
+    showForm:
+      $type: checkBoxField
+      label: Show as form
+      buttonLabel: Use <form> (using link if not enabled)
+      defaultValue: true
+      type: java.lang.Boolean
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: subtitle
+          - name: htagSubtitle
+          - name: partsUrl
+      lookandfeel:
+        label: Look & Feel
+        fields:
+          - name: bgImage
+          - name: variant
+          - name: showForm
+      inheritableSection:
+      anchor:
+      meta:
+light: false

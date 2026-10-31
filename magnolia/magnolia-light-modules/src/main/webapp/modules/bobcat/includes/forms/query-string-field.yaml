@@ -1,0 +1,15 @@
+$type: compositeField
+layout:
+  $type: form
+label: Query String
+itemProvider:
+  $type: jcrChildNodeProvider
+properties:
+  name:
+    $type: textField
+    label: Name
+    required: true
+  id:
+    $type: textField
+    label: Mapping field ID
+    description: Mapping field ID from 3rd party application/system, e.g. Salesforce, MailChimp.

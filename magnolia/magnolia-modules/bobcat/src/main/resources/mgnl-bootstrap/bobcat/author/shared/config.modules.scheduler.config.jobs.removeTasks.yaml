@@ -1,0 +1,8 @@
+removeTasks:
+  catalog: remove
+  command: removeOldTasks
+  'cron': '0 0 1 * * *'
+  description: 'Remove old tasks'
+  enabled: true
+  params:
+    daysToExpire: 14

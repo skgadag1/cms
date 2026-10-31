@@ -1,0 +1,2028 @@
+{
+  "inclusions":[
+  {
+    "code": "EE",
+    "name": "ELECTRICAL",
+    "type": "System",
+    "child": [
+      {
+        "code": "126",
+        "name": "CONTROLLER",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0000",
+            "name": "NO LOWER LEVEL",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0801",
+                "name": "ECU",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AZ",
+                    "name": "PRODUCT UPDATE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 0
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 0
+                      }
+                    ]
+                  },
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 550
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 600
+                      }
+                    ]
+                  },
+                  {
+                    "code": "CC",
+                    "name": "SWITCH",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 550
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 600
+                      }
+                    ]
+                  },
+                  {
+                    "code": "TT",
+                    "name": "TIGHTEN",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 550
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 600
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "029",
+        "name": "ENGINE",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0056",
+            "name": "CAMSHAFT",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0250",
+                "name": "SENSOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 500
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0085",
+            "name": "CRANK/CRANKSHAFT",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0250",
+                "name": "SENSOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 502
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0378",
+            "name": "GLOW PLUG",
+            "type": "Component",
+            "child": [
+              {
+                "code": "6875",
+                "name": "1 GLOW PLUG",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 65
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 100
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6876",
+                "name": "2 GLOW PLUGS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 70
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 96
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6877",
+                "name": "3 GLOW PLUGS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 115
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 143
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6878",
+                "name": "4 GLOW PLUGS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 154
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 229.2
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 175
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 217.5
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0154",
+            "name": "HARNESS",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "BB",
+                    "name": "REPAIR",
+                    "type": "Action",
+                    "labourTime": 1.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 1500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2000
+                      }
+                    ]
+                  },
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 4000
+                      }
+                    ]
+                  },
+                  {
+                    "code": "FF",
+                    "name": "REROUTE",
+                    "type": "Action",
+                    "labourTime": 1.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 315
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 362.5
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0934",
+            "name": "KNOCK SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 502
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0935",
+            "name": "TEMPERATURE_SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 502
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "030",
+        "name": "EXHAUST",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0308",
+            "name": "TURBO",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0798",
+                "name": "TEMPERATURE SENSOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 350
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 350
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "037",
+        "name": "INTAKE",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0918",
+            "name": "MASS AIR FLOW SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 400
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 400
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0522",
+            "name": "PRESSURE SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 502
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0289",
+            "name": "TEMPERATURE SENDER",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 500
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "FF",
+    "name": "ENGINE",
+    "type": "System",
+    "child": [
+      {
+        "code": "021",
+        "name": "COOLING",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0941",
+            "name": "EXCHANGER",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "BB",
+                    "name": "REPAIR",
+                    "type": "Action",
+                    "labourTime": 1.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 175
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 217.5
+                      }
+                    ]
+                  },
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 2000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2500
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0935",
+            "name": "TEMPERATURE_SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 235.2
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 253.75
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "030",
+        "name": "EXHAUST",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0936",
+            "name": "DOC",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 1750
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2175
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0510",
+            "name": "EGR VALVE",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0009",
+                "name": "CLAMP",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0518",
+                "name": "EGR VALVE AND ENGINE HARNESS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "SB",
+                    "name": "SERVICE BULLETIN",
+                    "type": "Action",
+                    "labourTime": 8,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 4050
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0127",
+                "name": "EXCHANGER",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 6,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 2000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0113",
+                "name": "EXHAUST TUBE",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0140",
+                "name": "GASKET",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1.25,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0161",
+                "name": "HOSE",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 6,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 4000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 4500
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0189",
+            "name": "MANIFOLD",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0140",
+                "name": "GASKET",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 735
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 797.5
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 1500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2000
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0308",
+            "name": "TURBO",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "BB",
+                    "name": "REPAIR",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  },
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 5.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0006",
+                "name": "OIL LINE",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "BB",
+                    "name": "REPAIR",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  },
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "032",
+        "name": "FUEL",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0920",
+            "name": "COMMON RAIL",
+            "type": "Component",
+            "child": [
+              {
+                "code": "6748",
+                "name": "COMMON RAIL & 1 INJECTOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.25,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 2000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6749",
+                "name": "COMMON RAIL & 2 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 4000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6750",
+                "name": "COMMON RAIL & 3 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.75,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 4000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 5000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6751",
+                "name": "COMMON RAIL & 4 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 3,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 5000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 6000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0251",
+                "name": "PRESSURE SENSOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 980
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 1116.5
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0136",
+            "name": "FUEL LINE/HOSE",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0009",
+                "name": "CLAMP",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  },
+                  {
+                    "code": "DD",
+                    "name": "TIGHTEN",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  },
+                  {
+                    "code": "FF",
+                    "name": "REROUTE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0937",
+            "name": "HIGH PRESSURE PUMP",
+            "type": "Component",
+            "child": [
+              {
+                "code": "6753",
+                "name": "HP PUMP & 1 INJECTOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6754",
+                "name": "HP PUMP & 2 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4.25,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 4000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 5500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6755",
+                "name": "HP PUMP & 3 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 5000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 6500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6756",
+                "name": "HP PUMP & 4 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4.75,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 6000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 7000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6740",
+                "name": "HP PUMP & COMMON RAIL & 1 INJECTOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 4.75,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 4000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 5000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6741",
+                "name": "HP PUMP & COMMON RAIL & 2 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 5000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 6000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6742",
+                "name": "HP PUMP & COMMON RAIL & 3 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 5.25,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 6000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 7000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6743",
+                "name": "HP PUMP & COMMON RAIL & 4 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 5.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 5800
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 7556
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6752",
+                "name": "HP PUMP & COMMON RAIL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 3000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 2500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3000
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0170",
+            "name": "INJECTOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "6744",
+                "name": "1 INJECTOR",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1.75,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 1500
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2500
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6745",
+                "name": "2 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 1400
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 2750
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6746",
+                "name": "3 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.25,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 2400
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 3000
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "6747",
+                "name": "4 INJECTORS",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 2.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 5000
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 5750
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0244",
+                "name": "SEAL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0938",
+            "name": "INLET METERING VALVE",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 840
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 957
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0180",
+            "name": "LIFT PUMP",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 335
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 400
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "0935",
+            "name": "TEMPERATURE_SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": true,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "037",
+        "name": "INTAKE",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0189",
+            "name": "MANIFOLD",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0140",
+                "name": "GASKET",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 200
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 200
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 1,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 980
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 1116.5
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "042",
+        "name": "LUBRICATION",
+        "type": "Sub System",
+        "child": [
+          {
+            "code": "0940",
+            "name": "TEMP_PRESSURE SENSOR",
+            "type": "Component",
+            "child": [
+              {
+                "code": "0000",
+                "name": "NO LOWER LEVEL",
+                "type": "Sub Component",
+                "child": [
+                  {
+                    "code": "AA",
+                    "name": "REPLACE",
+                    "type": "Action",
+                    "labourTime": 0.5,
+                    "labourTimeUnit": "Hours",
+                    "applicableToFieldModifications": false,
+                    "repeatable": false,
+                    "additionalLaborAllowed": true,
+                    "maxAmountPayable": [
+                      {
+                        "currency": "USD",
+                        "amount": 210
+                      },
+                      {
+                        "currency": "CAD",
+                        "amount": 224.75
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]}

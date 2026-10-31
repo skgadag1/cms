@@ -1,0 +1,4 @@
+'config':
+  'excludedFields': 'customNodeName,customUrl,target'
+  'propertiesToTranslateFinder':
+    'class': 'com.tbscg.doosan.magnolia.translation.finder.ConfigurableAdaptivePropertiesToTranslateFinderExt'

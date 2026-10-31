@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>toc</name>
+  <displayName>${project.name}</displayName>
+  <description>${project.description}</description>
+  <class>com.tbscg.doosan.magnolia.toc.TocModule</class>
+  <versionHandler>com.tbscg.doosan.magnolia.toc.setup.TocModuleVersionHandler</versionHandler>
+  <version>1.0.0</version>
+
+  <components>
+    <id>main</id>
+    <component>
+      <type>com.tbscg.doosan.magnolia.toc.service.TocSqsService</type>
+      <implementation>com.tbscg.doosan.magnolia.toc.service.TocSqsService</implementation>
+      <scope>singleton</scope>
+    </component>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>dxp-core</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>dxp-workflow</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>regions</name>
+      <version>*</version>
+    </dependency>
+    <dependency>
+      <name>translation</name>
+      <version>*</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <name>magnolia</name>
+      <workspaces>
+        <workspace>toc</workspace>
+      </workspaces>
+    </repository>
+  </repositories>
+</module>

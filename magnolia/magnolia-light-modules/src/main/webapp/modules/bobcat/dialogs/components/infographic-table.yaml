@@ -1,0 +1,216 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Infographic Table
+form:
+  implementationClass: info.magnolia.ui.javascript.form.FormViewWithChangeListener
+  properties:
+    title:
+      $type: cloudinaryRichText
+      alignment: true
+      images: false
+      label: Title
+      description: You can customize colors for each word using the color picker.
+      i18n: true
+    description:
+      $type: cloudinaryRichText
+      alignment: true
+      images: false
+      label: Description
+      description: You can customize colors for each word using the color picker.
+      i18n: true
+    textAfter:
+      $type: cloudinaryRichText
+      alignment: true
+      images: false
+      label: Text after elements
+      description: You can customize colors for each word using the color picker.
+      i18n: true
+    variant: !include:/bobcat/includes/variants/infographic-table-color-variants.yaml
+    componentSize:
+      $type: comboBoxField
+      layout: horizontal
+      defaultValue: small
+      label: Component Size
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: small
+            label: Small
+            value: small
+            selected: true
+          - name: medium
+            label: Medium
+            value: medium
+          - name: large
+            label: Large
+            value: large
+    cta:
+      label: Buttons (max 2 items)
+      description: Please define 0 - 2 buttons.
+      $type: jcrMultiField
+      i18n: true
+      minItems: 0
+      maxItems: 2
+      itemCountErrorMessage: "Button''s count should be between 0-2"
+      field: !include:/bobcat/includes/button-style-chooser.yaml
+    items:
+      label: Elements
+      $type: jcrMultiField
+      i18n: true
+      minItems: 0
+      maxItems: 20
+      itemCountErrorMessage: "Elements count should be between 0-20"
+      field:
+        label: Elements
+        name: compositeField
+        $type: compositeField
+        properties:
+          content:
+            label: Option Selection for tile/element
+            $type: switchableField
+            field:
+              $type: radioButtonGroupField
+              layout: horizontal
+              defaultValue: title
+              datasource:
+                $type: optionListDatasource
+                options:
+                  - name: img
+                    label: Image
+                    value: img
+                  - name: title
+                    label: Title
+                    value: title
+                  - name: bgImage
+                    label: Background image
+                    value: bgImage
+            itemProvider:
+              $type: jcrChildNodeProvider
+            forms:
+              title:
+                properties:
+                  elementTitle:
+                    $type: cloudinaryRichText
+                    alignment: true
+                    images: false
+                    label: Text
+                    description: You can customize colors for each word using the color picker.
+                    i18n: true
+              img:
+                properties:
+                  src: !include:/bobcat/includes/dam-image.yaml
+                    label: Select image
+                    required: true
+                  alt:
+                    $type: textField
+                    label: Image alt
+                  title:
+                    $type: textField
+                    label: Image title
+              bgImage:
+                properties:
+                  src: !include:/bobcat/includes/dam-image.yaml
+                    label: Select background image
+                    required: true
+                  textPosition:
+                    $type: comboBoxField
+                    layout: horizontal
+                    label: Text position
+                    defaultValue: top
+                    datasource:
+                      $type: optionListDatasource
+                      options:
+                        - name: top
+                          label: Top
+                          value: top
+                        - name: bottom
+                          label: Bottom
+                          value: bottom
+          before:
+            $type: cloudinaryRichText
+            alignment: true
+            images: false
+            label: Upper Title
+            description: You can customize colors for each word using the color picker.
+            i18n: true
+          after:
+            $type: cloudinaryRichText
+            alignment: true
+            images: false
+            label: Sub Title
+            description: You can customize colors for each word using the color picker.
+            i18n: true
+          bgColor:
+            $type: comboBoxField
+            layout: horizontal
+            label: Background Color (optional)
+            defaultValue: none
+            description: If a color is selected, the appearance of this card will always be changed to the selected color.
+            datasource:
+              $type: optionListDatasource
+              options:
+                - name: none
+                  label: None
+                  value: none
+                  selected: true
+                - name: black
+                  label: Black
+                  value: black
+                - name: white
+                  label: White
+                  value: white
+                - name: gray-lighter
+                  label: Light gray
+                  value: gray-lighter
+    bentoLayout:
+      label: Bento layout
+      $type: cloudinaryBentoLayout
+      fieldScript: /bobcat/webresources/bentoLayout/index.html
+      height: 520
+      i18n: false
+      defaultValue: ""
+    listDataSource:
+      label: Data source
+      description: This field determines the data source for the component. If "Bento layout" is selected, the component will be rendered based on the configuration in the "Bento layout" field. If "Elements view" is selected, the component will be rendered based on the "Elements" multi-field configuration.
+      $type: radioButtonGroupField
+      layout: horizontal
+      datasource:
+        $type: optionListDatasource
+        options:
+          - name: bento
+            label: Bento layout
+            value: bento
+          - name: elements
+            label: Elements view
+            value: elements
+      defaultValue: bento
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: title
+          - name: description
+          - name: textAfter
+      elements:
+        label: Elements
+        fields:
+          - name: items
+      bento:
+        label: Bento layout
+        fields:
+          - name: bentoLayout
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: componentSize
+          - name: variant
+          - name: listDataSource
+      inheritableSection:
+      anchor:
+      meta:
+light: false

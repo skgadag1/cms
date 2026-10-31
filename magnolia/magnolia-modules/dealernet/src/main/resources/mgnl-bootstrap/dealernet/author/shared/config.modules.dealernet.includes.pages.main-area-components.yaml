@@ -1,0 +1,7 @@
+main-area-components:
+  HeroSpot:
+    id: dealernet:components/herospot
+  Announcements:
+    id: dealernet:components/announcements
+  ListDocuments:
+    id: dealernet:components/list-documents

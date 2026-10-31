@@ -1,0 +1,249 @@
+label: Form Configuration
+icon: icon-message
+class: info.magnolia.ui.contentapp.configuration.BrowserDescriptor
+closable: false
+datasource:
+  $type: jcrDatasource
+  workspace: formsConfiguration
+  includeProperties: false
+  allowedNodeTypes:
+    - mgnl:folder
+    - dxp:formConfiguration
+workbench:
+  contentViews:
+    fields:
+      $type: treeView
+      multiSelect: true
+      multiSelectByRowClick: false
+      columns:
+        id:
+          label: ConfigurationId
+          $type: jcrTitleColumn
+          nodeTypeToIcon:
+            dxp:formConfiguration: icon-node-content
+        type:
+          label: Type
+          valueProvider: com.tbscg.doosan.magnolia.bobcat.field.BobcatContentTypeValueProvider
+        jcrPublishingStatus:
+          $type: lockingStatusColumn
+          label: Status
+        jcr:lockOwner:
+          name: jcr:lockOwner
+          label: Locked by
+        mgnl:lastModified:
+          $type: dateColumn
+actionbar:
+  defaultAction: editFormConfiguration
+  sections:
+    root:
+      availability:
+        root: true
+      groups:
+        addActions:
+          name: addActions
+          items:
+            - name: addFormConfiguration
+        editActions:
+          name: editActions
+          items:
+            - name: editFormConfiguration
+            - name: lock
+            - name: unlock
+        publishingActions:
+          name: publishingActions
+          items:
+            - name: publishItem
+            - name: publishRecursive
+            - name: unpublishItem
+        commonActions:
+          name: commonActions
+          items:
+            - name: renameItem
+            - name: deleteItem
+            - name: duplicateItem
+            - name: moveItem
+            - name: copyItem
+            - name: pasteItem
+        exportImportActions:
+          name: exportImportActions
+          items:
+            - name: export
+            - name: download
+            - name: import
+actions:
+  !include:/commons/includes/lock-unlock-action-definition.yaml
+  addFormConfiguration:
+    label: Add Form Configuration
+    icon: icon-documents-app
+    $type: openDetailSubappAction
+    appName: forms-configuration
+    subAppName: detailFormsConfiguration
+    viewType: add
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  editFormConfiguration:
+    label: Edit Form Configuration
+    icon: icon-edit
+    $type: openDetailSubappAction
+    appName: forms-configuration
+    subAppName: detailFormsConfiguration
+    viewType: edit
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:formConfiguration
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  publishItem:
+    label: Publish
+    icon: icon-publish
+    $type: jcrCommandAction
+    command: publish
+    catalog: versioned
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublishable:
+          $type: jcrPublishableRule
+        isNotLockedRule:
+          $type: isNotLocked
+  publishRecursive:
+    icon: icon-publish-incl-sub
+    $type: jcrCommandAction
+    command: publish
+    label: Publish recursive
+    asynchronous: true
+    params:
+      recursive: true
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublishable:
+          $type: jcrPublishableRule
+        isNotLockedRule:
+          $type: isNotLocked
+  unpublishItem:
+    label: Unpublish
+    icon: icon-unpublish
+    $type: jcrCommandAction
+    command: unpublish
+    availability:
+      writePermissionRequired: true
+      rules:
+        isPublished:
+          $type: jcrPublishedRule
+        isNotLockedRule:
+          $type: isNotLocked
+  renameItem:
+    label: Rename Item
+    icon: icon-edit
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:rename
+    availability:
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:formConfiguration
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  deleteItem:
+    label: Delete Item
+    icon: icon-delete
+    $type: confirmationAction
+    successActionName: delete
+    dialogId: ui-framework-jcr:delete
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:formConfiguration
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  duplicateItem:
+    label: Duplicate Item
+    icon: icon-duplicate
+    $type: duplicateNodeAction
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:formConfiguration
+  copyItem:
+    label: Copy Item
+    icon: icon-copy
+    $type: dxpPasteContentAction
+    allowedRoles:
+      - superuser
+    sendComponentAction: false
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - dxp:formConfiguration
+  pasteItem:
+    label: Paste Item
+    icon: icon-paste
+    $type: pasteContentAction
+    availability:
+      multiple: true
+      writePermissionRequired: true
+      nodeTypes:
+        - mgnl:folder
+  import:
+    label: Import
+    icon: icon-import
+    $type: openDialogAction
+    dialogId: ui-framework-jcr:import
+    availability:
+      root: true
+      rules:
+        isNotDeleted: &isNotDeleted
+          $type: jcrIsDeletedRule
+          negate: true
+  export:
+    label: Export
+    icon: icon-export
+    $type: exportAction
+    format: xml
+    dialogName: ui-admincentral:export
+    availability:
+      rules:
+        isNotDeleted: *isNotDeleted
+  download:
+      label: Download summary
+      icon: icon-download
+      $type: openDialogAction
+      dialogId: forms-configuration:form-download
+      populate: false
+      availability:
+        writePermissionRequired: false
+        rules:
+          isDynamoDB:
+            $type: subPathPropertyEqual
+            subPath: form-sender-selector
+            propertyName: field
+            propertyValue: dynamodb
+  delete:
+    $type: jcrCommandAction
+    asynchronous: true
+    command: delete
+    availability:
+      nodeTypes:
+        - dxp:formConfiguration
+      rules:
+        isNotLockedRule:
+          $type: isNotLocked
+  lock:
+    availability:
+      nodeTypes: &lockableTypes
+        - dxp:formConfiguration
+  unlock:
+    availability:
+      nodeTypes: *lockableTypes

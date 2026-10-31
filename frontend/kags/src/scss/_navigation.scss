@@ -1,0 +1,141 @@
+.nav {
+  &-vertical {
+    .nav-link {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      color: $black;
+
+      &:hover,
+      &.active {
+        color: $primary;
+        background: $white;
+      }
+
+      &:hover {
+        color: inherit;
+      }
+
+      &.disabled {
+        color: $gray-600;
+      }
+    }
+  }
+}
+
+header {
+  .navbar-toggler {
+    outline: none;
+
+    &[aria-expanded="true"] {
+      background: $gray-800;
+      border-color: $gray-800;
+
+      .dropdown-toggle::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  [aria-expanded="true"] {
+    .dropdown-toggle::after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+#bobcat-nav {
+  height: 3.75rem;
+
+  .nav-item {
+    padding-left: .675rem;
+    padding-right: .675rem;
+
+    & > a {
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
+
+      & > span{
+        font-family: HelveticaNeue-CondensedBold, HelveticaNeueBoldCondensed, HelveticaNeue-Bold-Condensed, "Helvetica Neue Bold Condensed", RobotoCondensed, "Roboto Condensed", Sans-serif;
+        font-size: 1rem;
+      }
+    }
+
+    & > a:not(.disabled) {
+      transition: all .15s ease-in-out;
+      opacity: .5;
+
+      & > span {
+        color: $white;
+      }
+
+      &.active:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: .25rem;
+        background-color: $primary;
+        z-index: -1;
+      }
+
+      &:active,
+      &.active,
+      &:focus {
+        opacity: 1;
+      }
+    }
+
+    &:active,
+    &.active,
+    &:focus,
+    &.hover,
+    &:hover {
+      & > a:not(.disabled) {
+        opacity: 1;
+      }
+    }
+
+    .subnavigation {
+      display: none;
+      color: inherit;
+      position: absolute;
+      top: -1000px;
+      transition: opacity .15s ease-in-out;
+      opacity: 0;
+      overflow: hidden;
+      min-width: 15rem;
+      max-width: 40rem;
+      cursor: default;
+
+      &__2cols {
+        min-width: 33rem;
+      }
+    }
+
+    &:hover {
+      .subnavigation {
+        opacity: 1;
+        top: 3.2rem;
+        z-index: $zindex-modal;
+        transition: all 0s;
+        overflow: visible;
+      }
+    }
+  }
+}
+
+// These panels render <b-dropdown-item>s without a .dropdown-menu wrapper, so they need the
+// --bs-dropdown-* variables that .dropdown-item reads.
+.subnavigation,
+.filter-item__options {
+  --bs-dropdown-item-padding-x: #{$dropdown-item-padding-x};
+  --bs-dropdown-item-padding-y: #{$dropdown-item-padding-y};
+  --bs-dropdown-link-color: #{$dropdown-link-color};
+  --bs-dropdown-link-hover-color: #{$dropdown-link-hover-color};
+  --bs-dropdown-link-hover-bg: #{$dropdown-link-hover-bg};
+  --bs-dropdown-link-active-color: #{$dropdown-link-active-color};
+  --bs-dropdown-link-active-bg: #{$dropdown-link-active-bg};
+  --bs-dropdown-link-disabled-color: #{$dropdown-link-disabled-color};
+}

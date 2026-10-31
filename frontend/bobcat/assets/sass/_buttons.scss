@@ -1,0 +1,223 @@
+$btn-expand-opacity: .75 !default;
+
+.btn {
+  min-width: 8rem;
+
+  @include media-breakpoint-up(md) {
+    &:hover {
+      box-shadow: $btn-box-shadow;
+    }
+  }
+
+  &[class*='btn-outline-']:not(:hover) {
+    background-color: $white;
+  }
+
+  &-secondary {
+    &:hover {
+      background-color: $secondary;
+      color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &-orange {
+    background-color: $orange-300 !important;
+    &:hover {
+      background-color: $orange !important;
+    }
+  }
+
+  &-tertiary {
+    background-color: $tertiary !important;
+    &:hover {
+      background-color: $light !important;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &-mobile {
+      width: 100% !important;
+    }
+
+    &-only-mobile-block {
+      width: auto !important;
+    }
+
+    &[class*='btn-outline-']:hover,
+    &[class*='btn-outline-']:active {
+      background-color: $white !important;
+      color: $primary !important;
+      box-shadow: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-only-mobile-block {
+      width: 100% !important;
+    }
+  }
+
+  &-expand {
+    opacity: $btn-expand-opacity;
+  }
+
+  [class^='bobcat-icon'] {
+    font-size: 1.125rem;
+  }
+
+  &-group .btn,
+  &.btn-narrow {
+    min-width: auto;
+  }
+
+  &-wide {
+    min-width: 13rem;
+  }
+
+  &.text-large {
+    font-size: 1.125rem;
+  }
+
+  &.btn-large {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+  }
+
+  // deprecated - use DynamicButton component instead
+  &.edge-clipped-btn {
+    padding: 0.875rem 1.33rem;
+    border-radius: 0 !important;
+    font-size: 1.125rem;
+    position: relative;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 15px)
+    );
+
+    &.btn-outline-primary {
+      border-width: 2px;
+    }
+
+    &.btn-outline-primary::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: -5px;
+      width: 20px;
+      height: 2px;
+      background: $primary;
+      transform: rotate(45deg);
+    }
+
+    &.btn-outline-primary::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: -4px;
+      width: 20px;
+      height: 2px;
+      background: $primary;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.dynamic-button {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  &.small-variant {
+    font-size: 1rem !important;
+  }
+
+  &.bg-white:hover {
+    background: $gray-100 !important;
+  }
+
+  &.bg-transparent:hover {
+    text-decoration: underline;
+    box-shadow: none;
+  }
+
+  &.hexagonal {
+    padding: 0.8125rem 1.33rem;
+    border-radius: 0 !important;
+    font-size: 1.125rem;
+    position: relative;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 15px)
+    );
+
+    &.btn-outline-primary,
+    &.btn-outline-dark {
+      border-width: 2px !important;
+      padding: 0.6875rem 1.33rem;
+    }
+
+    &.btn-outline-primary:focus {
+      border-color: $primary;
+
+      &::before, &::after {
+        background: $primary !important;
+      }
+    }
+    &.btn-outline-primary:hover {
+      background: white !important;
+      border-color: $danger;
+      outline-color: $danger;
+      color: $danger !important;
+
+      &::before, &::after {
+        background: $danger !important;
+      }
+    }
+
+    &.btn-outline-dark::before,
+    &.btn-outline-primary::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: -5px;
+      width: 20px;
+      height: 2px;
+      transform: rotate(45deg);
+    }
+
+    &.btn-outline-dark::after,
+    &.btn-outline-primary::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: -4px;
+      width: 20px;
+      height: 2px;
+      transform: rotate(45deg);
+    }
+
+    &.btn-outline-primary::after,
+    &.btn-outline-primary::before {
+      background: $primary;
+    }
+
+    &.btn-outline-dark {
+      border-color: $dark;
+      color: $dark;
+    }
+
+    &.btn-outline-dark::after,
+    &.btn-outline-dark::before {
+      background: $dark;
+    }
+  }
+}

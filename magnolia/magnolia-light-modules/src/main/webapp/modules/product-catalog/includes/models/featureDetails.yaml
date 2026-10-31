@@ -1,0 +1,123 @@
+class: info.magnolia.ui.contentapp.detail.DetailDescriptor
+label: Feature Details
+datasource:
+  $type: jcrDatasource
+  workspace: features
+  includeProperties: false
+itemProvider:
+  $type: jcrNodeFromLocationProvider
+  workspace: features
+  nodeType: dxp:feature
+form: 
+  properties:
+    jcrName:
+      label: Name
+      $type: textField
+      required: true
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    description:
+      label: Description
+      $type: cloudinaryRichText
+      alignment: true
+      rows: 5
+      i18n: true
+    shortDescription:
+      label: Short description
+      $type: cloudinaryRichText
+      alignment: true
+      rows: 2
+      i18n: true
+    link:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      defaultValue: none
+      i18n: true
+      field:
+        datasource:
+          options:
+            - name: none
+              label: No link
+              value: none
+      label: Link "view more"
+    assets:
+      !include:/product-catalog/includes/model-images.yaml
+      label: Assets
+    products:
+      label: Items
+      $type: relatedItemsField
+      itemType: product
+      storeProperty: features
+      i18n: true
+      layout:
+        $type: form
+      itemProvider:
+        $type: currentItemProvider
+    attachments:
+      label: Items
+      $type: relatedItemsField
+      itemType: attachment
+      storeProperty: features
+      i18n: true
+      layout:
+        $type: form
+      itemProvider:
+        $type: currentItemProvider
+    brochure:
+      !include:/product-catalog/includes/brochure.yaml
+    chips:
+      label: Chips
+      $type: jcrMultiLinkField
+      chooserId: product-catalog:chips-chooser
+      field:
+        label: ''
+        $type: linkField
+        validators:
+          ChipchooserValidator:
+            $type: ChipChooserValidator
+        datasource:
+          $type: jcrDatasource
+          workspace: concepts
+          rootPath: /bobcat
+          allowedNodeTypes:
+            - mgnl:content
+            - dxp:region
+            - mgnl:folder
+  layout:
+    $type: tabbedLayout
+    tabs:
+      basic:
+        label: Basic Info
+        fields:
+          - name: jcrName
+          - name: title
+          - name: description
+          - name: shortDescription
+          - name: link
+          - name: assets
+      products:
+        label: Products
+        fields:
+          - name: products
+      attachments:
+        label: Attachments
+        fields:
+          - name: attachments
+      brochure:
+        label: Brochure
+        fields:
+          - name: brochure
+      chips:
+        label: Chips
+        fields:
+          - name: chips
+actions:
+  commit:
+    class: info.magnolia.ui.contentapp.detail.action.SaveDetailSubAppActionDefinition
+    browserName: features
+  cancel:
+    $type: closeAction
+wide: true
+light: false
+

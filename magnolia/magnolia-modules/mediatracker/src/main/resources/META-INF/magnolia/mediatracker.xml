@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+    <name>mediatracker</name>
+    <displayName>Mediatracker Magnolia Module</displayName>
+    <class>com.tbscg.doosan.magnolia.mediatracker.MediatrackerModule</class>
+    <versionHandler>com.tbscg.doosan.magnolia.mediatracker.setup.MediatrackerVersionHandler</versionHandler>
+    <version>1</version>
+
+    <components>
+        <id>app-mediatracker</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.VanityDomainService</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.DomainServiceImpl</implementation>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.VanityUrlService</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.UrlServiceImpl</implementation>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.app.MediatrackerNavigator</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.app.MediatrackerNavigator</implementation>
+        </component>
+    </components>
+    <components>
+        <id>app-mediatracker-domain</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.app.domain.DomainSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.app.domain.DomainSubAppViewImpl</implementation>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbClientProvider</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbClientProvider</implementation>
+            <scope>singleton</scope>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbService</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbService</implementation>
+            <scope>singleton</scope>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbRepository</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.dynamodb.DynamoDbRepository</implementation>
+            <scope>singleton</scope>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.elasticsearch.ElasticsearchService</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.elasticsearch.ElasticsearchService</implementation>
+            <scope>singleton</scope>
+        </component>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.data.provider.elasticsearch.ElasticsearchHttpService</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.data.provider.elasticsearch.ElasticsearchHttpService</implementation>
+            <scope>singleton</scope>
+        </component>
+    </components>
+    <components>
+        <id>app-mediatracker-domainList</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.app.domainList.DomainListSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.app.domainList.DomainListSubAppViewImpl</implementation>
+        </component>
+    </components>
+    <components>
+        <id>app-mediatracker-url</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.app.url.UrlSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.app.url.UrlSubAppViewImpl</implementation>
+        </component>
+    </components>
+    <components>
+        <id>app-mediatracker-urlList</id>
+        <component>
+            <type>com.tbscg.doosan.magnolia.mediatracker.app.urlList.UrlListSubAppView</type>
+            <implementation>com.tbscg.doosan.magnolia.mediatracker.app.urlList.UrlListSubAppViewImpl</implementation>
+        </component>
+    </components>
+
+    <dependencies>
+        <dependency>
+            <name>core</name>
+            <version>*</version>
+        </dependency>
+        <dependency>
+            <name>ui-admincentral</name>
+            <version>*</version>
+        </dependency>
+        <dependency>
+            <name>dxp-core</name>
+            <version>*</version>
+        </dependency>
+    </dependencies>
+
+</module>

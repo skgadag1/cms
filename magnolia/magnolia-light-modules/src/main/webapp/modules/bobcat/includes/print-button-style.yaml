@@ -1,0 +1,42 @@
+$type: compositeField
+label: Print Button Style
+properties:
+  color:
+    $type: comboBoxField
+    label: Button Color
+    datasource:
+      $type: optionListDatasource
+      options:
+        - name: red
+          label: Primary Red
+          value: red
+        - name: white
+          label: White
+          value: white
+        - name: black
+          label: Black
+          value: black
+  customLabel:
+    label: Link label
+    $type: textField
+    i18n: true
+  pricingPage:
+    label: Print Page 1(Specs Features and Pricing)
+    $type: checkBoxField
+    buttonLabel: Specs Features and Pricing
+    defaultValue: true
+  attachmentsPage:
+    label: Print Page 2(Related Attachments)
+    $type: checkBoxField
+    buttonLabel: Related Attachments
+    defaultValue: true
+  packagesPage:
+    label: Print Page 3(Packages and Options)
+    $type: checkBoxField
+    buttonLabel: Packages and Options
+    defaultValue: true
+  target:
+    !include:/bobcat/includes/anchor-target.yaml
+  icon:
+    !include:/bobcat/includes/icons.yaml
+    required: false

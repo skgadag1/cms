@@ -1,0 +1,37 @@
+main-area-components-model-required:
+  ModelPricing:
+    id: bobcat:components/modelPricing
+  ProductOverview:
+    id: bobcat:components/productOverview
+  ProductSpecifications:
+    id: bobcat:components/productSpecifications
+  PartsFinder:
+    id: bobcat:components/partsFinder
+  Separator:
+    id: bobcat:components/separator
+  Features:
+    id: bobcat:components/features
+  RegionSelector:
+    id: bobcat:components/region-selector
+  PackagesAndOptions:
+    id: bobcat:components/packages-and-options
+  DealerModelPrint:
+    id: bobcat:components/dealer-model-print
+  EquipmentModelPrint:
+    id: bobcat:components/equipment-model-print
+  DealerModelPricing:
+    id: bobcat:components/dealer-model-pricing
+  DealerModelPricingV2:
+    id: bobcat:components/dealer-model-pricing-v2
+  StickyCTA:
+    id: bobcat:components/sticky-cta
+  SideNavGallery:
+    id: bobcat:components/side-nav-gallery
+  ModelHeader:
+    id: bobcat:components/model-header
+  AnchorLinksAlternativeNavigation:
+    id: bobcat:components/anchor-links-alternative-navigation
+  EvolutionImageGalleryGrid:
+    id: bobcat:components/evolution-image-gallery-grid
+  EvolutionTable:
+    id: bobcat:components/evolution-table

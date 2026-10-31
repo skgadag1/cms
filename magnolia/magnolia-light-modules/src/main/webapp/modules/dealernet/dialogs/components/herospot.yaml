@@ -1,0 +1,32 @@
+!include:/dealernet/includes/visibility-config.yaml
+label: Herospot Configuration
+form:
+  properties:
+    img:
+      !include:/dealernet/includes/visibility-tag-switchable-field.yaml
+      label: Image
+      forms:
+        default:
+          properties:
+            default:
+              !include:/bobcat/includes/image.yaml
+              label: ""
+    contentVisibility:
+      field:
+        properties:
+          nodes:
+            datasource:
+              options: !override
+                - name: img
+                  label: img
+                  value: img
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: img
+      componentVisibility:
+      contentVisibility:
+light: false

@@ -1,0 +1,73 @@
+.text-small {
+  font-size: $font-size-sm;
+}
+
+.text-large {
+  font-size: $font-size-lg;
+}
+
+.text-extralarge {
+  font-size: 2rem;
+}
+
+.list-checked {
+  @extend .list-unstyled;
+
+  li {
+    margin-left: 1.5rem;
+    margin-bottom: .35rem;
+    position: relative;
+    line-height: 1.2rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: .35rem;
+      height: .45rem;
+      width: .825rem;
+      transform: rotate(-45deg);
+      border-left: 3px solid $green;
+      border-bottom: 3px solid $green;
+    }
+  }
+}
+
+// Doubled class so it outranks Bootstrap's `.tooltip { font-family }`
+.tooltip.tooltip {
+  @extend .font-condensed;
+
+  // Keep the .tooltip-inner box-shadow from being clipped by its wrapper
+  & > .overflow-auto {
+    overflow: visible !important;
+  }
+
+  .tooltip-inner {
+    box-shadow: 0 0 8px 0 rgba($black, .35);
+  }
+}
+
+h1 {
+  .svg-inline--fa,
+  bicon {
+    @include media-breakpoint-down('md') {
+      width: auto !important;
+      height: 3rem;
+    }
+  }
+}
+
+a.disabled {
+  color: $gray-600;
+}
+
+.display-4 {
+  font-weight: 700;
+}
+
+@include media-breakpoint-down('lg') {
+  .badge {
+    font-family: Helvetica, Roboto, sans-serif;
+  }
+}
+

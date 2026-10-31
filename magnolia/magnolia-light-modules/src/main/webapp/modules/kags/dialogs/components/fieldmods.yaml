@@ -1,0 +1,42 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: title
+          fieldType: text
+          label: Title
+          required: true
+        - name: showBreadcrumb
+          fieldType: checkbox
+          label: Enable breadcrumb
+          buttonLabel: Select to display breadcrumbs based on sitemap
+          defaultValue: false
+          type: Boolean
+        - !include:/kags/includes/banner-field.yaml
+        - name: statusHeader
+          fieldType: text
+          label: Status header label
+          required: true
+        - name: classHeader
+          fieldType: text
+          label: Class header label
+          required: true
+        - name: codeHeader
+          fieldType: text
+          label: Code header label
+          required: true
+        - name: descriptionHeader
+          fieldType: text
+          label: Description header label
+          required: true
+        - name: expiresOnHeader
+          fieldType: text
+          label: Expires on header label
+          required: true
+        - name: noPending
+          fieldType: text
+          label: No Pending text
+          required: true
+
+actions: !include:/kags/includes/common-actions.yaml

@@ -1,0 +1,2 @@
+!inherit:freemarker
+class: com.tbscg.doosan.magnolia.kags.renderers.FreemarkerExtendedRenderer

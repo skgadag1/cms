@@ -1,0 +1,4 @@
+spa-page-prototype:
+  baseUrl: 'https://magnolia-cms-env-{PLACEHOLDER_TO_REPLACE_WITH_FEATURE_NAME}.dev.dice-tools.com/bobcat_editor' # proxy to: 'https://ssr-author.dev.bobcat.com'
+  # 'editmode' parameter is obligatory for author SSR
+  routeTemplate: '/{{@path}}?lang={language}&editmode=on'

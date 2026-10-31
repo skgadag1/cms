@@ -1,0 +1,19 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: magnolia-publisher
+spec:
+  hosts:
+  - "magnolia-publisher-{{ .Release.Namespace }}.dev.dice-tools.com"
+  gateways:
+  - magnolia-gateway-{{ .Release.Namespace }}-internal
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: magnolia-publisher
+        port:
+          number: {{ .Values.service.magnolia_publisher.port }}

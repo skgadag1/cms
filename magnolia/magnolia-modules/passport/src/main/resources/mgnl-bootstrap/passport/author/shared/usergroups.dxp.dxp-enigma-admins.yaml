@@ -1,0 +1,8 @@
+'dxp-enigma-admins':
+  'jcr:primaryType': 'mgnl:group'
+  'jcr:uuid': 'c85fd514-babe-4729-91e6-5c4e0cd60878'
+  'groups':
+    'jcr:uuid': '360f9f8a-5832-42b7-b341-e88076d6e8ab'
+  'roles':
+    '0': 'ae75d3c4-83af-439d-a2f4-c1a596e8eadb'
+    'jcr:uuid': 'ecd188c9-35b2-43c3-9a11-a74f5ddeeeff'

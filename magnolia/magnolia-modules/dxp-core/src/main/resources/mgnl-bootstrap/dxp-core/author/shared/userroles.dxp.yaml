@@ -1,0 +1,303 @@
+'dxp':
+  'jcr:primaryType': mgnl:folder
+  'jcr:uuid': ae066c4d-97d5-4e42-b21d-ac6347d1284a
+  'content-author':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': d5f80013-8233-48b9-a3fa-3f1512b3a0bc
+    'acl_userroles':
+      'jcr:uuid': 08b58724-3833-4195-8fbd-46ee0085f3f3
+      '0':
+        'jcr:uuid': 1399069b-0c4d-4323-b513-011a4b791a29
+        'path': /dxp/content-author
+        'permissions': 8
+    'acl_uri':
+      'jcr:uuid': a16ae416-a8a8-4cac-847c-77d5deb1a47b
+      '0':
+        'jcr:uuid': 09df3800-0945-4ac1-8a59-151fd17de440
+        'path': '*'
+        'permissions': 63
+    'acl_concepts':
+      'jcr:uuid': 1d40f206-f246-41a1-9117-5e6db162df2b
+      '0':
+        'jcr:uuid': 1f096097-9725-4cbc-850d-51ede41c9921
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': bb8b43e2-9886-4465-9543-11d5d4946271
+        'path': /*
+        'permissions': 63
+    'acl_tasks':
+      'jcr:uuid': 343c0338-0aed-45d0-a91f-6d03c8a0c2d2
+      '0':
+        'jcr:uuid': 9719b322-2d89-4aa8-9d6e-b75f2cb44dce
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 937df126-8ff8-44a2-9521-2ce2c5ddc699
+        'path': /*
+        'permissions': 63
+    'acl_website':
+      'jcr:uuid': 27be5ab5-3fdc-486e-924a-2f0e78c9c070
+      '0':
+        'jcr:uuid': e853b36b-ee81-4315-b32e-bd6e0375f719
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': ad7898ee-24ef-494d-9ee8-85e634177d1c
+        'path': /*
+        'permissions': 63
+    'acl_marketing-tags':
+      'jcr:uuid': ebc7de78-6414-4bab-aea6-89d9a82c162d
+      '0':
+        'jcr:uuid': 5be50ae2-40b5-45dd-a4f8-049b0f4e5321
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': cc507271-42a7-4f33-9686-38cc958b78f6
+        'path': /*
+        'permissions': 63
+    'acl_safety-docs':
+      'jcr:uuid': 0fdce467-6930-4b57-b27d-c2b7f0eac182
+      '0':
+        'jcr:uuid': 64171b39-ff29-4d30-bbc9-01a849590226
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': bd1f78e1-0dad-463b-b128-c2f754f38371
+        'path': /*
+        'permissions': 63
+    'acl_faq':
+      'jcr:uuid': 04bf441d-8371-4e1e-bf76-472f4555d8aa
+      '0':
+        'jcr:uuid': 324516ff-caa0-4d2d-8177-319ea9ac0b9b
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 5c256aa0-3778-4c58-9783-09c6f403e077
+        'path': /*
+        'permissions': 63
+    'acl_stories':
+      'jcr:uuid': 234c348f-9a90-4b16-a29c-ed6c07edb701
+      '0':
+        'jcr:uuid': 68fa7b6e-a6fc-43f8-908b-93a4cac92188
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 41de6927-46aa-4acc-8292-4645920802f6
+        'path': /*
+        'permissions': 63
+    'acl_messages':
+      'jcr:uuid': 64ef817a-5a1d-45ba-933e-92d7aa5782ba
+      '0':
+        'jcr:uuid': e5575f21-6f6a-43a7-a123-0805476c5b8f
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 28846948-2bed-49fb-93ef-d46c11f3be47
+        'path': /*
+        'permissions': 63
+    'acl_tags':
+      'jcr:uuid': 6e5bf8c7-8880-4083-ac6c-eebf0230252b
+      '0':
+        'jcr:uuid': 7880512b-cfc4-43cb-94c4-d7d4696baef6
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 0e99cb02-2079-4769-abcc-40712ba17414
+        'path': /*
+        'permissions': 63
+    'acl_dam':
+      'jcr:uuid': c55824e4-486d-456e-9a98-827a0c6f468f
+      '0':
+        'jcr:uuid': f23e7982-1735-4cba-8611-bcae0394809c
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 94f97c90-a02f-4c34-bde3-1ad332d54059
+        'path': /*
+        'permissions': 63
+    'acl_resources':
+      'jcr:uuid': d81e408d-c4f7-4466-8de5-82da22cd9399
+      '0':
+        'jcr:uuid': 5b0296f4-c4bf-485a-bee4-f38d14edf132
+        'path': /
+        'permissions': 8
+      '00':
+        'jcr:uuid': 26d14d25-28a5-4741-b1b5-7d34c74a852c
+        'path': /*
+        'permissions': 8
+    'acl_category':
+      'jcr:uuid': '2664e5d0-2572-4e52-9d50-3bc16482b3b9'
+      '0':
+        'jcr:uuid': '1397ee43-38c8-460f-bd13-fb08ad85817a'
+        'path': '/'
+        'permissions': 8
+      '00':
+        'jcr:uuid': 'bab0efc2-86ab-442f-b916-35461901d524'
+        'path': '/*'
+        'permissions': 8
+    'acl_toc':
+      'jcr:uuid': 'a34fed80-4acf-48c3-a5a1-6df11a9527c8'
+      '0':
+        'jcr:uuid': '55d96618-0513-4d05-843e-a0187be0bf0e'
+        'path': '/'
+        'permissions': 63
+      '00':
+        'jcr:uuid': 'f0f3beb2-63c5-4161-9b28-4963670ca133'
+        'path': '/*'
+        'permissions': 63
+  'content-approver':
+    'jcr:primaryType': mgnl:role
+    'jcr:uuid': 0f6bbdc1-03e6-4f35-8ff5-25005bec02de
+    'acl_userroles':
+      'jcr:uuid': 56600450-4954-4651-b1eb-8fa7cf2b5d17
+      '0':
+        'jcr:uuid': e9189bd5-b80f-4105-b966-c66d776a95ad
+        'path': /dxp/content-approver
+        'permissions': 8
+    'acl_uri':
+      'jcr:uuid': d10c7966-a485-4988-9d8a-43be83262e4f
+      '0':
+        'jcr:uuid': 1859854c-5995-4eeb-b681-4db8d99137db
+        'path': '*'
+        'permissions': 63
+    'acl_concepts':
+      'jcr:uuid': e0966a96-b7ef-46aa-8245-4a44e234632d
+      '0':
+        'jcr:uuid': 60373290-bb17-48f0-82d0-c9e3d7786ebb
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 092c23d1-66c7-48f8-a331-ecdef14a215d
+        'path': /*
+        'permissions': 63
+    'acl_tasks':
+      'jcr:uuid': d265cacc-2b29-4985-b3c3-2ab3234d6af2
+      '0':
+        'jcr:uuid': 2a8a338a-9f1e-4c6b-aa22-f697f2808bb8
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': f59c7fbd-cbdc-4e40-afd1-b310e54e4649
+        'path': /*
+        'permissions': 63
+    'acl_website':
+      'jcr:uuid': d24b05a8-bb36-46ca-9b63-a7513b350125
+      '0':
+        'jcr:uuid': 67306057-b7bc-4307-9bed-ce45efb48604
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 0eb6104e-1cae-4047-b98c-e4383e292a36
+        'path': /*
+        'permissions': 63
+    'acl_marketing-tags':
+      'jcr:uuid': 0678c70d-49a9-47b3-a6c3-861c927b46ea
+      '0':
+        'jcr:uuid': 35597c27-8879-4ddb-b050-67e34d065422
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 361371de-0cbd-45d3-82ea-bc67c44be62d
+        'path': /*
+        'permissions': 63
+    'acl_safety-docs':
+      'jcr:uuid': 55abe67c-c082-4200-a6f6-391f18644cac
+      '0':
+        'jcr:uuid': 2e111d85-308f-449b-b140-7e27dffc4632
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 556a26c1-fb08-4991-9fc1-df4bba7860ec
+        'path': /*
+        'permissions': 63
+    'acl_faq':
+      'jcr:uuid': bd610480-59e0-42c3-91be-4183d709b0a0
+      '0':
+        'jcr:uuid': ec056c3a-6780-4320-91b4-e989d0671833
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 57533182-d100-4f71-a3c0-4a9efd447d02
+        'path': /*
+        'permissions': 63
+    'acl_stories':
+      'jcr:uuid': 453bc8b5-ed19-4a2c-bbec-78827fd3e017
+      '0':
+        'jcr:uuid': d795691f-eaf3-4baf-8dba-85a60ebf766d
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 78a48e4b-64fa-4506-8bad-3c0747bc4fa6
+        'path': /*
+        'permissions': 63
+    'acl_messages':
+      'jcr:uuid': 02138a02-b3b8-4ce7-8d46-f863a24380c7
+      '0':
+        'jcr:uuid': 6265a2fb-4469-4c46-9bb8-4a31e65ed343
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': bc4c6b74-55b8-4690-8d62-3fa1913caf8a
+        'path': /*
+        'permissions': 63
+    'acl_tags':
+      'jcr:uuid': 7159c734-7475-478e-abe3-825447108070
+      '0':
+        'jcr:uuid': cce813e4-b457-476d-bbfa-3a18aa079900
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': f1ab465f-9bff-424b-aded-31a02569aa7e
+        'path': /*
+        'permissions': 63
+    'acl_dam':
+      'jcr:uuid': 3384a70c-71af-484e-867b-9a2654989057
+      '0':
+        'jcr:uuid': 0bc8f906-bb6f-4a28-9557-019a5f998c7c
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': d0c34720-0165-480c-a73f-f7621dcddb2d
+        'path': /*
+        'permissions': 63
+    'acl_workflow':
+      'jcr:uuid': 75dd2389-b79b-4509-9e55-b1cf53bb7ad8
+      '0':
+        'jcr:uuid': b78078d8-977c-4fcb-ad21-8ded32d85966
+        'path': /
+        'permissions': 63
+      '00':
+        'jcr:uuid': 8f21a78e-994f-44ef-a4e7-2cbdf41f6e7c
+        'path': /*
+        'permissions': 63
+    'acl_resources':
+      'jcr:uuid': 23e22fde-225e-4a97-aaa6-0adaf12240ef
+      '0':
+        'jcr:uuid': 2f5acbbb-55eb-4427-9d63-3aa13efbe9be
+        'path': /
+        'permissions': 8
+      '00':
+        'jcr:uuid': 574cfb8c-4d21-4364-9e35-1ea4afbd85d6
+        'path': /*
+        'permissions': 8
+    'acl_toc':
+      'jcr:uuid': '12b80570-0382-4b1e-9874-30ae3399406d'
+      '0':
+        'jcr:uuid': '7e8a4be7-ddc0-4da4-a370-4644b23bef3f'
+        'path': '/'
+        'permissions': 63
+      '00':
+        'jcr:uuid': 'ea1948d5-4e71-46ba-a953-0cdc4d9e5504'
+        'path': '/*'
+        'permissions': 63
+    'acl_category':
+      'jcr:uuid': '8276045b-0e2f-47a7-82a8-3b48455ece45'
+      '0':
+        'jcr:uuid': 'd8a50b4c-561c-41f6-a13e-1c1e4eca6c64'
+        'path': '/'
+        'permissions': 8
+      '00':
+        'jcr:uuid': 'f854e7ad-cef1-4bbb-abe6-7bfe455f060e'
+        'path': '/*'
+        'permissions': 8

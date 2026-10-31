@@ -1,0 +1,40 @@
+class: info.magnolia.ui.chooser.definition.SingleItemWorkbenchChooserDefinition
+actions:
+  choose:
+    $type: chooseAction
+  cancel:
+    $type: closeAction
+workbenchChooser:
+  workbench:
+    extensionViews:
+      - name: fullTextSearch
+        class: info.magnolia.ui.chooser.definition.FullTextSearchExtensionViewDefinition
+    contentViews:
+      features:
+        $type: treeView
+        columns:
+          jcrName:
+            label: Name
+            $type: jcrTitleColumn
+            expandRatio: 5
+            nodeTypeToIcon:
+              mgnl:page: icon-language-app
+          title:
+            label: Title
+            $type: title
+            expandRatio: 5
+          regionInfo:
+            label: Region
+            valueProvider: com.tbscg.doosan.magnolia.product.catalog.field.RegionNameValueProvider
+            expandRatio: 1
+            sortable: false
+          jcrPublishingStatus:
+            $type: lockingStatusColumn
+            label: Status
+          jcr:lockOwner:
+            name: jcr:lockOwner
+            label: Locked by
+          mgnl:lastModified:
+            $type: dateColumn
+            expandRatio: 3
+light: false

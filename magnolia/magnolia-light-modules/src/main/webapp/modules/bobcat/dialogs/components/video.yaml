@@ -1,0 +1,70 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Articles - Video Component
+form:
+  properties:
+    asset:
+      label: Asset source
+      $type: switchableField
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: video
+              label: Video
+              value: video
+            - name: youtube
+              label: YouTube
+              value: youtube
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        video:
+          properties:
+            video:
+              !include:/bobcat/includes/dam-asset.yaml
+              label: Video
+              filters:
+                resource_type:
+                  class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                  value: video
+            poster:
+              !include:/bobcat/includes/dam-image.yaml
+              label: Poster
+              description: Image displayed as poster (optional)
+              required: false
+        youtube:
+          properties:
+            youtube:
+              $type: textField
+              label: YouTube link source (use %LANG% for language)
+              description: example of LANG parameter usage https://www.youtube.com/embed/xxx?rel=0&hl=%LANG%&cc_lang_pref=%LANG%
+    fullWidth:
+      $type: checkBoxField
+      label: Full width
+      buttonLabel: Use component with full width
+      type: java.lang.Boolean
+      default: false
+    grayBg:
+      $type: checkBoxField
+      label: Background
+      buttonLabel: Use gray background
+      type: java.lang.Boolean
+      default: false
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: asset
+      look:
+        label: Look & feel
+        fields:
+          - name: fullWidth
+          - name: grayBg
+      inheritableSection:
+      anchor:
+      meta:
+light: false

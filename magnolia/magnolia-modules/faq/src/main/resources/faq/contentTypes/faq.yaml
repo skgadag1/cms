@@ -1,0 +1,20 @@
+name: dxp:faq
+
+datasource:
+  workspace: faq
+  rootPath: /
+  namespaces:
+    dxp: https://doosan.com/jcr/1.0/lib
+  autoCreate: true
+
+model:
+  nodeType: dxp:faq
+  properties:
+    - name: name
+      label: FAQ Name
+      required: true
+    - name: question
+      label: Question
+      required: true
+    - name: answer
+      label: Answer

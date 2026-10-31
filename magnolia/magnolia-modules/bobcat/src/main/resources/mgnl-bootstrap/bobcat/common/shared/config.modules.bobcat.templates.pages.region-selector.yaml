@@ -1,0 +1,14 @@
+region-selector:
+  $type: spa
+  renderType: spa
+  extends: '/modules/bobcat/includes/pages/spa-page-prototype'
+  title: 'Bobcat.com Region Selector Page'
+  class: info.magnolia.rendering.spa.renderer.SpaRenderableDefinition
+  dialog: bobcat:pages/index
+  type: content
+
+  areas:
+    main:
+      title: Main area
+      availableComponents:
+        extends: '/modules/bobcat/includes/main-area-components'

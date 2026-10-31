@@ -1,0 +1,24 @@
+form:
+  tabs:
+    - name: config
+      label: Configuration
+      fields:
+        - name: title
+          fieldType: text
+          label: Title
+          required: true
+        - !include:/kags/includes/banner-field.yaml
+        - name: TraditionalTab
+          fieldType: text
+          label: Traditional
+          required: true
+        - name: AiAssistantTab
+          fieldType: text
+          label: AI Assistant
+          required: true  
+        - name: DescriptionTitle
+          fieldType: text
+          label: Description Title
+          required: true  
+
+actions: !include:/kags/includes/common-actions.yaml

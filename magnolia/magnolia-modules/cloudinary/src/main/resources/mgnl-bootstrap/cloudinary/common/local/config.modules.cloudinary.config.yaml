@@ -1,0 +1,65 @@
+'config':
+  'cloudPlayer': 'https://cldplayer.dev.dice-tools.com/'
+  'renditionUrlTemplate': 'https://res.cloudinary.com/{cloud_name}/{resource_type}/{type}/{transformation}/v{version}/{public_id}'
+  'thumbnailTransformation': 'c_limit,w_300,h_300/b_rgb:00ff00/f_jpg'
+  jcr:primaryType: 'mgnl:content'
+  'api':
+    'apiKey': '245399868852615'
+    'apiSecret': '${jcr.cloudinary.api.secret}'
+    'cloudName': 'doosan-bobcat'
+  'folderMode': 'fixed'
+  'scriptSource': 'https://media-library.cloudinary.com/global/all.js'
+  'assetPreviewConfigurations':
+    'imageConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'image': 'image/*'
+    'audioConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'audio': 'audio/*'
+    'videoConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'video': 'video/*'
+    'flashConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'application': 'application/x-shockwave-flash'
+    'applicationConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'application': 'application/*'
+    'documentConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'excel': 'application/vnd.ms-excel'
+        'msword': 'application/msword'
+        'pdf': 'application/pdf'
+        'powerpoint': 'application/vnd.ms-powerpoint'
+        'text': 'text/*'
+    'svgConfig':
+      'thumbnailComponentProviderClass': 'com.tbscg.doosan.magnolia.cloudinary.field.compatibility.config.thumbnail.ImageThumbnailComponentProvider'
+      'previewConfig':
+        'iconStyleName': 'icon-search'
+        'previewComponentProviderClass': 'info.magnolia.dam.app.ui.field.configuration.image.ImagePreviewComponentProvider'
+      'supportedMediaTypes':
+        'image': 'image/svg+xml'

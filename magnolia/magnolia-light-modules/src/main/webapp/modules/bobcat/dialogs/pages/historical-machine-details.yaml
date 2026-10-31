@@ -1,0 +1,11 @@
+!include:/bobcat/dialogs/pages/machine-details.yaml
+label: Page properties (historical product)
+form:
+  properties:
+    model:
+      datasource:
+        nodeFilter:
+          propertyName: lifecycle
+          propertyValue: Historical
+          propertyDefaultValue: Current
+          nodeType: dxp:product

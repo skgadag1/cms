@@ -1,0 +1,3 @@
+contextAttributes:
+  damfn:
+    componentClass: com.tbscg.doosan.magnolia.cloudinary.templating.CloudinaryTemplatingFunctions

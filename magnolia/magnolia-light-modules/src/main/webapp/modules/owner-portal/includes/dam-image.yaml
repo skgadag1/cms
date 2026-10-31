@@ -1,0 +1,5 @@
+!include:/bobcat/includes/dam-asset.yaml
+filters:
+  resource_type:
+    class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+    value: image

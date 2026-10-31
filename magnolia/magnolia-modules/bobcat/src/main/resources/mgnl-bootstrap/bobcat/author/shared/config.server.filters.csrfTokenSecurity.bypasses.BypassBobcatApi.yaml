@@ -1,0 +1,3 @@
+BypassBobcatApi:
+  class: info.magnolia.voting.voters.URIStartsWithVoter
+  pattern: /bobcat_api

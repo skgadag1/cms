@@ -1,0 +1,9 @@
+!include:/bobcat/includes/forms/shared/list-option.yaml
+label: Extended list option
+properties:
+  prepend:
+    $type: textField
+    label: Prepend text
+    i18n: true
+  image:
+    !include:/bobcat/includes/image.yaml

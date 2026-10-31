@@ -1,0 +1,392 @@
+{
+  "total": 7116,
+  "relation": "eq",
+  "items": [
+    {
+      "document_id": "80527_B5PJ_11001",
+      "file_name": "WB700 7461216 enUS om.pdf",
+      "title": "7461216",
+      "description": "WB700 | 9990702 | B5PJ11001-B5PJ99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80527_B5PL_11001",
+      "file_name": "WB700 7461216 enUS om.pdf",
+      "title": "7461216",
+      "description": "WB700 | 9990701 | B5PL11001-B5PL99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80527_B5PK_11001",
+      "file_name": "WB700 7461216 enUS om.pdf",
+      "title": "7461216",
+      "description": "WB700 | 9990703 | B5PK11001-B5PK99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80526_ANL7_18001",
+      "file_name": "TL3570 7439809 enGB om.pdf",
+      "title": "7439809",
+      "description": "TL3570 | TL3570 | ANL718001-ANL799999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80526_ANMG_18001",
+      "file_name": "TL3570 7439809 enGB om.pdf",
+      "title": "7439809",
+      "description": "TL3570 | TL3570X | ANMG18001-ANMG99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80525",
+      "file_name": "sl5541 fm 02r338.pdf",
+      "title": "SL 5541",
+      "description": "Pivot Pin Retaining Bolt Nuts (02R338)",
+      "category": "Field Modifications",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80524",
+      "file_name": "sl5540 fm exr172.pdf",
+      "title": "SL 5540",
+      "description": "Manifold Tubeline Replacement (EXR172)",
+      "category": "Field Modifications",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80523",
+      "file_name": "sl5535 fm 02r334.pdf",
+      "title": "SL 5535",
+      "description": "Lift Arm Support Decal Replacement (02R334)",
+      "category": "Field Modifications",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80522",
+      "file_name": "7467819 enUS.pdf",
+      "title": "7467819",
+      "description": "UPPERSTRUCTURE KIT",
+      "category": "Instruction",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80521",
+      "file_name": "7450183 enUS.pdf",
+      "title": "7450183",
+      "description": "MOTION ALARM KIT",
+      "category": "Instruction",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80520",
+      "file_name": "7435462 enUS.pdf",
+      "title": "7435462",
+      "description": "BEACON KIT",
+      "category": "Instruction",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80517_B5AY_11001",
+      "file_name": "TL619 7442784 enUS sm.pdf",
+      "title": "7442784",
+      "description": "TL619 | B5AY11001-B5AY99999",
+      "category": "Service Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80507_B3GS_18001",
+      "file_name": "T36120 7442570 enGB om.pdf",
+      "title": "7442570",
+      "description": "T36120 | T36120SLB | B3GS18001-B3GS99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80505_2334_101",
+      "file_name": "Dumping Hopper 7448899 enUS om.pdf",
+      "title": "7448899",
+      "description": "Dumping Hopper | 10 | 233400101-233499999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80505_9912_101",
+      "file_name": "Dumping Hopper 7448899 enUS om.pdf",
+      "title": "7448899",
+      "description": "Dumping Hopper | 25 | 991200101-991299999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80503_B4NM_11001",
+      "file_name": "E88 7433618 enUS sm.pdf",
+      "title": "7433618",
+      "description": "E88 | B4NM11001-B4NM99999",
+      "category": "Service Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80502_0453_101",
+      "file_name": "Trencher 6902546 enGB om.pdf",
+      "title": "6902546",
+      "description": "Trencher | LT213 | 045300101-045399999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80502_0454_101",
+      "file_name": "Trencher 6902546 enGB om.pdf",
+      "title": "6902546",
+      "description": "Trencher | LT313 | 045400101-045499999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80502_A0RS_101",
+      "file_name": "Trencher 6902546 enGB om.pdf",
+      "title": "6902546",
+      "description": "Trencher | LT414 | A0RS00101-A0RS99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80501_B5U8_11001",
+      "file_name": "E10e 7463985 enUS om.pdf",
+      "title": "7463985",
+      "description": "E10e | B5U811001-B5U899999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enUS",
+      "language_code": "en",
+      "country_code": "US"
+    },
+    {
+      "document_id": "80500_AFLJ_101",
+      "file_name": "Vibratory Roller 6987312 enGB om.pdf",
+      "title": "6987312",
+      "description": "Vibratory Roller | Roller 48 Padded | AFLJ00101-AFLJ99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80500_AFLE_101",
+      "file_name": "Vibratory Roller 6987312 enGB om.pdf",
+      "title": "6987312",
+      "description": "Vibratory Roller | Roller 73 Smooth | AFLE00101-AFLE99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80500_AFLC_101",
+      "file_name": "Vibratory Roller 6987312 enGB om.pdf",
+      "title": "6987312",
+      "description": "Vibratory Roller | Roller 80 Smooth | AFLC00101-AFLC99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80500_AFLK_101",
+      "file_name": "Vibratory Roller 6987312 enGB om.pdf",
+      "title": "6987312",
+      "description": "Vibratory Roller | Roller 48 Smooth | AFLK00101-AFLK99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    },
+    {
+      "document_id": "80500_AFLD_101",
+      "file_name": "Vibratory Roller 6987312 enGB om.pdf",
+      "title": "6987312",
+      "description": "Vibratory Roller | Roller 73 Padded | AFLD00101-AFLD99999",
+      "category": "Operation & Maintenance Manual",
+      "locale": "enGB",
+      "language_code": "en",
+      "country_code": "GB"
+    }
+  ],
+  "aggr": {
+    "bulletin_filter": {
+      "doc_count": 910,
+      "buckets": [
+        {
+          "key": "Field Modifications",
+          "doc_count": 621
+        },
+        {
+          "key": "General",
+          "doc_count": 211
+        },
+        {
+          "key": "Safety Notices",
+          "doc_count": 78
+        }
+      ]
+    },
+    "locale_filter": {
+      "doc_count": 7116,
+      "buckets": [
+        {
+          "key": "enUS",
+          "doc_count": 6303
+        },
+        {
+          "key": "enGB",
+          "doc_count": 813
+        }
+      ]
+    },
+    "language_filter": {
+      "doc_count": 9865,
+      "buckets": [
+        {
+          "key": "en",
+          "doc_count": 7116
+        },
+        {
+          "key": "es",
+          "doc_count": 1215
+        },
+        {
+          "key": "pt",
+          "doc_count": 933
+        },
+        {
+          "key": "fr",
+          "doc_count": 598
+        },
+        {
+          "key": "zh",
+          "doc_count": 3
+        }
+      ]
+    },
+    "instruction_filter": {
+      "doc_count": 2179,
+      "buckets": [
+        {
+          "key": "Instruction",
+          "doc_count": 2179
+        }
+      ]
+    },
+    "product_filter": {
+      "doc_count": 7116,
+      "buckets": [
+        {
+          "key": "Loader",
+          "doc_count": 2511
+        },
+        {
+          "key": "Attachment",
+          "doc_count": 1893
+        },
+        {
+          "key": "Excavator",
+          "doc_count": 1143
+        },
+        {
+          "key": "Telescopic Handler",
+          "doc_count": 621
+        },
+        {
+          "key": "Utility Vehicle",
+          "doc_count": 333
+        },
+        {
+          "key": "Compact Tractor",
+          "doc_count": 232
+        },
+        {
+          "key": "Toolcat",
+          "doc_count": 134
+        },
+        {
+          "key": "Backhoe Loader",
+          "doc_count": 120
+        },
+        {
+          "key": "Loader Articulated",
+          "doc_count": 99
+        },
+        {
+          "key": "Loader Mini Track",
+          "doc_count": 77
+        },
+        {
+          "key": "Mower",
+          "doc_count": 30
+        },
+        {
+          "key": "Light Compaction",
+          "doc_count": 16
+        }
+      ]
+    },
+    "manual_filter": {
+      "doc_count": 4027,
+      "buckets": [
+        {
+          "key": "Operation & Maintenance Manual",
+          "doc_count": 2379
+        },
+        {
+          "key": "Service Manual",
+          "doc_count": 1640
+        },
+        {
+          "key": "User Guide",
+          "doc_count": 8
+        }
+      ]
+    }
+  }
+}

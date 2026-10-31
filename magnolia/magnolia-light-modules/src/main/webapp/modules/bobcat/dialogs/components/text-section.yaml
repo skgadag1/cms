@@ -1,0 +1,22 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Article Text Section Configuration
+form:
+  properties:
+    text:
+      label: Text
+      $type: cloudinaryRichText
+      alignment: true
+      images: true
+      required: true
+      i18n: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: Content
+        fields:
+          - name: text
+      inheritableSection:
+      anchor:
+      meta:
+light: false

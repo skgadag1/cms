@@ -1,0 +1,59 @@
+form:
+  tabs:
+    - name: config
+      label: Contact component configuration
+      fields:
+        - name: headline
+          fieldType: text
+          label: Headline
+        - name: subtitle
+          fieldType: cloudinaryRichText
+          images: true
+          label: Subtitle
+        - !include:/kags/includes/separator.yaml
+        - name: blocks
+          fieldType: multiValue
+          label: Contact blocks
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: block
+            label: Contact block
+            fieldType: composite
+            layout: vertical
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: title
+                fieldType: text
+                label: Title
+              - name: body
+                fieldType: cloudinaryRichText
+                label: Text body
+                images: true
+              - name: phoneNumber
+                fieldType: text
+                label: Phone number
+              - name: phoneLabel
+                fieldType: text
+                label: Phone link label
+
+              - name: emailAddress
+                fieldType: text
+                label: Email address
+              - name: emailLabel
+                fieldType: text
+                label: Email link label
+
+              - name: hours
+                fieldType: text
+                label: Operation hours
+
+              - name: chatLink
+                fieldType: text
+                label: Chat button link
+              - name: chatLabel
+                fieldType: text
+                label: Chat button label
+
+              - !include:/kags/includes/separator.yaml
+
+actions: !include:/kags/includes/common-actions.yaml

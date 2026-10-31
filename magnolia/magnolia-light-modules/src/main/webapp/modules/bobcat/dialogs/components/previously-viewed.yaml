@@ -1,0 +1,22 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Previously Viewed Pages Configuration
+form:
+  properties:
+    title:
+      label: Title
+      $type: textField
+      i18n: true
+    htag:
+      !include:/bobcat/includes/htag-field.yaml
+      defaultValue: 'h2'
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+      inheritableSection:
+      meta:
+light: false

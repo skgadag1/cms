@@ -1,0 +1,8 @@
+label: HTML
+form:
+  properties:
+    editHTML:
+      $type: codeField
+      language: html
+      required: true
+      description: "Only HTML tags inside the &lt;body&gt; element are accepted. All other tags will be ignored."

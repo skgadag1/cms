@@ -1,0 +1,13 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+endpointPath: /api/content/config
+bypassWorkspaceAcls: true
+workspace: config
+rootPath: /modules/bobcat/commonConfig
+depth: 1
+systemProperties:
+  - mgnl:lastModified
+nodeTypes:
+  - mgnl:contentNode
+
+childNodeTypes:
+  - mgnl:contentNode

@@ -1,0 +1,4 @@
+renderType: ftlExtended
+title: Video Component
+templateScript: /kags/templates/components/video.ftl
+dialog: kags:components/video

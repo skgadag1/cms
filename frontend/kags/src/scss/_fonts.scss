@@ -1,0 +1,67 @@
+// bobcat fonts
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url('../assets/fonts/bobcat-webkit/2CA9B8_0_0.eot');
+  src: local("Helvetica Neue"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_0_0.eot?#iefix') format("embedded-opentype"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_0_0.woff2') format("woff2"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_0_0.woff') format("woff"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_0_0.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  src: url('../assets/fonts/bobcat-webkit/HelveticaNeue-Medium.eot');
+  src: local("Helvetica Neue"),
+  url('../assets/fonts/bobcat-webkit/HelveticaNeue-Medium.eot?#iefix') format("embedded-opentype"),
+  url('../assets/fonts/bobcat-webkit/HelveticaNeue-Medium.woff2') format("woff2"),
+  url('../assets/fonts/bobcat-webkit/HelveticaNeue-Medium.woff') format("woff"),
+  url('../assets/fonts/bobcat-webkit/HelveticaNeue-Medium.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Bold Condensed";
+  src: url('../assets/fonts/bobcat-webkit/2CA9B8_1_0.eot');
+  src: local("Helvetica Neue Bold Condensed"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_1_0.eot?#iefix') format("embedded-opentype"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_1_0.woff2') format("woff2"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_1_0.woff') format("woff"),
+  url('../assets/fonts/bobcat-webkit/2CA9B8_1_0.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url('../assets/fonts/google/Roboto_400.eot');
+  src: local("Roboto"),
+  local("Roboto-Regular"),
+  url('../assets/fonts/google/Roboto_400.eot?#iefix') format("embedded-opentype"),
+  url('../assets/fonts/google/Roboto_400.woff2') format("woff2"),
+  url('../assets/fonts/google/Roboto_400.woff') format("woff"),
+  url('../assets/fonts/google/Roboto_400.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url('../assets/fonts/google/Roboto_Condensed_400.eot');
+  src: local("Roboto Condensed"),
+  local("RobotoCondensed-Regular"),
+  url('../assets/fonts/google/Roboto_Condensed_400.eot?#iefix') format("embedded-opentype"),
+  url('../assets/fonts/google/Roboto_Condensed_400.woff2') format("woff2"),
+  url('../assets/fonts/google/Roboto_Condensed_400.woff') format("woff"),
+  url('../assets/fonts/google/Roboto_Condensed_400.ttf') format("truetype");
+}
+
+.font-condensed {
+  font-family: HelveticaNeue-CondensedBold, HelveticaNeueBoldCondensed, HelveticaNeue-Bold-Condensed, "Helvetica Neue Bold Condensed", RobotoCondensed, "Roboto Condensed", sans-serif;
+}
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Helvetica Neue", Helvetica, Roboto, sans-serif;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+.font-base {
+  font-family: $font-family-base;
+}

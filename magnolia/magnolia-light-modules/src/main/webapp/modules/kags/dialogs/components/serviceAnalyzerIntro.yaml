@@ -1,0 +1,13 @@
+form:
+  label: Service Analyzer Intro
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+        - name: introField
+          fieldType: text
+          label: Intro
+          rows: 3
+          required: true
+
+actions: !include:/kags/includes/common-actions.yaml

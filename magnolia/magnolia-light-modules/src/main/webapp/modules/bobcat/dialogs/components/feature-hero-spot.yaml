@@ -1,0 +1,80 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Feature HeroSpot Configuration
+form:
+  properties:
+    !include:/bobcat/includes/section-text-props.yaml
+    asset:
+      label: Asset source
+      $type: switchableField
+      field:
+        $type: radioButtonGroupField
+        layout: horizontal
+        datasource:
+          $type: optionListDatasource
+          options:
+            - name: video
+              label: Video
+              value: video
+            - name: img
+              label: Image
+              value: img
+            - name: youtube
+              label: YouTube
+              value: youtube
+      itemProvider:
+        $type: jcrChildNodeProvider
+      forms:
+        video:
+          properties:
+            video:
+              !include:/bobcat/includes/dam-video.yaml
+              description: '3:2 aspect ratio'
+              label: Select video
+              properties:
+                src:
+                  !include:/bobcat/includes/dam-asset.yaml
+                  label: Video
+                  filters:
+                    resource_type:
+                      class: com.tbscg.doosan.magnolia.cloudinary.contentapp.filter.AssetPropertyFilter
+                      value: video
+        img:
+          properties:
+            img:
+              !include:/bobcat/includes/image.yaml
+              description: '3:2 aspect ratio'
+        youtube:
+          properties:
+            youtube:
+              $type: textField
+              label: YouTube link source
+              description: '16:9 aspect ratio'
+    fullWidth:
+      $type: checkBoxField
+      label: Full width
+      buttonLabel: Use component with full width
+      type: java.lang.Boolean
+      default: false
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: title
+          - name: htag
+          - name: content
+          - name: asset
+      buttons:
+        label: Buttons
+        fields:
+          - name: cta
+      lookAndFeel:
+        label: Look & Feel
+        fields:
+          - name: variant
+          - name: fullWidth
+      inheritableSection:
+      anchor:
+      meta:
+light: false

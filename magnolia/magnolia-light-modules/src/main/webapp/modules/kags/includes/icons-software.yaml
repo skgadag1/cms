@@ -1,0 +1,30 @@
+label: Software icon
+$type: comboBoxField
+datasource:
+  $type: optionListDatasource
+  options:
+    - name: empty
+      value: ''
+      label: '- empty -'
+#      selected: true
+    - name: analyzer
+      value: service-analyzer.svg
+      label: Service analyzer
+    - name: analyzer-red
+      value: service-analyzer-red.svg
+      label: Service analyzer red
+    - name: enginea
+      value: engine-analyzer.svg
+      label: Engine analyzer
+    - name: orionbms
+      value: orion-bms.svg
+      label: Orion BMS
+    - name: hydrob
+      value: hydro_b.svg
+      label: Hydro
+    - name: engine
+      value: engine.svg
+      label: engine
+    - name: bobcat
+      value: bobcathead.png
+      label: Bobcathead

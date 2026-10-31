@@ -1,0 +1,214 @@
+label: Form element
+$type: switchableField
+field:
+  $type: comboBoxField
+  defaultValue: 'inputField'
+  datasource:
+    $type: optionListDatasource
+    options:
+      - name: Input Field
+        label: Input field
+        value: inputField
+      - name: Hidden Input Field
+        label: Hidden input field
+        value: hiddenInputField
+      - name: Radio Button Field
+        label: Radio button field
+        value: radioButtonField
+      - name: Select Field
+        label: Select field
+        value: selectField
+      - name: Text Area Field
+        label: Text area field
+        value: textAreaField
+      - name: Checkbox Group Field
+        label: Checkbox group field
+        value: checkboxGroupField
+      - name: Brochure
+        label: Brochure field
+        value: brochureField
+      - name: Product Selector
+        label: Product Selector field
+        value: productSelectorField
+      - name: Product Interest Selector
+        label: Multiselect Product Interest dropdown from PC
+        value: productInterestSelectorField
+      - name: Product Interest SF
+        label: Product Interest from SF - dynamic form handlers
+        value: productInterestSfField
+      - name: Dealer Locator Product Interest
+        label: Dealer Locator Product Interest field
+        value: dealerLocatorProductInterestField
+      - name: States List
+        label: States List field
+        value: statesListField
+      - name: Captcha
+        label: Captcha field
+        value: captchaField
+      - name: Address Autocomplete
+        label: Address Autocomplete field
+        value: addressAutocompleteField
+      - name: Phone Autocomplete
+        label: Phone Autocomplete field
+        value: phoneAutocompleteField
+      - name: Related Fields
+        label: Related Fields
+        value: relatedFields
+      - name: Custom Text
+        label: Custom Text
+        value: customText
+      - name: Query String
+        label: Query String field
+        value: queryStringField
+      - name: Related Checkbox
+        label: Checkbox field related to Country/States Picker
+        value: relatedCheckboxField
+      - name: Yes No Dynamic Form
+        label: Yes No Dynamic Form Field
+        value: yesNoDynamicFormField
+      - name: Dynamic Dropdown Parent
+        label: Dynamic Dropdown (Parent) Field
+        value: dynamicDropdownParentField
+      - name: Dynamic Dropdown Child
+        label: Dynamic Dropdown (Child) Field
+        value: dynamicDropdownChildField
+      - name: Dynamic Hidden Field
+        label: Dynamic Hidden Field
+        value: dynamicHiddenField
+      - name: Product Groups Field
+        label: Product Groups Field
+        value: productGroupsField
+      - name: Product Groups Dropdown Field
+        label: Multiselect Product Interest dropdown manual
+        value: productGroupsDropdownField
+      - name: Upload Field
+        label: Upload Field
+        value: uploadField
+      - name: Numeric Field
+        label: Numeric Field
+        value: numericField
+      - name: Privacy Policy
+        label: Privacy Policy
+        value: privacyPolicyField
+      - name: Terms And Conditions
+        label: Terms And Conditions
+        value: termsAndConditionsField
+itemProvider:
+  $type: jcrChildNodeProvider
+forms:
+  inputField:
+    properties:
+      inputField:
+        !include:/bobcat/includes/forms/input-field.yaml
+  hiddenInputField:
+    properties:
+      hiddenInputField:
+        !include:/bobcat/includes/forms/input-field-hidden.yaml
+  radioButtonField:
+    properties:
+      radioButtonField:
+        !include:/bobcat/includes/forms/radio-button-field.yaml
+  selectField:
+    properties:
+      selectField:
+        !include:/bobcat/includes/forms/select-field.yaml
+  productSelectorField:
+    properties:
+      productSelectorField:
+        !include:/bobcat/includes/forms/product-selector-field.yaml
+  productInterestSelectorField:
+    properties:
+      productInterestSelectorField:
+        !include:/bobcat/includes/forms/product-interest-selector-field.yaml
+  productInterestSfField:
+    properties:
+      productInterestSfField:
+        !include:/bobcat/includes/forms/product-interest-sf-field.yaml
+  dealerLocatorProductInterestField:
+    properties:
+      dealerLocatorProductInterestField:
+        !include:/bobcat/includes/forms/dealer-locator-product-interest-field.yaml
+  statesListField:
+    properties:
+      statesListField:
+        !include:/bobcat/includes/forms/states-list-field.yaml
+  textAreaField:
+    properties:
+      textAreaField:
+        !include:/bobcat/includes/forms/text-area-field.yaml
+  checkboxGroupField:
+    properties:
+      checkboxGroupField:
+        !include:/bobcat/includes/forms/checkbox-group-field.yaml
+  brochureField:
+    properties:
+      brochureField:
+        !include:/product-catalog/includes/brochure.yaml
+  captchaField:
+    properties:
+      captchaField:
+        !include:/bobcat/includes/forms/captcha-field.yaml
+  addressAutocompleteField:
+    properties:
+      addressAutocompleteField:
+        !include:/bobcat/includes/forms/address-autocomplete-field.yaml
+  phoneAutocompleteField:
+    properties:
+      phoneAutocompleteField:
+        !include:/bobcat/includes/forms/phone-autocomplete-field.yaml
+  relatedFields:
+    properties:
+      relatedFields:
+        !include:/bobcat/includes/forms/related-fields.yaml
+  customText:
+    properties:
+      customText:
+        !include:/bobcat/includes/forms/custom-text.yaml
+  queryStringField:
+    properties:
+      queryStringField:
+        !include:/bobcat/includes/forms/query-string-field.yaml
+  relatedCheckboxField:
+    properties:
+      relatedCheckboxField:
+        !include:/bobcat/includes/forms/related-checkbox-field.yaml
+  yesNoDynamicFormField:
+    properties:
+      yesNoDynamicFormField:
+        !include:/bobcat/includes/forms/yes-no-dynamic-form-field.yaml
+  dynamicDropdownParentField:
+    properties:
+      dynamicDropdownParentField:
+        !include:/bobcat/includes/forms/dynamic-dropdown-parent-field.yaml
+  dynamicDropdownChildField:
+    properties:
+      dynamicDropdownChildField:
+        !include:/bobcat/includes/forms/dynamic-dropdown-child-field.yaml
+  dynamicHiddenField:
+    properties:
+      dynamicHiddenField:
+        !include:/bobcat/includes/forms/dynamic-hidden-field.yaml
+  productGroupsField:
+    properties:
+      productGroupsField:
+        !include:/bobcat/includes/forms/product-groups-field.yaml
+  productGroupsDropdownField:
+    properties:
+      productGroupsDropdownField:
+        !include:/bobcat/includes/forms/product-groups-dropdown-field.yaml
+  uploadField:
+    properties:
+      uploadField:
+        !include:/bobcat/includes/forms/upload-field.yaml
+  numericField:
+    properties:
+      numericField:
+        !include:/bobcat/includes/forms/numeric-field.yaml
+  privacyPolicyField:
+    properties:
+      privacyPolicyField:
+        !include:/bobcat/includes/forms/privacy-policy-field.yaml
+  termsAndConditionsField:
+    properties:
+      termsAndConditionsField:
+        !include:/bobcat/includes/forms/terms-and-conditions-field.yaml

@@ -1,0 +1,72 @@
+---
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: magnolia-gateway-internal
+spec:
+  selector:
+    istio: ingressgateway-internal
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "magnolia-cms.{{ .Values.domain_name }}"
+        - "magnolia-publisher.{{ .Values.domain_name }}"
+      tls:
+        httpsRedirect: true
+    - port:
+        number: 443
+        name: https
+        protocol: HTTP
+      hosts:
+        - "magnolia-cms.{{ .Values.domain_name }}"
+        - "magnolia-publisher.{{ .Values.domain_name }}"
+      tls:
+        minProtocolVersion: TLSV1_2
+        maxProtocolVersion: TLSV1_2
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: author-internal
+spec:
+  hosts:
+    - "magnolia-cms.{{ .Values.domain_name }}"
+  gateways:
+    - magnolia-gateway-internal
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: magnolia-author
+            port:
+              number: {{ .Values.service.magnolia_author.port }}
+          # temporary header set to eliminate problem with okta. okta application within magnolia has to be reconfigured to correct host header. Related doc: https://confluence.dibhids.net/display/DXP/Magnolia+SSO
+          headers:
+           request:
+             set:
+               host: magnolia-author
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: publisher-internal
+spec:
+  hosts:
+    - "magnolia-publisher.{{ .Values.domain_name }}"
+  gateways:
+    - magnolia-gateway-internal
+  http:
+    - match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: magnolia-publisher
+            port:
+              number: {{ .Values.service.magnolia_publisher.port }}
+

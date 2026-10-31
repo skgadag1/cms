@@ -1,0 +1,29 @@
+mediatracker:
+  class: info.magnolia.ui.api.app.AppDescriptor
+  appClass: com.tbscg.doosan.magnolia.mediatracker.app.MediatrackerApp
+  name: mediatracker
+  icon: icon-favorites
+  label: Mediatracker
+  subApps:
+    urlList:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.mediatracker.app.urlList.UrlListSubApp
+      closable: false
+      label: Manage URLs
+    url:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.mediatracker.app.url.UrlSubApp
+      closable: true
+      icon: icon-documents-app
+      label: URL
+    domainList:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.mediatracker.app.domainList.DomainListSubApp
+      closable: false
+      label: Manage Domains
+    domain:
+      class: info.magnolia.ui.api.app.SubAppDescriptor
+      subAppClass: com.tbscg.doosan.magnolia.mediatracker.app.domain.DomainSubApp
+      closable: true
+      icon: icon-documents-app
+      label: Domain

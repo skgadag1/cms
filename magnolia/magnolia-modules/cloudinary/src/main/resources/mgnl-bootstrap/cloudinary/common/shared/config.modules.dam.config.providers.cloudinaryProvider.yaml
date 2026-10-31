@@ -1,0 +1,9 @@
+'cloudinaryProvider': 
+  'class': 'com.tbscg.doosan.magnolia.cloudinary.dam.CloudinaryAssetProvider'
+  'identifier': 'cloudinary'
+  'renderers': 
+    jcr:primaryType: 'mgnl:content'
+    'imaging': 
+      'class': 'com.tbscg.doosan.magnolia.cloudinary.dam.CloudinaryAssetRenderer'
+
+

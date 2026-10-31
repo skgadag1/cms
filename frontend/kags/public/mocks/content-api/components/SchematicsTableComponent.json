@@ -1,0 +1,18 @@
+[
+  {
+    "key": "schematics",
+    "value": "Schematics"
+  },
+  {
+    "key": "electricSchematics",
+    "value": "Electric Schematics"
+  },
+  {
+    "key": "hydraulicSchematics",
+    "value": "Hydraulic Schematics"
+  },
+  {
+    "key": "downloadDetails",
+    "value": "Download file"
+  }
+]

@@ -1,0 +1,59 @@
+!include:/bobcat/dialogs/components/gallery.yaml
+label: Gallery with Spinset Configuration
+form:
+  properties:
+    galleryImages:
+      label: Gallery Items
+      $type: jcrMultiField
+      i18n: false
+      field:
+        name: compositeField
+        $type: compositeField
+        label: Item
+        i18n: false
+        properties:
+          image: !override
+            label: ''
+            $type: switchableField
+            field:
+              $type: radioButtonGroupField
+              layout: horizontal
+              datasource:
+                $type: optionListDatasource
+                options:
+                  - name: asset
+                    label: Cloudinary Asset
+                    value: asset
+                  - name: tag
+                    label: Images by tag
+                    value: tag
+                  - name: spinset
+                    label: Spinset by tag
+                    value: spinset
+            itemProvider:
+              $type: jcrChildNodeProvider
+            forms:
+              asset:
+                properties:
+                  asset:
+                    !include:/bobcat/includes/image-or-obj-or-video.yaml
+                    properties:
+                      src:
+                        label: Add asset
+                        required: true
+                        requiredErrorMessage: This field is required!
+                        buttonSelectAddLabel: Select Asset
+              tag:
+                properties:
+                  tag:
+                    $type: textField
+                    label: Cloudinary tag
+                    required: true
+                    requiredErrorMessage: This field is required!
+              spinset:
+                properties:
+                  tag:
+                    $type: textField
+                    label: Cloudinary tag
+                    required: true
+                    requiredErrorMessage: This field is required!

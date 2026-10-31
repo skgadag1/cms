@@ -1,0 +1,59 @@
+!include:/bobcat/includes/inheritable-config.yaml
+label: Header Configuration
+form:
+  properties:
+    logo:
+      !include:/bobcat/includes/image.yaml
+      label: Select image
+    topLinks:
+      label: Top links items
+      i18n: true
+      $type: jcrMultiField
+      field:
+        label: Top link
+        name: compositeField
+        $type: compositeField
+        properties:
+          link:
+            !include:/bobcat/includes/page-link-or-url-field.yaml
+            required: true
+          icon:
+            !include:/bobcat/includes/icons.yaml
+    regionLink:
+      !include:/bobcat/includes/page-link-or-url-field.yaml
+      forms:
+        custom: 
+          properties:
+            link:
+              properties:
+                customLabel:
+                  description: 'If used: %REGION% and %LANG% tags will be replaced by model region and language (from Region App)'
+        page: 
+          properties:
+            link:
+              properties:
+                pageLabel:
+                  description: 'If used: %REGION% and %LANG% tags will be replaced by model region and language (from Region App)'
+      label: Region Selector Link
+      i18n: true
+    pageUrl:
+      label: Search Page Url
+      $type: pageLinkField
+      required: true
+    preloaded:
+      defaultValue: true
+    inheritable:
+      defaultValue: true
+  layout:
+    $type: tabbedLayout
+    tabs: !override
+      content:
+        label: General
+        fields:
+          - name: logo
+          - name: topLinks
+          - name: regionLink
+          - name: pageUrl
+      inheritableSection:
+      meta:
+light: false

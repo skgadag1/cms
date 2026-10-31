@@ -1,0 +1,14 @@
+table .md-table-border {
+    border: 1px solid #c9c9c9;
+}
+
+.md-row-border {
+    border-left: 1px solid #c9c9c9 !important;
+}
+
+div.md-table-border > table > tbody > tr > td.v-formlayout-captioncell {
+    text-align: right;
+    line-height: 44px;
+    min-width: 100px;
+    border-top: 1px transparent;
+}

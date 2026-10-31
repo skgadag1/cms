@@ -1,0 +1,12 @@
+class: info.magnolia.rest.delivery.jcr.v2.JcrDeliveryEndpointDefinition
+workspace: concepts
+rootPath: /
+endpointPath: /api/content/concepts
+depth: 10
+includeSystemProperties: false
+nodeTypes:
+  - mgnl:content
+  - mgnl:folder
+childNodeTypes:
+  - mgnl:content
+  - mgnl:folder
